@@ -57,6 +57,8 @@ export default {
         name: 'My Story Of House Music Part 2',
         artist: 'Lionites',
         genres: ['House', 'Techno'],
+        pubDate: 'Tue, 5 Oct 2019 12:15:00 +0200',
+        duration: '02:03:16',
         url: '/test/MyStoryOfHouseMusic-02_House_Lionites.m4a',
         cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/MSOHM-part-2.jpg',
       },
@@ -64,6 +66,8 @@ export default {
         name: 'ZuluMix 40',
         artist: 'DJ Djive',
         genres: ['Techno'],
+        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
+        duration: '02:03:16',
         url: '/test/ZuluMix-40_Techno_Djive.m4a',
         cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZM40.jpg',
       },
@@ -71,6 +75,8 @@ export default {
         name: 'ZuluMix 39',
         artist: 'DJ Djive',
         genres: ['Techno'],
+        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
+        duration: '02:03:16',
         url: '/test/ZuluMix-39_Techno_Djive.m4a',
         cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZM39.jpg'
       },
@@ -78,33 +84,62 @@ export default {
         name: 'ZuluMix 38',
         artist: 'DJ Djive',
         genres: ['Techno'],
+        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
+        duration: '02:03:16',
         url: '/test/ZuluMix-38_Techno_Djive.m4a',
         cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZM38.jpg'
       },
       {
         name: 'ZuluMix 37',
         artist: 'Lionites',
-        genres: ['Drum&Bass'],
+        genres: ['Drum & Bass'],
+        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
+        duration: '02:03:16',
         url: '/test/ZuluMix-37_DnB_Lionites.m4a',
         cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZM37.jpg'
       },
       {
+        name: 'ZuluMix 36',
+        artist: 'Djive',
+        genres: ['Drum & Bass'],
+        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
+        duration: '02:03:16',
         url: '/test/MyStoryOfHouseMusic-02_House_Lionites.m4a',
         cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZM36.jpg',
       },
       {
+        name: 'ZuluMix 27',
+        artist: 'Djive',
+        genres: ['Drum & Bass'],
+        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
+        duration: '02:03:16',
         url: '/test/ZuluMix-40_Techno_Djive.m4a',
         cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZM27.jpg',
       },
       {
+        name: 'ZuluMix 36',
+        artist: 'Djive',
+        genres: ['Drum & Bass'],
+        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
+        duration: '02:03:16',
         url: '/test/ZuluMix-39_Techno_Djive.m4a',
         cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZM26.jpg'
       },
       {
+        name: 'ZuluMix 22',
+        artist: 'Lionites',
+        genres: ['Drum & Bass'],
+        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
+        duration: '02:03:16',
         url: '/test/ZuluMix-38_Techno_Djive.m4a',
         cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZuluMix22.png'
       },
       {
+        name: 'ZuluMix 36',
+        artist: 'Lionites',
+        genres: ['House'],
+        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
+        duration: '02:03:16',
         url: '/test/ZuluMix-37_DnB_Lionites.m4a',
         cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZuluMix21.jpg'
       }
@@ -134,6 +169,7 @@ export default {
 
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 html, body {
@@ -149,6 +185,22 @@ html, body {
 
 button:focus {
   outline: none;
+}
+
+.tag {
+  margin: 1.2vh 0 0 .5vh;
+  padding: .5vh .8vh;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1vh;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: rgba(200,200,200, 1);
+  border: 2px solid rgba(128,128,128, .5);
+  border-radius: .8vh;
+  mix-blend-mode: lighten;
+  user-select: none;
 }
 
 #app {
@@ -184,7 +236,7 @@ button:focus {
   transform: skew(0, -10deg);
   z-index: 2;
   color: rgb(200,200,200);
-  text-shadow: 0 0 1rem rgb(0,0,0);
+  text-shadow: 0 0 2px rgb(0,0,0);
   mix-blend-mode: luminosity;
   pointer-events: none;
 

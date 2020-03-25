@@ -6,8 +6,31 @@
       @click="onCoverClick"
     />
     <div class="meta">
-      <h2>{{ song.name }}</h2>
-      <h3>{{ song.artist }}</h3>
+      <h2 class="title">{{ song.name }}</h2>
+      <h3 class="artist">{{ song.artist }}</h3>
+      <div class="date-duration-wrapper">
+        <h4 class="date">
+          <svg viewBox="0 0 24 24">
+            <path d="M5,4V6H19V4H5M5,14H9V20H15V14H19L12,7L5,14Z" />
+          </svg>
+          {{ pubDate }}
+        </h4>
+        <h4 class="duration">
+          <svg viewBox="0 0 24 24">
+            <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.24,7.76C15.07,6.58 13.53,6 12,6V12L7.76,16.24C10.1,18.58 13.9,18.58 16.24,16.24C18.59,13.9 18.59,10.1 16.24,7.76Z" />
+          </svg>
+          {{ song.duration }}
+        </h4>
+      </div>
+      <div class="tags">
+        <span
+          v-for="genre in song.genres"
+          :key="genre"
+          class="tag"
+        >
+          {{ genre }}
+        </span>
+      </div>
     </div>
     <div
       v-if="active"
@@ -18,10 +41,7 @@
           :class="['play', { playing }]"
           @click="playPause"
         />
-        <input
-          type="range"
-          class="volume amplitude-volume-slider"
-        />
+        <Volume/>
       </div>
       <div class="progress">
         <progress
@@ -43,9 +63,12 @@
 
 <script>
 import Amplitude from "amplitudejs";
+import Volume from './Volume'
 
 export default {
   name: "Episode",
+
+  components: { Volume },
 
   props: {
     song: {
@@ -56,6 +79,19 @@ export default {
     active: Boolean,
     selected: Boolean,
     playing: Boolean
+  },
+
+  computed: {
+    pubDate () {
+      const padZero = input => input.toString().padStart(2, '0')
+
+      const date = new Date(this.song.pubDate)
+      const year = date.getFullYear()
+      const month = padZero(date.getMonth() + 1)
+      const day = padZero(date.getDate())
+
+      return `${day}.${month}.${year}`
+    }
   },
 
   methods: {
@@ -136,32 +172,66 @@ export default {
   align-items: flex-end;
   text-align: right;
   justify-content: flex-end;
-  padding: 2rem;
+  padding: 2.5vh;
   color: rgba(255,255,255, .75);
-  background-color: rgba(0,0,0, .95);
+  background-color: rgba(0,0,0, .9);
 
   .selected & {
     display: flex;
+    background-color: rgba(255,53,127, .95);
   }
 
-  h2, h3 {
+  .title,
+  .artist {
     margin: 0;
     padding: 0;
     text-transform: uppercase;
     line-height: 1.1;
   }
 
-  h2 {
-    order: 2;
-    font-size: 2.2rem;
+  .title {
+    font-size: 2.5vh;
     font-weight: 200;
-    opacity: .75;
+    color: rgba(255,53,127, 1);
+    opacity: 1;
+
+    .selected & {
+      color: rgb(0,0,0);
+    }
   }
 
-  h3 {
-    order: 1;
-    font-size: 1.5rem;
-    margin-bottom: .5rem;
+  .artist {
+    font-size: 1.75vh;
+    margin: .125rem 0 .25rem;
+  }
+
+  .date-duration-wrapper {
+    display: flex;
+    align-items: center;
+
+    & > * {
+      margin: .5rem 0 0 .5rem;
+      display: flex;
+      align-items: center;
+      font-size: 1.5vh;
+      line-height: 1;
+      font-weight: 200;
+
+      .selected & {
+        color: rgb(0,0,0, .75);
+      }
+
+      svg {
+        margin-right: .25vh;
+        height: 1.65vh;
+        width: 1.65vh;
+        fill: rgba(255,255,255, .75);
+
+        .selected & {
+          fill: rgb(0,0,0);
+        }
+      }
+    }
   }
 }
 
@@ -204,8 +274,7 @@ export default {
     margin-left: 0.5vh;
     border-top: 2vh solid transparent;
     border-bottom: 2vh solid transparent;
-    border-left: 3vh solid rgba(255,53,127,1);
-    mix-blend-mode: screen;
+    border-left: 3vh solid rgba(255,53,127, .85);
   }
 
   &.playing {
@@ -215,8 +284,7 @@ export default {
       display: block;
       width: 1.25vh;
       height: 4vh;
-      background-color: rgb(200,200,200);
-      mix-blend-mode: screen;
+      background-color: rgba(255,53,127, .85);
     }
 
     &:before {
@@ -224,115 +292,6 @@ export default {
     }
   }
 }
-
-.volume {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  margin: 0 3vh;
-
-  &::-webkit-slider-runnable-track {
-    -webkit-appearance: none;
-    background: rgba(59,173,227,1);
-    background: -moz-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(59,173,227,1)), color-stop(25%, rgba(87,111,230,1)), color-stop(51%, rgba(152,68,183,1)), color-stop(100%, rgba(255,53,127,1)));
-    background: -webkit-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: -o-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: -ms-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
-    height: 2px;
-  }
-
-  &:focus {
-    outline: none;
-  }
-
-  &::-moz-range-track {
-    -moz-appearance: none;
-    background: rgba(59,173,227,1);
-    background: -moz-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(59,173,227,1)), color-stop(25%, rgba(87,111,230,1)), color-stop(51%, rgba(152,68,183,1)), color-stop(100%, rgba(255,53,127,1)));
-    background: -webkit-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: -o-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: -ms-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
-    height: 2px;
-  }
-
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    border: 2px solid;
-    border-radius: 50%;
-    height: 25px;
-    width: 25px;
-    max-width: 80px;
-    position: relative;
-    bottom: 11px;
-    background-color: #1d1c25;
-    cursor: -webkit-grab;
-    -webkit-transition: border 1000ms ease;
-    transition: border 1000ms ease;
-  }
-
-  &::-moz-range-thumb {
-    -moz-appearance: none;
-    border: 2px solid;
-    border-radius: 50%;
-    height: 25px;
-    width: 25px;
-    max-width: 80px;
-    position: relative;
-    bottom: 11px;
-    background-color: #1d1c25;
-    cursor: -moz-grab;
-    -moz-transition: border 1000ms ease;
-    transition: border 1000ms ease;
-  }
-}
-
-
-
-/* .range.blue::-webkit-slider-thumb {
-   border-color: rgb(59,173,227);
-}
-
-.range.ltpurple::-webkit-slider-thumb {
-   border-color: rgb(87,111,230);
-}
-
-.range.purple::-webkit-slider-thumb {
-   border-color: rgb(152,68,183);
-}
-
-.range.pink::-webkit-slider-thumb {
-   border-color: rgb(255,53,127);
-}
-
-.range.blue::-moz-range-thumb {
-   border-color: rgb(59,173,227);
-}
-
-.range.ltpurple::-moz-range-thumb {
-   border-color: rgb(87,111,230);
-}
-
-.range.purple::-moz-range-thumb {
-   border-color: rgb(152,68,183);
-}
-
-.range.pink::-moz-range-thumb {
-   border-color: rgb(255,53,127);
-}
-
-input[type=range]::-webkit-slider-thumb:active {
-  cursor: -webkit-grabbing;
-}
-
-input[type=range]::-moz-range-thumb:active {
-  cursor: -moz-grabbing;
-}
-} */
 
 /* Progress */
 .progress {
@@ -364,7 +323,7 @@ input[type=range]::-moz-range-thumb:active {
   cursor: pointer;
 
   &::-webkit-progress-value {
-    background-color: rgba(200, 200, 200, .75);
+    background-color: rgba(255,53,127,1);
     mix-blend-mode: lighten;
     opacity: .75;
   }
