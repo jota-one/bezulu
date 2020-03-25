@@ -300,7 +300,7 @@ export default {
 /* Progress */
 .progress {
   position: relative;
-  height: 1.5rem;
+  height: 2rem;
   background-color: rgba(0, 0, 0, .4);
 }
 
@@ -339,12 +339,12 @@ export default {
   left: 0;
   top: 0;
   width: 100%;
-  height: 1.5rem;
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 .5rem .125rem;
-  font-size: .9rem;
+  font-size: 1rem;
   font-weight: 400;
   color: rgb(255, 255, 255);
   mix-blend-mode: difference;
