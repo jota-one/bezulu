@@ -178,7 +178,7 @@ html, body {
   width: 100%;
   height: 100%;
   font-family: Oswald, system-ui, system;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 200;
   background-color: rgb(10,10,10);
 }
@@ -187,19 +187,23 @@ button:focus {
   outline: none;
 }
 
+.spacer {
+  flex: 1;
+}
+
 .tag {
   margin: 1.2vh 0 0 .5vh;
   padding: .5vh .8vh;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1vh;
+  font-size: 1.5vh;
   font-weight: 400;
   text-transform: uppercase;
   color: rgba(200,200,200, 1);
-  border: 2px solid rgba(128,128,128, .5);
+  border: 2px solid rgba(180,180,180, .5);
   border-radius: .8vh;
-  mix-blend-mode: lighten;
+  mix-blend-mode: screen;
   user-select: none;
 }
 

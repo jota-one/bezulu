@@ -41,7 +41,9 @@
           :class="['play', { playing }]"
           @click="playPause"
         />
+        <div class="spacer"/>
         <Volume/>
+        <Download />
       </div>
       <div class="progress">
         <progress
@@ -64,11 +66,12 @@
 <script>
 import Amplitude from "amplitudejs";
 import Volume from './Volume'
+import Download from './Download'
 
 export default {
   name: "Episode",
 
-  components: { Volume },
+  components: { Volume, Download },
 
   props: {
     song: {
@@ -201,8 +204,8 @@ export default {
   }
 
   .artist {
-    font-size: 1.75vh;
-    margin: .125rem 0 .25rem;
+    font-size: 2vh;
+    margin: 1vh 0 1.5vh;
   }
 
   .date-duration-wrapper {
@@ -213,12 +216,13 @@ export default {
       margin: .5rem 0 0 .5rem;
       display: flex;
       align-items: center;
-      font-size: 1.5vh;
+      font-size: 1.7vh;
       line-height: 1;
-      font-weight: 200;
+      font-weight: 400;
+      color: rgba(255,255,255, .35);
 
       .selected & {
-        color: rgb(0,0,0, .75);
+        color: rgba(0,0,0, .5);
       }
 
       svg {
