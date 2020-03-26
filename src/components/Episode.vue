@@ -5,8 +5,8 @@
       :src="song.cover_art_url"
       @click="onCoverClick"
     />
-    <div class="meta">
-      <h2 class="title">{{ song.name }}</h2>
+    <div class="meta colored bg">
+      <h2 class="title colored color">{{ song.name }}</h2>
       <h3 class="artist">{{ song.artist }}</h3>
       <div class="date-duration-wrapper">
         <h4 class="date">
@@ -38,7 +38,7 @@
     >
       <div class="controls">
         <button
-          :class="['play', { playing }]"
+          :class="['play', 'colored', 'fill', { playing }]"
           @click="playPause"
         />
         <div class="spacer"/>
@@ -51,7 +51,7 @@
           value="0"
         />
         <progress
-          class="played amplitude-song-played-progress"
+          class="played colored progress-bg amplitude-song-played-progress"
           @click="seek"
         />
         <div class="time">
@@ -153,6 +153,10 @@ export default {
     display: flex;
     flex-direction: column;
   }
+
+  &:not(.selected) .meta {
+    background-color: rgba(0,0,0, .9);
+  }
 }
 
 /* New */
@@ -177,11 +181,9 @@ export default {
   justify-content: flex-end;
   padding: 2.5vh;
   color: rgba(255,255,255, .75);
-  background-color: rgba(0,0,0, .9);
 
   .selected & {
     display: flex;
-    background-color: rgba(255,53,127, .95);
   }
 
   .title,
@@ -195,7 +197,6 @@ export default {
   .title {
     font-size: 2.5vh;
     font-weight: 200;
-    color: rgba(255,53,127, 1);
     opacity: 1;
 
     .selected & {
@@ -327,7 +328,6 @@ export default {
   cursor: pointer;
 
   &::-webkit-progress-value {
-    background-color: rgba(255,53,127,1);
     mix-blend-mode: lighten;
     opacity: .75;
   }
@@ -347,7 +347,7 @@ export default {
   font-size: 1rem;
   font-weight: 400;
   color: rgb(255, 255, 255);
-  mix-blend-mode: difference;
+  mix-blend-mode: luminosity;
   pointer-events: none;
 
   .remaining:before {

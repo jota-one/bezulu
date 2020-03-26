@@ -1,11 +1,12 @@
 <template>
   <div class="Volume">
-    <svg class="icon" viewBox="0 0 24 24">
+    <svg class="icon colored fill" viewBox="0 0 24 24">
       <path d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" />
     </svg>
     <input
+      ref="range"
       type="range"
-      class="slider amplitude-volume-slider"
+      class="slider colored amplitude-volume-slider"
     />
   </div>
 </template>
@@ -14,108 +15,92 @@
 export default {
   name: 'Volume',
 
-  mounted () {
-    // var inputRange = document.getElementsByClassName('range')[0],
-    // maxValue = 100, // the higher the smoother when dragging
-    // speed = 5,
-    // currValue, rafID;
-
-    // // set min/max value
-    // inputRange.min = 0;
-    // inputRange.max = maxValue;
-
-    // // bind events
-    // inputRange.addEventListener('mousedown', unlockStartHandler, false);
-    // inputRange.addEventListener('mousestart', unlockStartHandler, false);
-    // inputRange.addEventListener('mouseup', unlockEndHandler, false);
-    // inputRange.addEventListener('touchend', unlockEndHandler, false);
-
-    // // move gradient
-    // inputRange.addEventListener('input', onInput)
+  props: {
+    targetSelector: {
+      type: String,
+      default: '.colored'
+    }
   },
 
-  // methods: {
-  //   onInput () {
-  //       //Change slide thumb color on way up
-  //       if (this.value > 20) {
-  //           inputRange.classList.add('ltpurple');
-  //       }
-  //       if (this.value > 40) {
-  //           inputRange.classList.add('purple');
-  //       }
-  //       if (this.value > 60) {
-  //           inputRange.classList.add('pink');
-  //       }
+  data: () => ({
+    targets: [],
+    inputRange: undefined,
+    speed: 5,
+    currValue: undefined,
+    rafID: undefined
+  }),
 
-  //       //Change slide thumb color on way down
-  //       if (this.value < 20) {
-  //           inputRange.classList.remove('ltpurple');
-  //       }
-  //       if (this.value < 40) {
-  //           inputRange.classList.remove('purple');
-  //       }
-  //       if (this.value < 60) {
-  //           inputRange.classList.remove('pink');
-  //       }
-  //   },
+  mounted () {
+    this.inputRange = this.$refs.range
+    this.inputRange.addEventListener('input', this.onInput)
+    this.targets = document.querySelectorAll(this.targetSelector)
+    this.targets.forEach(target =>  target.classList.add('high'))
+  },
 
-  //   // listen for unlock
-  //   unlockStartHandler () {
-  //       // clear raf if trying again
-  //       window.cancelAnimationFrame(rafID);
+  beforeDestroy () {
+    this.inputRange.removeEventListener('input', this.onInput)
+  },
 
-  //       // set to desired value
-  //       currValue = +this.value;
-  //   },
+  methods: {
+    onInput (event) {
+        // Change slide thumb color on way up
+        if (event.target.value > 0) {
+            this.targets.forEach(target =>  target.classList.add('lower'))
+        }
 
-  //   unlockEndHandler () {
+        if (event.target.value > 20) {
+            this.targets.forEach(target =>  target.classList.add('low'))
+        }
 
-  //       // store current value
-  //       currValue = +this.value;
+        if (event.target.value > 40) {
+            this.targets.forEach(target =>  target.classList.add('high'))
+        }
 
-  //       // determine if we have reached success or not
-  //       if(currValue >= maxValue) {
-  //           successHandler();
-  //       }
-  //       else {
-  //           rafID = window.requestAnimationFrame(animateHandler);
-  //       }
-  //   },
+        if (event.target.value > 60) {
+            this.targets.forEach(target =>  target.classList.add('higher'))
+        }
 
-  //   // handle range animation
-  //   animateHandler () {
+        // Change slide thumb color on way down
+        if (event.target.value < 20) {
+            this.targets.forEach(target =>  target.classList.remove('low'))
+        }
 
-  //       // calculate gradient transition
-  //       var transX = currValue - maxValue;
+        if (event.target.value < 40) {
+            this.targets.forEach(target =>  target.classList.remove('high'))
+        }
 
-  //       // update input range
-  //       inputRange.value = currValue;
+        if (event.target.value < 60) {
+            this.targets.forEach(target =>  target.classList.remove('higher'))
+        }
+    },
 
-  //       //Change slide thumb color on mouse up
-  //       if (currValue < 20) {
-  //           inputRange.classList.remove('ltpurple');
-  //       }
-  //       if (currValue < 40) {
-  //           inputRange.classList.remove('purple');
-  //       }
-  //       if (currValue < 60) {
-  //           inputRange.classList.remove('pink');
-  //       }
+    animateHandler () {
+        // Change slide thumb color on mouse up
+        if (this.currValue < 20) {
+            this.targets.forEach(target =>  target.classList.remove('low'))
+        }
 
-  //       // determine if we need to continue
-  //       if(currValue > -1) {
-  //         window.requestAnimationFrame(animateHandler);
-  //       }
+        if (this.currValue < 40) {
+            this.targets.forEach(target =>  target.classList.remove('high'))
+        }
 
-  //       // decrement value
-  //       currValue = currValue - speed;
-  //   },
+        if (this.currValue < 60) {
+            this.targets.forEach(target =>  target.classList.remove('higher'))
+        }
 
-  //   // handle successful unlock
-  //   successHandler () {
-  //     alert('Unlocked');
-  //   }
-  // }
+        // Determine if we need to continue
+        if (this.currValue > -1) {
+          window.requestAnimationFrame(this.animateHandler)
+        }
+
+        // Decrement value
+        this.currValue -=this.speed
+    },
+
+    successHandler () {
+      alert('Unlocked');
+    }
+  }
 }
 </script>
 
@@ -124,28 +109,55 @@ export default {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  max-width: 40%;
+  padding: 2vh;
 }
 
 .icon {
-  width: 3rem;
-  height: 3rem;
+  width: 3vh;
+  height: 3vh;
+  margin-right: 1vh;
   fill: rgba(255,53,127, 1);
 }
 
 .slider {
   -webkit-appearance: none;
   -moz-appearance: none;
-  margin: 0 3vh;
+  width: 100%;
 
   &::-webkit-slider-runnable-track {
     -webkit-appearance: none;
     background: rgba(59,173,227,1);
-    background: -moz-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(59,173,227,1)), color-stop(25%, rgba(87,111,230,1)), color-stop(51%, rgba(152,68,183,1)), color-stop(100%, rgba(255,53,127,1)));
-    background: -webkit-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: -o-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: -ms-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+    background: -moz-linear-gradient(45deg,
+      rgba(59,173,227,1) 0%,
+      rgba(87,111,230,1) 25%,
+      rgba(152,68,183,1) 51%,
+      rgba(255,53,127,1) 100%);
+    background: -webkit-gradient(left bottom, right top,
+      color-stop(0%, rgba(59,173,227,1)),
+      color-stop(25%, rgba(87,111,230,1)),
+      color-stop(51%, rgba(152,68,183,1)),
+      color-stop(100%, rgba(255,53,127,1)));
+    background: -webkit-linear-gradient(45deg,
+      rgba(59,173,227,1) 0%,
+      rgba(87,111,230,1) 25%,
+      rgba(152,68,183,1) 51%,
+      rgba(255,53,127,1) 100%);
+    background: -o-linear-gradient(45deg,
+      rgba(59,173,227,1) 0%,
+      rgba(87,111,230,1) 25%,
+      rgba(152,68,183,1) 51%,
+      rgba(255,53,127,1) 100%);
+    background: -ms-linear-gradient(45deg,
+      rgba(59,173,227,1) 0%,
+      rgba(87,111,230,1) 25%,
+      rgba(152,68,183,1) 51%,
+      rgba(255,53,127,1) 100%);
+    background: linear-gradient(45deg,
+      rgba(59,173,227,1) 0%,
+      rgba(87,111,230,1) 25%,
+      rgba(152,68,183,1) 51%,
+      rgba(255,53,127,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
     height: 2px;
   }
@@ -157,76 +169,65 @@ export default {
   &::-moz-range-track {
     -moz-appearance: none;
     background: rgba(59,173,227,1);
-    background: -moz-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(59,173,227,1)), color-stop(25%, rgba(87,111,230,1)), color-stop(51%, rgba(152,68,183,1)), color-stop(100%, rgba(255,53,127,1)));
-    background: -webkit-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: -o-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: -ms-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-    background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+    background: -moz-linear-gradient(45deg,
+      rgba(59,173,227,1) 0%,
+      rgba(87,111,230,1) 25%,
+      rgba(152,68,183,1) 51%,
+      rgba(255,53,127,1) 100%);
+    background: -webkit-gradient(left bottom, right top,
+      color-stop(0%, rgba(59,173,227,1)),
+      color-stop(25%, rgba(87,111,230,1)),
+      color-stop(51%, rgba(152,68,183,1)),
+      color-stop(100%, rgba(255,53,127,1)));
+    background: -webkit-linear-gradient(45deg,
+      rgba(59,173,227,1) 0%,
+      rgba(87,111,230,1) 25%,
+      rgba(152,68,183,1) 51%,
+      rgba(255,53,127,1) 100%);
+    background: -o-linear-gradient(45deg,
+      rgba(59,173,227,1) 0%,
+      rgba(87,111,230,1) 25%,
+      rgba(152,68,183,1) 51%,
+      rgba(255,53,127,1) 100%);
+    background: -ms-linear-gradient(45deg,
+      rgba(59,173,227,1) 0%,
+      rgba(87,111,230,1) 25%,
+      rgba(152,68,183,1) 51%,
+      rgba(255,53,127,1) 100%);
+    background: linear-gradient(45deg,
+      rgba(59,173,227,1) 0%,
+      rgba(87,111,230,1) 25%,
+      rgba(152,68,183,1) 51%,
+      rgba(255,53,127,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
     height: 2px;
   }
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
-    border: .2px solid;
+    border: 2px solid;
     border-radius: 50%;
-    height: 25px;
-    width: 25px;
-    max-width: 80px;
+    height: 20px;
+    width: 20px;
+    bottom: 9px;
     position: relative;
-    bottom: 11px;
     background-color: #1d1c25;
     cursor: -webkit-grab;
-    -webkit-transition: border 1000ms ease;
-    transition: border 1000ms ease;
   }
 
   &::-moz-range-thumb {
     -moz-appearance: none;
     border: 2px solid;
     border-radius: 50%;
-    height: 25px;
-    width: 25px;
-    max-width: 80px;
+    height: 20px;
+    width: 20px;
+    bottom: 9px;
     position: relative;
     bottom: 11px;
     background-color: #1d1c25;
     cursor: -moz-grab;
-    -moz-transition: border 1000ms ease;
-    transition: border 1000ms ease;
-  }
-
-  &.blue::-webkit-slider-thumb {
-    border-color: rgb(59,173,227);
-  }
-
-  &.ltpurple::-webkit-slider-thumb {
-    border-color: rgb(87,111,230);
-  }
-
-  &.purple::-webkit-slider-thumb {
-    border-color: rgb(152,68,183);
-  }
-
-  &.pink::-webkit-slider-thumb {
-    border-color: rgb(255,53,127);
-  }
-
-  &.blue::-moz-range-thumb {
-    border-color: rgb(59,173,227);
-  }
-
-  &.ltpurple::-moz-range-thumb {
-    border-color: rgb(87,111,230);
-  }
-
-  &.purple::-moz-range-thumb {
-    border-color: rgb(152,68,183);
-  }
-
-  &.pink::-moz-range-thumb {
-    border-color: rgb(255,53,127);
+    -moz-transition: border .25s ease;
+    transition: border .25s ease;
   }
 
   &::-webkit-slider-thumb:active {
@@ -236,5 +237,143 @@ export default {
   &::-moz-range-thumb:active {
     cursor: -moz-grabbing;
   }
+}
+</style>
+
+<style lang="postcss">
+/* Transition */
+.colored.color {
+  -webkit-transition: color 1s ease;
+  transition: color 1s ease;
+}
+
+.colored.fill {
+  -webkit-transition: fill 1s ease;
+  transition: fill 1s ease;
+}
+
+.colored.border {
+  -webkit-transition: border-color 1s ease;
+  transition: border-color 1s ease;
+}
+
+.colored.bg,
+.colored.progress-bg::-webkit-progress-value {
+  -webkit-transition: background-color 1s ease;
+  transition: background-color 1s ease;
+}
+
+.Volume .slider::-webkit-slider-thumb {
+  -webkit-transition: border .5s ease;
+  transition: border 1s ease;
+}
+
+  -webkit-transition: border .5s ease;
+.Volume .slider::-moz-range-thumb  {
+  transition: border 1s ease;
+}
+
+/* LOWER */
+.colored.lower.color {
+  color: rgb(59,173,227);
+}
+
+.colored.lower.fill {
+  fill: rgb(59,173,227);
+}
+
+.colored.lower.border {
+  border-color: rgb(59,173,227);
+}
+
+.colored.lower.bg,
+.colored.lower.progress-bg::-webkit-progress-value {
+  background-color: rgb(59,173,227);
+}
+
+.Volume .lower.slider::-webkit-slider-thumb {
+  border-color: rgb(59,173,227);
+}
+
+.Volume .lower.slider::-moz-range-thumb  {
+  border-color: rgb(59,173,227);
+}
+
+/* LOW */
+.colored.low.color {
+  color: rgb(87,111,230);
+}
+
+.colored.low.fill {
+  fill: rgb(87,111,230);
+}
+
+.colored.low.border {
+  border-color: rgb(87,111,230);
+}
+
+.colored.low.bg,
+.colored.low.progress-bg::-webkit-progress-value {
+  background-color: rgb(87,111,230);
+}
+
+.Volume .low.slider::-webkit-slider-thumb {
+  border-color: rgb(87,111,230);
+}
+
+.Volume .low.slider::-moz-range-thumb {
+  border-color: rgb(87,111,230);
+}
+
+/* HIGH */
+.colored.high.color {
+  color: rgb(152,68,183);
+}
+
+.colored.high.fill {
+  fill: rgb(152,68,183);
+}
+
+.colored.high.border {
+  border-color: rgb(152,68,183);
+}
+
+.colored.high.bg,
+.colored.high.progress-bg::-webkit-progress-value {
+  background-color: rgb(152,68,183);
+}
+
+.Volume .high.slider::-webkit-slider-thumb {
+  border-color: rgb(152,68,183);
+}
+
+.Volume .high.slider::-moz-range-thumb {
+  border-color: rgb(152,68,183);
+}
+
+/* HIGHER */
+.colored.higher.color {
+  color: rgb(255,53,127);
+}
+
+.colored.higher.fill {
+  fill: rgb(255,53,127);
+}
+
+.colored.higher.bg,
+.colored.higher.progress-bg::-webkit-progress-value {
+  background-color: rgb(255,53,127);
+}
+
+.colored.higher.border {
+  border-color: rgb(255,53,127);
+}
+
+.Volume .higher.slider::-webkit-slider-thumb {
+  border-color: rgb(255,53,127);
+}
+
+.Volume .higher.slider::-moz-range-thumb {
+  border-color: rgb(255,53,127);
 }
 </style>

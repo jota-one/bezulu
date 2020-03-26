@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="heading">
-      <h1>
+      <h1 class="colored color">
         <span class="bold">
           Be
         </span>
@@ -239,9 +239,7 @@ button:focus {
   left: 4vh;
   transform: skew(0, -10deg);
   z-index: 2;
-  color: rgb(200,200,200);
   text-shadow: 0 0 2px rgb(0,0,0);
-  mix-blend-mode: luminosity;
   pointer-events: none;
 
   @media screen and (min-width: 75vh) {
