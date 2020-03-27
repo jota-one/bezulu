@@ -1,7 +1,16 @@
 <template>
   <div class="Volume">
-    <svg class="icon colored fill" viewBox="0 0 24 24">
-      <path d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" />
+    <svg
+      class="icon colored fill"
+      viewBox="0 0 24 24"
+      >
+      <path d="M3 9V15H7L12 20V4L7 9H3Z"/>
+      <path
+        :class="['path', { visible: value > 25 }]"
+        d="M16.5 12C16.5 10.23 15.5 8.71 14 7.97V16C15.5 15.29 16.5 13.76 16.5 12Z"/>
+      <path
+        :class="['path', { visible: value > 75 }]"
+        d="M14 3.23001V5.29001C16.89 6.15001 19 8.83001 19 12C19 15.17 16.89 17.84 14 18.7V20.77C18 19.86 21 16.28 21 12C21 7.72001 18 4.14001 14 3.23001Z"/>
     </svg>
     <input
       ref="range"
@@ -23,11 +32,10 @@ export default {
   },
 
   data: () => ({
-    targets: [],
+    value: 50,
     inputRange: undefined,
     speed: 5,
-    currValue: undefined,
-    rafID: undefined
+    targets: []
   }),
 
   mounted () {
@@ -43,62 +51,37 @@ export default {
 
   methods: {
     onInput (event) {
-        // Change slide thumb color on way up
-        if (event.target.value > 0) {
-            this.targets.forEach(target =>  target.classList.add('lower'))
-        }
+      this.value = event.target.value
 
-        if (event.target.value > 20) {
-            this.targets.forEach(target =>  target.classList.add('low'))
-        }
+      // Change slide thumb color on way up
+      if (this.value > 0) {
+          this.targets.forEach(target =>  target.classList.add('lower'))
+      }
 
-        if (event.target.value > 40) {
-            this.targets.forEach(target =>  target.classList.add('high'))
-        }
+      if (this.value > 20) {
+          this.targets.forEach(target =>  target.classList.add('low'))
+      }
 
-        if (event.target.value > 60) {
-            this.targets.forEach(target =>  target.classList.add('higher'))
-        }
+      if (this.value > 40) {
+          this.targets.forEach(target =>  target.classList.add('high'))
+      }
 
-        // Change slide thumb color on way down
-        if (event.target.value < 20) {
-            this.targets.forEach(target =>  target.classList.remove('low'))
-        }
+      if (this.value > 60) {
+          this.targets.forEach(target =>  target.classList.add('higher'))
+      }
 
-        if (event.target.value < 40) {
-            this.targets.forEach(target =>  target.classList.remove('high'))
-        }
+      // Change slide thumb color on way down
+      if (this.value < 20) {
+          this.targets.forEach(target =>  target.classList.remove('low'))
+      }
 
-        if (event.target.value < 60) {
-            this.targets.forEach(target =>  target.classList.remove('higher'))
-        }
-    },
+      if (this.value < 40) {
+          this.targets.forEach(target =>  target.classList.remove('high'))
+      }
 
-    animateHandler () {
-        // Change slide thumb color on mouse up
-        if (this.currValue < 20) {
-            this.targets.forEach(target =>  target.classList.remove('low'))
-        }
-
-        if (this.currValue < 40) {
-            this.targets.forEach(target =>  target.classList.remove('high'))
-        }
-
-        if (this.currValue < 60) {
-            this.targets.forEach(target =>  target.classList.remove('higher'))
-        }
-
-        // Determine if we need to continue
-        if (this.currValue > -1) {
-          window.requestAnimationFrame(this.animateHandler)
-        }
-
-        // Decrement value
-        this.currValue -=this.speed
-    },
-
-    successHandler () {
-      alert('Unlocked');
+      if (this.value < 60) {
+          this.targets.forEach(target =>  target.classList.remove('higher'))
+      }
     }
   }
 }
@@ -114,10 +97,20 @@ export default {
 }
 
 .icon {
-  width: 3vh;
-  height: 3vh;
+  width: 5vh;
+  height: 5vh;
   margin-right: 1vh;
   fill: rgba(255,53,127, 1);
+}
+
+.path {
+  opacity: 0;
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+
+  &.visible {
+    opacity: 1;
+  }
 }
 
 .slider {

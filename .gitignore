@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 /dist
-/public/test
+/public/podcast.json
 
 # local env files
 .env.local

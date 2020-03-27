@@ -36,6 +36,15 @@
 <script>
 import Amplitude from 'amplitudejs'
 import Episode from '@/components/Episode'
+import podcast from '../public/podcast.json'
+
+const cleanEmptyObject = input => {
+  if (typeof input === 'object' && !Object.keys(input).length) {
+    return ''
+  }
+
+  return input
+}
 
 export default {
   name: 'App',
@@ -45,105 +54,18 @@ export default {
   data: () => ({
     playing: false,
     selected: 0,
-    episodes: [
-      // {
-      //   name: 'ZuluMix 41',
-      //   artist: 'DJ Djive',
-      //   genres: ['House', 'Techno'],
-      //   url: '/ZuluMix_41_Dj_Djive.wav',
-      //   cover_art_url: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
-      // },
-      {
-        name: 'My Story Of House Music Part 2',
-        artist: 'Lionites',
-        genres: ['House', 'Techno'],
-        pubDate: 'Tue, 5 Oct 2019 12:15:00 +0200',
-        duration: '02:03:16',
-        url: '/test/MyStoryOfHouseMusic-02_House_Lionites.m4a',
-        cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/MSOHM-part-2.jpg',
-      },
-      {
-        name: 'ZuluMix 40',
-        artist: 'DJ Djive',
-        genres: ['Techno'],
-        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
-        duration: '02:03:16',
-        url: '/test/ZuluMix-40_Techno_Djive.m4a',
-        cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZM40.jpg',
-      },
-      {
-        name: 'ZuluMix 39',
-        artist: 'DJ Djive',
-        genres: ['Techno'],
-        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
-        duration: '02:03:16',
-        url: '/test/ZuluMix-39_Techno_Djive.m4a',
-        cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZM39.jpg'
-      },
-      {
-        name: 'ZuluMix 38',
-        artist: 'DJ Djive',
-        genres: ['Techno'],
-        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
-        duration: '02:03:16',
-        url: '/test/ZuluMix-38_Techno_Djive.m4a',
-        cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZM38.jpg'
-      },
-      {
-        name: 'ZuluMix 37',
-        artist: 'Lionites',
-        genres: ['Drum & Bass'],
-        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
-        duration: '02:03:16',
-        url: '/test/ZuluMix-37_DnB_Lionites.m4a',
-        cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZM37.jpg'
-      },
-      {
-        name: 'ZuluMix 36',
-        artist: 'Djive',
-        genres: ['Drum & Bass'],
-        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
-        duration: '02:03:16',
-        url: '/test/MyStoryOfHouseMusic-02_House_Lionites.m4a',
-        cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZM36.jpg',
-      },
-      {
-        name: 'ZuluMix 27',
-        artist: 'Djive',
-        genres: ['Drum & Bass'],
-        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
-        duration: '02:03:16',
-        url: '/test/ZuluMix-40_Techno_Djive.m4a',
-        cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZM27.jpg',
-      },
-      {
-        name: 'ZuluMix 36',
-        artist: 'Djive',
-        genres: ['Drum & Bass'],
-        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
-        duration: '02:03:16',
-        url: '/test/ZuluMix-39_Techno_Djive.m4a',
-        cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZM26.jpg'
-      },
-      {
-        name: 'ZuluMix 22',
-        artist: 'Lionites',
-        genres: ['Drum & Bass'],
-        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
-        duration: '02:03:16',
-        url: '/test/ZuluMix-38_Techno_Djive.m4a',
-        cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZuluMix22.png'
-      },
-      {
-        name: 'ZuluMix 36',
-        artist: 'Lionites',
-        genres: ['House'],
-        pubDate: 'Tue, 15 Oct 2019 12:15:00 +0200',
-        duration: '02:03:16',
-        url: '/test/ZuluMix-37_DnB_Lionites.m4a',
-        cover_art_url: 'http://www.zuluparty.ch/media/Images/CD_Covers/ZuluMix21.jpg'
-      }
-    ]
+    episodes: podcast.rss.channel.item
+      .filter(episode => !episode.enclosure.type.includes('video'))
+      .map(episode => ({
+        name: cleanEmptyObject(episode['jota:name']),
+        artist: cleanEmptyObject(episode['jota:artist']),
+        genres: cleanEmptyObject(episode['jota:genres'])
+          .split(',').map(genre => genre.trim()),
+        pubDate: episode.pubDate,
+        duration: episode['itunes:duration'],
+        url: episode.enclosure.url,
+        cover_art_url: cleanEmptyObject(episode['jota:image'])
+      }))
   }),
 
   computed: {
@@ -197,10 +119,12 @@ button:focus {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-family: Oswald, system-ui, system;
   font-size: 1.5vh;
   font-weight: 400;
   text-transform: uppercase;
   color: rgba(200,200,200, 1);
+  background: transparent;
   border: 2px solid rgba(180,180,180, .5);
   border-radius: .8vh;
   mix-blend-mode: screen;
@@ -239,7 +163,7 @@ button:focus {
   left: 4vh;
   transform: skew(0, -10deg);
   z-index: 2;
-  text-shadow: 0 0 2px rgb(0,0,0);
+  text-shadow: 0 0 1px rgb(0,0,0);
   pointer-events: none;
 
   @media screen and (min-width: 75vh) {

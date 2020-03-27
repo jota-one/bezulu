@@ -23,13 +23,13 @@
         </h4>
       </div>
       <div class="tags">
-        <span
+        <button
           v-for="genre in song.genres"
           :key="genre"
           class="tag"
         >
           {{ genre }}
-        </span>
+        </button>
       </div>
     </div>
     <div
@@ -38,9 +38,25 @@
     >
       <div class="controls">
         <button
-          :class="['play', 'colored', 'fill', { playing }]"
+          :class="['play', { playing }]"
           @click="playPause"
-        />
+        >
+          <svg
+            v-if="!playing"
+            class="colored fill"
+            viewBox="0 0 60 60"
+          >
+            <path d="M18.2874 47.335V12.6651L44.5939 29.9493L18.2874 47.335Z"/>
+          </svg>
+          <svg
+            v-else
+            class="colored fill"
+            viewBox="0 0 60 60"
+          >
+            <path d="M26.6002 12.4242H16.4615V47.5758H26.6002V12.4242Z"/>
+            <path d="M43.5385 12.4242H33.3998V47.5758H43.5385V12.4242Z"/>
+          </svg>
+        </button>
         <div class="spacer"/>
         <Volume/>
         <Download />
@@ -271,30 +287,9 @@ export default {
   background-color: transparent;
   -webkit-tap-highlight-color: transparent;
 
-  &:not(.playing):before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-    margin-left: 0.5vh;
-    border-top: 2vh solid transparent;
-    border-bottom: 2vh solid transparent;
-    border-left: 3vh solid rgba(255,53,127, .85);
-  }
-
-  &.playing {
-    &:before,
-    &:after {
-      content: "";
-      display: block;
-      width: 1.25vh;
-      height: 4vh;
-      background-color: rgba(255,53,127, .85);
-    }
-
-    &:before {
-      margin-right: 0.75vh;
-    }
+  svg {
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -329,7 +324,7 @@ export default {
 
   &::-webkit-progress-value {
     mix-blend-mode: lighten;
-    opacity: .75;
+    opacity: .85;
   }
 }
 
@@ -349,6 +344,10 @@ export default {
   color: rgb(255, 255, 255);
   mix-blend-mode: luminosity;
   pointer-events: none;
+
+  .current {
+    font-weight: 700;
+  }
 
   .remaining:before {
     content: "-";
