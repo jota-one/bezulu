@@ -1,7 +1,11 @@
 .DS_Store
 node_modules
 /dist
-/public/podcast.json
+/www/*.html
+/www/*.ico
+/www/*.json
+/www/css
+/www/js
 
 # local env files
 .env.local

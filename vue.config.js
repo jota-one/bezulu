@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   lintOnSave: true,
   css: {
@@ -18,5 +20,11 @@ module.exports = {
         ]
       }
     }
+  },
+  devServer: {
+    contentBase: [
+      path.join(__dirname, 'public'),
+      path.join(__dirname, 'www')
+    ]
   }
 }

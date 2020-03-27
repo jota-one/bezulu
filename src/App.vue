@@ -36,7 +36,7 @@
 <script>
 import Amplitude from 'amplitudejs'
 import Episode from '@/components/Episode'
-import podcast from '../public/podcast.json'
+import podcast from '../www/podcast.json'
 
 const cleanEmptyObject = input => {
   if (typeof input === 'object' && !Object.keys(input).length) {
