@@ -1,78 +1,91 @@
 <template>
   <div :class="['Episode', { active, selected }]">
-    <img
-      class="cover"
-      :src="song.cover_art_url"
-      @click="onCoverClick"
-    />
-    <div class="meta colored bg">
-      <h2 class="title colored color">{{ song.name }}</h2>
-      <h3 class="artist">{{ song.artist }}</h3>
-      <div class="date-duration-wrapper">
-        <h4 class="date">
-          <svg viewBox="0 0 24 24">
-            <path d="M5,4V6H19V4H5M5,14H9V20H15V14H19L12,7L5,14Z" />
-          </svg>
-          {{ pubDate }}
-        </h4>
-        <h4 class="duration">
-          <svg viewBox="0 0 24 24">
-            <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.24,7.76C15.07,6.58 13.53,6 12,6V12L7.76,16.24C10.1,18.58 13.9,18.58 16.24,16.24C18.59,13.9 18.59,10.1 16.24,7.76Z" />
-          </svg>
-          {{ song.duration }}
-        </h4>
-      </div>
-      <div class="tags">
-        <button
-          v-for="genre in song.genres"
-          :key="genre"
-          class="tag"
-        >
-          {{ genre }}
-        </button>
-      </div>
-    </div>
-    <div
-      v-if="active"
-      class="player"
-    >
-      <div class="controls">
-        <button
-          :class="['play', { playing }]"
-          @click="playPause"
-        >
-          <svg
-            v-if="!playing"
-            class="colored fill"
-            viewBox="0 0 60 60"
-          >
-            <path d="M18.2874 47.335V12.6651L44.5939 29.9493L18.2874 47.335Z"/>
-          </svg>
-          <svg
-            v-else
-            class="colored fill"
-            viewBox="0 0 60 60"
-          >
-            <path d="M26.6002 12.4242H16.4615V47.5758H26.6002V12.4242Z"/>
-            <path d="M43.5385 12.4242H33.3998V47.5758H43.5385V12.4242Z"/>
-          </svg>
-        </button>
-        <div class="spacer"/>
-        <Volume/>
-        <Download />
-      </div>
-      <div class="progress">
-        <progress
-          class="buffered amplitude-buffered-progress"
-          value="0"
+    <div class="wrapper">
+      <div class="cover">
+        <img class="size"
+          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
         />
-        <progress
-          class="played colored progress-bg amplitude-song-played-progress"
-          @click="seek"
+        <img
+          class="image"
+          :src="song.cover_art_url"
+          @click="onCoverClick"
         />
-        <div class="time">
-          <div class="current amplitude-current-time" />
-          <div class="remaining amplitude-time-remaining" />
+      </div>
+      <div class="meta colored bg">
+        <h2 class="title colored color">{{ song.name }}</h2>
+        <h3 class="artist">{{ song.artist }}</h3>
+        <div class="date-duration-wrapper">
+          <h4 class="date">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5,4V6H19V4H5M5,14H9V20H15V14H19L12,7L5,14Z" />
+            </svg>
+            {{ pubDate }}
+          </h4>
+          <h4 class="duration">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.24,7.76C15.07,6.58 13.53,6 12,6V12L7.76,16.24C10.1,18.58 13.9,18.58 16.24,16.24C18.59,13.9 18.59,10.1 16.24,7.76Z" />
+            </svg>
+            {{ song.duration }}
+          </h4>
+        </div>
+        <div class="tags">
+          <button
+            v-for="genre in song.genres"
+            :key="genre"
+            class="tag"
+          >
+            {{ genre }}
+          </button>
+        </div>
+      </div>
+      <div
+        v-if="active"
+        class="player"
+      >
+        <div class="controls">
+          <button
+            :class="['play', { playing }]"
+            @click="playPause"
+          >
+            <svg
+              v-if="!playing"
+              class="icon colored fill"
+              viewBox="0 0 60 60"
+            >
+              <path d="M18.2874 47.335V12.6651L44.5939 29.9493L18.2874 47.335Z"/>
+            </svg>
+            <svg
+              v-else
+              class="icon colored fill"
+              viewBox="0 0 60 60"
+            >
+              <path d="M26.6002 12.4242H16.4615V47.5758H26.6002V12.4242Z"/>
+              <path d="M43.5385 12.4242H33.3998V47.5758H43.5385V12.4242Z"/>
+            </svg>
+          </button>
+          <div class="spacer"/>
+          <Volume/>
+          <Download />
+        </div>
+        <div class="progress">
+          <progress
+            class="buffered amplitude-buffered-progress"
+            value="0"
+          />
+          <progress
+            class="played colored progress-bg amplitude-song-played-progress"
+            @click="seek"
+          />
+          <div class="time">
+            <div class="current amplitude-current-time" />
+            <div class="remaining amplitude-time-remaining" />
+          </div>
         </div>
       </div>
     </div>
@@ -180,9 +193,18 @@ export default {
 /* New */
 
 /* Cover */
-.cover {
+.cover,
+.size,
+.image {
+  display: block;
   width: 100%;
   height: 100%;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /* Meta */
@@ -197,7 +219,7 @@ export default {
   align-items: flex-end;
   text-align: right;
   justify-content: flex-end;
-  padding: 2.5vh;
+  padding: 2vh;
   color: rgba(255,255,255, .75);
 
   .selected & {
@@ -244,7 +266,7 @@ export default {
         color: rgba(0,0,0, .5);
       }
 
-      svg {
+      .icon {
         margin-right: .25vh;
         height: 1.65vh;
         width: 1.65vh;
@@ -290,7 +312,7 @@ export default {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 
-  svg {
+  .icon  {
     width: 100%;
     height: 100%;
   }
@@ -309,7 +331,10 @@ export default {
   width: 100%;
   height: 100%;
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
+  border: none;
+  background-color: transparent;
 
   &::-webkit-progress-bar {
     background-color: transparent;
@@ -317,7 +342,13 @@ export default {
 }
 
 .buffered {
+  background-color: transparent;
+
   &::-webkit-progress-value {
+    background-color: rgba(0, 0, 0, .5);
+  }
+
+  &::-moz-progress-bar {
     background-color: rgba(0, 0, 0, .5);
   }
 }
@@ -326,6 +357,11 @@ export default {
   cursor: pointer;
 
   &::-webkit-progress-value {
+    mix-blend-mode: lighten;
+    opacity: .85;
+  }
+
+  &::-moz-progress-bar {
     mix-blend-mode: lighten;
     opacity: .85;
   }

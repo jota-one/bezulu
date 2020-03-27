@@ -190,7 +190,7 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: Oswald, system-ui, system;
+  font-family: Oswald, sans-serif;
   font-size: 13px;
   font-weight: 200;
   background-color: rgb(10,10,10);
@@ -210,7 +210,7 @@ html, body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: Oswald, system-ui, system;
+  font-family: Oswald, sans-serif;
   font-size: 1.5vh;
   font-weight: 400;
   text-transform: uppercase;
@@ -342,14 +342,18 @@ html, body {
 .filter {
   -webkit-appearance: none;
   appearance: none;
-  margin-left: 2vh;
+  margin-left: 1vh;
   padding: 1vh 1.2vh;
   border: none;
-  font-family: Oswald, system-uii, system;
+  font-family: Oswald, sans-serif;
   font-size: 1.7vh;
   font-weight: 400;
   line-height: 1.7vh;
   text-transform: uppercase;
+
+  option {
+    font-family: Oswald, sans-serif;
+  }
 }
 
 /* Grid */

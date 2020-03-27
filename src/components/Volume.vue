@@ -42,7 +42,7 @@ export default {
     this.inputRange = this.$refs.range
     this.inputRange.addEventListener('input', this.onInput)
     this.targets = document.querySelectorAll(this.targetSelector)
-    this.targets.forEach(target =>  target.classList.add('high'))
+    this.targets.forEach(target => target.classList.add('high'))
   },
 
   beforeDestroy () {
@@ -55,32 +55,32 @@ export default {
 
       // Change slide thumb color on way up
       if (this.value > 0) {
-          this.targets.forEach(target =>  target.classList.add('lower'))
+        this.targets.forEach(target =>  target.classList.add('lower'))
       }
 
       if (this.value > 20) {
-          this.targets.forEach(target =>  target.classList.add('low'))
+        this.targets.forEach(target =>  target.classList.add('low'))
       }
 
       if (this.value > 40) {
-          this.targets.forEach(target =>  target.classList.add('high'))
+        this.targets.forEach(target =>  target.classList.add('high'))
       }
 
       if (this.value > 60) {
-          this.targets.forEach(target =>  target.classList.add('higher'))
+        this.targets.forEach(target =>  target.classList.add('higher'))
       }
 
       // Change slide thumb color on way down
       if (this.value < 20) {
-          this.targets.forEach(target =>  target.classList.remove('low'))
+        this.targets.forEach(target =>  target.classList.remove('low'))
       }
 
       if (this.value < 40) {
-          this.targets.forEach(target =>  target.classList.remove('high'))
+        this.targets.forEach(target =>  target.classList.remove('high'))
       }
 
       if (this.value < 60) {
-          this.targets.forEach(target =>  target.classList.remove('higher'))
+        this.targets.forEach(target =>  target.classList.remove('higher'))
       }
     }
   }
@@ -116,6 +116,7 @@ export default {
 .slider {
   -webkit-appearance: none;
   -moz-appearance: none;
+  background: transparent;
   width: 100%;
 
   &::-webkit-slider-runnable-track {
@@ -256,13 +257,18 @@ export default {
   transition: background-color 1s ease;
 }
 
+.colored.progress-bg::-moz-progress-bar {
+  -webkit-transition: background-color 1s ease;
+  transition: background-color 1s ease;
+}
+
 .Volume .slider::-webkit-slider-thumb {
   -webkit-transition: border .5s ease;
   transition: border 1s ease;
 }
 
+.Volume .slider::-moz-range-thumb {
   -webkit-transition: border .5s ease;
-.Volume .slider::-moz-range-thumb  {
   transition: border 1s ease;
 }
 
@@ -281,6 +287,10 @@ export default {
 
 .colored.lower.bg,
 .colored.lower.progress-bg::-webkit-progress-value {
+  background-color: rgb(59,173,227);
+}
+
+.colored.lower.progress-bg::-moz-progress-bar {
   background-color: rgb(59,173,227);
 }
 
@@ -310,6 +320,10 @@ export default {
   background-color: rgb(87,111,230);
 }
 
+.colored.low.progress-bg::-moz-progress-bar {
+  background-color: rgb(87,111,230);
+}
+
 .Volume .low.slider::-webkit-slider-thumb {
   border-color: rgb(87,111,230);
 }
@@ -336,6 +350,10 @@ export default {
   background-color: rgb(152,68,183);
 }
 
+.colored.high.progress-bg::-moz-progress-bar {
+  background-color: rgb(152,68,183);
+}
+
 .Volume .high.slider::-webkit-slider-thumb {
   border-color: rgb(152,68,183);
 }
@@ -355,6 +373,10 @@ export default {
 
 .colored.higher.bg,
 .colored.higher.progress-bg::-webkit-progress-value {
+  background-color: rgb(255,53,127);
+}
+
+.colored.higher.progress-bg::-moz-progress-bar {
   background-color: rgb(255,53,127);
 }
 
