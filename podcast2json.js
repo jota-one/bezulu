@@ -17,8 +17,7 @@ const transform = async (root, src, dst) => {
         ...item.enclosure,
         ...{ url: item.enclosure.url.replace(config.rootURI, '') }
       },
-      'jota:image': item['jota:image'].replace(config.rootURI, ''),
-      'jota:genres': item['jota:genres']
+      'jota:image': item['jota:image'].replace(config.rootURI, '')
     }
   }))
 

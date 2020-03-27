@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="heading">
-      <h1 class="colored color">
+      <h1 class="h1 colored color">
         <span class="bold">
           Be
         </span>
@@ -13,6 +13,48 @@
         </span>
       </h1>
     </div>
+    <div class="info">
+      <a
+        class="podcast colored color"
+        :href="podcastURI"
+        target="_blank"
+      >
+        <svg
+          class="podcast-icon colored fill"
+          viewBox="0 0 24 24">
+          <path
+            d="M17,18.25V21.5H7V18.25C7,16.87 9.24,15.75 12,15.75C14.76,15.75 17,16.87 17,18.25M12,5.5A6.5,6.5 0 0,1 18.5,12C18.5,13.25 18.15,14.42 17.54,15.41L16,14.04C16.32,13.43 16.5,12.73 16.5,12C16.5,9.5 14.5,7.5 12,7.5C9.5,7.5 7.5,9.5 7.5,12C7.5,12.73 7.68,13.43 8,14.04L6.46,15.41C5.85,14.42 5.5,13.25 5.5,12A6.5,6.5 0 0,1 12,5.5M12,1.5A10.5,10.5 0 0,1 22.5,12C22.5,14.28 21.77,16.39 20.54,18.11L19.04,16.76C19.96,15.4 20.5,13.76 20.5,12A8.5,8.5 0 0,0 12,3.5A8.5,8.5 0 0,0 3.5,12C3.5,13.76 4.04,15.4 4.96,16.76L3.46,18.11C2.23,16.39 1.5,14.28 1.5,12A10.5,10.5 0 0,1 12,1.5M12,9.5A2.5,2.5 0 0,1 14.5,12A2.5,2.5 0 0,1 12,14.5A2.5,2.5 0 0,1 9.5,12A2.5,2.5 0 0,1 12,9.5Z"
+          />
+        </svg>
+        Subscribe!
+      </a>
+    </div>
+    <div class="filters">
+      <select v-model="selectedArtist" class="filter colored bg">
+        <option value="">
+          All artists
+        </option>
+        <option
+          v-for="artist in artists"
+          :key="artist"
+          :value="artist"
+        >
+          {{ artist }}
+        </option>
+      </select>
+      <select v-model="selectedGenre" class="filter colored bg">
+        <option value="">
+          All genres
+        </option>
+        <option
+          v-for="genre in genres"
+          :key="genre"
+          :value="genre"
+        >
+          {{ genre }}
+        </option>
+      </select>
+    </div>
     <div class="grid">
       <Episode
         active
@@ -22,12 +64,13 @@
         :playing="playing"
         @playPause="playing = !playing" />
       <Episode
-        v-for="(episode, index) in filteredEpisodes"
-        :key="index"
+        v-for="episode in filteredEpisodes"
+        :key="episode.index"
         :song="episode"
         :index="episode.index"
-        :selected="selected === index"
-        @select="selected = index; playing = true" />
+        :selected="selected === episode.index"
+        :class="{ hidden: episode.hidden }"
+        @select="selected = episode.index; playing = true" />
       <div style="clear:left"/>
     </div>
   </div>
@@ -37,6 +80,7 @@
 import Amplitude from 'amplitudejs'
 import Episode from '@/components/Episode'
 import podcast from '../www/podcast.json'
+import config from '../config.json'
 
 const cleanEmptyObject = input => {
   if (typeof input === 'object' && !Object.keys(input).length) {
@@ -54,11 +98,17 @@ export default {
   data: () => ({
     playing: false,
     selected: 0,
+    selectedGenre: '',
+    selectedArtist: '',
+    podcastURI: config.podcastURI,
     episodes: podcast.rss.channel.item
       .filter(episode => !episode.enclosure.type.includes('video'))
-      .map(episode => ({
+      .map((episode, index) => ({
+        index,
         name: cleanEmptyObject(episode['jota:name']),
-        artist: cleanEmptyObject(episode['jota:artist']),
+        artist: cleanEmptyObject(episode['jota:artists']),
+        artists: cleanEmptyObject(episode['jota:artists'])
+          .split(',').map(artist => artist.trim()),
         genres: cleanEmptyObject(episode['jota:genres'])
           .split(',').map(genre => genre.trim()),
         pubDate: episode.pubDate,
@@ -71,7 +121,43 @@ export default {
   computed: {
     filteredEpisodes () {
       return this.episodes
-        .map((episode, index) => ({ ...episode, ...{ index }}))
+        .map((episode, i) => {
+          episode.hidden = (
+            this.selectedArtist &&
+            !episode.artists.includes(this.selectedArtist)
+           ) || (
+            this.selectedGenre &&
+            !episode.genres.includes(this.selectedGenre)
+          )
+
+          if (i === this.selected) {
+            episode.hidden = false
+          }
+
+          return episode
+        })
+    },
+
+    artists () {
+      return this.episodes.reduce((allArtists, { artists }) => {
+        artists.forEach(artist => {
+          if (!allArtists.includes(artist)) {
+            allArtists.push(artist)
+          }
+        })
+        return allArtists
+      }, [])
+    },
+
+    genres () {
+      return this.episodes.reduce((allGenres, { genres }) => {
+        genres.forEach(genre => {
+          if (!allGenres.includes(genre)) {
+            allGenres.push(genre)
+          }
+        })
+        return allGenres
+      }, [])
     }
   },
 
@@ -86,8 +172,13 @@ export default {
 </script>
 
 <style lang="postcss">
-
 @import url('https://fonts.googleapis.com/css?family=Oswald:200,400,700&display=swap');
+
+@keyframes podcast {
+  0%   { width: 4.5vh; height: 4.5vh  }
+  50%  { width: 5vh; height: 5vh }
+  100% { width: 4.5vh; height: 4.5vh  }
+}
 
 * {
   box-sizing: border-box;
@@ -105,12 +196,12 @@ html, body {
   background-color: rgb(10,10,10);
 }
 
-button:focus {
-  outline: none;
-}
-
 .spacer {
   flex: 1;
+}
+
+.hidden {
+  display: none;
 }
 
 .tag {
@@ -127,6 +218,7 @@ button:focus {
   background: transparent;
   border: 2px solid rgba(180,180,180, .5);
   border-radius: .8vh;
+  outline: none;
   mix-blend-mode: screen;
   user-select: none;
 }
@@ -135,7 +227,6 @@ button:focus {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
   min-height: 100vh;
   margin: 0 auto;
 
@@ -157,14 +248,17 @@ button:focus {
 }
 
 /* Heading */
-.heading {
+.heading,
+.info,
+.filters {
   position: fixed;
   top: 4vh;
-  left: 4vh;
-  transform: skew(0, -10deg);
   z-index: 2;
-  text-shadow: 0 0 1px rgb(0,0,0);
-  pointer-events: none;
+}
+
+.heading,
+.info {
+  left: 4vh;
 
   @media screen and (min-width: 75vh) {
     left: calc(50vw - 33vh);
@@ -181,21 +275,81 @@ button:focus {
   @media screen and (min-width: 150vh) {
     left: calc(50vw - 70.75vh);
   }
+}
 
-  h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 5vh;
-    line-height: 1;
-    font-weight: 200;
-    text-transform: uppercase;
+.heading {
+  text-shadow: 0 0 1px rgb(0,0,0);
+}
 
-    .bold {
-      display: block;
-      font-size: 120%;
-      font-weight: 700;
-    }
+.info {
+  padding-top: 18.5vh;
+}
+
+.filters {
+  right: 4vh;
+
+  @media screen and (min-width: 75vh) {
+    right: calc(50vw - 33.5vh);
   }
+
+  @media screen and (min-width: 100vh) {
+    right: calc(50vw - 20.5vh);
+  }
+
+  @media screen and (min-width: 125vh) {
+    right: calc(50vw - 8vh);
+  }
+
+  @media screen and (min-width: 150vh) {
+    right: calc(50vw + 3vh);
+  }
+}
+
+.h1 {
+  margin: 0;
+  padding: 0;
+  transform: skew(0, -10deg);
+  font-size: 5vh;
+  line-height: 1;
+  font-weight: 200;
+  text-transform: uppercase;
+  pointer-events: none;
+
+  .bold {
+    display: block;
+    font-size: 120%;
+    font-weight: 700;
+  }
+}
+
+.podcast {
+  display: flex;
+  align-items: center;
+  font-size: 2.5vh;
+  line-height: 2vh;
+  text-transform: uppercase;
+  text-decoration: none;
+  transform: skew(0, -10deg) scaleY(1.1);
+  opacity: .85;
+}
+
+.podcast-icon {
+  margin-right: 1vh;
+  width: 4.5vh;
+  height: 4.5vh;
+}
+
+.filter {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-left: 2vh;
+  padding: 1vh 1.2vh;
+  border: none;
+  font-family: Oswald, system-uii, system;
+  font-size: 1.7vh;
+  font-weight: 400;
+  line-height: 1.7vh;
+  text-transform: uppercase;
 }
 
 /* Grid */

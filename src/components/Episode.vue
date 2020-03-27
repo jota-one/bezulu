@@ -115,8 +115,10 @@ export default {
 
   methods: {
     onCoverClick () {
-      Amplitude.playSongAtIndex(this.song.index)
-      this.$emit('select')
+      if (!this.active) {
+        Amplitude.playSongAtIndex(this.song.index)
+        this.$emit('select')
+      }
     },
 
     playPause () {
@@ -283,8 +285,9 @@ export default {
   height: 8vh;
   padding: 0;
   border: none;
-  cursor: pointer;
   background-color: transparent;
+  outline: none;
+  cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 
   svg {
