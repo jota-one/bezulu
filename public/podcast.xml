@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:jota="https://jota.one/rss/dtd" version="2.0">
+  <channel>
+    <lastBuildDate>Sat, 21 Mar 2020 23:12:07 +0100</lastBuildDate>
+    <title><![CDATA[Be Zulu! Podcast]]></title>
+    <itunes:author><![CDATA[DJ Djive, Kameren J (aka Lionites) and friends]]></itunes:author>
+    <link>https://bezu.lu/</link>
+    <itunes:owner>
+      <itunes:email>hello@bezu.lu</itunes:email>
+    </itunes:owner>
+
+    <generator>Jota</generator>
+    <description><![CDATA[The Zulu Mixes: House, Techno and Drum'n'Bass sets mixed by dj's Djive, Kameren J and Lester. Discover the particular style of the Zulu Dj's: mixing old school classics with today's hits, vocal house on a a techno beat, original funk tunes inside a techno set, that's the Zulu Sound ! A varied and eclectic vision of electronic music, 'Be Zulu!']]></description>
+    <itunes:subtitle><![CDATA[]]></itunes:subtitle>
+
+    <itunes:summary><![CDATA[The Zulu Mixes: House, Techno and Drum'n'Bass sets mixed by dj's Djive, Kameren J and Lester. Discover the particular style of the Zulu Dj's: mixing old school classics with today's hits, vocal house on a a techno beat, original funk tunes inside a techno set, that's the Zulu Sound ! A varied and eclectic vision of electronic music, 'Be Zulu!']]></itunes:summary>
+    <language>en</language>
+    <copyright />
+    <itunes:image href="http://www.zuluparty.ch/covers/BeZulu_Podcast.jpg" />
+    <image>
+      <url>https://bezu.lu/covers/BeZulu_Podcast_144.jpg</url>
+      <title>Be Zulu! Podcast</title>
+      <link>https://bezu.lu/</link>
+      <width>144</width>
+      <height>144</height>
+    </image>
+    <category>Music</category>
+    <itunes:category text="Music" />
+    <itunes:keywords><![CDATA[dj,music,techno,house,drum,bass,drum&bass,zulu,zuluparty,djive,kameren,lester,mix]]></itunes:keywords>
+    <itunes:explicit>no</itunes:explicit>
+    <item>
+      <title><![CDATA[My Story Of House Music Part 2: Lionites (House)]]></title>
+      <itunes:author><![CDATA[Lionites]]></itunes:author>
+      <description><![CDATA[This one might be the first 'part 2' Lionites ever made. Hope this is going to last ! Beware: abrupt start :-)]]></description>
+      <itunes:subtitle><![CDATA[This one might be the first 'part 2' Lionites ever made. Hope this is going to last ! Beware: abrupt start :-)]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/MyStoryOfHouseMusic-02_House_Lionites.m4a" length="119684899" />
+      <guid>https://bezu.lu/episodes/MyStoryOfHouseMusic-02_House_Lionites.m4a</guid>
+      <pubDate>Tue, 15 Oct 2019 12:15:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>02:03:16</itunes:duration>
+      <itunes:keywords><![CDATA[lionites, house, old school, techno, deep house, deep, mix, zulu, be zulu, kameren, kameren j]]></itunes:keywords>
+      <link>https://bezu.lu.php</link>
+      <jota:image>https://bezu.lu/covers/MSOHM-part-2.jpg</jota:image>
+      <jota:name><![CDATA[My Story Of House Music Part 2]]></jota:name>
+      <jota:artist><![CDATA[Lionites]]></jota:artist>
+      <jota:genres><![CDATA[House, Techno]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 40: DJ Djive (Techno)]]></title>
+      <itunes:author><![CDATA[DJ Djive]]></itunes:author>
+      <description><![CDATA[Djive strikes again with an enchanting deep techno mix! Sit back, relax and enjoy...]]></description>
+      <itunes:subtitle><![CDATA[Djive strikes again with an enchanting deep techno mix! Sit back, relax and enjoy...]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-40_Techno_Djive.m4a" length="153760466" />
+      <guid>https://bezu.lu/episodes/ZuluMix-40_Techno_Djive.m4a</guid>
+      <pubDate>Fri, 16 Aug 2019 19:09:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:19:35</itunes:duration>
+      <itunes:keywords><![CDATA[techno,mix,djive, dj djive,house,techno,zulu,dee jay,part,zulu party,electro,minimal]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZM40.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 40]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive]]></jota:artist>
+      <jota:genres><![CDATA[Techno]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 39: DJ Djive (Techno)]]></title>
+      <itunes:author><![CDATA[DJ Djive]]></itunes:author>
+      <description><![CDATA[Santa Djive strikes again with a deep and sharp techno mix! Seems that Christmas has extended in january for music lovers :-)]]></description>
+      <itunes:subtitle><![CDATA[Santa Djive strikes again with a deep and sharp techno mix! Seems that Christmas has extended in january for music lovers :-)]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-39_Techno_Djive.m4a" length="70633316" />
+      <guid>https://bezu.lu/episodes/ZuluMix-39_Techno_Djive.m4a</guid>
+      <pubDate>Tue, 22 Jan 2019 21:35:00 +0100</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:12:39</itunes:duration>
+      <itunes:keywords><![CDATA[techno,mix,djive, dj djive,house,zulu,dee jay,part,zulu party,electro]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZM39.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 39]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive]]></jota:artist>
+      <jota:genres><![CDATA[Techno]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 38: DJ Djive (Techno)]]></title>
+      <itunes:author><![CDATA[DJ Djive]]></itunes:author>
+      <description><![CDATA[A stunning 2 hours mix of techno gems, genuinely cooked by our 'chef' Djive; an explosion of musical tastes and flavors that will delight your clubber's palate !! Massive!]]></description>
+      <itunes:subtitle><![CDATA[A stunning 2 hours mix of techno gems, genuinely cooked by our 'chef' Djive; an explosion of musical tastes and flavors that will delight your clubber's palate !! Massive!]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-38_Techno_Djive.m4a" length="233554145" />
+      <guid>https://bezu.lu/episodes/ZuluMix-38_Techno_Djive.m4a</guid>
+      <pubDate>Wed, 21 Nov 2018 22:44:00 +0100</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>02:00:48</itunes:duration>
+      <itunes:keywords><![CDATA[techno,mix,djive, dj djive,house,zulu,dee jay,part,zulu party,electro]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZM38.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 38]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive]]></jota:artist>
+      <jota:genres><![CDATA[Techno]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 37: Lionites (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[Lionites]]></itunes:author>
+      <description><![CDATA[A juicy, fresh and warming liquid drum&bass mix with a touch of spicy basslines. Bon appetit!]]></description>
+      <itunes:subtitle><![CDATA[A juicy, fresh and warming liquid drum&bass mix with a touch of spicy basslines. Bon appetit!]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-37_DnB_Lionites.m4a" length="77689620" />
+      <guid>https://bezu.lu/episodes/ZuluMix-37_DnB_Lionites.m4a</guid>
+      <pubDate>Wed, 03 Oct 2018 20:57:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:17:29</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,lionites, the lionites,drum'n'bass,zulu,jungle,couleur3,couleur 3,dj,drum&bass]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZM37.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 37]]></jota:name>
+      <jota:artist><![CDATA[Lionites]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 36: DJ Djive (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[DJ Djive]]></itunes:author>
+      <description><![CDATA[Return of the mighty mouse with a superb D&B set welcoming the summer and once again dedicating all our respect to the D&B scene !]]></description>
+      <itunes:subtitle><![CDATA[Return of the mighty mouse with a superb D&B set welcoming the summer and once again dedicating all our respect to the D&B scene !]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-36_DnB_Djive.m4a" length="122642207" />
+      <guid>https://bezu.lu/episodes/ZuluMix-36_DnB_Djive.m4a</guid>
+      <pubDate>Sat, 24 Jun 2017 13:19:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:03:22</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,djive, dj djive,drum'n'bass,zulu,jungle,drum&bass,drum & bass,dee jay,part,zulu party]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZM36.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 36]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[My Story Of House Music Part 1: Lionites (House)]]></title>
+      <itunes:author><![CDATA[Lionites]]></itunes:author>
+      <description><![CDATA[First part of a (theoretically) infinite series of Lionites' best house and techno tunes from his crate.]]></description>
+      <itunes:subtitle><![CDATA[First part of a (theoretically) infinite series of Lionites' best house and techno tunes from his crate.]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/mpeg" url="https://bezu.lu/episodes/MyStoryOfHouseMusic-01_House_Lionites.mp3" length="234234939" />
+      <guid>https://bezu.lu/episodes/MyStoryOfHouseMusic-01_House_Lionites.mp3</guid>
+      <pubDate>Sat, 02 Jan 2016 14:55:00 +0100</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:37:34</itunes:duration>
+      <itunes:keywords><![CDATA[lionites, house, old school, techno, deep house, deep, mix, zulu, be zulu, kameren, kameren j]]></itunes:keywords>
+      <link>https://bezu.lu.php</link>
+      <jota:image>https://bezu.lu/covers/MSOHM-part-1.jpg</jota:image>
+      <jota:name><![CDATA[My Story Of House Music Part 1]]></jota:name>
+      <jota:artist><![CDATA[Lionites]]></jota:artist>
+      <jota:genres><![CDATA[House]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[KSDBLOI: Lionites (Drum&Bass)]]></title>
+      <itunes:author><![CDATA[Lionites]]></itunes:author>
+      <description><![CDATA[Got this one back from the archive ! Mind-blowing melodies and basslines, amen break on 80% of the tracks, that's the 1998 D&B flavour, Lionites on the old school, enjoy !]]></description>
+      <itunes:subtitle><![CDATA[Got this one back from the archive ! Mind-blowing melodies and basslines, amen break on 80% of the tracks, that's the 1998 D&B flavour, Lionites on the old school, enjoy !]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/KSDBLOI_DnB_Lionites.m4a" length="62982701" />
+      <guid>https://bezu.lu/episodes/KSDBLOI_DnB_Lionites.m4a</guid>
+      <pubDate>Thu, 26 Jun 2014 11:45:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:10:00</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,lionites, the lionites,drum'n'bass,zulu,jungle,dj,drum&bass, oldschool, old school]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/KSDBLOI.jpg</jota:image>
+      <jota:name><![CDATA[KSDBLOI (1998)]]></jota:name>
+      <jota:artist><![CDATA[Lionites]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 35: Lionites (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[Lionites]]></itunes:author>
+      <description><![CDATA[A fresh liquid mix ponctuated with some good old hits ! Kameren J appears as Lionites from now on, check it !]]></description>
+      <itunes:subtitle><![CDATA[A fresh liquid mix ponctuated with some good old hits ! Kameren J appears as Lionites from now on, check it !]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-35_DnB_Lionites.m4a" length="60531438" />
+      <guid>https://bezu.lu/episodes/ZuluMix-35_DnB_Lionites.m4a</guid>
+      <pubDate>Sat, 21 Jun 2014 21:26:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:01:43</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,lionites, the lionites,drum'n'bass,zulu,jungle,couleur3,couleur 3,dj,drum&bass]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZM35.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 35]]></jota:name>
+      <jota:artist><![CDATA[Lionites]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[The Anthem Mix Partt 1: DJ Djive & Kameren J (House)]]></title>
+      <itunes:author><![CDATA[DJ Djive & Kameren J]]></itunes:author>
+      <description><![CDATA[House music as we loved it ! Hope we'll reach the goal we targeted sofar: mixing every classic house track we've been collecting and loving since we were kids. Here's the first one for your listening pleasure. Should bring you
+some good memories back when house music was at its best, cheers !]]></description>
+      <itunes:subtitle><![CDATA[House music as we loved it ! Hope we'll reach the goal we targeted sofar: mixing every classic house track we've been collecting and loving since we were kids. Here's the first one for your listening pleasure. Should bring you
+some good memories back when house music was at its best, cheers !]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/TheAnthemMix-01_House_DjiveKJ.m4a" length="67780562" />
+      <guid>https://bezu.lu/episodes/TheAnthemMix-01_House_DjiveKJ.m4a</guid>
+      <pubDate>Thu, 26 Sep 2013 11:51:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:17:26</itunes:duration>
+      <itunes:keywords><![CDATA[house,mix,kameren,djive,music,oldschool,zulu,party,zuluparty,lionites,house music,techno,djaimin,pump it up]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/TheAnthemMix1.jpg</jota:image>
+      <jota:name><![CDATA[The Anthem Mix Partt 1]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive & Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[House]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 34: Kameren J (Dubstep)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[Kameren back in the steps era.]]></description>
+      <itunes:subtitle><![CDATA[Kameren back in the steps era.]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-34_Dubstep_KamerenJ.m4a" length="77658310" />
+      <guid>https://bezu.lu/episodes/ZuluMix-34_Dubstep_KamerenJ.m4a</guid>
+      <pubDate>Mon, 30 Apr 2012 14:02:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:19:16</itunes:duration>
+      <itunes:keywords><![CDATA[bass,dubstep,dub,break,breaks,dub,mix,kameren, kameren j,zulu,jungle,dj,be zulu]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZM34.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 34]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[Dubstep]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[StudioMix 05: DJ Djive (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[DJ Djive]]></itunes:author>
+      <description><![CDATA[Roll !]]></description>
+      <itunes:subtitle><![CDATA[Roll !]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/StudioMix-05_DnB_Djive.m4a" length="43794094" />
+      <guid>https://bezu.lu/episodes/StudioMix-05_DnB_Djive.m4a</guid>
+      <pubDate>Mon, 20 Feb 2012 19:50:00 +0100</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>00:45:45</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,djive, dj djive,drum'n'bass,zulu,jungle,drum&bass,drum & bass,dee jay,part,zulu party]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/SM05.jpg</jota:image>
+      <jota:name><![CDATA[StudioMix 05]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 33: Kameren J (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[Metissage Mix on radio Couleur3 / 04.02.2012]]></description>
+      <itunes:subtitle><![CDATA[Metissage Mix on radio Couleur3 / 04.02.2012]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-33_DnB_KamerenJ.m4a" length="69195417" />
+      <guid>https://bezu.lu/episodes/ZuluMix-33_DnB_KamerenJ.m4a</guid>
+      <pubDate>Fri, 03 Feb 2012 17:48:00 +0100</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:11:37</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle,couleur3,couleur 3,dj,drum&bass]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZM33.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 33]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 32: Kameren J (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[Metissage Mix on radio Couleur3 / 31.12.2010]]></description>
+      <itunes:subtitle><![CDATA[Metissage Mix on radio Couleur3 / 31.12.2010]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-32_DnB_KamerenJ.m4a" length="56117658" />
+      <guid>https://bezu.lu/episodes/ZuluMix-32_DnB_KamerenJ.m4a</guid>
+      <pubDate>Fri, 01 Apr 2011 11:57:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>00:58:21</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle,couleur3,couleur 3,dj]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZM32.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 32]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 31: DJ Djive (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[DJ Djive]]></itunes:author>
+      <description><![CDATA[Djive as eclectic as he used to be when selecting DnB, check!]]></description>
+      <itunes:subtitle><![CDATA[Djive as eclectic as he used to be when selecting DnB, check!]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-31_DnB_Djive.m4a" length="56681516" />
+      <guid>https://bezu.lu/episodes/ZuluMix-31_DnB_Djive.m4a</guid>
+      <pubDate>Mon, 02 Aug 2010 21:21:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>58:11</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,djive, dj djive,drum'n'bass,zulu,jungle,drum&bass,drum & bass,dee jay,part,zulu party]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZM31.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 31]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[The Ae Mix: Kameren J (Ambient)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[We rescued this mix by Kameren J from our archives ! This was recorded in 1997 on a ('low quality') 120 min band tape that became very noisy with the time. But here it is thanks to Djive's denoising and mastering skills for recovering an audible quality, enjoy!]]></description>
+      <itunes:subtitle><![CDATA[We rescued this mix by Kameren J from our archives ! This was recorded in 1997 on a ('low quality') 120 min band tape that became very noisy with the time. But here it is thanks to Djive's denoising and mastering skills for recovering an audible quality, enjoy!]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/TheAeMix_Ambient_KamerenJ.m4a" length="121167635" />
+      <guid>https://bezu.lu/episodes/TheAeMix_Ambient_KamerenJ.m4a</guid>
+      <pubDate>Fri, 30 Jul 2010 22:06:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>02:04:26</itunes:duration>
+      <itunes:keywords><![CDATA[zulu,be zulu,kameren,kameren j,ambient,autehre,ae,mix,techno,dj,dee jay]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/TheAeMix.jpg</jota:image>
+      <jota:name><![CDATA[The Ae Mix (1997)]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[Ambient]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 30: Kameren J (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[Metissage Mix on radio Couleur3 / 26.06.2010]]></description>
+      <itunes:subtitle><![CDATA[Metissage Mix on radio Couleur3 / 26.06.2010]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-30_DnB_KamerenJ.m4a" length="57191245" />
+      <guid>https://bezu.lu/episodes/ZuluMix-30_DnB_KamerenJ.m4a</guid>
+      <pubDate>Wed, 07 Jul 2010 20:29:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>58:42</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle,couleur3,couleur 3,dj]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZM30.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 30]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 29: Kameren J (Dubstep)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[Kameren loves UK sound.]]></description>
+      <itunes:subtitle><![CDATA[Kameren loves UK sound.]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-29_Dubstep_KamerenJ.m4a" length="63159763" />
+      <guid>https://bezu.lu/episodes/ZuluMix-29_Dubstep_KamerenJ.m4a</guid>
+      <pubDate>Mon, 05 Apr 2010 23:50:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:04:47</itunes:duration>
+      <itunes:keywords><![CDATA[bass,dubstep,break,breaks,dub,mix,kameren, kameren j,zulu,jungle,dj,be zulu]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZM29.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 29]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[Dubstep]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 28: Kameren J (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[Metissage Mix on radio Couleur3 / 03.04.2010]]></description>
+      <itunes:subtitle><![CDATA[Metissage Mix on radio Couleur3 / 03.04.2010]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-28_DnB_KamerenJ.m4a" length="61972690" />
+      <guid>https://bezu.lu/episodes/ZuluMix-28_DnB_KamerenJ.m4a</guid>
+      <pubDate>Sat, 20 Mar 2010 01:12:00 +0100</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:03:35</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle,couleur3,couleur 3,dj]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZM28.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 27: DJ Djive (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[DJ Djive]]></itunes:author>
+      <description><![CDATA[Metissage Mix on radio Couleur 3 / 03.10.2009]]></description>
+      <itunes:subtitle><![CDATA[Metissage Mix on radio Couleur 3 / 03.10.2009]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-27_DnB_Djive.m4a" length="1146880" />
+      <guid>https://bezu.lu/episodes/ZuluMix-27_DnB_Djive.m4a</guid>
+      <pubDate>Thu, 23 Jul 2009 15:41:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>00:58:15</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,djive, dj djive,drum'n'bass,zulu,jungle,couleur3,couleur 3]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZM27.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 27]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 26: DJ Djive (House Electro)]]></title>
+      <itunes:author><![CDATA[DJ Djive]]></itunes:author>
+      <description><![CDATA[Metissage Mix on radio Couleur 3 / 30.05.2009]]></description>
+      <itunes:subtitle><![CDATA[Metissage Mix on radio Couleur 3 / 30.05.2009]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-26_HouseElectro_Djive.m4a" length="5044320" />
+      <guid>https://bezu.lu/episodes/ZuluMix-26_HouseElectro_Djive.m4a</guid>
+      <pubDate>Sun, 31 May 2009 10:54:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>00:57:26</itunes:duration>
+      <itunes:keywords><![CDATA[couleur3,couleur 3,dj,house,techno,deep,electro,zulu,music,zuluparty,mix,djive]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZM26.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 26]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive]]></jota:artist>
+      <jota:genres><![CDATA[House, Electro]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 25: Kameren J (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[Metissage Mix on radio Couleur 3 / 03.04.2009]]></description>
+      <itunes:subtitle><![CDATA[Metissage Mix on radio Couleur 3 / 03.04.2009]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-25_DnB_KamerenJ.m4a" length="55882369" />
+      <guid>https://bezu.lu/episodes/ZuluMix-25_DnB_KamerenJ.m4a</guid>
+      <pubDate>Mon, 13 Apr 2009 17:30:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>00:57:36</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle,couleur3,couleur 3
+]]>      </itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/podcast_Kameren.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 25]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 24: Kameren J (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[Metissage Mix on radio Couleur 3 / 21.12.2008]]></description>
+      <itunes:subtitle><![CDATA[Metissage Mix on radio Couleur 3 / 21.12.2008]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-24_DnB_KamerenJ.m4a" length="55117543" />
+      <guid>https://bezu.lu/episodes/ZuluMix-24_DnB_KamerenJ.m4a</guid>
+      <pubDate>Fri, 19 Dec 2008 21:25:00 +0100</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>00:57:32</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle,couleur3,couleur 3]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/podcast_Kameren.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 24]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 23: DJ Djive (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[DJ Djive]]></itunes:author>
+      <description><![CDATA[DJ Djive on the DnB, bang !]]></description>
+      <itunes:subtitle><![CDATA[DJ Djive on the DnB, bang !]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://bezu.lu/episodes/ZuluMix-23_DnB_Djive.m4a" length="53504691" />
+      <guid>https://bezu.lu/episodes/ZuluMix-23_DnB_Djive.m4a</guid>
+      <pubDate>Fri, 19 Sep 2008 22:30:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>00:55:53</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,djive,dj,drum'n'bass,music,mix]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/podcast_Djive.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 23]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 22: Kameren J (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[Metissage Mix on radio Couleur 3 / 18.08.2008]]></description>
+      <itunes:subtitle><![CDATA[Metissage Mix on radio Couleur 3 / 18.08.2008]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/mpeg" url="https://bezu.lu/episodes/ZuluMix-22_DnB_KamerenJ.mp3" length="90617030" />
+      <guid>https://bezu.lu/episodes/ZuluMix-22_DnB_KamerenJ.mp3</guid>
+      <pubDate>Thu, 14 Aug 2008 23:04:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:01:48</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZuluMix22.png</jota:image>
+      <jota:name><![CDATA[ZuluMix 22]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 21: Kameren J (House)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[The K Session (part 1): Yaaaaaaa'll in da house !]]></description>
+      <itunes:subtitle><![CDATA[The K Session (part 1): Yaaaaaaa'll in da house !]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/mpeg" url="https://bezu.lu/episodes/ZuluMix-21_House_KamerenJ.mp3" length="95873581" />
+      <guid>https://bezu.lu/episodes/ZuluMix-21_House_KamerenJ.mp3</guid>
+      <pubDate>Sat, 22 Dec 2007 22:25:00 +0100</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:06:29</itunes:duration>
+      <itunes:keywords><![CDATA[house,mix,kameren,kameren j,old shool,techno,zulu,zuluparty]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZuluMix21.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 21]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[House]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 20: Kameren J (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[Rrrrrrrrrrrrrroll it Mista Lion K !!!]]></description>
+      <itunes:subtitle><![CDATA[Rrrrrrrrrrrrrroll it Mista Lion K !!!]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/mpeg" url="https://bezu.lu/episodes/ZuluMix-20_DnB_KamerenJ.mp3" length="73208939" />
+      <guid>https://bezu.lu/episodes/ZuluMix-20_DnB_KamerenJ.mp3</guid>
+      <pubDate>Sun, 03 Jun 2007 21:52:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:16:05</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZuluMix20.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 20]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 19: DJ Djive (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[DJ Djive]]></itunes:author>
+      <description><![CDATA[One more excellent drum'n'bass set: pumpin beats, positive melodies supporting swinging vocals, all that bassed and spinned perfectly ! Enjoy ;-)]]></description>
+      <itunes:subtitle><![CDATA[One more excellent drum'n'bass set: pumpin beats, positive melodies supporting swinging vocals, all that bassed and spinned perfectly ! Enjoy ;-)]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/mpeg" url="https://bezu.lu/episodes/ZuluMix-19_DnB_Djive.mp3" length="55964113" />
+      <guid>https://bezu.lu/episodes/ZuluMix-19_DnB_Djive.mp3</guid>
+      <pubDate>Thu, 19 Apr 2007 22:33:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>00:58:13</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,djive,drum'n'bass,zulu,jungle]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZuluMix19.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 19]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 18: Kameren J (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[Kameren puts you in a good mood with this flavoured, vocal and pumpin drum and bass set, keep it deeeeep !!]]></description>
+      <itunes:subtitle><![CDATA[Kameren puts you in a good mood with this flavoured, vocal and pumpin drum and bass set, keep it deeeeep !!]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/mpeg" url="https://bezu.lu/episodes/ZuluMix-18_DnB_KamerenJ.mp3" length="70514829" />
+      <guid>https://bezu.lu/episodes/ZuluMix-18_DnB_KamerenJ.mp3</guid>
+      <pubDate>Mon, 26 Feb 2007 17:14:00 +0100</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:13:12</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,kameren,drum'n'bass,zulu,jungle]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZuluMix18.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 18]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluVideo 01: I'm Shy Fashion Party @ Red Club (Lausanne)]]></title>
+      <itunes:author><![CDATA[Fabio]]></itunes:author>
+      <description><![CDATA[Our FIRST video experience: The Zulu Crew entertaining the Red Clubs' party people alongside with DJ Mathemathic, Kenshyro & Mr. Mike, Deborah from Sens Unik and Saian Supa Crew... Once again an eclectic and original concept for this great event ! Check out www.shy-wear.com for the party pictures !]]></description>
+      <itunes:subtitle><![CDATA[Our FIRST video experience: The Zulu Crew entertaining the Red Clubs' party people alongside with DJ Mathemathic, Kenshyro & Mr. Mike, Deborah from Sens Unik and Saian Supa Crew... Once again an eclectic and original concept for this great event ! Check out www.shy-wear.com for the party pictures !]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="video/mp4" url="https://bezu.lu/episodes/ZuluVideo-01.mp4" length="44144975" />
+      <guid>https://bezu.lu/episodes/ZuluVideo-01.mp4</guid>
+      <pubDate>Tue, 05 Dec 2006 12:30:00 +0100</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>00:11:26</itunes:duration>
+      <itunes:keywords><![CDATA[I am Shy,Zulu,house,deep,old school,zulu,music,Be Zulu]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>null</jota:image>
+      <jota:name><![CDATA[ZuluVideo 01: I'm Shy Fashion Party @ Red Club (Lausanne)]]></jota:name>
+      <jota:artist><![CDATA[Fabio]]></jota:artist>
+      <jota:genres><![CDATA[House]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 17: DJ Djive & Kameren J (House)]]></title>
+      <itunes:author><![CDATA[DJ Djive & Kameren J]]></itunes:author>
+      <description><![CDATA[Long mixes, deep, vocal and funky house for ya !!]]></description>
+      <itunes:subtitle><![CDATA[Long mixes, deep, vocal and funky house for ya !!]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/mpeg" url="https://bezu.lu/episodes/ZuluMix-17_DjiveKJ.mp3" length="57675263" />
+      <guid>https://bezu.lu/episodes/ZuluMix-17_DjiveKJ.mp3</guid>
+      <pubDate>Sat, 14 Oct 2006 23:15:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:00:05</itunes:duration>
+      <itunes:keywords><![CDATA[house,deep,old school,zulu,music,zuluparty,mix,djive,kameren]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/podcast_DjiveKJ.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 17]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive & Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[House]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[StudioMix 04: DJ Djive (Deep - Electro)]]></title>
+      <itunes:author><![CDATA[DJ Djive]]></itunes:author>
+      <description><![CDATA[Really nice and trippin set with melodies and mad beats, don't miss !!]]></description>
+      <itunes:subtitle><![CDATA[Really nice and trippin set with melodies and mad beats, don't miss !!]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/mpeg" url="https://bezu.lu/episodes/StudioMix-04_Electro_Djive.mp3" length="39263485" />
+      <guid>https://bezu.lu/episodes/StudioMix-04_Electro_Djive.mp3</guid>
+      <pubDate>Fri, 22 Sep 2006 22:43:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>00:40:56</itunes:duration>
+      <itunes:keywords><![CDATA[house,techno,deep,old school,zulu,music,zuluparty,mix,djive]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/podcast_Djive.jpg</jota:image>
+      <jota:name><![CDATA[StudioMix 04]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive]]></jota:artist>
+      <jota:genres><![CDATA[Deep House, Electro]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[StudioMix 03: Kameren J (Electro)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[Kameren got electrified !!!! A melodic smooth-kicked suite of electronic sounds, enjoy ;-)]]></description>
+      <itunes:subtitle><![CDATA[Kameren got electrified !!!! A melodic smooth-kicked suite of electronic sounds, enjoy ;-)]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/mpeg" url="https://bezu.lu/episodes/StudioMix-03_Electro_KamerenJ.mp3" length="49662756" />
+      <guid>https://bezu.lu/episodes/StudioMix-03_Electro_KamerenJ.mp3</guid>
+      <pubDate>Thu, 14 Sep 2006 22:56:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>00:51:47</itunes:duration>
+      <itunes:keywords><![CDATA[house,techno,electro,kameren,zulu,music,zuluparty,mix]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/podcast_Kameren.jpg</jota:image>
+      <jota:name><![CDATA[StudioMix 03]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[Electro]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[StudioMix 02: DJ Djive (Techno)]]></title>
+      <itunes:author><![CDATA[DJ Djive]]></itunes:author>
+      <description><![CDATA[A smooth and precise techno mix by Djive.]]></description>
+      <itunes:subtitle><![CDATA[A smooth and precise techno mix by Djive.]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/mpeg" url="https://bezu.lu/episodes/StudioMix-02_Techno_Djive.mp3" length="21790185" />
+      <guid>https://bezu.lu/episodes/StudioMix-02_Techno_Djive.mp3</guid>
+      <pubDate>Wed, 30 Aug 2006 16:30:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>00:22:41</itunes:duration>
+      <itunes:keywords><![CDATA[techno,djive,dj,electro,music,mix,studio]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/podcast_Djive.jpg</jota:image>
+      <jota:name><![CDATA[StudioMix 02]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive]]></jota:artist>
+      <jota:genres><![CDATA[Techno]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[StudioMix 01: Kameren J (Drum'n'Bass)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[Fresh ! A 'cool operation' by the K! A housy, jazzy and happy d&b set ;-)]]></description>
+      <itunes:subtitle><![CDATA[Fresh ! A 'cool operation' by the K! A housy, jazzy and happy d&b set ;-)]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/mpeg" url="https://bezu.lu/episodes/StudioMix-01_DnB_KamerenJ.mp3" length="43571230" />
+      <guid>https://bezu.lu/episodes/StudioMix-01_DnB_KamerenJ.mp3</guid>
+      <pubDate>Wed, 02 Aug 2006 20:01:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>00:45:26</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,kameren,drum&bass,drum'n'bass]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/podcast_Kameren.jpg</jota:image>
+      <jota:name><![CDATA[StudioMix 01]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 16: DJ Djive (Drum & Bass)]]></title>
+      <itunes:author><![CDATA[DJ Djive]]></itunes:author>
+      <description><![CDATA[DJ Djive getting up from liquid and cool promos to dancefloor riots !!]]></description>
+      <itunes:subtitle><![CDATA[DJ Djive getting up from liquid and cool promos to dancefloor riots !!]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/mpeg" url="https://bezu.lu/episodes/ZuluMix-16_Djive.mp3" length="58370664" />
+      <guid>https://bezu.lu/episodes/ZuluMix-16_Djive.mp3</guid>
+      <pubDate>Mon, 08 May 2006 21:39:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:00:53</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,djive,dj,drum'n'bass,music,mix]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/podcast_Djive.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 16]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 15: Kameren J (Drum & Bass)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[A pumpin and junglistik drum&bass promo set from Kameren J (may 2006)]]></description>
+      <itunes:subtitle><![CDATA[A pumpin and junglistik drum&bass promo set from Kameren J (may 2006)]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/mpeg" url="https://bezu.lu/episodes/ZuluMix-15_KamerenJ.mp3" length="55780986" />
+      <guid>https://bezu.lu/episodes/ZuluMix-15_KamerenJ.mp3</guid>
+      <pubDate>Fri, 05 May 2006 13:58:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>00:58:11</itunes:duration>
+      <itunes:keywords><![CDATA[drum and bass,mix,kameren,drum'n'bass,drum&bass]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/podcast_Kameren.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 15]]></jota:name>
+      <jota:artist><![CDATA[Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 01: DJ Djive & Kameren J (House)]]></title>
+      <itunes:author><![CDATA[DJ Djive & Kameren J]]></itunes:author>
+      <description><![CDATA[The first Zulumix: oldschool house and techno sounds, deep and various.]]></description>
+      <itunes:subtitle><![CDATA[The first Zulumix: oldschool house and techno sounds, deep and various.]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/mpeg" url="https://bezu.lu/episodes/ZuluMix-01_House_DjiveKJ.mp3" length="62381795" />
+      <guid>https://bezu.lu/episodes/ZuluMix-01_House_DjiveKJ.mp3</guid>
+      <pubDate>Sat, 08 Jan 2005 23:02:00 +0100</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:04:49</itunes:duration>
+      <itunes:keywords><![CDATA[house,mix,kameren,djive,music,oldschool,zulu,party,zuluparty]]></itunes:keywords>
+      <link>https://bezu.lu</link>
+      <jota:image>https://bezu.lu/covers/ZuluMix01.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 01]]></jota:name>
+      <jota:artist><![CDATA[DJ Djive & Kameren J]]></jota:artist>
+      <jota:genres><![CDATA[House]]></jota:genres>
+    </item>
+    <atom:link href="https://bezu.lu/media/Sounds/Podcasts/bezulu.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
