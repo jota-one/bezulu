@@ -13,10 +13,10 @@ const transform = async (root, src, dst) => {
   json.rss.channel.item = json.rss.channel.item.map(item => ({
     ...item,
     ...{
-      enclosure: {
-        ...item.enclosure,
-        ...{ url: item.enclosure.url.replace(config.rootURI, '') }
-      },
+      // enclosure: {
+      //   ...item.enclosure,
+      //   ...{ url: item.enclosure.url.replace(config.rootURI, '') }
+      // },
       'jota:image': item['jota:image'].replace(config.rootURI, '')
     }
   }))
