@@ -207,7 +207,8 @@ export default {
   &.active {
     position: relative;
     width: 100%;
-    max-width: 75vh;
+    /* Safari compute svh weirdly... */
+    max-width: calc(75vh - 2px);
     display: flex;
     flex-direction: column;
   }
