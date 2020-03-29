@@ -1,4 +1,5 @@
 const path = require('path')
+const config = require('./config.json')
 
 module.exports = {
   lintOnSave: true,
@@ -21,10 +22,19 @@ module.exports = {
       }
     }
   },
+  pages: {
+    index: {
+      entry: 'src/main.js',
+      template: 'public/index.html',
+      filename: 'index.html',
+      title: config.title,
+      chunks: ['chunk-vendors', 'chunk-common', 'index']
+    }
+  },
   devServer: {
     contentBase: [
       path.join(__dirname, 'public'),
       path.join(__dirname, 'www')
     ]
-  }
+  },
 }

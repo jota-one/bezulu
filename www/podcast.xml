@@ -30,6 +30,27 @@
     <itunes:category text="Music" />
     <itunes:keywords><![CDATA[dj,music,techno,house,drum,bass,drum&bass,zulu,zuluparty,djive,kameren,lester,mix]]></itunes:keywords>
     <itunes:explicit>no</itunes:explicit>
+
+    <item>
+      <title><![CDATA[ZuluMix 41: DJ Djive (House / Techno)]]></title>
+      <itunes:author><![CDATA[DJ Djive]]></itunes:author>
+      <description><![CDATA[Djive is on a rampage :) This little gem will make you want to press replay. A splendid mix as usual!]]></description>
+      <itunes:subtitle><![CDATA[Djive is on a rampage :) This little gem will make you want to press replay. A splendid mix as usual!]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-41_Techno_Djive.m4a" length="75000320" />
+      <guid>http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-41_Techno_Djive.m4a</guid>
+      <pubDate>Sat, 28 Mar 2020 21:47:00 +0100</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:14:45</itunes:duration>
+      <itunes:keywords><![CDATA[house,techno,mix,djive,dj djive,house,techno,zulu,dee jay,part,zulu party]]></itunes:keywords>
+      <link>https://bezu.lu.php</link>
+      <jota:id><![CDATA[ZuluMix-41]]></jota:id>
+      <jota:image>https://bezu.lu/covers/ZM41.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 41]]></jota:name>
+      <jota:artists><![CDATA[DJ Djive]]></jota:artists>
+      <jota:genres><![CDATA[House, Techno]]></jota:genres>
+    </item>
     <item>
       <title><![CDATA[My Story Of House Music Part 2: Lionites (House)]]></title>
       <itunes:author><![CDATA[Lionites]]></itunes:author>
@@ -44,6 +65,7 @@
       <itunes:duration>02:03:16</itunes:duration>
       <itunes:keywords><![CDATA[lionites, house, old school, techno, deep house, deep, mix, zulu, be zulu, kameren, kameren j]]></itunes:keywords>
       <link>https://bezu.lu.php</link>
+      <jota:id><![CDATA[MSOHM-2]]></jota:id>
       <jota:image>https://bezu.lu/covers/MSOHM-part-2.jpg</jota:image>
       <jota:name><![CDATA[My Story Of House Music 2]]></jota:name>
       <jota:artists><![CDATA[Lionites]]></jota:artists>
@@ -63,6 +85,7 @@
       <itunes:duration>01:19:35</itunes:duration>
       <itunes:keywords><![CDATA[techno,mix,djive, dj djive,house,techno,zulu,dee jay,part,zulu party,electro,minimal]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-40]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZM40.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 40]]></jota:name>
       <jota:artists><![CDATA[DJ Djive]]></jota:artists>
@@ -82,6 +105,7 @@
       <itunes:duration>01:12:39</itunes:duration>
       <itunes:keywords><![CDATA[techno,mix,djive, dj djive,house,zulu,dee jay,part,zulu party,electro]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-39]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZM39.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 39]]></jota:name>
       <jota:artists><![CDATA[DJ Djive]]></jota:artists>
@@ -101,6 +125,7 @@
       <itunes:duration>02:00:48</itunes:duration>
       <itunes:keywords><![CDATA[techno,mix,djive, dj djive,house,zulu,dee jay,part,zulu party,electro]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-38]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZM38.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 38]]></jota:name>
       <jota:artists><![CDATA[DJ Djive]]></jota:artists>
@@ -120,6 +145,7 @@
       <itunes:duration>01:17:29</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,lionites, the lionites,drum'n'bass,zulu,jungle,couleur3,couleur 3,dj,drum&bass]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-37]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZM37.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 37]]></jota:name>
       <jota:artists><![CDATA[Lionites]]></jota:artists>
@@ -139,6 +165,7 @@
       <itunes:duration>01:03:22</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,djive, dj djive,drum'n'bass,zulu,jungle,drum&bass,drum & bass,dee jay,part,zulu party]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-36]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZM36.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 36]]></jota:name>
       <jota:artists><![CDATA[DJ Djive]]></jota:artists>
@@ -158,6 +185,7 @@
       <itunes:duration>01:37:34</itunes:duration>
       <itunes:keywords><![CDATA[lionites, house, old school, techno, deep house, deep, mix, zulu, be zulu, kameren, kameren j]]></itunes:keywords>
       <link>https://bezu.lu.php</link>
+      <jota:id><![CDATA[MSOHM-1]]></jota:id>
       <jota:image>https://bezu.lu/covers/MSOHM-part-1.jpg</jota:image>
       <jota:name><![CDATA[My Story Of House Music 1]]></jota:name>
       <jota:artists><![CDATA[Lionites]]></jota:artists>
@@ -177,6 +205,7 @@
       <itunes:duration>01:10:00</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,lionites, the lionites,drum'n'bass,zulu,jungle,dj,drum&bass, oldschool, old school]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[KSDBLOI]]></jota:id>
       <jota:image>https://bezu.lu/covers/KSDBLOI.jpg</jota:image>
       <jota:name><![CDATA[KSDBLOI (1998)]]></jota:name>
       <jota:artists><![CDATA[Lionites]]></jota:artists>
@@ -196,6 +225,7 @@
       <itunes:duration>01:01:43</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,lionites, the lionites,drum'n'bass,zulu,jungle,couleur3,couleur 3,dj,drum&bass]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-35]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZM35.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 35]]></jota:name>
       <jota:artists><![CDATA[Lionites]]></jota:artists>
@@ -217,6 +247,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>01:17:26</itunes:duration>
       <itunes:keywords><![CDATA[house,mix,kameren,djive,music,oldschool,zulu,party,zuluparty,lionites,house music,techno,djaimin,pump it up]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[The-Anthem-Mix]]></jota:id>
       <jota:image>https://bezu.lu/covers/TheAnthemMix1.jpg</jota:image>
       <jota:name><![CDATA[The Anthem Mix Partt 1]]></jota:name>
       <jota:artists><![CDATA[DJ Djive, Kameren J]]></jota:artists>
@@ -236,6 +267,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>01:19:16</itunes:duration>
       <itunes:keywords><![CDATA[bass,dubstep,dub,break,breaks,dub,mix,kameren, kameren j,zulu,jungle,dj,be zulu]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-34]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZM34.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 34]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
@@ -255,6 +287,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>00:45:45</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,djive, dj djive,drum'n'bass,zulu,jungle,drum&bass,drum & bass,dee jay,part,zulu party]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[StudioMix-5]]></jota:id>
       <jota:image>https://bezu.lu/covers/SM05.jpg</jota:image>
       <jota:name><![CDATA[StudioMix 05]]></jota:name>
       <jota:artists><![CDATA[DJ Djive]]></jota:artists>
@@ -274,6 +307,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>01:11:37</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle,couleur3,couleur 3,dj,drum&bass]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-33]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZM33.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 33]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
@@ -293,6 +327,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>00:58:21</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle,couleur3,couleur 3,dj]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-32]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZM32.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 32]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
@@ -312,6 +347,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>58:11</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,djive, dj djive,drum'n'bass,zulu,jungle,drum&bass,drum & bass,dee jay,part,zulu party]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-31]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZM31.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 31]]></jota:name>
       <jota:artists><![CDATA[DJ Djive]]></jota:artists>
@@ -331,6 +367,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>02:04:26</itunes:duration>
       <itunes:keywords><![CDATA[zulu,be zulu,kameren,kameren j,ambient,autehre,ae,mix,techno,dj,dee jay]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[The-Ae-Mix]]></jota:id>
       <jota:image>https://bezu.lu/covers/TheAeMix.jpg</jota:image>
       <jota:name><![CDATA[The Ae Mix (1997)]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
@@ -350,6 +387,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>58:42</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle,couleur3,couleur 3,dj]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-30]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZM30.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 30]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
@@ -369,6 +407,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>01:04:47</itunes:duration>
       <itunes:keywords><![CDATA[bass,dubstep,break,breaks,dub,mix,kameren, kameren j,zulu,jungle,dj,be zulu]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-29]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZM29.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 29]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
@@ -388,6 +427,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>01:03:35</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle,couleur3,couleur 3,dj]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-28]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZM28.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
@@ -407,6 +447,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>00:58:15</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,djive, dj djive,drum'n'bass,zulu,jungle,couleur3,couleur 3]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-27]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZM27.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 27]]></jota:name>
       <jota:artists><![CDATA[DJ Djive]]></jota:artists>
@@ -426,6 +467,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>00:57:26</itunes:duration>
       <itunes:keywords><![CDATA[couleur3,couleur 3,dj,house,techno,deep,electro,zulu,music,zuluparty,mix,djive]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-26]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZM26.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 26]]></jota:name>
       <jota:artists><![CDATA[DJ Djive]]></jota:artists>
@@ -443,10 +485,12 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <category>Music</category>
       <itunes:explicit>no</itunes:explicit>
       <itunes:duration>00:57:36</itunes:duration>
-      <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle,couleur3,couleur 3
-]]>      </itunes:keywords>
+      <itunes:keywords>
+      <![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle,couleur3,couleur 3]]>
+      </itunes:keywords>
       <link>https://bezu.lu</link>
-      <jota:image>https://bezu.lu/covers/podcast_Kameren.jpg</jota:image>
+      <jota:id><![CDATA[ZuluMix-25]]></jota:id>
+      <jota:image>https://bezu.lu/covers/ZM25.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 25]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
       <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
@@ -465,7 +509,8 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>00:57:32</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle,couleur3,couleur 3]]></itunes:keywords>
       <link>https://bezu.lu</link>
-      <jota:image>https://bezu.lu/covers/podcast_Kameren.jpg</jota:image>
+      <jota:id><![CDATA[ZuluMix-24]]></jota:id>
+      <jota:image>https://bezu.lu/covers/ZM24.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 24]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
       <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
@@ -484,7 +529,8 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>00:55:53</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,djive,dj,drum'n'bass,music,mix]]></itunes:keywords>
       <link>https://bezu.lu</link>
-      <jota:image>https://bezu.lu/covers/podcast_Djive.jpg</jota:image>
+      <jota:id><![CDATA[ZuluMix-23]]></jota:id>
+      <jota:image>https://bezu.lu/covers/ZM23.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 23]]></jota:name>
       <jota:artists><![CDATA[DJ Djive]]></jota:artists>
       <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
@@ -503,6 +549,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>01:01:48</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-22]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZuluMix22.png</jota:image>
       <jota:name><![CDATA[ZuluMix 22]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
@@ -522,6 +569,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>01:06:29</itunes:duration>
       <itunes:keywords><![CDATA[house,mix,kameren,kameren j,old shool,techno,zulu,zuluparty]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-21]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZuluMix21.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 21]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
@@ -541,6 +589,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>01:16:05</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-20]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZuluMix20.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 20]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
@@ -560,6 +609,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>00:58:13</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,djive,drum'n'bass,zulu,jungle]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-19]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZuluMix19.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 19]]></jota:name>
       <jota:artists><![CDATA[DJ Djive]]></jota:artists>
@@ -579,6 +629,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>01:13:12</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,kameren,drum'n'bass,zulu,jungle]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-18]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZuluMix18.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 18]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
@@ -598,6 +649,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>00:11:26</itunes:duration>
       <itunes:keywords><![CDATA[I am Shy,Zulu,house,deep,old school,zulu,music,Be Zulu]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluVideo-1]]></jota:id>
       <jota:image>null</jota:image>
       <jota:name><![CDATA[ZuluVideo 01: I'm Shy Fashion Party @ Red Club (Lausanne)]]></jota:name>
       <jota:artists><![CDATA[Fabio]]></jota:artists>
@@ -617,7 +669,8 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>01:00:05</itunes:duration>
       <itunes:keywords><![CDATA[house,deep,old school,zulu,music,zuluparty,mix,djive,kameren]]></itunes:keywords>
       <link>https://bezu.lu</link>
-      <jota:image>https://bezu.lu/covers/podcast_DjiveKJ.jpg</jota:image>
+      <jota:id><![CDATA[ZuluMix-17]]></jota:id>
+      <jota:image>https://bezu.lu/covers/ZM17.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 17]]></jota:name>
       <jota:artists><![CDATA[DJ Djive, Kameren J]]></jota:artists>
       <jota:genres><![CDATA[House]]></jota:genres>
@@ -636,7 +689,8 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>00:40:56</itunes:duration>
       <itunes:keywords><![CDATA[house,techno,deep,old school,zulu,music,zuluparty,mix,djive]]></itunes:keywords>
       <link>https://bezu.lu</link>
-      <jota:image>https://bezu.lu/covers/podcast_Djive.jpg</jota:image>
+      <jota:id><![CDATA[StudioMix-04]]></jota:id>
+      <jota:image>https://bezu.lu/covers/SM04.jpg</jota:image>
       <jota:name><![CDATA[StudioMix 04]]></jota:name>
       <jota:artists><![CDATA[DJ Djive]]></jota:artists>
       <jota:genres><![CDATA[Deep House, Electro]]></jota:genres>
@@ -655,7 +709,8 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>00:51:47</itunes:duration>
       <itunes:keywords><![CDATA[house,techno,electro,kameren,zulu,music,zuluparty,mix]]></itunes:keywords>
       <link>https://bezu.lu</link>
-      <jota:image>https://bezu.lu/covers/podcast_Kameren.jpg</jota:image>
+      <jota:id><![CDATA[StudioMix-03]]></jota:id>
+      <jota:image>https://bezu.lu/covers/SM03.jpg</jota:image>
       <jota:name><![CDATA[StudioMix 03]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
       <jota:genres><![CDATA[Electro]]></jota:genres>
@@ -674,7 +729,8 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>00:22:41</itunes:duration>
       <itunes:keywords><![CDATA[techno,djive,dj,electro,music,mix,studio]]></itunes:keywords>
       <link>https://bezu.lu</link>
-      <jota:image>https://bezu.lu/covers/podcast_Djive.jpg</jota:image>
+      <jota:id><![CDATA[StudioMix-02]]></jota:id>
+      <jota:image>https://bezu.lu/covers/SM02.jpg</jota:image>
       <jota:name><![CDATA[StudioMix 02]]></jota:name>
       <jota:artists><![CDATA[DJ Djive]]></jota:artists>
       <jota:genres><![CDATA[Techno]]></jota:genres>
@@ -693,7 +749,8 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>00:45:26</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,kameren,drum&bass,drum'n'bass]]></itunes:keywords>
       <link>https://bezu.lu</link>
-      <jota:image>https://bezu.lu/covers/podcast_Kameren.jpg</jota:image>
+      <jota:id><![CDATA[StudioMix-01]]></jota:id>
+      <jota:image>https://bezu.lu/covers/SM01.jpg</jota:image>
       <jota:name><![CDATA[StudioMix 01]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
       <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
@@ -712,7 +769,8 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>01:00:53</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,djive,dj,drum'n'bass,music,mix]]></itunes:keywords>
       <link>https://bezu.lu</link>
-      <jota:image>https://bezu.lu/covers/podcast_Djive.jpg</jota:image>
+      <jota:id><![CDATA[ZuluMix-16]]></jota:id>
+      <jota:image>https://bezu.lu/covers/ZM16.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 16]]></jota:name>
       <jota:artists><![CDATA[DJ Djive]]></jota:artists>
       <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
@@ -731,7 +789,8 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>00:58:11</itunes:duration>
       <itunes:keywords><![CDATA[drum and bass,mix,kameren,drum'n'bass,drum&bass]]></itunes:keywords>
       <link>https://bezu.lu</link>
-      <jota:image>https://bezu.lu/covers/podcast_Kameren.jpg</jota:image>
+      <jota:id><![CDATA[ZuluMix-15]]></jota:id>
+      <jota:image>https://bezu.lu/covers/ZM15.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 15]]></jota:name>
       <jota:artists><![CDATA[Kameren J]]></jota:artists>
       <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
@@ -750,6 +809,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:duration>01:04:49</itunes:duration>
       <itunes:keywords><![CDATA[house,mix,kameren,djive,music,oldschool,zulu,party,zuluparty]]></itunes:keywords>
       <link>https://bezu.lu</link>
+      <jota:id><![CDATA[ZuluMix-01]]></jota:id>
       <jota:image>https://bezu.lu/covers/ZuluMix01.jpg</jota:image>
       <jota:name><![CDATA[ZuluMix 01]]></jota:name>
       <jota:artists><![CDATA[DJ Djive, Kameren J]]></jota:artists>

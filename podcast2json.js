@@ -9,17 +9,20 @@ const dst = 'podcast.json'
 const transform = async (root, src, dst) => {
   const xml = await fs.readFile(path.resolve(path.join(root, src)), 'utf8')
   let json = JSON.parse(parser.toJson(xml))
+  let ids = []
 
-  json.rss.channel.item = json.rss.channel.item.map(item => ({
-    ...item,
-    ...{
-      // enclosure: {
-      //   ...item.enclosure,
-      //   ...{ url: item.enclosure.url.replace(config.rootURI, '') }
-      // },
-      'jota:image': item['jota:image'].replace(config.rootURI, '')
+  json.rss.channel.item = json.rss.channel.item.map(item => {
+    if (ids.includes(item['jota:id'])) {
+      throw new Error(`ID ${item['jota:id']} already exists`)
     }
-  }))
+
+    ids.push(item['jota:id'])
+
+    return {
+      ...item,
+      ...{ 'jota:image': item['jota:image'].replace(config.rootURI, '') }
+    }
+  })
 
   await fs.writeFile(
     path.resolve(path.join(root, dst)),

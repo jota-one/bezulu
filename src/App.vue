@@ -62,7 +62,7 @@
         :song="episodes[selected]"
         :index="selected"
         :playing="playing"
-        @playPause="playing = !playing" />
+        @playPause="onPlayPause" />
       <Episode
         v-for="episode in filteredEpisodes"
         :key="episode.index"
@@ -70,7 +70,7 @@
         :index="episode.index"
         :selected="selected === episode.index"
         :class="{ hidden: episode.hidden }"
-        @select="selected = episode.index; playing = true" />
+        @select="onSelect(episode)" />
       <div style="clear:left"/>
     </div>
   </div>
@@ -105,6 +105,7 @@ export default {
       .filter(episode => !episode.enclosure.type.includes('video'))
       .map((episode, index) => ({
         index,
+        id: episode['jota:id'],
         name: cleanEmptyObject(episode['jota:name']),
         artist: cleanEmptyObject(episode['jota:artists']),
         artists: cleanEmptyObject(episode['jota:artists'])
@@ -166,7 +167,34 @@ export default {
       songs: this.episodes
     })
 
-    window.Amplitude = Amplitude
+    const episodeId = this.$route.params.episodeId
+
+    this.selected = episodeId
+      ? this.episodes.find(episode => episode.id === episodeId).index
+      : 0
+  },
+
+  methods: {
+    onSelect (episode) {
+      this.selected = episode.index
+      this.playing = true
+      this.$router.push({ name: 'player', params: { episodeId: episode.id }})
+      Amplitude.playSongAtIndex(this.selected)
+    },
+
+    onPlayPause () {
+      const isPlaying = Amplitude.getPlayerState() === 'playing'
+
+      if (isPlaying) {
+        Amplitude.pause()
+      } else if (Amplitude.getSongPlayedPercentage() > 0) {
+        Amplitude.play()
+      } else {
+        Amplitude.playSongAtIndex(this.selected)
+      }
+
+      this.playing = !this.playing
+    }
   }
 }
 </script>
@@ -253,7 +281,7 @@ html, body {
 .filters {
   position: fixed;
   top: 4vh;
-  z-index: 2;
+  z-index: 3;
 }
 
 .heading,
@@ -308,7 +336,7 @@ html, body {
 .h1 {
   margin: 0;
   padding: 0;
-  transform: skew(0, -10deg);
+  transform: skew(0, -13deg);
   font-size: 5vh;
   line-height: 1;
   font-weight: 200;
@@ -329,7 +357,7 @@ html, body {
   line-height: 2vh;
   text-transform: uppercase;
   text-decoration: none;
-  transform: skew(0, -10deg) scaleY(1.1);
+  transform: skew(0, -13deg) scaleY(1.1);
   opacity: .85;
 }
 

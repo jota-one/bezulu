@@ -11,27 +11,23 @@
           @click="onCoverClick"
         />
       </div>
+      <div
+        v-if="isNew"
+        class="new"
+      >
+        NEW!
+      </div>
+      <!-- <Favorite
+        v-if="!active"
+        class="favorite"
+        :id="song.id"
+      /> -->
       <div class="meta colored bg">
         <h2 class="title colored color">{{ song.name }}</h2>
         <h3 class="artist">{{ song.artist }}</h3>
         <div class="date-duration-wrapper">
           <h4 class="date">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5,4V6H19V4H5M5,14H9V20H15V14H19L12,7L5,14Z" />
-            </svg>
-            {{ pubDate }}
-          </h4>
-          <h4 class="duration">
-            <svg
-              class="icon"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.24,7.76C15.07,6.58 13.53,6 12,6V12L7.76,16.24C10.1,18.58 13.9,18.58 16.24,16.24C18.59,13.9 18.59,10.1 16.24,7.76Z" />
-            </svg>
-            {{ song.duration }}
+            {{ pubDateStr }}
           </h4>
         </div>
         <div class="tags">
@@ -69,9 +65,15 @@
               <path d="M43.5385 12.4242H33.3998V47.5758H43.5385V12.4242Z"/>
             </svg>
           </button>
+          <!-- <Favorite
+            v-if="active"
+            is-main
+            class="favorite-button"
+            :id="song.id"
+          /> -->
           <div class="spacer"/>
           <Volume/>
-          <Download />
+          <Download :url="song.url" class="download" />
         </div>
         <div class="progress">
           <progress
@@ -93,9 +95,13 @@
 </template>
 
 <script>
-import Amplitude from "amplitudejs";
+import Amplitude from "amplitudejs"
+import { mapState, mapActions } from 'vuex'
 import Volume from './Volume'
 import Download from './Download'
+// import Favorite from './Favorite'
+
+const IS_NEW_TIMERANGE = 2505600000 // 1 month
 
 export default {
   name: "Episode",
@@ -114,32 +120,53 @@ export default {
   },
 
   computed: {
+    ...mapState(['played']),
+
     pubDate () {
+      return new Date(this.song.pubDate)
+    },
+
+    pubDateStr () {
       const padZero = input => input.toString().padStart(2, '0')
 
-      const date = new Date(this.song.pubDate)
+      const date = this.pubDate
       const year = date.getFullYear()
       const month = padZero(date.getMonth() + 1)
       const day = padZero(date.getDate())
 
       return `${day}.${month}.${year}`
+    },
+
+    isNew () {
+      const isNew = Date.now() - this.pubDate.getTime() < IS_NEW_TIMERANGE
+      return isNew && !this.played.includes(this.song.id)
     }
   },
 
   methods: {
+    ...mapActions(['set']),
+
+    storePlayed () {
+      let played = this.played
+
+      if (!this.played.includes(this.song.id)) {
+        played.push(this.song.id)
+      }
+
+      this.set({ key: 'played', value: played })
+    },
+
     onCoverClick () {
       if (!this.active) {
-        Amplitude.playSongAtIndex(this.song.index)
         this.$emit('select')
       }
+
+      this.storePlayed()
     },
 
     playPause () {
-      Amplitude.getPlayerState() === 'playing'
-        ? Amplitude.pause()
-        : Amplitude.play()
-
       this.$emit('playPause')
+      this.storePlayed()
     },
 
     seek(event) {
@@ -191,6 +218,34 @@ export default {
 }
 
 /* New */
+.new {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: .5vh 2.5vh;
+  font-size: 2.25vh;
+  font-weight: 700;
+  color: rgba(0,0,0, .85);
+  background-color: yellow;
+  z-index: 2;
+
+  .selected & {
+    display: none;
+  }
+}
+
+/* Favorite + Download */
+.download,
+.favorite-button {
+  margin-right: 2vh;
+}
+
+.favorite {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1.5vh;
+}
 
 /* Cover */
 .cover,
@@ -219,7 +274,7 @@ export default {
   align-items: flex-end;
   text-align: right;
   justify-content: flex-end;
-  padding: 2vh;
+  padding: 1.75vh;
   color: rgba(255,255,255, .75);
 
   .selected & {
@@ -257,24 +312,14 @@ export default {
       margin: .5rem 0 0 .5rem;
       display: flex;
       align-items: center;
-      font-size: 1.7vh;
+      font-size: 2vh;
       line-height: 1;
-      font-weight: 400;
-      color: rgba(255,255,255, .35);
+      font-weight: 200;
+      color: rgba(255,255,255, 1);
+      text-shadow: 0 1px rgba(0,0,0, .5);
 
       .selected & {
         color: rgba(0,0,0, .5);
-      }
-
-      .icon {
-        margin-right: .25vh;
-        height: 1.65vh;
-        width: 1.65vh;
-        fill: rgba(255,255,255, .75);
-
-        .selected & {
-          fill: rgb(0,0,0);
-        }
       }
     }
   }
