@@ -177,9 +177,12 @@ export default {
   methods: {
     onSelect (episode) {
       this.selected = episode.index
+
+      Amplitude.playSongAtIndex(this.selected)
+
       this.playing = true
       this.$router.push({ name: 'player', params: { episodeId: episode.id }})
-      Amplitude.playSongAtIndex(this.selected)
+      this.updatePageTitle()
     },
 
     onPlayPause () {
@@ -194,6 +197,14 @@ export default {
       }
 
       this.playing = !this.playing
+      this.updatePageTitle()
+    },
+
+    updatePageTitle () {
+      const title = document.getElementsByTagName('title')[0]
+      const episode = this.episodes[this.selected]
+
+      title.innerText = `${episode.artist}: ${episode.name}`
     }
   }
 }
