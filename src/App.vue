@@ -385,7 +385,7 @@ html, body {
   padding: 1vh 1.2vh;
   border: none;
   font-family: Oswald, sans-serif;
-  font-size: 1.7vh;
+  font-size: 2vh;
   font-weight: 400;
   line-height: 1.7vh;
   text-transform: uppercase;

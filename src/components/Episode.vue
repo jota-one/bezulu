@@ -186,6 +186,7 @@ export default {
 .Episode {
   position: relative;
   overflow: hidden;
+  perspective: 500px;
 
   &:before {
     content: "";
@@ -201,6 +202,17 @@ export default {
     @media screen and (max-width: 75vh) {
       width: 50vw;
       height: 50vw;
+    }
+
+    .wrapper.flip {
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      backface-visibility: hidden;
+
+      &:hover {
+        transform: rotateY(180deg);
+        transition: transform 0.5s;
+      }
     }
   }
 

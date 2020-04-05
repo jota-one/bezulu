@@ -486,7 +486,7 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <itunes:explicit>no</itunes:explicit>
       <itunes:duration>00:57:36</itunes:duration>
       <itunes:keywords>
-      <![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle,couleur3,couleur 3]]>
+        <![CDATA[drum and bass,mix,kameren, kameren j,drum'n'bass,zulu,jungle,couleur3,couleur 3]]>
       </itunes:keywords>
       <link>https://bezu.lu/zulumix25</link>
       <jota:id><![CDATA[zulumix25]]></jota:id>
@@ -796,6 +796,66 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <jota:genres><![CDATA[Drum & Bass]]></jota:genres>
     </item>
     <item>
+      <title><![CDATA[ZuluMix 04: Lester DJ (House)]]></title>
+      <itunes:author><![CDATA[Lester DJ]]></itunes:author>
+      <description><![CDATA[We fill the gap after all these years... And finally bring Lester in the podcast!!! Vocal house at its best, a pure gem of freshness &#10084;&#65039;]]></description>
+      <itunes:subtitle><![CDATA[We fill the gap after all these years... And finally bring Lester in the podcast!!! Vocal house at its best, a pure gem of freshness &#10084;&#65039;]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-04_House_Lester.m4a" length="66133658" />
+      <guid>http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-04_House_Lester.m4a</guid>
+      <pubDate>Sun, 05 Apr 2020 23:19:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:07:15</itunes:duration>
+      <itunes:keywords><![CDATA[house,mix,lester,lester dj,music,oldschool,zulu,party,zuluparty]]></itunes:keywords>
+      <link>https://bezu.lu/zulumix4</link>
+      <jota:id><![CDATA[zulumix4]]></jota:id>
+      <jota:image>https://bezu.lu/covers/ZM04.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 04]]></jota:name>
+      <jota:artists><![CDATA[Lester DJ]]></jota:artists>
+      <jota:genres><![CDATA[House]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 03: Kameren J (House)]]></title>
+      <itunes:author><![CDATA[Kameren J]]></itunes:author>
+      <description><![CDATA[We fill the gap after all these years... The third ZuluMix back in 2005, Kameren J rocking Lausanne's house dancefloors !]]></description>
+      <itunes:subtitle><![CDATA[We fill the gap after all these years... The third ZuluMix back in 2005, Kameren J rocking Lausanne's house dancefloors !]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-03_House_KamerenJ.m4a" length="60076526" />
+      <guid>http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-03_House_KamerenJ.m4a</guid>
+      <pubDate>Sun, 05 Apr 2020 23:14:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:00:53</itunes:duration>
+      <itunes:keywords><![CDATA[house,mix,kameren,kameren j,lionites,music,oldschool,zulu,party,zuluparty]]></itunes:keywords>
+      <link>https://bezu.lu/zulumix3</link>
+      <jota:id><![CDATA[zulumix3]]></jota:id>
+      <jota:image>https://bezu.lu/covers/ZM03.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 03]]></jota:name>
+      <jota:artists><![CDATA[Kameren J]]></jota:artists>
+      <jota:genres><![CDATA[House]]></jota:genres>
+    </item>
+    <item>
+      <title><![CDATA[ZuluMix 02: DJ Djive (House)]]></title>
+      <itunes:author><![CDATA[DJ Djive]]></itunes:author>
+      <description><![CDATA[We fill the gap after all these years... The second ZuluMix back in 2005, Djive for the masses !]]></description>
+      <itunes:subtitle><![CDATA[We fill the gap after all these years... The second ZuluMix back in 2005, Djive for the masses !]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-02_House_Djive.m4a" length="68900744" />
+      <guid>http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-02_House_Djive.m4a</guid>
+      <pubDate>Sun, 05 Apr 2020 23:11:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:10:20</itunes:duration>
+      <itunes:keywords><![CDATA[house,mix,djive,music,oldschool,zulu,party,zuluparty]]></itunes:keywords>
+      <link>https://bezu.lu/zulumix2</link>
+      <jota:id><![CDATA[zulumix2]]></jota:id>
+      <jota:image>https://bezu.lu/covers/ZM02.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 02]]></jota:name>
+      <jota:artists><![CDATA[DJ Djive]]></jota:artists>
+      <jota:genres><![CDATA[House]]></jota:genres>
+    </item>
+    <item>
       <title><![CDATA[ZuluMix 01: DJ Djive & Kameren J (House)]]></title>
       <itunes:author><![CDATA[DJ Djive & Kameren J]]></itunes:author>
       <description><![CDATA[The first Zulumix: oldschool house and techno sounds, deep and various.]]></description>
@@ -816,5 +876,5 @@ some good memories back when house music was at its best, cheers !]]></itunes:su
       <jota:genres><![CDATA[House]]></jota:genres>
     </item>
     <atom:link href="https://bezu.lu/podcast.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
+    </channel>
+  </rss>
