@@ -12,6 +12,12 @@
           Podcast
         </span>
       </h1>
+      <div class="count-new" v-if="newEpisodes.length">
+        {{ newEpisodes.length }}
+        <span class="text">
+          new
+        </span>
+      </div>
     </div>
     <div class="info">
       <a
@@ -61,6 +67,7 @@
         ref="player"
         :song="episodes[selected]"
         :index="selected"
+        :is-new="newEpisodes.some(e => e.id === episodes[selected].id)"
         :playing="playing"
         @playPause="onPlayPause" />
       <Episode
@@ -68,6 +75,7 @@
         :key="episode.index"
         :song="episode"
         :index="episode.index"
+        :is-new="newEpisodes.some(e => e.id === episode.id)"
         :selected="selected === episode.index"
         :class="{ hidden: episode.hidden }"
         @select="onSelect(episode)" />
@@ -77,6 +85,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Amplitude from 'amplitudejs'
 import Episode from '@/components/Episode'
 import podcast from '../www/podcast.json'
@@ -89,6 +98,8 @@ const cleanEmptyObject = input => {
 
   return input
 }
+
+const IS_NEW_TIMERANGE = 2505600000 // 1 month
 
 export default {
   name: 'App',
@@ -120,6 +131,8 @@ export default {
   }),
 
   computed: {
+    ...mapState(['played']),
+
     filteredEpisodes () {
       return this.episodes
         .map((episode, i) => {
@@ -159,6 +172,15 @@ export default {
         })
         return allGenres
       }, [])
+    },
+
+    newEpisodes () {
+      return this.episodes.filter(episode => {
+        const newlyPublished =
+        Date.now() - (new Date(episode.pubDate)).getTime() < IS_NEW_TIMERANGE
+
+        return newlyPublished && !this.played.includes(episode.id)
+      })
     }
   },
 
@@ -361,6 +383,30 @@ html, body {
   }
 }
 
+.count-new {
+  position: absolute;
+  top: 0;
+  left: 8vh;
+  display: inline-flex;
+  transform: skew(0, -13deg);
+  padding: 1.5vh 1.25vh;
+  font-weight: 700;
+  font-size: 3vh;
+  line-height: 1.5vh;
+  color: rgba(0,0,0, .85);
+  background-color: yellow;
+  border-radius: 2vh;
+  box-shadow: 0 0 2vh rgba(0,0,0, .25);
+
+  .text {
+    margin: -.25rem 0 0 .5vh;
+    font-size: 1.75vh;
+    line-height: 2vh;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+
 .podcast {
   display: flex;
   align-items: center;
@@ -385,7 +431,7 @@ html, body {
   padding: 1vh 1.2vh;
   border: none;
   font-family: Oswald, sans-serif;
-  font-size: 2vh;
+  font-size: 1.85vh;
   font-weight: 400;
   line-height: 1.7vh;
   text-transform: uppercase;

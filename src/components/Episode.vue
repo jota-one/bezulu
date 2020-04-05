@@ -101,8 +101,6 @@ import Volume from './Volume'
 import Download from './Download'
 // import Favorite from './Favorite'
 
-const IS_NEW_TIMERANGE = 2505600000 // 1 month
-
 export default {
   name: "Episode",
 
@@ -115,6 +113,7 @@ export default {
     },
 
     active: Boolean,
+    isNew: Boolean,
     selected: Boolean,
     playing: Boolean
   },
@@ -135,11 +134,6 @@ export default {
       const day = padZero(date.getDate())
 
       return `${day}.${month}.${year}`
-    },
-
-    isNew () {
-      const isNew = Date.now() - this.pubDate.getTime() < IS_NEW_TIMERANGE
-      return isNew && !this.played.includes(this.song.id)
     }
   },
 
