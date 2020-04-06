@@ -47,7 +47,7 @@
         <div class="controls">
           <button
             :class="['play', { playing }]"
-            @click="playPause"
+            @click="$emit('playPause')"
           >
             <svg
               v-if="!playing"
@@ -95,8 +95,7 @@
 </template>
 
 <script>
-import Amplitude from "amplitudejs"
-import { mapState, mapActions } from 'vuex'
+import Amplitude from 'amplitudejs'
 import Volume from './Volume'
 import Download from './Download'
 // import Favorite from './Favorite'
@@ -119,8 +118,6 @@ export default {
   },
 
   computed: {
-    ...mapState(['played']),
-
     pubDate () {
       return new Date(this.song.pubDate)
     },
@@ -138,29 +135,10 @@ export default {
   },
 
   methods: {
-    ...mapActions(['set']),
-
-    storePlayed () {
-      let played = this.played
-
-      if (!this.played.includes(this.song.id)) {
-        played.push(this.song.id)
-      }
-
-      this.set({ key: 'played', value: played })
-    },
-
     onCoverClick () {
       if (!this.active) {
         this.$emit('select')
       }
-
-      this.storePlayed()
-    },
-
-    playPause () {
-      this.$emit('playPause')
-      this.storePlayed()
     },
 
     seek(event) {

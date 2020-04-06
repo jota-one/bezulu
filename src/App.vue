@@ -78,14 +78,14 @@
         :is-new="newEpisodes.some(e => e.id === episode.id)"
         :selected="selected === episode.index"
         :class="{ hidden: episode.hidden }"
-        @select="onSelect(episode)" />
+        @select="select(episode)" />
       <div style="clear:left"/>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import Amplitude from 'amplitudejs'
 import Episode from '@/components/Episode'
 import podcast from '../www/podcast.json'
@@ -153,7 +153,7 @@ export default {
     },
 
     artists () {
-      return this.episodes.reduce((allArtists, { artists }) => {
+      const artists = this.episodes.reduce((allArtists, { artists }) => {
         artists.forEach(artist => {
           if (!allArtists.includes(artist)) {
             allArtists.push(artist)
@@ -161,10 +161,13 @@ export default {
         })
         return allArtists
       }, [])
+
+      artists.sort()
+      return artists
     },
 
     genres () {
-      return this.episodes.reduce((allGenres, { genres }) => {
+      const genres = this.episodes.reduce((allGenres, { genres }) => {
         genres.forEach(genre => {
           if (!allGenres.includes(genre)) {
             allGenres.push(genre)
@@ -172,6 +175,9 @@ export default {
         })
         return allGenres
       }, [])
+
+      genres.sort()
+      return genres
     },
 
     newEpisodes () {
@@ -186,7 +192,13 @@ export default {
 
   mounted () {
     Amplitude.init({
-      songs: this.episodes
+      songs: this.episodes,
+      callbacks: {
+        next: () => {
+          this.selected++
+          this.select(this.episodes[this.selected])
+        }
+      }
     })
 
     const episodeId = this.$route.params.episodeId
@@ -197,7 +209,21 @@ export default {
   },
 
   methods: {
-    onSelect (episode) {
+    ...mapActions(['set']),
+
+    storePlayed () {
+      let played = this.played
+
+      const activeEpisode = this.episodes[this.selected]
+
+      if (!this.played.includes(activeEpisode.id)) {
+        played.push(activeEpisode.id)
+      }
+
+      this.set({ key: 'played', value: played })
+    },
+
+    select (episode) {
       this.selected = episode.index
 
       Amplitude.playSongAtIndex(this.selected)
@@ -205,6 +231,7 @@ export default {
       this.playing = true
       this.$router.push({ name: 'player', params: { episodeId: episode.id }})
       this.updatePageTitle()
+      this.storePlayed()
     },
 
     onPlayPause () {
@@ -220,6 +247,7 @@ export default {
 
       this.playing = !this.playing
       this.updatePageTitle()
+      this.storePlayed()
     },
 
     updatePageTitle () {
