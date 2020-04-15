@@ -81,6 +81,7 @@
         @select="select(episode)" />
       <div style="clear:left"/>
     </div>
+    <About />
   </div>
 </template>
 
@@ -88,6 +89,7 @@
 import { mapState, mapActions } from 'vuex'
 import Amplitude from 'amplitudejs'
 import Episode from '@/components/Episode'
+import About from '@/components/About'
 import podcast from '../www/podcast.json'
 import config from '../config.json'
 
@@ -104,7 +106,7 @@ const IS_NEW_TIMERANGE = 2505600000 // 1 month
 export default {
   name: 'App',
 
-  components: { Episode },
+  components: { Episode, About },
 
   data: () => ({
     playing: false,
