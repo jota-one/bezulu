@@ -6,8 +6,6 @@ node_modules
 /www/*.json
 /www/css
 /www/js
-/www/covers
-/www/episodes
 
 # local env files
 .env.local
