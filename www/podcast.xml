@@ -30,7 +30,26 @@
     <itunes:category text="Music" />
     <itunes:keywords><![CDATA[dj,music,techno,house,drum,bass,drum&bass,zulu,zuluparty,djive,kameren,lester,mix]]></itunes:keywords>
     <itunes:explicit>no</itunes:explicit>
-
+    <item>
+      <title><![CDATA[ZuluMix 42: Lionites (Funk / House)]]></title>
+      <itunes:author><![CDATA[Lionites]]></itunes:author>
+      <description><![CDATA[Lionites celebrates summertime with a fresh and funky journey to the 80s, know your classics!]]></description>
+      <itunes:subtitle><![CDATA[Lionites celebrates summertime with a fresh and funky journey to the 80s, know your classics!]]></itunes:subtitle>
+      <itunes:summary />
+      <enclosure type="audio/x-m4a" url="https://media.lionites.com/ZuluMix-42_Funk_Lionites.m4a" length="65086033" />
+      <guid>https://media.lionites.com/ZuluMix-42_Funk_Lionites.m4a</guid>
+      <pubDate>Fri, 01 May 2020 02:13:00 +0200</pubDate>
+      <category>Music</category>
+      <itunes:explicit>no</itunes:explicit>
+      <itunes:duration>01:06:37</itunes:duration>
+      <itunes:keywords><![CDATA[lionites, funk, disco, house, old school, deep house, deep, mix, zulu, be zulu, kameren, kameren j]]></itunes:keywords>
+      <link>https://bezu.lu/zulumix42</link>
+      <jota:id><![CDATA[zulumix42]]></jota:id>
+      <jota:image>https://bezu.lu/covers/ZM42.jpg</jota:image>
+      <jota:name><![CDATA[ZuluMix 42]]></jota:name>
+      <jota:artists><![CDATA[Lionites]]></jota:artists>
+      <jota:genres><![CDATA[Funk, Disco, House]]></jota:genres>
+    </item>
     <item>
       <title><![CDATA[ZuluMix 41: DJ Djive (House / Techno)]]></title>
       <itunes:author><![CDATA[DJ Djive]]></itunes:author>
