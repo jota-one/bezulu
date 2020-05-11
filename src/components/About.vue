@@ -1,6 +1,6 @@
 <template>
   <div class="About">
-    <div class="jota">
+    <a href="https://jota.one" target="_blank" class="jota">
       <div class="by">by</div>
       <svg
         viewBox="0 0 24 24"
@@ -12,7 +12,7 @@
         />
       </svg>
     </div>
-  </div>
+  </a>
 </template>
 
 <style lang="postcss" scoped>
@@ -41,16 +41,18 @@
 .jota {
   display: flex;
   align-items: center;
-  font-size: 2vh;
+  font-size: 1.5vh;
   font-style: italic;
+  color: rgba(255,255,255, .5);
+  text-decoration: none;
 
   .by {
-    margin: -.3rem .15vh 0 0;
+    margin: -0.4rem .45vh 0 0;
   }
 
   .icon {
-    width: 6vh;
-    height: 6vh;
+    width: 4vh;
+    height: 4vh;
     animation: colors-fill 60s linear infinite 0s;
   }
 }
