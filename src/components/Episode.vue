@@ -84,9 +84,10 @@
             class="played colored progress-bg amplitude-song-played-progress"
             @click="seek"
           />
+          <div class="loading colored bg" v-show="!loaded"/>
           <div class="time">
-            <div class="current amplitude-current-time" />
-            <div class="remaining amplitude-time-remaining" />
+            <div class="current amplitude-current-time" v-show="loaded" />
+            <div class="remaining amplitude-time-remaining" v-show="loaded" />
           </div>
         </div>
       </div>
@@ -114,7 +115,8 @@ export default {
     active: Boolean,
     isNew: Boolean,
     selected: Boolean,
-    playing: Boolean
+    playing: Boolean,
+    loaded: Boolean
   },
 
   computed: {
@@ -142,13 +144,13 @@ export default {
     },
 
     seek(event) {
-      const element = event.target;
-      const offset = element.getBoundingClientRect();
-      const x = event.pageX - offset.left;
+      const element = event.target
+      const offset = element.getBoundingClientRect()
+      const x = event.pageX - offset.left
       const percentage =
-        (parseFloat(x) / parseFloat(element.offsetWidth)) * 100;
+        (parseFloat(x) / parseFloat(element.offsetWidth)) * 100
 
-      Amplitude.setSongPlayedPercentage(percentage);
+      Amplitude.setSongPlayedPercentage(percentage)
     }
   }
 };
@@ -355,6 +357,7 @@ export default {
   background-color: rgba(0, 0, 0, .4);
 }
 
+.loading,
 .buffered,
 .played {
   position: absolute;
@@ -381,6 +384,22 @@ export default {
   &::-moz-progress-bar {
     background-color: rgba(0, 0, 0, .5);
   }
+}
+
+.loading {
+  background-image: linear-gradient(
+    135deg,
+    rgba(0,0,0, .5) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(0,0,0, .5) 50%,
+    rgba(0,0,0, .5) 75%,
+    transparent 75%,
+    transparent 100%
+  );
+  background-size: 2rem 2rem;
+  background-position: 0 0;
+  animation: loading 1s linear infinite;
 }
 
 .played {

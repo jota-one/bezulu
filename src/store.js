@@ -13,6 +13,16 @@ let stored
 
 try {
   stored = getItem(STORAGE_KEY) || {}
+
+  // Backwards compatibility with old version of played without time info
+  if (Array.isArray(stored.played)) {
+    stored.played = stored.played.reduce((episodes, episode) => {
+      episodes[episode] = 0
+      return episodes
+    }, {})
+  }
+
+  setItem(STORAGE_KEY, stored)
 } catch (e) {
   stored = {}
 }
@@ -20,7 +30,7 @@ try {
 // initial state
 const state = merge({
   favorites: [],
-  played: []
+  played: {}
 }, stored)
 
 // actions

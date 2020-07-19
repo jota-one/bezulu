@@ -65,6 +65,7 @@
       <Episode
         active
         ref="player"
+        :loaded="loaded"
         :song="episodes[selected]"
         :index="selected"
         :is-new="newEpisodes.some(e => e.id === episodes[selected].id)"
@@ -101,7 +102,7 @@ const cleanEmptyObject = input => {
   return input
 }
 
-const IS_NEW_TIMERANGE = 2505600000 // 1 month
+const IS_NEW_TIMERANGE = 30067200000 // 1 month
 
 export default {
   name: 'App',
@@ -109,6 +110,7 @@ export default {
   components: { Episode, About },
 
   data: () => ({
+    loaded: false,
     playing: false,
     selected: 0,
     selectedGenre: '',
@@ -187,45 +189,57 @@ export default {
         const newlyPublished =
         Date.now() - (new Date(episode.pubDate)).getTime() < IS_NEW_TIMERANGE
 
-        return newlyPublished && !this.played.includes(episode.id)
+        return newlyPublished && !Object.keys(this.played).includes(episode.id)
       })
+    },
+
+    current () {
+      return this.episodes[this.selected]
     }
   },
 
   mounted () {
+    const episodeId = this.$route.params.episodeId
+
     Amplitude.init({
       songs: this.episodes,
       callbacks: {
         next: () => {
           this.selected++
           this.select(this.episodes[this.selected])
+        },
+        loadeddata: () => {
+          Amplitude.setSongPlayedPercentage(this.played[this.current.id] || 0)
+          setTimeout(() => { this.loaded = true }, 200)
         }
       }
     })
 
-    const episodeId = this.$route.params.episodeId
-
     this.selected = episodeId
       ? this.episodes.find(episode => episode.id === episodeId).index
       : 0
+
+    // Update playing position
+    setInterval(() => {
+      if (!Amplitude.getSongPlayedPercentage()) {
+        return
+      }
+
+      this.set({
+        key: 'played',
+        value: {
+          ...this.played,
+          [this.current.id]: Amplitude.getSongPlayedPercentage()
+        }
+      })
+    }, 1000)
   },
 
   methods: {
     ...mapActions(['set']),
 
-    storePlayed () {
-      let played = this.played
-
-      const activeEpisode = this.episodes[this.selected]
-
-      if (!this.played.includes(activeEpisode.id)) {
-        played.push(activeEpisode.id)
-      }
-
-      this.set({ key: 'played', value: played })
-    },
-
     select (episode) {
+      this.loaded = false
       this.selected = episode.index
 
       Amplitude.playSongAtIndex(this.selected)
@@ -233,23 +247,19 @@ export default {
       this.playing = true
       this.$router.push({ name: 'player', params: { episodeId: episode.id }})
       this.updatePageTitle()
-      this.storePlayed()
     },
 
     onPlayPause () {
-      const isPlaying = Amplitude.getPlayerState() === 'playing'
-
-      if (isPlaying) {
+      if (Amplitude.getPlayerState() === 'playing') {
         Amplitude.pause()
-      } else if (Amplitude.getSongPlayedPercentage() > 0) {
-        Amplitude.play()
-      } else {
+      } else if (this.current.id !== Amplitude.getActiveSongMetadata().id) {
         Amplitude.playSongAtIndex(this.selected)
+      } else {
+        Amplitude.play()
       }
 
       this.playing = !this.playing
       this.updatePageTitle()
-      this.storePlayed()
     },
 
     updatePageTitle () {
@@ -269,6 +279,12 @@ export default {
   0%   { width: 4.5vh; height: 4.5vh  }
   50%  { width: 5vh; height: 5vh }
   100% { width: 4.5vh; height: 4.5vh  }
+}
+
+@keyframes loading {
+  100% {
+    background-position: 4rem 0, 4rem 0, 4rem 0;
+  }
 }
 
 * {
@@ -465,6 +481,7 @@ html, body {
   font-weight: 400;
   line-height: 1.7vh;
   text-transform: uppercase;
+  border-radius: .25rem;
 
   option {
     font-family: Oswald, sans-serif;
