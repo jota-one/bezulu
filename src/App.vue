@@ -102,7 +102,7 @@ const cleanEmptyObject = input => {
   return input
 }
 
-const IS_NEW_TIMERANGE = 30067200000 // 1 month
+const IS_NEW_TIMERANGE = 2505600000 // 1 month
 
 export default {
   name: 'App',
