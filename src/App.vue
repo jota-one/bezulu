@@ -211,6 +211,12 @@ export default {
         loadeddata: () => {
           Amplitude.setSongPlayedPercentage(this.played[this.current.id] || 0)
           setTimeout(() => { this.loaded = true }, 200)
+        },
+        play: () => {
+          this.playing = true
+        },
+        pause: () => {
+          this.playing = false
         }
       }
     })
@@ -244,13 +250,12 @@ export default {
 
       Amplitude.playSongAtIndex(this.selected)
 
-      this.playing = true
       this.$router.push({ name: 'player', params: { episodeId: episode.id }})
       this.updatePageTitle()
     },
 
     onPlayPause () {
-      if (Amplitude.getPlayerState() === 'playing') {
+      if (this.playing) {
         Amplitude.pause()
       } else if (this.current.id !== Amplitude.getActiveSongMetadata().id) {
         Amplitude.playSongAtIndex(this.selected)
@@ -258,7 +263,6 @@ export default {
         Amplitude.play()
       }
 
-      this.playing = !this.playing
       this.updatePageTitle()
     },
 
