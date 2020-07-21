@@ -209,7 +209,13 @@ export default {
           this.select(this.episodes[this.selected])
         },
         loadeddata: () => {
-          Amplitude.setSongPlayedPercentage(this.played[this.current.id] || 0)
+          let percentage = this.played[this.current.id] || 0
+
+          if (percentage > 99) {
+            percentage = 0
+          }
+
+          Amplitude.setSongPlayedPercentage(percentage)
           setTimeout(() => { this.loaded = true }, 200)
         },
         play: () => {
