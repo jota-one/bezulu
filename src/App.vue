@@ -87,6 +87,8 @@
 </template>
 
 <script>
+import '../public/fonts/Assistant/fontface.css'
+import '../public/fonts/Oswald/fontface.css'
 import { mapState, mapActions } from 'vuex'
 import Amplitude from 'amplitudejs'
 import Episode from '@/components/Episode'
@@ -283,8 +285,6 @@ export default {
 </script>
 
 <style lang="postcss">
-@import url('https://fonts.googleapis.com/css?family=Oswald:200,400,700&display=swap');
-
 @keyframes podcast {
   0%   { width: 4.5vh; height: 4.5vh  }
   50%  { width: 5vh; height: 5vh }

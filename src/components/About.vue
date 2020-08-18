@@ -1,7 +1,7 @@
 <template>
   <div class="About">
     <a href="https://jota.one" target="_blank" class="jota">
-      <div class="by">by</div>
+      <div class="by">A project developed by</div>
       <svg
         viewBox="0 0 24 24"
         class="icon"
@@ -27,32 +27,28 @@
 
 .About {
   display: flex;
-  align-items: flex-end;
-  width: 25vh;
-  padding: 2.5vh;
-  font-size: 2.25vh;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2rem;
+  font-family: Assistant, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
   color: rgba(255,255,255, .75);
-
-  @media screen and (max-width: 75vh) {
-    width: 50vw;
-  }
 }
 
 .jota {
   display: flex;
   align-items: center;
-  font-size: 2.5vh;
-  font-style: italic;
   color: rgba(255,255,255, .5);
   text-decoration: none;
 
   .by {
-    margin: -.5rem .5vh 0 0;
+    margin: -.25rem .25rem 0;
   }
 
   .icon {
-    width: 8vh;
-    height: 8vh;
+    width: 3rem;
+    height: 3rem;
     animation: colors-fill 60s linear infinite 0s;
   }
 }
