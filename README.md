@@ -26,3 +26,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### Troubleshoot Git LFS
 git lfs update --force
 git lfs push --all
+
