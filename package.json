@@ -1,54 +1,30 @@
 {
-  "name": "bezulu",
+  "name": "svelte-app",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "podcast2json": "node podcast2json",
-    "serve": "npm run podcast2json && vue-cli-service serve",
-    "build": "npm run podcast2json && vue-cli-service build && cp -r dist/* www && rm -rf dist",
-    "lint": "vue-cli-service lint"
-  },
-  "dependencies": {
-    "amplitudejs": "^5.2.0",
-    "core-js": "^3.6.5",
-    "lodash": "^4.17.20",
-    "vue": "^2.6.11",
-    "vue-router": "^3.4.3",
-    "vuex": "^3.5.1"
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public --no-clear"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.4",
-    "@vue/cli-plugin-eslint": "^4.5.4",
-    "@vue/cli-service": "^4.5.4",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.7.0",
-    "eslint-plugin-vue": "^6.2.2",
-    "fs-extra": "^9.0.1",
-    "postcss-custom-media": "^7.0.8",
-    "postcss-nested": "^4.2.3",
-    "vue-template-compiler": "^2.6.11",
-    "xml2json": "^0.12.0"
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.7",
+    "postcss-custom-media": "^8.0.0",
+    "postcss-import": "^14.0.0",
+    "postcss-load-config": "^3.0.1",
+    "postcss-nested": "^5.0.5",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0",
+    "svelte-preprocess": "^4.6.9"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie < 11"
-  ],
-  "engines": {
-    "node": ">=12.19.0"
+  "dependencies": {
+    "sirv-cli": "^1.0.0"
   }
 }
