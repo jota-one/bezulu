@@ -1,13 +1,14 @@
 <script>
-	import ZPlayer from './ZPlayer'
+	import Player from './Player'
 
-	const tracks = [...Array(100).keys()].map(i => ({
+	const tracks = [...Array(50).keys()].map(i => ({
 		id: i,
+		selected: i === 5,
 		artist: 'artist',
 		title: 'title',
 		duration: 10,
 		albumId: undefined,
-		dates:{
+		dates: {
 			added: undefined,
 			updated: undefined
 		}, 
@@ -16,7 +17,7 @@
 	}))
 </script>
 
-<ZPlayer {tracks} />
+<Player {tracks} />
 
 <style>
 :global(html, body) {
@@ -27,5 +28,9 @@
 	font-family: sans-serif;
 	font-size: 13px;
 	font-weight: 200;
+}
+
+:global(body) {
+	background: black;
 }
 </style>

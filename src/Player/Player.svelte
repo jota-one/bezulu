@@ -13,10 +13,13 @@
 
 .zplayer {
     margin: 0 auto;
-    height: 100vh;
     min-width: 320px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: black;
 
-    /* @media (--s) {
+    @media (--s) {
         max-width: 75vh;
     }
 
@@ -30,6 +33,6 @@
 
     @media (--xl) {
         max-width: 150vh;
-    } */
+    }
 }
 </style>
