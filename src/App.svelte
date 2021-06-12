@@ -1,36 +1,36 @@
 <script>
-	import Player from './Player'
+	import Player from "./Player";
 
-	const tracks = [...Array(50).keys()].map(i => ({
+	const tracks = [...Array(620).keys()].map((i) => ({
 		id: i,
 		selected: i === 5,
-		artist: 'artist',
-		title: 'title',
+		artist: "artist",
+		title: "title",
 		duration: 10,
 		albumId: undefined,
 		dates: {
 			added: undefined,
-			updated: undefined
-		}, 
-		coverUrl: 'coverUrl',
-		audioUrl: 'audioUrl'
-	}))
+			updated: undefined,
+		},
+		coverUrl: "coverUrl",
+		audioUrl: "audioUrl",
+	}));
 </script>
 
 <Player {tracks} />
 
 <style>
-:global(html, body) {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 100%;
-	font-family: sans-serif;
-	font-size: 13px;
-	font-weight: 200;
-}
+	:global(html, body) {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		font-family: sans-serif;
+		font-size: 13px;
+		font-weight: 200;
+	}
 
-:global(body) {
-	background: black;
-}
+	:global(body) {
+		background: black;
+	}
 </style>
