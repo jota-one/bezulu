@@ -1,0 +1,21 @@
+{
+    "media_root": "./media",
+    "covers_root": "./public/covers",
+    "feed_file": "./public/feed.xml",
+    "feed": {
+        "settings": {
+            "title": "Be Zulu! Podcast",
+            "description": "The Zulu Mixes: House, Techno and Drum'n'Bass sets mixed by dj's Djive, Kameren J and Lester. Discover the particular style of the Zulu Dj's: mixing old school classics with today's hits, vocal house on a a techno beat, original funk tunes inside a techno set, that's the Zulu Sound ! A varied and eclectic vision of electronic music, \"Be Zulu!\"",
+            "generator": "Jota",
+            "feedUrl": "https://bezu.lu/feed.xml",
+            "siteUrl": "https://bezu.lu",
+            "author": "DJ Djive, Kameren J (aka Lionites) and friends",
+            "itunesAuthor": "DJ Djive, Kameren J (aka Lionites) and friends",
+            "langugae": "en",
+            "categories": ["Music"],
+            "itunesExplicit": false,
+            "itunesCategory": [{ "text": "Music" }]
+        },
+        "episodes": []
+    }
+}
