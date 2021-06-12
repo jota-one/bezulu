@@ -1,38 +1,38 @@
 <script>
-    import Grid from './Grid.svelte'
-    
-    export let tracks = []
+    import Grid from "./Grid.svelte";
+
+    export let tracks = [];
 </script>
 
-<div class="zplayer">
+<div class="player">
     <Grid {tracks} />
 </div>
 
 <style global lang="postcss">
-@import "styles/_media.pcss";
+    @import "styles/_media.pcss";
 
-.zplayer {
-    margin: 0 auto;
-    min-width: 320px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background: black;
+    .zplayer {
+        margin: 0 auto;
+        min-width: 320px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background: black;
 
-    @media (--s) {
-        max-width: 75vh;
+        @media (--s) {
+            max-width: 75vh;
+        }
+
+        @media (--m) {
+            max-width: 100vh;
+        }
+
+        @media (--l) {
+            max-width: 125vh;
+        }
+
+        @media (--xl) {
+            max-width: 150vh;
+        }
     }
-
-    @media (--m) {
-        max-width: 100vh;
-    }
-
-    @media (--l) {
-        max-width: 125vh;
-    }
-
-    @media (--xl) {
-        max-width: 150vh;
-    }
-}
 </style>
