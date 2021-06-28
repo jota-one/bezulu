@@ -26,18 +26,19 @@ const getMetaData = async fileName => {
         const metadata = await mm.parseFile(fileName)
         const cover = mm.selectCover(metadata.common.picture)
         return {
+            author: metadata.common.artist,
             cover,
-            artist: metadata.common.artist,
-            title: metadata.common.title,
-            year: metadata.common.year,
+            description: metadata.common.comment,
             duration: metadata.format.duration,
-            comment: metadata.common.comment
+            genre: metadata.common.genre, 
+            title: metadata.common.title,
+            year: metadata.common.year
         }
     } catch(e) {}
 }
 
-const processEpisodes = async ({ root, coversRoot }) => {
-    const episodes = []
+const processMedias = async ({ root, coversRoot }) => {
+    const medias = {}
 
     await Walk.walk(root, async (err, path) => {
         if (err) {
@@ -60,45 +61,85 @@ const processEpisodes = async ({ root, coversRoot }) => {
                     })
                 }
 
-                const episode = { ...metadata,  coverPath }
-                delete episode.cover
+                const media = { ...metadata,  coverPath }
+                media.file = path
+                delete media.cover
 
-                episodes.push(episode)
+                medias[path.replace(root, '')] = media
             }
         }
     })
 
-    return episodes
+    return medias
 }
 
-const run = async ({ settings, mediaRoot, coversRoot, feedFile }) => {
-    const feed = new Podcast(settings)
-    const episodes = await processEpisodes({ root: mediaRoot, coversRoot })
-    
-    for (const episode of episodes) {
-        feed.addItem(episode)
-    }
+const throwError = (msg, episode) => {
+    throw new Error(`${msg} in episode ${JSON.stringify(episode)}`)
+}
 
-    await fs.writeFile(feedFile, feed.buildXml('\t'), 'utf8')
+const run = async ({
+    feed,
+    mediaRoot,
+    coversRoot,
+    appRoot,
+    mediaBaseUrl,
+    appBaseUrl,
+    feedFile
+}) => {
+    const json = []
+    const podcast = new Podcast(feed.settings)
+    const medias = await processMedias({ root: mediaRoot, coversRoot })
+
+    feed.episodes.forEach((episode, index) => {
+        if (!episode.id) throwError('"id" property missing', episode)
+        if (!episode.date) throwError('"date" property missing', episode)
+
+        const item = medias[episode.file]
+
+        if (!item) {
+            throwError(`Media file "${path.join(mediaRoot, episode.file)}" not found`, episode)
+        }
+
+        podcast.addItem({
+            ...item,
+            ...episode,
+            enclosure: {
+                url: mediaBaseUrl.replace(/\/$/, '') + episode.file,
+                file: item.file
+            },
+            itunesDuration: item.duration,
+            url: `${appBaseUrl.replace(/\/$/, '')}/${episode.id}`,
+        })
+
+        json.push({
+            active: index === 0,
+            artist: episode.artist || item.author,
+            audioUrl: mediaBaseUrl.replace(/\/$/, '') + episode.file,
+            coverUrl: path.resolve(coversRoot + item.coverPath)
+                .replace(path.resolve(appRoot), ''),
+            dates: {
+                added: episode.date,
+                updated: episode.date
+            },
+            duration: item.duration,
+            genres: episode.genres || item.genre,
+            id: episode.id,
+            title: episode.trackTitle || item.title
+        })
+    })
+
+    await fs.writeFile(feedFile, podcast.buildXml('\t'), 'utf8')
 
     await fs.writeFile(
         feedFile.replace('.xml', '.json'),
-        JSON.stringify({
-            ...feed,
-            items: feed.items.map((episode, i) => ({
-                id: i,
-                artist: '',
-                title: episode.title,
-                coverUrl: coversRoot.replace(ROOT, '') + episodes[i].coverPath
-            }))
-        }),
+        JSON.stringify(json),
         'utf8'
     )
 }
 
 run({
-    settings: config.feed.settings,
-    mediaRoot: path.join(ROOT, config.media_root),
-    coversRoot: path.join(ROOT, config.covers_root),
-    feedFile: path.join(ROOT, config.feed_file)
+    ...config,
+    mediaRoot: path.join(ROOT, config.mediaRoot),
+    coversRoot: path.join(ROOT, config.coversRoot),
+    feedFile: path.join(ROOT, config.feedFile)
 })

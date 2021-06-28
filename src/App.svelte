@@ -1,20 +1,23 @@
 <script>
 	import Player from "./Player";
+	import items from '../public/feed.json'
 
-	const tracks = [...Array(620).keys()].map((i) => ({
-		id: i,
-		selected: i === 5,
-		artist: "artist",
-		title: "title",
-		duration: 10,
-		albumId: undefined,
-		dates: {
-			added: undefined,
-			updated: undefined,
-		},
-		coverUrl: "coverUrl",
-		audioUrl: "audioUrl",
-	}));
+	// const tracks = [...Array(620).keys()].map((i) => ({
+	// 	id: i,
+	// 	selected: i === 5,
+	// 	artist: "artist",
+	// 	title: "title",
+	// 	duration: 10,
+	// 	albumId: undefined,
+	// 	dates: {
+	// 		added: undefined,
+	// 		updated: undefined,
+	// 	},
+	// 	coverUrl: "coverUrl",
+	// 	audioUrl: "audioUrl",
+	// }));
+
+	const tracks = items
 </script>
 
 <Player {tracks} />

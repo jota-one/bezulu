@@ -2,7 +2,7 @@
     const active = false;
 </script>
 
-<li class={active}>
+<li class:active>
     <slot />
 </li>
 
@@ -17,9 +17,9 @@
         background: rgb(50, 50, 50);
 
         &.active {
-            grid-column-start: 1;
+            /* grid-column-start: 1; */
             grid-column-end: span 2;
-            grid-row-start: 1;
+            /* grid-row-start: 1; */
             grid-row-end: span 2;
 
             @media (--s) {

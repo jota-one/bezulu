@@ -1,3 +1,3 @@
-import Player from './Player.svelte'
+import App from './App.svelte'
 
-export default Player
+export default App
