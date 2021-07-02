@@ -1,6 +1,6 @@
 <script>
-	import Player from "./Player";
-	import items from '../public/feed.json'
+	import Player from "./Ple";
+	import { basePath, items } from '../public/feed.json'
 
 	// const tracks = [...Array(620).keys()].map((i) => ({
 	// 	id: i,
@@ -20,7 +20,7 @@
 	const tracks = items
 </script>
 
-<Player {tracks} />
+<Player {tracks} {basePath} />
 
 <style>
 	:global(html, body) {

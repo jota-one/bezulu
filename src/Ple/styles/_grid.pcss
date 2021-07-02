@@ -1,0 +1,58 @@
+@import "./_media.pcss";
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+
+    @media (--v75) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (--square) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (--h125) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    @media (--h150) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    @media (--h175) {
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    @media (--h200) {
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    @media (--h225) {
+        grid-template-columns: repeat(9, 1fr);
+    }
+
+    @media (--h250) {
+        grid-template-columns: repeat(10, 1fr);
+    }
+
+    @media (--h275) {
+        grid-template-columns: repeat(11, 1fr);
+    }
+
+    @media (--h300) {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    :first-child {
+        grid-column-end: span 2;
+        grid-row-end: span 2;
+
+        @media (--v50) {
+            grid-column-end: span 3;
+            grid-row-end: span 3;
+        }
+    }
+}

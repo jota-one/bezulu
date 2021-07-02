@@ -3,7 +3,8 @@
     "coversRoot": "./public/covers",
     "appRoot": "./public",
     "mediaBaseUrl": "https://media.lionites.com/",
-    "appBaseUrl": "https://bezu.lu/",
+    "appBaseUrl": "https://bezu.lu",
+    "appBasePath": "/",
     "feedFile": "./public/feed.xml",
     "feed": {
         "settings": {

@@ -3,8 +3,14 @@ const path = require('path')
 const mm = require('music-metadata')
 const Walk = require('@root/walk')
 const Podcast = require('podcast')
-const config = require('../../config.json')
 
+const configPath = path.resolve(process.cwd(), process.argv[2])
+
+if (!fs.pathExistsSync(configPath)) {
+    throw new Error(`Config file ${configPath} not found!`)
+}
+
+const config = require(configPath)
 const ROOT = path.resolve('.')
 
 const writeCover = async ({ root, sourceFile, format, data }) => {
@@ -84,9 +90,10 @@ const run = async ({
     appRoot,
     mediaBaseUrl,
     appBaseUrl,
+    appBasePath,
     feedFile
 }) => {
-    const json = []
+    const json = { basePath: appBasePath, items: [] }
     const podcast = new Podcast(feed.settings)
     const medias = await processMedias({ root: mediaRoot, coversRoot })
 
@@ -111,9 +118,9 @@ const run = async ({
             url: `${appBaseUrl.replace(/\/$/, '')}/${episode.id}`,
         })
 
-        json.push({
-            active: index === 0,
+        json.items.push({
             artist: episode.artist || item.author,
+            album: feed.settings.title,
             audioUrl: mediaBaseUrl.replace(/\/$/, '') + episode.file,
             coverUrl: path.resolve(coversRoot + item.coverPath)
                 .replace(path.resolve(appRoot), ''),

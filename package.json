@@ -5,8 +5,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public --no-clear",
-    "podcast:build": "node scripts/podcast"
+    "start": "sirv public --no-clear  --single",
+    "podcast:build": "node src/Ple/scripts/podcast config.json"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^19.0.0",

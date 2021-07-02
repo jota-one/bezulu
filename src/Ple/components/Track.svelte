@@ -1,6 +1,6 @@
 <script>
     export let active = undefined
-    export let albumId = undefined
+    export let album = undefined
     export let artist
     export let audioUrl
     export let coverUrl = undefined
@@ -42,8 +42,8 @@
 </div>
 
 <style lang="postcss">
-    @import "styles/_media.pcss";
-    @import "styles/_colors.pcss";
+    @import "../styles/_media.pcss";
+    @import "../styles/_colors.pcss";
 
     div {
         position: absolute;
@@ -111,7 +111,7 @@
             left: 0;
             bottom: 0;
             right: 0;
-            background: var(--c-default);
+            background: var(--c-active);
             opacity: 0.95;
             z-index: 1;
         }
