@@ -1,4 +1,16 @@
+<script>
+    import { formatTime } from '../helpers'
+    export let tracks = []
+</script>
 <footer>
+    <div>
+        <div>
+            {tracks.length}&nbsp; tracks
+        </div>
+        <div>
+            {formatTime(tracks.reduce((sum, track) => sum + track.duration, 0))}
+        </div>
+    </div>
     <a
         class="jota"
         href="https://jota.one"
@@ -63,18 +75,30 @@
 </footer>
 
 <style lang="postcss">
+    @import "../styles/_size.pcss";
     footer {
+        display: flex;
+        align-items: center;
         width: 100%;
-        padding: 1.5vh;
-        background: rgba(0,0,0,0.75);
+        padding: 0 2vh 3vh 0;
+        font-size: 1.5vh;
+        font-weight: 400;
+        color: rgb(128,128,128);
         z-index: 3;
+
+        & > div {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     .jota {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        color: var(--c-active);
+        margin-bottom: -2vh;
+        color: rgb(128,128,128);
 
         svg {
             height: 4vh;

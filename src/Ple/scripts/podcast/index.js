@@ -38,7 +38,7 @@ const getMetaData = async fileName => {
             duration: metadata.format.duration,
             genre: metadata.common.genre, 
             title: metadata.common.title,
-            year: metadata.common.year
+            year: metadata.common.year,
         }
     } catch(e) {}
 }
@@ -58,7 +58,6 @@ const processMedias = async ({ root, coversRoot }) => {
             let coverPath = undefined
 
             if (metadata) {
-                
                 if (metadata.cover) {
                     coverPath = await writeCover({
                         ...metadata.cover,
@@ -97,8 +96,9 @@ const run = async ({
     const podcast = new Podcast(feed.settings)
     const medias = await processMedias({ root: mediaRoot, coversRoot })
 
-    feed.episodes.forEach((episode, index) => {
-        if (!episode.id) throwError('"id" property missing', episode)
+    for (let index = 0; index < feed.episodes.length; index++) {
+        const episode = feed.episodes[index]
+
         if (!episode.date) throwError('"date" property missing', episode)
 
         const item = medias[episode.file]
@@ -118,6 +118,11 @@ const run = async ({
             url: `${appBaseUrl.replace(/\/$/, '')}/${episode.id}`,
         })
 
+        if (!episode.id) {
+            console.warn('"id" property missing => Episode skipped in webapp', episode)
+            continue
+        }
+
         json.items.push({
             artist: episode.artist || item.author,
             album: feed.settings.title,
@@ -128,12 +133,13 @@ const run = async ({
                 added: episode.date,
                 updated: episode.date
             },
+            downloadable: !episode.preventDownload,
             duration: item.duration,
             genres: episode.genres || item.genre,
             id: episode.id,
-            title: episode.trackTitle || item.title
+            title: episode.trackTitle || item.title || item.title
         })
-    })
+    }
 
     await fs.writeFile(feedFile, podcast.buildXml('\t'), 'utf8')
 

@@ -1,57 +1,54 @@
 <script>
-    import { Howl } from 'howler'
-    import { onMount } from 'svelte'
+    import { onMount, createEventDispatcher } from 'svelte'
+    import { formatTime } from '../helpers'
+    import * as player from '../services/player'
+    import { error, volume } from '../stores'
 
     export let track = undefined
-    export function playPause() {
-        return _playPause()
-    }
 
-    let player = undefined
-    let wrapper = undefined
-    let wrapperY = -1
-    let progress = 0
-    let sound = undefined
+    const dispatch = createEventDispatcher()
+    const time = { ellapsed: 0, left: 0 }
+
     let playingTrackId = undefined
-    let paused = false
-    const time = {
-        ellapsed: 0,
-        left: 0
-    }
+    let paused = undefined
+    let progress = 0
 
-    $: playPauseButtonStyle = track ? `background-image:url(${track.coverUrl})` : ''
+    export function playPause() {
+        if ($error) {
+            return
+        }
 
-    function _playPause() {
-        if (sound) {
+        if (player.isLoaded()) {
             if (playingTrackId === track.id) {
-                if (paused) {
-                    play()
+                if (!player.isPlaying()) {
+                    player.play()
+                    paused = false
                 } else {
-                    pause()
+                    player.pause()
+                    paused = true
                 }
                 return
             } else {
                 progress = 0
-                sound.unload()
+                player.unload()
+                paused = true
             }
         }
-        
+
+        player.playNewSound({
+            url: track.audioUrl,
+            volume: $volume,
+            onError,
+            onEnd
+        })
+
+        paused = false
+
         time.ellapsed = 0
         time.left = 0
-
-        sound = new Howl({
-            src: [track.audioUrl],
-            html5: true
-        })
         
-        sound.once('load', () => {
-            time.left = sound.duration()
-        })
-
-        sound.on('end', () => {
-            stop()
-        })
-
+        playingTrackId = track.id
+        
         if ('mediaSession' in navigator) {
             navigator.mediaSession.metadata = new MediaMetadata({
                 title: track.title,
@@ -60,18 +57,9 @@
                 artwork: [{ src: track.coverUrl }]
             });
 
-            navigator.mediaSession.setActionHandler('play', () => {
-                play()
-            });
-
-            navigator.mediaSession.setActionHandler('pause', () => {
-                pause()
-            });
-            
-            navigator.mediaSession.setActionHandler('stop', () => {
-                stop()
-            });
-
+            navigator.mediaSession.setActionHandler('play', player.play)
+            navigator.mediaSession.setActionHandler('pause', player.pause)
+            navigator.mediaSession.setActionHandler('stop', player.stop)
             // navigator.mediaSession.setActionHandler('seekbackward', function() { /* Code excerpted. */ });
             // navigator.mediaSession.setActionHandler('seekforward', function() { /* Code excerpted. */ });
             // navigator.mediaSession.setActionHandler('seekto', function() { /* Code excerpted. */ });
@@ -84,93 +72,50 @@
             // navigator.mediaSession.setActionHandler('nexttrack', function() { /* Code excerpted. */ });
             // navigator.mediaSession.setActionHandler('skipad', function() { /* Code excerpted. */ });
         }
-
-        play()
-        
-        playingTrackId = track.id
     }
 
-    function formatTime(seconds) {
-        const padStart = number => ('' + number).padStart('2', 0)
+    $: playPauseButtonStyle = track ? `background-image:url(${track.coverUrl})` : ''
 
-        let remaining = seconds
-
-        const h = Math.floor(seconds / 3600)
-        const hh = h > 0 ? `${padStart(h)}:` : ''
-        remaining -= 3600 * h
-        
-        const m = Math.floor(remaining / 60)
-        const mm = `${padStart(m)}:`
-        remaining -= 60 * m
-        
-        const ss = padStart(Math.floor(remaining))
-        
-        return `${hh}${mm}${ss}`
-    }
-
-    function play() {
-        sound.play()
-        paused = false
-    }
-
-    function pause() {
-        sound.pause()
-        paused = true
-    }
-
-    function stop() {
-        sound.stop()
-        paused = true
-    }
-
-    function seek(event) {
-        if (!sound) {
-            playPause(track)
-        }
-
-        sound.seek(parseInt(event.target.value))
-        
-        if (paused) {
-            play()
-        }
-    }
-
-    onMount(() => {
-        setTimeout(() => {
-            wrapperY = player.offsetHeight - wrapper.offsetHeight
-        }, 100)
-
+    onMount(() => {
+        // TODO synchronize timers rendering when seeking
         window.setInterval(() => {
-            if (sound && sound.playing()) {
-                time.ellapsed = sound.seek()
-                time.left = sound.duration() - sound.seek()
-                progress = sound.seek() / sound.duration()
+            if (player.isPlaying()) {
+                const duration = player.getDuration()
+                const ellapsed = player.getPlayingPosition()
 
+                time.ellapsed = ellapsed
+                time.left = duration - ellapsed
+                progress = ellapsed / duration
             }
         }, 500)
     })
+
+    function onEnd() {
+        player.stop()
+        paused = true
+        dispatch('navigate')
+    }
+
+    function onError(_error) {
+        player.stop()
+        paused = true
+        error.set(_error)
+    }
+
+    function seek(event) {
+        player.seek(event.target.value)
+
+        if (!player.isPlaying()) {
+            player.play()
+            paused = false
+        }
+    }
 </script>
 
-<div class="player" bind:this={player}>
-    <svg class="svg-filters">
-        <defs>
-            <filter id="dropshadow" x="0" y="0" width="200%" height="200%">
-                <feOffset result="offOut" in="SourceAlpha" dx="1" dy="1" />
-                <feGaussianBlur result="blurOut" in="offOut" stdDeviation="1" />
-                <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-                <feComponentTransfer>
-                    <feFuncA type="linear" slope="0.5"/>
-                </feComponentTransfer>
-                <feMerge> 
-                    <feMergeNode/>
-                    <feMergeNode in="SourceGraphic"/> 
-                </feMerge>
-            </filter>
-        </defs>
-    </svg>
-    <div class="wrapper" bind:this={wrapper}>
-        <button class="playpause" style="{playPauseButtonStyle}" on:click={playPause}>
-            <svg viewBox="0 0 60 60" width="60" height="60" filter="url(#dropshadow)">
+<div class="player">
+    <button class="playpause" style="{playPauseButtonStyle}" on:click={playPause}>
+        {#if track.id}
+            <svg viewBox="0 0 60 60" width="60" height="60" fill="currentColor" filter="url(#dropshadow)">
             {#if paused || !playingTrackId}                
                 <path d="M18.2874 47.335V12.6651L44.5939 29.9493L18.2874 47.335Z"/>
             {:else}
@@ -178,87 +123,56 @@
                 <path d="M43.5385 12.4242H33.3998V47.5758H43.5385V12.4242Z"/>
             {/if}
             </svg>
-        </button>
-        <div class="track">
-            <div class="header">
-                <h2>
-                    <b>{track.artist}</b>&nbsp;- {track.title}
-                </h2>
-            </div>
-            <div class="progress">
-                <div
-                    class="bar"
-                    class:paused
-                    style="width: {progress * 100}%"
-                />
-                <input type=range min=0 max={time.ellapsed + time.left} value={time.ellapsed} on:input={seek}/>
-            </div>
-            <div class="time">
-                <div class="ellapsed">{formatTime(time.ellapsed)}</div>
-                <div class="left">-{formatTime(time.left)}</div>
-            </div>
+        {/if}
+    </button>
+    <div class="progress">
+        <div
+            class="bar"
+            class:paused
+            style="width: {progress * 100}%"
+        >
+            {#if time.ellapsed}
+                <div class="time ellapsed">{formatTime(time.ellapsed)}</div>
+            {/if}
         </div>
-        <div class="actions">
-            <!-- <button class="volume">
-                <svg viewBox="0 0 24 24" width="24" height="24" filter="url(#dropshadow)">
-                    <path d="M3 9V15H7L12 20V4L7 9H3Z"/>
-                    <path d="M16.5 12C16.5 10.23 15.5 8.71 14 7.97V16C15.5 15.29 16.5 13.76 16.5 12Z"/>
-                    <path d="M14 3.23001V5.29001C16.89 6.15001 19 8.83001 19 12C19 15.17 16.89 17.84 14 18.7V20.77C18 19.86 21 16.28 21 12C21 7.72001 18 4.14001 14 3.23001Z"/>
-                </svg>
-            </button> -->
-            <button class="download">
-                <svg viewBox="0 0 24 24" width="24" height="24" filter="url(#dropshadow)">
-                    <path d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z"/>
-                </svg>
-            </button>
+        <input type=range min=0 max={time.ellapsed + time.left} value={time.ellapsed} on:input={seek} />
+        {#if track.id}
+        <div class="text">
+            <h2>
+                <b>{track.title}</b> by <b>{track.artist}</b>
+            </h2>
+            {#if time.left}
+                <div class="time left">-{formatTime(time.left)}</div>
+            {/if}
         </div>
+        {/if}
     </div>
 </div>
 
 <style lang="postcss">
     @import "../styles/_media.pcss";
+    @import "../styles/_size.pcss";
+    @import "../styles/_button.pcss";
 
     .player {
+        width: 100%;
         display: flex;
         align-items: flex-end;
     }
 
-    .svg-filters {
-        position: absolute;
-    }
-
-    .wrapper {
-        display: flex;
-        align-items: center;
-        width: 100%;        
-    }
-
-    button {
-        flex-shrink: 0;
-        margin: 0;
-        padding: 1vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        background: none;
-        cursor: pointer;
-
-        svg {
-            fill: var(--c-active);
-            width: 4vh;
-            height: 4vh;
-        }
-    }
-
     .playpause {
-        position: relative;
-        height: 11vh;
-        width: 11vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: var(--ple-s-player-height);
+        width: var(--ple-s-player-height);
+        color: var(--ple-c-active);
         border: none;
+        background-color: rgba(128,128,128, 0.2);
         background-size: cover;
         background-repeat: no-repeat;
         z-index: 1;
+        transition: color var(--ple-transition-time) var(--ple-transition-type);
 
         &:after {
             content: '';
@@ -268,98 +182,88 @@
 
         svg {
             position: absolute;
-            width: 4vh;
-            height: 4vh;
+            width: 5vh;
+            height: 5vh;
             pointer-events: none;
         }
     }
 
-    .track {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        padding-left: 3vh;
-    }
-
-    .actions {
-        padding: 0 1vh;
-    }
-
     .progress {
         position: relative;
-        height: 3vh;
-    }
-
-    h2,
-    .time {
-        font-size: 1.75vh;
-        color: white;
-        text-shadow: 1px 1px 3px black;
-    }
-
-    h2 {
-        padding: 0;
-        margin: 0;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        font-weight: 400;
+        width: calc(100% - var(--ple-s-player-height) - 1px);
+        margin-left: var(--ple-s-player-height);
     }
 
     input[type="range"],
     .bar {
-        position: absolute;
-        top: 1.25vh;
-        left: 0;
         width: 100%;
     }
 
     input[type="range"] {
         -webkit-appearance: none;
         appearance: none;
+        display: block;
+        height: 5vh;
         margin: 0;
         padding: 0;
-        width: 100%;
-        height: 0.5vh;
-        border-radius: 1vh;
-        background: rgba(255,255,255, 0.25);
-        border: none;
-        outline: none;
-        cursor: pointer;
-
-        &::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 1px;
-            height: 2vh;
-            background: var(--c-active);
-        }
-
-        &::-moz-range-thumb {
-            appearance: none;
-            width: 1px;
-            height: 2vh;
-            background: var(--c-active);
-        }
-    }
-
-    .bar {
-        position: relative;
-        height: 0.5vh;
-        border-radius: 1vh;
-        background: var(--c-active);
+        background: rgba(20,20,20, 0.85);
         background-image: linear-gradient(
             135deg,
-            rgba(0,0,0, .25) 25%,
+            rgba(255,255,255, .025) 25%,
             transparent 25%,
             transparent 50%,
-            rgba(0,0,0, .25) 50%,
-            rgba(0,0,0, .25) 75%,
+            rgba(255,255,255, .025) 50%,
+            rgba(255,255,255, .025) 75%,
             transparent 75%,
             transparent 100%
         );
         background-size: 1vh 1vh;
         background-position: 0 0;
+        border: none;
+        outline: none;
+        overflow: visible;
+        cursor: pointer;
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            position: relative;
+            top: 0;
+            width: 1px;
+            height: 5vh;
+            background: var(--ple-c-active);
+            transition: background var(--ple-transition-time) var(--ple-transition-type);
+        }
+
+        &::-moz-range-thumb {
+            appearance: none;
+            position: relative;
+            top: 0;
+            width: 1px;
+            height: 5vh;
+            background: var(--ple-c-active);
+            transition: background var(--ple-transition-time) var(--ple-transition-type);
+        }
+    }
+
+    .bar {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: var(--ple-c-active);
+        background-image: linear-gradient(
+            135deg,
+            rgba(0,0,0, .2) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(0,0,0, .2) 50%,
+            rgba(0,0,0, .2) 75%,
+            transparent 75%,
+            transparent 100%
+        );
+        background-size: 1vh 1vh;
+        background-position: 0 0;
+        transition: background var(--ple-transition-time) var(--ple-transition-type);
         pointer-events: none;
         z-index: 1;
         
@@ -370,21 +274,52 @@
         &:after {
             content: '';
             position: absolute;
-            top: calc(50% - 1vh - 2px);
-            right: calc(-1vh - 2px);
-            width: 2vh;
-            height: 2vh;
-            border-radius: 50%;
-            background: rgba(30,30,30, 0.9);
-            border: 2px solid var(--c-active);
+            top: 0;
+            right: -1px;
+            width: 3px;
+            height: var(--ple-s-player-height);
+            background: var(--ple-c-active);
+            box-shadow: 0 0 5px rgba(0,0,0, 0.95);
+            transition: background var(--ple-transition-time) var(--ple-transition-type);
+            z-index: 1;
+        }
+
+        .time {
+            position: absolute;
+            bottom: -3.2vh;
+            right: 0;
+            padding: 0.45vh 0.85vh;
+            background: rgba(0,0,0, 0.5);
         }
     }
 
-    .time {
+    .text {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: 0 1.25vh;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: space-between;
-        font-weight: 600;
+        font-weight: 400;
+        color: white;
+        text-shadow: 0 0 10px black;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    h2 {
+        font-size: 2vh;
+        line-height: 1;
+        font-weight: 400;
+    }
+
+    .time {
+        font-size: 1.8vh;
+        font-weight: 500;
         color: white;
         text-shadow: 1px 1px 3px black;
     }

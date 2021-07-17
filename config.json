@@ -2,7 +2,7 @@
     "mediaRoot": "./media",
     "coversRoot": "./public/covers",
     "appRoot": "./public",
-    "mediaBaseUrl": "https://media.lionites.com/",
+    "mediaBaseUrl": "https://media.lionites.com/bezulu/",
     "appBaseUrl": "https://bezu.lu",
     "appBasePath": "/",
     "feedFile": "./public/feed.xml",
@@ -31,14 +31,16 @@
             {
                 "file": "/ZuluMix-43_Techno_Djive.m4a",
                 "id": "zulumix43",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-43_Techno_Djive.m4a",
                 "trackTitle": "ZuluMix 43",
                 "date": "2021-04-19",
-                "genres": ["House", "Techno"]
+                "genres": ["House", "Techno"],
+                "preventDownload": false
             },
             {
                 "file": "/ZuluMix-42_Funk_Lionites.m4a",
                 "id": "zulumix42",
-                "guid": "https://media.lionites.com/ZuluMix-42_Funk_Lionites.m4a",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-42_Funk_Lionites.m4a",
                 "trackTitle": "ZuluMix 42",
                 "date": "2020-05-01",
                 "genres": ["Funk", "Disco", "House"]
@@ -46,7 +48,7 @@
             {
                 "file": "/ZuluMix-41_Techno_Djive.m4a",
                 "id": "zulumix41",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-41_Techno_Djive.m4a",
                 "trackTitle": "ZuluMix 41",
                 "date": "2020-03-28",
                 "genres": ["House", "Techno"]
@@ -54,7 +56,7 @@
             {
                 "file": "/MyStoryOfHouseMusic-02_House_Lionites.m4a",
                 "id": "msohm2",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/MyStoryOfHouseMusic-02_House_Lionites.m4a",
                 "trackTitle": "My Story Of House Music 2",
                 "date": "2019-10-15",
                 "genres": ["House", "Techno"]
@@ -62,7 +64,7 @@
             {
                 "file": "/ZuluMix-40_Techno_Djive.m4a",
                 "id": "zulumix40",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-40_Techno_Djive.m4a",
                 "trackTitle": "ZuluMix 40",
                 "date": "2019-08-16",
                 "genres": ["Techno"]
@@ -70,7 +72,7 @@
             {
                 "file": "/ZuluMix-39_Techno_Djive.m4a",
                 "id": "zulumix39",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-39_Techno_Djive.m4a",
                 "trackTitle": "ZuluMix 39",
                 "date": "2019-01-22",
                 "genres": ["Techno"]
@@ -78,7 +80,7 @@
             {
                 "file": "/ZuluMix-38_Techno_Djive.m4a",
                 "id": "zulumix38",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-38_Techno_Djive.m4a",
                 "trackTitle": "ZuluMix 38",
                 "date": "2018-11-21",
                 "genres": ["Techno"]
@@ -86,7 +88,7 @@
             {
                 "file": "/ZuluMix-37_DnB_Lionites.m4a",
                 "id": "zulumix37",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-37_DnB_Lionites.m4a",
                 "trackTitle": "ZuluMix 37",
                 "date": "2018-10-03",
                 "genres": ["Drum & Bass"]
@@ -94,7 +96,7 @@
             {
                 "file": "/ZuluMix-36_DnB_Djive.m4a",
                 "id": "zulumix36",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-36_DnB_Djive.m4a",
                 "trackTitle": "ZuluMix 36",
                 "date": "2017-06-24",
                 "genres": ["Drum & Bass"]
@@ -102,7 +104,7 @@
             {
                 "file": "/MyStoryOfHouseMusic-01_House_Lionites.mp3",
                 "id": "msohm1",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/MyStoryOfHouseMusic-01_House_Lionites.mp3",
                 "trackTitle": "My Story Of House Music 1 ",
                 "date": "2016-01-02",
                 "genres": ["House"]
@@ -110,7 +112,7 @@
             {
                 "file": "/KSDBLOI_DnB_Lionites.m4a",
                 "id": "ksdbloi",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/KSDBLOI_DnB_Lionites.m4a",
                 "trackTitle": "KSDBLOI (1998)",
                 "date": "2014-06-26",
                 "genres": ["Drum & Bass"]
@@ -118,7 +120,7 @@
             {
                 "file": "/ZuluMix-35_DnB_Lionites.m4a",
                 "id": "zulumix35",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-35_DnB_Lionites.m4a",
                 "trackTitle": "ZuluMix 35",
                 "date": "2014-06-21",
                 "genres": ["Drum & Bass"]
@@ -126,7 +128,7 @@
             {
                 "file": "/TheAnthemMix-01_House_DjiveKJ.m4a",
                 "id": "anthem1",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/TheAnthemMix-01_House_DjiveKJ.m4a",
                 "trackTitle": "The Anthem Mix 1",
                 "date": "2013-09-26",
                 "genres": ["House"]
@@ -134,7 +136,7 @@
             {
                 "file": "/ZuluMix-34_Dubstep_KamerenJ.m4a",
                 "id": "zulumix34",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-34_Dubstep_KamerenJ.m4a",
                 "trackTitle": "ZuluMix 34",
                 "date": "2012-04-30",
                 "genres": ["Dubstep"]
@@ -142,7 +144,7 @@
             {
                 "file": "/StudioMix-05_DnB_Djive.m4a",
                 "id": "studiomix5",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/StudioMix-05_DnB_Djive.m4a",
                 "trackTitle": "StudioMix 05",
                 "date": "2012-02-20",
                 "genres": ["Drum & Bass"]
@@ -150,7 +152,7 @@
             {
                 "file": "/ZuluMix-33_DnB_KamerenJ.m4a",
                 "id": "zulumix33",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-33_DnB_KamerenJ.m4a",
                 "trackTitle": "ZuluMix 33",
                 "date": "2012-02-03",
                 "genres": ["Drum & Bass"]
@@ -158,7 +160,7 @@
             {
                 "file": "/ZuluMix-32_DnB_KamerenJ.m4a",
                 "id": "zulumix32",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-32_DnB_KamerenJ.m4a",
                 "trackTitle": "ZuluMix 32",
                 "date": "2011-04-01",
                 "genres": ["Drum & Bass"]
@@ -166,7 +168,7 @@
             {
                 "file": "/ZuluMix-31_DnB_Djive.m4a",
                 "id": "zulumix31",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-31_DnB_Djive.m4a",
                 "trackTitle": "ZuluMix 31",
                 "date": "2010-08-02",
                 "genres": ["Drum & Bass"]
@@ -174,7 +176,7 @@
             {
                 "file": "/TheAeMix_Ambient_KamerenJ.m4a",
                 "id": "ae",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/TheAeMix_Ambient_KamerenJ.m4a",
                 "trackTitle": "The Ae Mix (1997)",
                 "date": "2010-07-30",
                 "genres": ["Ambient"]
@@ -182,7 +184,7 @@
             {
                 "file": "/ZuluMix-30_DnB_KamerenJ.m4a",
                 "id": "zulumix30",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-30_DnB_KamerenJ.m4a",
                 "trackTitle": "ZuluMix 30",
                 "date": "2010-07-07",
                 "genres": ["Drum & Bass"]
@@ -190,7 +192,7 @@
             {
                 "file": "/ZuluMix-29_Dubstep_KamerenJ.m4a",
                 "id": "zulumix29",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-29_Dubstep_KamerenJ.m4a",
                 "trackTitle": "ZuluMix 29",
                 "date": "2010-04-05",
                 "genres": ["Dubstep"]
@@ -198,7 +200,7 @@
             {
                 "file": "/ZuluMix-28_DnB_KamerenJ.m4a",
                 "id": "zulumix28",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-28_DnB_KamerenJ.m4a",
                 "trackTitle": "ZuluMix 28",
                 "date": "2010-03-20",
                 "genres": ["Drum & Bass"]
@@ -206,7 +208,7 @@
             {
                 "file": "/ZuluMix-27_DnB_Djive.m4a",
                 "id": "zulumix27",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-27_DnB_Djive.m4a",
                 "trackTitle": "ZuluMix 27",
                 "date": "2009-07-23",
                 "genres": ["Drum & Bass"]
@@ -214,7 +216,7 @@
             {
                 "file": "/ZuluMix-26_HouseElectro_Djive.m4a",
                 "id": "zulumix26",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-26_HouseElectro_Djive.m4a",
                 "trackTitle": "ZuluMix 26",
                 "date": "2009-05-31",
                 "genres": ["House", "Electro"]
@@ -222,7 +224,7 @@
             {
                 "file": "/ZuluMix-25_DnB_KamerenJ.m4a",
                 "id": "zulumix25",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-25_DnB_KamerenJ.m4a",
                 "trackTitle": "ZuluMix 25",
                 "date": "2009-04-13",
                 "genres": ["Drum & Bass"]
@@ -230,7 +232,7 @@
             {
                 "file": "/ZuluMix-24_DnB_KamerenJ.m4a",
                 "id": "zulumix24",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-24_DnB_KamerenJ.m4a",
                 "trackTitle": "ZuluMix 24",
                 "date": "2008-12-19",
                 "genres": ["Drum & Bass"]
@@ -238,7 +240,7 @@
             {
                 "file": "/ZuluMix-23_DnB_Djive.m4a",
                 "id": "zulumix23",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-23_DnB_Djive.m4a",
                 "trackTitle": "ZuluMix 23",
                 "date": "2008-09-19",
                 "genres": ["Drum & Bass"]
@@ -246,7 +248,7 @@
             {
                 "file": "/ZuluMix-22_DnB_KamerenJ.mp3",
                 "id": "zulumix22",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-22_DnB_KamerenJ.mp3",
                 "trackTitle": "ZuluMix 22",
                 "date": "2008-08-14",
                 "genres": ["Drum & Bass"]
@@ -254,7 +256,7 @@
             {
                 "file": "/ZuluMix-21_House_KamerenJ.mp3",
                 "id": "zulumix21",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-21_House_KamerenJ.mp3",
                 "trackTitle": "ZuluMix 21",
                 "date": "2017-12-22",
                 "genres": ["House"]
@@ -262,7 +264,7 @@
             {
                 "file": "/ZuluMix-20_DnB_KamerenJ.mp3",
                 "id": "zulumix20",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-20_DnB_KamerenJ.mp3",
                 "trackTitle": "ZuluMix 20",
                 "date": "2007-06-03",
                 "genres": ["Drum & Bass"]
@@ -270,7 +272,7 @@
             {
                 "file": "/ZuluMix-19_DnB_Djive.mp3",
                 "id": "zulumix19",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-19_DnB_Djive.mp3",
                 "trackTitle": "ZuluMix 19",
                 "date": "2007-04-19",
                 "genres": ["Drum & Bass"]
@@ -278,15 +280,24 @@
             {
                 "file": "/ZuluMix-18_DnB_KamerenJ.mp3",
                 "id": "zulumix18",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-18_DnB_KamerenJ.mp3",
                 "trackTitle": "ZuluMix 18",
                 "date": "2007-02-26",
                 "genres": ["Drum & Bass"]
             },
             {
+                "author": "Fabio",
+                "file": "/ZuluVideo-01.mp4",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluVideo-01.mp4",
+                "title": "ZuluVideo 01: I'm Shy Fashion Party @ Red Club (Lausanne)",
+                "description": "Our FIRST video experience: The Zulu Crew entertaining the Red Clubs' party people alongside with DJ Mathemathic, Kenshyro & Mr. Mike, Deborah from Sens Unik and Saian Supa Crew... Once again an eclectic and original concept for this great event ! Check out www.shy-wear.com for the party pictures!",
+                "date": "2006-12-05",
+                "duration": "00:11:26"
+            },
+            {
                 "file": "/ZuluMix-17_DjiveKJ.mp3",
                 "id": "zulumix17",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-17_DjiveKJ.mp3",
                 "trackTitle": "ZuluMix 17",
                 "date": "2006-10-14",
                 "genres": ["House"]
@@ -294,7 +305,7 @@
             {
                 "file": "/StudioMix-04_Electro_Djive.mp3",
                 "id": "studiomix4",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/StudioMix-04_Electro_Djive.mp3",
                 "trackTitle": "StudioMix 04",
                 "date": "2006-09-22",
                 "genres": ["Deep House", "Techno"]
@@ -302,7 +313,7 @@
             {
                 "file": "/StudioMix-03_Electro_KamerenJ.mp3",
                 "id": "studiomix3",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/StudioMix-03_Electro_KamerenJ.mp3",
                 "trackTitle": "StudioMix 03",
                 "date": "2006-09-14",
                 "genres": ["Electro"]
@@ -310,7 +321,7 @@
             {
                 "file": "/StudioMix-02_Techno_Djive.mp3",
                 "id": "studiomix2",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/StudioMix-02_Techno_Djive.mp3",
                 "trackTitle": "StudioMix 02",
                 "date": "2006-08-30",
                 "genres": ["Techno"]
@@ -318,7 +329,7 @@
             {
                 "file": "/StudioMix-01_DnB_KamerenJ.mp3",
                 "id": "studiomix1",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/StudioMix-01_DnB_KamerenJ.mp3",
                 "trackTitle": "StudioMix 01",
                 "date": "2006-08-02",
                 "genres": ["Drum & Bass"]
@@ -326,7 +337,7 @@
             {
                 "file": "/ZuluMix-16_Djive.mp3",
                 "id": "zulumix16",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-16_Djive.mp3",
                 "trackTitle": "ZuluMix 16",
                 "date": "2006-05-08",
                 "genres": ["Drum & Bass"]
@@ -334,7 +345,7 @@
             {
                 "file": "/ZuluMix-15_KamerenJ.mp3",
                 "id": "zulumix15",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-15_KamerenJ.mp3",
                 "trackTitle": "ZuluMix 15",
                 "date": "2006-05-05",
                 "genres": ["Drum & Bass"]
@@ -342,7 +353,7 @@
             {
                 "file": "/ZuluMix-08_House_Djive.m4a",
                 "id": "zulumix8",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-08_House_Djive.m4a",
                 "trackTitle": "ZuluMix 08",
                 "date": "2020-04-15",
                 "genres": ["House"]
@@ -350,7 +361,7 @@
             {
                 "file": "/ZuluMix-07_House_Lester.m4a",
                 "id": "zulumix7",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-07_House_Lester.m4a",
                 "trackTitle": "ZuluMix 07",
                 "date": "2020-04-15",
                 "genres": ["House"]
@@ -358,7 +369,7 @@
             {
                 "file": "/ZuluMix-06_House_KamerenJ.m4a",
                 "id": "zulumix6",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-06_House_KamerenJ.m4a",
                 "trackTitle": "ZuluMix 06",
                 "date": "2020-04-13",
                 "genres": ["House"]
@@ -366,7 +377,7 @@
             {
                 "file": "/ZuluMix-05_House_Djive.m4a",
                 "id": "zulumix5",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-05_House_Djive.m4a",
                 "trackTitle": "ZuluMix 05",
                 "date": "2020-04-13",
                 "genres": ["House"]
@@ -374,7 +385,7 @@
             {
                 "file": "/ZuluMix-04_House_Lester.m4a",
                 "id": "zulumix4",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-04_House_Lester.m4a",
                 "trackTitle": "ZuluMix 04",
                 "date": "2020-04-05",
                 "genres": ["House"]
@@ -382,7 +393,7 @@
             {
                 "file": "/ZuluMix-03_House_KamerenJ.m4a",
                 "id": "zulumix3",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-03_House_KamerenJ.m4a",
                 "trackTitle": "ZuluMix 03",
                 "date": "2020-04-05",
                 "genres": ["House"]
@@ -390,7 +401,7 @@
             {
                 "file": "/ZuluMix-02_House_Djive.m4a",
                 "id": "zulumix2",
-                "guid": "",
+                "guid": "http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-02_House_Djive.m4a",
                 "trackTitle": "ZuluMix 02",
                 "date": "2020-04-05",
                 "genres": ["House"]
