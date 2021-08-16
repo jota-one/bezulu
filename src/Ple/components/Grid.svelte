@@ -1,18 +1,19 @@
 <script>
     import { onMount, createEventDispatcher } from 'svelte'
     // import VirtualScroller from "../VirtualScroller/VirtualScroller.svelte";
+    import { activeTrack, filteredTracks } from '../stores'
     import Slot from './Slot.svelte'
     import Track from './Track.svelte'
-
-    export let tracks = []
-    export let activeTrack = undefined
 
     let container = null
     const dispatch = createEventDispatcher()
 
     $: items = [
-        activeTrack,
-        ...tracks.map(track => ({ ...track, active: track.id === activeTrack?.id }))
+        $activeTrack,
+        ...$filteredTracks.map(track => ({
+            ...track,
+            active: track?.id === $activeTrack?.id
+        }))
     ]
 
     function renderSlot({ index, container }) {
@@ -33,11 +34,15 @@
     function onClick(event) {
         let slot = event.target
 
-        while (slot.tagName.toLowerCase() !== 'li') {
+        while (!['li', 'body'].includes(slot.tagName.toLowerCase())) {
             slot = slot.parentElement
         }
 
-        const selectedTrack = tracks
+        if (slot.tagName.toLowerCase() === 'body') {
+            return
+        }
+
+        const selectedTrack = $filteredTracks
             .find(track => track.id === slot.firstElementChild.id)
         
         dispatch('navigate', selectedTrack)

@@ -18,7 +18,8 @@
             "langugae": "en",
             "categories": ["Music"],
             "itunesExplicit": false,
-            "itunesCategory": [{ "text": "Music" }]
+            "itunesCategory": [{ "text": "Music" }],
+            "itunesImage": "http://www.zuluparty.ch/media/Images/CD_Covers/BeZulu_Podcast.jpg"
         },
         "episodes": [
             {

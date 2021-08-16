@@ -1,14 +1,16 @@
 <script>
     import { formatTime } from '../helpers'
+    import { filteredTracks } from '../stores'
+
     export let tracks = []
 </script>
 <footer>
     <div>
         <div>
-            {tracks.length}&nbsp; tracks
+            {$filteredTracks.length}&nbsp; tracks
         </div>
         <div>
-            {formatTime(tracks.reduce((sum, track) => sum + track.duration, 0))}
+            {formatTime($filteredTracks.reduce((sum, track) => sum + track?.duration, 0))}
         </div>
     </div>
     <a

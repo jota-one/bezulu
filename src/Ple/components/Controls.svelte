@@ -1,18 +1,26 @@
 <script>
     import { createEventDispatcher } from 'svelte'
-    import { activeTrackIndex, loop, nextDisabled, prevDisabled, random } from '../stores'
+    import {
+        loop,
+        nextDisabled,
+        nextTrack,
+        prevDisabled,
+        prevTrack,
+        random
+    } from '../stores'
+    import ComboInput from './ComboInput.svelte'
     import Volume from './Volume.svelte'
 
-    export let tracks = []
-
     const dispatch = createEventDispatcher()
+    let asideOpen = false
+    let comboInput = undefined
 
     function navigatePrev() {
-        dispatch('navigate', tracks[$activeTrackIndex - 1])
+        dispatch('navigate', $prevTrack)
     }
 
     function navigateNext() {
-        dispatch('navigate', tracks[$activeTrackIndex + 1])
+        dispatch('navigate', $nextTrack)
     }
 
     function toggleRandom() {
@@ -30,10 +38,11 @@
     }
 
     function toggleSearch() {
-
+        asideOpen = !asideOpen
+        comboInput.focus()
     }
 </script>
-<div class="controls">
+<div class="controls" class:asideOpen>
     <div class="buttons">
         <button class="search" on:click={toggleSearch}>
             <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -70,7 +79,11 @@
         </button>
         <Volume />
     </div>
-    <aside></aside>
+    <aside>
+        <section>
+            <ComboInput bind:this={comboInput}/>
+        </section>
+    </aside>
     <button class="hamburger">
         <span/>
         <span/>
@@ -86,13 +99,18 @@
     .controls {
         position: sticky;
         top: var(--ple-s-player-height);
-        height: calc(100vh - var(--ple-s-player-height));
+        height: 100%;
         width: var(--ple-s-player-height);
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
         z-index: 2;
+    }
+
+    .controls,
+    .buttons {
+        background: inherit;
     }
 
     .buttons,
@@ -138,13 +156,24 @@
         top: calc(0px - var(--ple-s-player-height));
         left: var(--ple-s-player-height);
         bottom: 0;
-        padding: 6vh 2vh;
+        padding-top: calc(var(--ple-s-player-height) - 3vh);
+        min-width: 50vw;
         font-size: 2vh;
         font-weight: 400;
         color: white;
-        background: rgba(0,0,0, 0.95);
         transform: translate3d(-100%, 0, 0);
         z-index: 0;
         transition: transform 0.3s ease;
+        pointer-events: none;
+
+        .asideOpen & {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    section {
+        padding: 3vh;
+        background: rgba(255,0,0, 0.95);
+        pointer-events: all;
     }
 </style>

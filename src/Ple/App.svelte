@@ -4,7 +4,7 @@
         activeTrack,
         activeTrackId,
         filteredTracks,
-        allTracks,
+        setAllTracks,
         volumeLevel
     } from './stores'
     import Grid from './components/Grid.svelte'
@@ -23,7 +23,7 @@
     let router = undefined
     let player = undefined
 
-    $: { $allTracks = tracks }
+    $: { setAllTracks(tracks) }
     $: { dispatch('colorChanged', $volumeLevel) }
 
     function onRouterInit(event) {
@@ -59,13 +59,14 @@
         on:navigate={onRouterNavigate}
     />
     <header>
-        <Player track={$activeTrack} bind:this={player} on:navigate={navigate} />
+        <Player bind:this={player} on:navigate={navigate} />
     </header>
     <main>
-        <Controls tracks={$filteredTracks} on:navigate={navigate} />
+        <Controls on:navigate={navigate} />
         <div class="grid">
             <slot></slot>
-            <Grid tracks={$filteredTracks} activeTrack={$activeTrack} on:navigate={navigate} />
+            <Grid on:navigate={navigate} />
+            <div style="flex:1"></div>
             <div class=" to-top">
                 <button class="active" on:click={() => { app.scrollIntoView() }}>
                     <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" filter="url(#dropshadow)">
@@ -73,7 +74,7 @@
                     </svg>
                 </button>
             </div>
-            <Footer tracks={$filteredTracks} />
+            <Footer />
         </div>
     </main>
 </div>
@@ -149,9 +150,14 @@
             display: flex;
         }
 
+        main {
+            background: inherit;
+        }
+
         .grid {
             flex-grow: 1;
             flex-direction: column;
+            min-height: calc(100vh - var(--ple-s-player-height));
             z-index: 0;
         }
 

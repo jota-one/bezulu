@@ -1,63 +1,148 @@
-import { writable, derived } from 'svelte/store'
+import { readable, writable, derived } from 'svelte/store'
 import * as player from './services/player'
 
-export const activeTrackId = writable({})
-export const allTracks = writable([])
+let _allTracks = []
+
+export const activeTrackId = writable('')
 export const error = writable('')
 export const loop = writable(0)
 export const random = writable(false)
-export const tracksFilter = writable({ genre: 'house' })
+export const tracksFilter = writable({})
 export const volume = writable(0.5)
 
+export const allTracks = derived(random, $random => {  
+  if ($random) {
+    _allTracks = _allTracks.reduce((randomTracks, track, i) => {
+      const index = $random
+        ? getRandomIndex(_allTracks.length, randomTracks)
+        : track._pos
+      
+      if (!track._pos) {
+        track._pos = i
+      }
+  
+      randomTracks[index] = track
+      return randomTracks
+    }, new Array(_allTracks.length))
+  } else {
+    _allTracks = _allTracks.reduce((allTracks, track, i) => {
+      allTracks[track._pos !== undefined ? track._pos : i] = track
+      return allTracks
+    }, new Array(_allTracks.length))
+  }
+
+  return _allTracks
+})
+
 export const activeTrack = derived(
-    [allTracks, activeTrackId],
-    ([$allTracks, $activeTrackId]) => ({
-        ...$allTracks.find(track => track.id === $activeTrackId),
-        isShowcase: true
-    })
+  [allTracks, activeTrackId],
+  ([$allTracks, $activeTrackId]) => ({
+    ...$allTracks.find(track => track.id === $activeTrackId),
+    isShowcase: true
+  })
 )
 
 export const filteredTracks = derived(
-    [allTracks, tracksFilter],
-    ([$allTracks, $tracksFilter]) =>  $allTracks
-        .reduce((filteredTracks, track) => {
-            filteredTracks.push(track)
-            return filteredTracks
-        }, [])
+  [activeTrackId, allTracks, tracksFilter],
+  ([$activeTrackId, $allTracks, $tracksFilter]) => $allTracks
+    .reduce((filteredTracks, track) => {
+      if (
+        track.id !== $activeTrackId &&
+        isTrackFiltered(track, $tracksFilter)
+      ) {
+        return filteredTracks
+      }
+
+      filteredTracks.push(track)
+      return filteredTracks
+    }, [])
 )
 
 export const activeTrackIndex = derived(
-    [filteredTracks, activeTrackId],
-    ([$filteredTracks, $activeTrackId]) => $filteredTracks
-        .findIndex(track => track.id === $activeTrackId)
+  [filteredTracks, activeTrackId],
+  ([$filteredTracks, $activeTrackId]) => $filteredTracks
+    .findIndex(track => track?.id === $activeTrackId)
+)
+
+export const nextTrack = derived(
+  [filteredTracks, activeTrackIndex, loop],
+  ([$filteredTracks, $activeTrackIndex, $loop]) => {
+    const isLast = $activeTrackIndex === $filteredTracks.length - 1
+      
+    if (isLast && $loop === 0) {
+        return
+    }
+
+    const index = $loop === 1
+      ? $activeTrackIndex
+      : isLast
+        ? 0
+        : $activeTrackIndex + 1 
+    
+    return $filteredTracks[index]
+  }
+)
+
+export const prevTrack = derived(
+  [filteredTracks, activeTrackIndex, loop],
+  ([$filteredTracks, $activeTrackIndex, $loop]) => {
+    const isFirst = $activeTrackIndex === 0
+      
+    if (isFirst && $loop === 0) {
+        return
+    }
+
+    const index = $loop === 1
+      ? $activeTrackIndex
+      : isFirst
+        ? $filteredTracks.length - 1
+        : $activeTrackIndex - 1
+
+    return $filteredTracks[index]
+  }
 )
 
 export const nextDisabled = derived(
-    [filteredTracks, activeTrackIndex, loop],
-    ([$filteredTracks, $activeTrackIndex, $loop]) => $loop === 1
-        ? true
-        : $activeTrackIndex + 1 >= $filteredTracks.length
+  [loop, nextTrack],
+  ([$loop, $nextTrack]) => $loop === 1 || !Boolean($nextTrack)
 )
 
 export const prevDisabled = derived(
-    [activeTrackIndex, loop],
-    ([$activeTrackIndex, $loop]) => $loop === 1 ? true : $activeTrackIndex - 1 < 0
+  [loop, prevTrack],
+  ([$loop, $prevTrack]) => $loop === 1 || !Boolean($prevTrack)
 )
 
 export const volumeLevel = derived(volume, $volume => $volume < 0.2
-    ? 'min'
-    : $volume < 0.4
-        ? 'low'
-        : $volume < 0.6
-            ? 'default'
-            : $volume < 0.8
-                ? 'high'
-                : 'max')
+  ? 'min'
+  : $volume < 0.4
+    ? 'low'
+    : $volume < 0.6
+      ? 'default'
+      : $volume < 0.8
+        ? 'high'
+        : 'max')
 
 export function setAllTracks(tracks = []) {
-    allTracks = tracks
+  _allTracks = tracks
 }
 
 volume.subscribe(volume => {
-    player.setVolume(volume)
+  player.setVolume(volume)
 })
+
+function isTrackFiltered(track, filters) {
+  return !Object.entries(filters).every(([key, value]) => {
+    const v = Array.isArray(track[key]) ? track[key].join(',') : track[key]
+    return v.toLowerCase().includes(value.toLowerCase())
+  })
+}
+
+function getRandomIndex(max, list) {
+  let index
+  
+  do {
+    index = Math.floor(Math.random() * max)
+  } while(list[index])
+  
+  return index
+}

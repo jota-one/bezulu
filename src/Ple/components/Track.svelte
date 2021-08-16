@@ -60,6 +60,7 @@
                 class:disabled={Boolean($error)}
                 target="_blank"
                 href={audioUrl}
+                on:click={e => e.stopPropagation()}
             >
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" filter="url(#dropshadow)">
                     <path d="M10.7 19.5H8L12 23.5L16 19.5H13.25V11.5H10.7V19.5Z"/>
