@@ -196,8 +196,8 @@
 
     svg {
       position: absolute;
-      width: 5vh;
-      height: 5vh;
+      width: 70%;
+      height: 70%;
       pointer-events: none;
     }
   }
@@ -205,19 +205,21 @@
   .progress {
     position: relative;
     width: calc(100% - var(--ple-s-player-height) - 1px);
+    height: calc(var(--ple-s-player-height) / 1.75);
     margin-left: var(--ple-s-player-height);
   }
 
   input[type="range"],
   .bar {
     width: 100%;
+    height: 100%;
   }
 
   input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
     display: block;
-    height: 5vh;
+    height: 100%;
     margin: 0;
     padding: 0;
     background: rgba(20, 20, 20, 0.85);
@@ -244,8 +246,9 @@
       position: relative;
       top: 0;
       width: 1px;
-      height: 5vh;
+      height: var(--ple-s-player-height);
       background: var(--ple-c-active);
+      outline: none;
       transition: background var(--ple-transition-time)
         var(--ple-transition-type);
     }
@@ -255,8 +258,9 @@
       position: relative;
       top: 0;
       width: 1px;
-      height: 5vh;
+      height: var(--ple-s-player-height);
       background: var(--ple-c-active);
+      outline: none;
       transition: background var(--ple-transition-time)
         var(--ple-transition-type);
     }
@@ -303,10 +307,14 @@
 
     .time {
       position: absolute;
-      bottom: -3.2vh;
+      bottom: -2.2rem;
       right: 0;
-      padding: 0.45vh 0.85vh;
+      padding: 0.5rem 0.75rem;
       background: rgba(0, 0, 0, 0.5);
+
+      @media (--m) {
+        bottom: -2.4rem;
+      }
     }
   }
 
@@ -317,7 +325,7 @@
     left: 0;
     right: 0;
     margin: 0;
-    padding: 0 1.25vh;
+    padding: 0 0.75rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -326,18 +334,35 @@
     text-shadow: 0 0 10px black;
     pointer-events: none;
     z-index: 2;
+
+    b:first-of-type {
+      opacity: 0.7;
+    }
   }
 
   h2 {
-    font-size: 2vh;
+    margin-right: 1rem;
+    font-size: 1rem;
     line-height: 1;
     font-weight: 400;
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @media (--m) {
+      font-size: 1.25rem;
+    }
   }
 
   .time {
-    font-size: 1.8vh;
+    font-size: 0.95rem;
     font-weight: 500;
     color: white;
     text-shadow: 1px 1px 3px black;
+
+    @media (--m) {
+      font-size: 1.125rem;
+    }
   }
 </style>

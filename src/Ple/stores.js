@@ -112,15 +112,17 @@ export const prevDisabled = derived(
   ([$loop, $prevTrack]) => $loop === 1 || !Boolean($prevTrack)
 )
 
-export const volumeLevel = derived(volume, $volume => $volume < 0.2
-  ? 'min'
-  : $volume < 0.4
-    ? 'low'
-    : $volume < 0.6
-      ? 'default'
-      : $volume < 0.8
-        ? 'high'
-        : 'max')
+export const volumeLevel = derived(volume, $volume => $volume === 0
+  ? 'off'
+  : $volume < 0.2
+    ? 'min'
+    : $volume < 0.4
+      ? 'low'
+      : $volume < 0.6
+        ? 'default'
+        : $volume < 0.8
+          ? 'high'
+          : 'max')
 
 export function setAllTracks(tracks = []) {
   _allTracks = tracks

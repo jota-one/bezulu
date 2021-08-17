@@ -16,12 +16,12 @@
     }
 
     input {
-        padding: 1vh;
+        padding: 1rem;
         width: 100%;
-        font-size: 1.75vh;
+        font-size: 1.1rem;
         color: white;
         border: none;
-        border-radisu: 0.25vh;
+        border-radius: 0.5rem;
         background: transparent;
         outline: transparent;
     }
