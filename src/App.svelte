@@ -68,6 +68,9 @@
     <a
       href="https://podcasts.apple.com/ch/podcast/be-zulu-podcast/id189008679?l=en"
       target="_blank"
+      rel="noopener"
+      title="Subscribe to the Be Zulu! podcast"
+      aria-label="Subscribe to the Be Zulu! podcast"
     >
       <svg
         width="70"
@@ -137,7 +140,7 @@
     position: fixed;
     top: var(--ple-s-player-height);
     left: calc(50% + var(--ple-s-player-height) - var(--ple-s-max-width) / 2);
-    margin: 0 2rem;
+    margin: 0 1.5rem;
     width: 8rem;
     z-index: 4;
     transition: color var(--ple-transition-time) var(--ple-transition-type);

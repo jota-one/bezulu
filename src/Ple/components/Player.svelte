@@ -58,7 +58,7 @@
         title: $activeTrack.title,
         artist: $activeTrack.artist,
         album: $activeTrack.album,
-        artwork: [{ src: $activeTrack.coverUrl }],
+        artwork: [{ src: $activeTrack.thumbnailUrl }],
       });
 
       navigator.mediaSession.setActionHandler("play", player.play);
@@ -80,7 +80,7 @@
   }
 
   $: playPauseButtonStyle = $activeTrack
-    ? `background-image:url(${$activeTrack.coverUrl})`
+    ? `background-image:url(${$activeTrack.thumbnailUrl})`
     : ""
 
   onMount(() => {
@@ -119,7 +119,12 @@
 </script>
 
 <div class="player">
-  <button class="playpause" style={playPauseButtonStyle} on:click={playPause}>
+  <button
+    class="playpause"
+    title="Play / Pause"
+    style={playPauseButtonStyle}
+    on:click={playPause}
+  >
     {#if $activeTrack.id}
       <svg
         viewBox="0 0 60 60"
@@ -139,6 +144,7 @@
   </button>
   <div class="progress">
     <div class="bar" class:paused style="width: {progress * 100}%">
+      <div class="background"></div>
       {#if time.ellapsed}
         <div class="time ellapsed">{formatTime(time.ellapsed)}</div>
       {/if}
@@ -205,7 +211,7 @@
   .progress {
     position: relative;
     width: calc(100% - var(--ple-s-player-height) - 1px);
-    height: calc(var(--ple-s-player-height) / 1.75);
+    height: calc(var(--ple-s-player-height) / 1.5);
     margin-left: var(--ple-s-player-height);
   }
 
@@ -225,11 +231,11 @@
     background: rgba(20, 20, 20, 0.85);
     background-image: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.025) 25%,
+      rgba(255, 255, 255, 0.05) 25%,
       transparent 25%,
       transparent 50%,
-      rgba(255, 255, 255, 0.025) 50%,
-      rgba(255, 255, 255, 0.025) 75%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0.05) 75%,
       transparent 75%,
       transparent 100%
     );
@@ -270,24 +276,38 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    background: var(--ple-c-active);
-    background-image: linear-gradient(
-      135deg,
-      rgba(0, 0, 0, 0.2) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(0, 0, 0, 0.2) 50%,
-      rgba(0, 0, 0, 0.2) 75%,
-      transparent 75%,
-      transparent 100%
-    );
-    background-size: 1vh 1vh;
-    background-position: 0 0;
-    transition: background var(--ple-transition-time) var(--ple-transition-type);
     pointer-events: none;
     z-index: 1;
 
-    &:not(.paused) {
+    .background {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      &:before {
+        content: '';
+        position: absolute;
+        left: -4vh;
+        width: calc(100% + 4vh);
+        height: 100%;
+        background: var(--ple-c-active);
+        background-image: linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.2) 25%,
+          transparent 25%,
+          transparent 50%,
+          rgba(0, 0, 0, 0.2) 50%,
+          rgba(0, 0, 0, 0.2) 75%,
+          transparent 75%,
+          transparent 100%
+        );
+        background-size: 1vh 1vh;
+        background-position: 0 0;
+        transition: background var(--ple-transition-time) var(--ple-transition-type);
+      }
+    }
+
+    &:not(.paused) .background:before {
       animation: playing 1s linear infinite;
     }
 
@@ -307,14 +327,10 @@
 
     .time {
       position: absolute;
-      bottom: -2.2rem;
+      top: calc(var(--ple-s-player-height) / 1.5);
       right: 0;
       padding: 0.5rem 0.75rem;
       background: rgba(0, 0, 0, 0.5);
-
-      @media (--m) {
-        bottom: -2.4rem;
-      }
     }
   }
 
@@ -331,7 +347,7 @@
     justify-content: space-between;
     font-weight: 400;
     color: white;
-    text-shadow: 0 0 10px black;
+    text-shadow: 0 0 12px rgba(0,0,0, 0.5);
     pointer-events: none;
     z-index: 2;
 

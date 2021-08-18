@@ -20,6 +20,7 @@
     class="jota"
     href="https://jota.one"
     target="_blank"
+    rel="noopener"
     title="Crafted by Jota"
     aria-label="Crafted by Jota"
   >
@@ -83,7 +84,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 0 2rem 3rem 0;
+    padding: 0 2rem 1rem 0;
     font-size: 1rem;
     font-weight: 400;
     color: rgb(128, 128, 128);

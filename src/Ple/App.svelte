@@ -1,58 +1,60 @@
 <script>
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher } from 'svelte'
   import {
-    activeTrack,
     activeTrackId,
-    filteredTracks,
     setAllTracks,
     volumeLevel,
-  } from "./stores";
-  import Grid from "./components/Grid.svelte";
-  import Player from "./components/Player.svelte";
-  import Controls from "./components/Controls.svelte";
-  import Router from "./components/Router.svelte";
-  import Footer from "./components/Footer.svelte";
-  import SvgFilters from "./components/SvgFilters.svelte";
+  } from './stores'
+  import Grid from './components/Grid.svelte'
+  import Player from './components/Player.svelte'
+  import Controls from './components/Controls.svelte'
+  import Router from './components/Router.svelte'
+  import Footer from './components/Footer.svelte'
+  import SvgFilters from './components/SvgFilters.svelte'
+  import Volume from './components/Volume.svelte'
+  import OverlayPanel from './components/OverlayPanel.svelte'
 
-  export let tracks = [];
-  export let basePath = undefined;
+  export let tracks = []
+  export let basePath = undefined
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher()
 
-  let app = undefined;
-  let router = undefined;
-  let player = undefined;
+  let app = undefined
+  let router = undefined
+  let player = undefined
 
   $: {
-    setAllTracks(tracks);
-  }
-  $: {
-    dispatch("colorChanged", $volumeLevel);
+    setAllTracks(tracks)
+    dispatch('colorChanged', $volumeLevel)
   }
 
   function onRouterInit(event) {
-    setActiveTrackId(event.detail || tracks[0].id);
+    setActiveTrackId(event.detail || tracks[0].id)
   }
 
   function onRouterNavigate(event) {
-    setActiveTrackId(event.detail || tracks[0].id);
-    playActiveTrack();
+    setActiveTrackId(event.detail || tracks[0].id)
+    playActiveTrack()
   }
 
   function navigate(event) {
-    setActiveTrackId(event.detail.id);
-    router.navigate($activeTrackId);
-    playActiveTrack();
+    setActiveTrackId(event.detail.id)
+    router.navigate($activeTrackId)
+    playActiveTrack()
   }
 
   function setActiveTrackId(trackId) {
-    $activeTrackId = trackId;
+    $activeTrackId = trackId
   }
 
   function playActiveTrack() {
     window.setTimeout(() => {
-      player.playPause();
+      player.playPause()
     });
+  }
+
+  function toggleFilter(event) {
+    console.log(event)
   }
 </script>
 
@@ -68,14 +70,17 @@
     <Player bind:this={player} on:navigate={navigate} />
   </header>
   <main>
-    <Controls on:navigate={navigate} />
+    <Controls on:navigate={navigate} on:toggleFilter={toggleFilter}/>
     <div class="grid">
       <slot />
+      <OverlayPanel />
       <Grid on:navigate={navigate} />
       <div style="flex:1" />
-      <div class="to-top">
+      <div class="secondary-controls">
+        <Volume/>
         <button
           class="active"
+          title="Scroll to top of page"
           on:click={() => {
             app.scrollIntoView();
           }}
@@ -110,7 +115,8 @@
 
   @keyframes playing {
     100% {
-      background-position: 4vh 0, 4vh 0, 4vh 0;
+      /* background-position: 4vh 0, 4vh 0, 4vh 0; */
+      transform: translate3d(4vh, 0, 0)
     }
   }
 
@@ -181,16 +187,20 @@
       z-index: 0;
     }
 
-    .to-top {
+    .secondary-controls {
       position: sticky;
       bottom: 1rem;
       display: flex;
-      justify-content: flex-end;
-      padding: 1rem 1.5rem 0;
+      justify-content: space-between;
+      padding: 1rem 1.5rem 0 0;
       pointer-events: none;
 
-      button {
+      & > * {
         pointer-events: all;
+      }
+
+      button {
+        transition: color var(--ple-transition-time) var(--ple-transition-type);
       }
 
       svg {

@@ -25,7 +25,7 @@
         grid-row-end: span 3;
       }
 
-      @media (--l) {
+      @media (--xl2) {
         grid-column-end: span 4;
         grid-row-end: span 4;
       }

@@ -1,5 +1,5 @@
 <script>
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher } from 'svelte'
   import {
     loop,
     nextDisabled,
@@ -7,55 +7,85 @@
     prevDisabled,
     prevTrack,
     random,
-  } from "../stores";
-  import Volume from "./Volume.svelte";
+  } from '../stores'
 
-  const dispatch = createEventDispatcher();
-  let asideOpen = false;
+  const dispatch = createEventDispatcher()
+  let asideOpen = false
 
   function navigatePrev() {
-    dispatch("navigate", $prevTrack);
+    dispatch('navigate', $prevTrack)
   }
 
   function navigateNext() {
-    dispatch("navigate", $nextTrack);
+    dispatch('navigate', $nextTrack)
   }
 
   function toggleRandom() {
-    $random = !$random;
+    $random = !$random
   }
 
   function toggleLoop() {
-    const value = $loop === -1 ? 1 : $loop === 0 ? -1 : 0;
+    const value = $loop === -1 ? 1 : $loop === 0 ? -1 : 0
 
-    $loop = value;
+    $loop = value
+  }
+
+  function toggleSearchFilter() {
+    dispatch('toggleFilter', 'search')
+  }
+
+  function toggleArtistsFilter() {
+    dispatch('toggleFilter', 'artists')
+  }
+
+  function toggleGenresFilter() {
+    dispatch('toggleFilter', 'genres')
   }
 </script>
 
 <div class="controls" class:asideOpen>
   <div class="buttons">
-    <button class="search" on:click={dispatch('toggleSearch')}>
+    <!-- <button
+      class="search"
+      on:click={toggleSearchFilter}
+      title="Filter list"
+    >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
         <path
           d="M10.7679 4.26788C12.4918 4.26788 14.1451 4.9527 15.3641 6.17169C16.5831 7.39068 17.2679 9.04398 17.2679 10.7679C17.2679 12.0053 17.0958 12.9228 16.054 14.554C16.054 14.6534 19.7321 18.2321 19.7321 18.2321L18.2321 19.7321L14.554 16.054C13.5126 16.8228 12.0053 17.2679 10.7679 17.2679C9.04398 17.2679 7.39068 16.5831 6.17169 15.3641C4.9527 14.1451 4.26788 12.4918 4.26788 10.7679C4.26788 9.04398 4.9527 7.39068 6.17169 6.17169C7.39068 4.9527 9.04398 4.26788 10.7679 4.26788ZM10.7679 6.26788C8.26788 6.26788 6.26788 8.26788 6.26788 10.7679C6.26788 13.2679 8.26788 15.2679 10.7679 15.2679C13.2679 15.2679 15.2679 13.2679 15.2679 10.7679C15.2679 8.26788 13.2679 6.26788 10.7679 6.26788Z"
         />
       </svg>
-    </button>
-    <button class="next" disabled={$nextDisabled} on:click={navigateNext}>
+    </button> -->
+    <button
+      class="next"
+      title="Skip to next track"
+      disabled={$nextDisabled}
+      on:click={navigateNext}
+    >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
         <path
           d="M11.25 13.0588L4.25 18V6L11.25 10.9412V6L19.75 12L11.25 18V13.0588Z"
         />
       </svg>
     </button>
-    <button class="previous" disabled={$prevDisabled} on:click={navigatePrev}>
+    <button
+      class="previous"
+      title="Skip to previous track"
+      disabled={$prevDisabled}
+      on:click={navigatePrev}
+    >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
         <path
           d="M12.75 13.0588L19.75 18V6L12.75 10.9412V6L4.25 12L12.75 18V13.0588Z"
         />
       </svg>
     </button>
-    <button class="loop" class:active={$loop !== 0} on:click={toggleLoop}>
+    <button
+      class="loop"
+      class:active={$loop !== 0}
+      on:click={toggleLoop}
+      title="Repeat list"
+    >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
         {#if $loop !== 1}
           <path d="M10 3L10 11L14 7L10 3Z" />
@@ -75,14 +105,64 @@
         {/if}
       </svg>
     </button>
-    <button class="random" class:active={$random} on:click={toggleRandom}>
+    <button
+      class="random"
+      class:active={$random}
+      on:click={toggleRandom}
+      title="Randomize list"
+    >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
         <path
           d="M21 7L17 4V6H16C13.8197 6 12.5604 7.29874 11.5268 9.04169L11.6443 9.28052C11.7617 9.51932 11.8798 9.75966 12 10C12.1115 10.223 12.2169 10.4366 12.3175 10.6407C12.3784 10.764 12.4375 10.8839 12.4953 11.0004C13.5981 8.77341 14.0572 8 16 8H17V10L21 7ZM17 18V20L21 17L17 14V16H16C13.9745 16 13.4285 14.893 12.3175 12.6407C12.2169 12.4366 12.1115 12.223 12 12C11.8798 11.7597 11.7617 11.5193 11.6443 11.2805C10.2963 8.53857 9.04825 6 6 6H3V8H6C8.02328 8 8.43747 8.83882 9.64523 11.2847C9.75616 11.5094 9.87381 11.7476 10 12C10.1261 12.2522 10.2494 12.5028 10.3711 12.7502C11.7601 15.5743 12.9533 18 16 18H17M6 16C7.91464 16 8.50729 15.0109 9.5047 13.0004L9.64523 13.2847C9.75616 13.5094 9.87381 13.7476 10 14C10.1261 14.2522 10.2494 14.5028 10.3711 14.7502L10.4757 14.9629C9.43631 16.7323 8.20248 18 6 18H3V16H6Z"
         />
       </svg>
     </button>
-    <Volume />
+    <button
+      class="artists"
+      title="Filter list on Artists"
+      on:click={toggleArtistsFilter}
+    >
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+        <path
+          d="M17.3873 16.0573C17.0268 16.85 15.0607 18.7157 11.9804 18.7157C8.88839 18.7157 7.00541 16.8391 6.60369 16.0573C6.60369 16.0573 4.98044 13.9083 11.9804 13.9083C18.9804 13.9083 17.3873 16.0573 17.3873 16.0573Z"
+        />
+        <path
+          d="M14.5509 8.31989C14.888 8.8244 15.0679 9.41755 15.0679 10.0243C15.0679 10.838 14.7447 11.6183 14.1694 12.1937C13.594 12.769 12.8137 13.0922 12 13.0922C11.3933 13.0922 10.8001 12.9123 10.2956 12.5752C9.79108 12.2381 9.39786 11.7589 9.16566 11.1984C8.93346 10.6378 8.8727 10.0209 8.99108 9.4258C9.10945 8.83069 9.40164 8.28404 9.8307 7.85499C10.2598 7.42594 10.8064 7.13375 11.4015 7.01537C11.9966 6.897 12.6135 6.95775 13.1741 7.18995C13.7346 7.42215 14.2138 7.81537 14.5509 8.31989Z"/>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M12.0031 22.0075C17.5378 22.0075 22.0245 17.5207 22.0245 11.9861C22.0245 6.45139 17.5378 1.96466 12.0031 1.96466C6.46848 1.96466 1.98175 6.45139 1.98175 11.9861C1.98175 17.5207 6.46848 22.0075 12.0031 22.0075ZM12.0031 20.534C16.724 20.534 20.551 16.7069 20.551 11.9861C20.551 7.26517 16.724 3.43814 12.0031 3.43814C7.28223 3.43814 3.4552 7.26517 3.4552 11.9861C3.4552 16.7069 7.28223 20.534 12.0031 20.534Z"
+          />
+      </svg>
+    </button>
+    <button
+      class="genres"
+      title="Filter list on Genres"
+      on:click={toggleGenresFilter}
+    >
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+        <path
+          d="M15.5438 3.60582L13.1206 4.1705L16.9013 20.3942L19.3245 19.8295L15.5438 3.60582Z"
+        />
+        <path
+          d="M15.5438 3.60582L13.1206 4.1705L16.9013 20.3942L19.3245 19.8295L15.5438 3.60582Z"
+        />
+        <path
+          d="M15.5438 3.60582L13.1206 4.1705L16.9013 20.3942L19.3245 19.8295L15.5438 3.60582Z"
+        />
+        <path
+          d="M15.5438 3.60582L13.1206 4.1705L16.9013 20.3942L19.3245 19.8295L15.5438 3.60582Z"
+        />
+        <path d="M4.44421 3.64524H6.93233V20.3036H4.44421V3.64524Z"/>
+        <path d="M4.44421 3.64524H6.93233V20.3036H4.44421V3.64524Z"/>
+        <path d="M4.44421 3.64524H6.93233V20.3036H4.44421V3.64524Z"/>
+        <path d="M4.44421 3.64524H6.93233V20.3036H4.44421V3.64524Z"/>
+        <path d="M8.78253 3.64524H11.2706V20.3036H8.78253V3.64524Z"/>
+        <path d="M8.78253 3.64524H11.2706V20.3036H8.78253V3.64524Z"/>
+        <path d="M8.78253 3.64524H11.2706V20.3036H8.78253V3.64524Z"/>
+        <path d="M8.78253 3.64524H11.2706V20.3036H8.78253V3.64524Z"/>
+      </svg>
+    </button>
   </div>
   <button class="hamburger">
     <span />
@@ -124,7 +204,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
   }
 
   button {

@@ -6,6 +6,7 @@
   export let artist = undefined;
   export let audioUrl = undefined;
   export let coverUrl = undefined;
+  export let thumbnailUrl = undefined;
   export let dates = {
     added: undefined,
     updated: undefined,
@@ -35,7 +36,7 @@
   {/if}
   {#if coverUrl}
     <img
-      src={coverUrl.replace("/public", "")}
+      src={(isShowcase ? coverUrl : thumbnailUrl).replace("/public", "")}
       width="100%"
       height="100%"
       loading="lazy"
@@ -57,6 +58,9 @@
         class:active={Boolean(!$error)}
         class:disabled={Boolean($error)}
         target="_blank"
+        rel="noopener"
+        title="Download {title}"
+        aria-label="Download {title}"
         href={audioUrl}
         on:click={(e) => e.stopPropagation()}
       >
@@ -105,7 +109,7 @@
         bottom: 0;
         right: 0;
         background: var(--ple-c-active);
-        opacity: 0.95;
+        opacity: 0.97;
         transition: background var(--ple-transition-time)
           var(--ple-transition-type);
         z-index: 1;
@@ -140,7 +144,7 @@
 
   h4 {
     font-size: 1.3rem;
-    font-weight: 300;
+    font-weight: 400;
     opacity: 0.75;
   }
 
@@ -157,16 +161,13 @@
   }
 
   li {
-    margin-right: 0.6rem;
-    padding: 0.6rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
+    margin: 1px 3px 1px 0;
+    padding: 4px;
+    font-size: 0.7rem;
+    line-height: 0.8rem;
     font-weight: 500;
     text-transform: uppercase;
-    border-radius: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0.25rem;
     background: rgba(0, 0, 0, 0.2);
   }
 

@@ -4,17 +4,14 @@
   function onInput(event) {
     $volume = event.target.value / 10;
   }
+
+  function toggleVolume () {
+    console.log('toggle volume', $volume)
+  }
 </script>
 
 <div class="volume">
-  <input
-    type="range"
-    min="0"
-    max="10"
-    value={$volume * 10}
-    on:input={onInput}
-  />
-  <button>
+  <button title="Toggle volume" on:click={toggleVolume}>
     <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
       {#if $volume === 0}
         <path
@@ -42,34 +39,34 @@
       {/if}
     </svg>
   </button>
+  <input
+    type="range"
+    min="0"
+    max="10"
+    value={$volume * 10}
+    on:input={onInput}
+  />
 </div>
 
 <style lang="postcss">
+  @import "../styles/_media.pcss";
   @import "../styles/_button.pcss";
 
   .volume {
     position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    height: 15rem;
-    width: 100%;
-
-    @media (--m) {
-      height: 20rem;
-    }
   }
 
   input {
     -webkit-appearance: none;
     appearance: none;
-    position: absolute;
-    top: -3rem;
     padding: 0;
     margin: 0;
-    height: 3px;
-    width: 9rem;
+    height: 4px;
+    width: 10rem;
     border: none;
+    border-radius: 6px;
     background: var(--ple-c-min);
     background-image: linear-gradient(
       45deg,
@@ -79,24 +76,23 @@
       var(--ple-c-high) 75%,
       var(--ple-c-max) 100%
     );
-    transform: rotate(-90deg) translateX(-9rem);
-    transform-origin: top;
     cursor: pointer;
-    
+
+    @media (--s) {
+      width: 15rem;
+    }
+
     @media (--m) {
-      top: -4rem;
-      width: 12rem;
-      transform: rotate(-90deg) translateX(-12rem);
+      width: 20rem;
     }
 
     &::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
       position: relative;
-      top: 0;
       width: 1.5rem;
       height: 1.5rem;
-      border-radius: 50%;
+      border-radius: 999px;
       border: 2px solid var(--ple-c-active);
       background: rgb(20, 20, 20);
       transition: border-color var(--ple-transition-time) var(--ple-transition-type);
@@ -110,11 +106,9 @@
     &::-moz-range-thumb {
       appearance: none;
       position: relative;
-      top: 0;
-      width: 3px;
       width: 1.25rem;
       height: 1.25rem;
-      border-radius: 50%;
+      border-radius: 999px;
       border: 2px solid var(--ple-c-active);
       background: rgb(20, 20, 20);
       transition: border-color var(--ple-transition-time) var(--ple-transition-type);
@@ -127,8 +121,6 @@
   }
 
   button {
-    position: absolute;
-    bottom: 0.5rem;
     color: var(--ple-c-active);
     transition: color var(--ple-transition-time) var(--ple-transition-type);
   }
