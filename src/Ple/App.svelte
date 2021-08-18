@@ -194,6 +194,7 @@
       justify-content: space-between;
       padding: 1rem 1.5rem 0 0;
       pointer-events: none;
+      z-index: 1;
 
       & > * {
         pointer-events: all;
