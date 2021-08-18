@@ -126,7 +126,7 @@
 
   .meta {
     padding: 1rem;
-    z-index: 2;
+    z-index: 1;
   }
 
   h3,
