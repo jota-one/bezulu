@@ -1,12 +1,15 @@
 <script>
   import { volume } from "../stores";
 
+  let currentVolume
+
   function onInput(event) {
     $volume = event.target.value / 10;
+    currentVolume = $volume
   }
 
   function toggleVolume () {
-    console.log('toggle volume', $volume)
+    $volume = $volume === 0 ? currentVolume : 0
   }
 </script>
 
