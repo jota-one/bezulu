@@ -61,9 +61,9 @@
         artwork: [{ src: $activeTrack.thumbnailUrl }],
       });
 
-      navigator.mediaSession.setActionHandler("play", player.play);
-      navigator.mediaSession.setActionHandler("pause", player.pause);
-      navigator.mediaSession.setActionHandler("stop", player.stop);
+      navigator.mediaSession.setActionHandler("play", playPause);
+      navigator.mediaSession.setActionHandler("pause", playPause);
+      navigator.mediaSession.setActionHandler("stop", stop);
 
       if ($prevTrack) {
         navigator.mediaSession.setActionHandler("previoustrack", () => {
@@ -97,20 +97,33 @@
   });
 
   function onEnd() {
-    player.stop()
-    paused = true
+    stop()
 
     if (!$nextTrack) {
-      return;
+      return
     }
 
     dispatch("navigate", $nextTrack)
   }
 
   function onError(_error) {
-    player.stop();
-    paused = true;
+    stop()
     error.set(_error);
+  }
+
+  function play() {
+    if (player.isPlaying()) {
+      player.pause()
+      paused = true
+    } else {
+      player.play()
+      paused = false
+    }
+  }
+
+  function stop() {
+    player.stop()
+    paused = true
   }
 
   function seek(event) {
