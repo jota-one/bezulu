@@ -1,0 +1,42 @@
+button,
+.button {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ple-c-inactive);
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  &.active {
+    color: var(--ple-c-active);
+  }
+
+  &:hover {
+    background-color: var(--ple-c-hover-bg);
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+
+    &:hover {
+      color: var(--ple-c-inactive);
+      background-color: unset;
+    }
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+
+    @media (--m) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
