@@ -140,7 +140,7 @@
     position: fixed;
     top: var(--ple-s-player-height);
     left: calc(50% + var(--ple-s-player-height) - var(--ple-s-max-width) / 2);
-    margin: 0 1.5rem;
+    margin: 1rem 1.5rem;
     width: 8rem;
     z-index: 4;
     transition: color var(--ple-transition-time) var(--ple-transition-type);

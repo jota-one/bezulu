@@ -1,4 +1,4 @@
-import { readable, writable, derived } from 'svelte/store'
+import { writable, derived } from 'svelte/store'
 import * as player from './services/player'
 
 let _allTracks = []
@@ -124,6 +124,24 @@ export const volumeLevel = derived(volume, $volume => $volume === 0
           ? 'high'
           : 'max')
 
+export const artists = derived(
+  [allTracks, tracksFilter],
+  ([$allTracks, $tracksFilter]) => getFilterList(
+    $allTracks,
+    $tracksFilter,
+    'artist'
+  )
+)
+
+export const genres = derived(
+  [allTracks, tracksFilter],
+  ([$allTracks, $tracksFilter]) => getFilterList(
+    $allTracks,
+    $tracksFilter,
+    'genres'
+  )
+)
+
 export function setAllTracks(tracks = []) {
   _allTracks = tracks
 }
@@ -135,7 +153,14 @@ volume.subscribe(volume => {
 function isTrackFiltered(track, filters) {
   return !Object.entries(filters).every(([key, value]) => {
     const v = Array.isArray(track[key]) ? track[key].join(',') : track[key]
-    return v.toLowerCase().includes(value.toLowerCase())
+    const values = [].concat(value)
+    
+    if (!values.length) {
+      return true
+    }
+    
+    return values
+      .some(value => v.toLowerCase().includes(value.toLowerCase()))
   })
 }
 
@@ -147,4 +172,21 @@ function getRandomIndex(max, list) {
   } while(list[index])
   
   return index
+}
+
+function getFilterList(allTracks, tracksFilter, key) {
+  return allTracks.reduce((all, track) => {
+    [].concat(track[key]).forEach(keyItem => {
+      if (!all.map(item => item.value).includes(keyItem)) {
+        all.push({
+          id: keyItem.toLowerCase()
+            .replace(/[^a-z0-9]/gi, '-')
+            .replace(/-+/gi, '-'),
+          value: keyItem,
+          checked: (tracksFilter[key] || []).includes(keyItem)
+        })
+      }
+    })
+    return all
+  }, [])
 }

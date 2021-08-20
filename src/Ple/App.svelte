@@ -22,6 +22,7 @@
   let app = undefined
   let router = undefined
   let player = undefined
+  let panel = undefined
 
   $: {
     setAllTracks(tracks)
@@ -54,11 +55,31 @@
   }
 
   function toggleFilter(event) {
-    console.log(event)
+    panel.toggle(event.detail)
+  }
+
+  function onClickInApp(event) {
+    const isBody = element => element.tagName.toLowerCase() === 'body'
+    let target = event.target
+    
+    while (
+      !isBody(target) &&
+      target !== panel.getDomElement()
+    ) {
+      target = target.parentNode
+    }
+
+    if (isBody(target) && panel.isVisible()) {
+      panel.close()
+    }
   }
 </script>
 
-<div class="ple-app volume-{$volumeLevel}" bind:this={app}>
+<div
+  class="ple-app volume-{$volumeLevel}"
+  bind:this={app}
+  on:click={onClickInApp}
+>
   <SvgFilters />
   <Router
     {basePath}
@@ -73,7 +94,7 @@
     <Controls on:navigate={navigate} on:toggleFilter={toggleFilter}/>
     <div class="grid">
       <slot />
-      <OverlayPanel />
+      <OverlayPanel bind:this={panel}/>
       <Grid on:navigate={navigate} />
       <div style="flex:1" />
       <div class="secondary-controls">
@@ -177,6 +198,7 @@
     }
 
     main {
+      min-height: calc(100vh - var(--ple-s-player-height) / 1.5);
       background: inherit;
     }
 
@@ -207,6 +229,21 @@
       svg {
         width: 3rem;
         height: 3rem;
+      }
+    }
+
+    .scrollable {
+      &::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgba(128,128,128, 0.35);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(255,255,255, 0.25);
+        border: none;
       }
     }
   }
