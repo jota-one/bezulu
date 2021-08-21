@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+	<channel>
+		<title><![CDATA[Be Zulu! Podcast]]></title>
+		<description><![CDATA[The Zulu Mixes: House, Techno and Drum'n'Bass sets mixed by dj's Djive, Kameren J and Lester. Discover the particular style of the Zulu Dj's: mixing old school classics with today's hits, vocal house on a a techno beat, original funk tunes inside a techno set, that's the Zulu Sound ! A varied and eclectic vision of electronic music, "Be Zulu!"]]></description>
+		<link>https://bezu.lu</link>
+		<generator>Jota</generator>
+		<lastBuildDate>Sat, 21 Aug 2021 00:02:08 GMT</lastBuildDate>
+		<atom:link href="https://bezu.lu/feed.xml" rel="self" type="application/rss+xml"/>
+		<author><![CDATA[DJ Djive, Kameren J (aka Lionites) and friends]]></author>
+		<category><![CDATA[Music]]></category>
+		<itunes:author>DJ Djive, Kameren J (aka Lionites) and friends</itunes:author>
+		<itunes:summary>The Zulu Mixes: House, Techno and Drum&apos;n&apos;Bass sets mixed by dj&apos;s Djive, Kameren J and Lester. Discover the particular style of the Zulu Dj&apos;s: mixing old school classics with today&apos;s hits, vocal house on a a techno beat, original funk tunes inside a techno set, that&apos;s the Zulu Sound ! A varied and eclectic vision of electronic music, &quot;Be Zulu!&quot;</itunes:summary>
+		<itunes:owner>
+			<itunes:name>DJ Djive, Kameren J (aka Lionites) and friends</itunes:name>
+			<itunes:email></itunes:email>
+		</itunes:owner>
+		<itunes:explicit>No</itunes:explicit>
+		<itunes:category text="Music"/>
+		<itunes:image href="http://www.zuluparty.ch/media/Images/CD_Covers/BeZulu_Podcast.jpg"/>
+		<item>
+			<title><![CDATA[My Story Of House Music Part 3: Lionites (House)]]></title>
+			<link>https://bezu.lu/msohm3</link>
+			<guid isPermaLink="true">https://bezu.lu/msohm3</guid>
+			<dc:creator><![CDATA[Lionites]]></dc:creator>
+			<pubDate>Thu, 03 Jun 2021 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/MyStoryOfHouseMusic-03_House_Lionites.m4a" length="216693611" type="audio/mp4"/>
+			<itunes:author>Lionites</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>02:13:29</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 43: DJ Djive (House / Techno)]]></title>
+			<link>https://bezu.lu/zulumix43</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-43_Techno_Djive.m4a</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Mon, 19 Apr 2021 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-43_Techno_Djive.m4a" length="80134102" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:22:30</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 42: Lionites (Funk/House)]]></title>
+			<link>https://bezu.lu/zulumix42</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-42_Funk_Lionites.m4a</guid>
+			<dc:creator><![CDATA[Lionites]]></dc:creator>
+			<pubDate>Fri, 01 May 2020 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-42_Funk_Lionites.m4a" length="64718639" type="audio/mp4"/>
+			<itunes:author>Lionites</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:06:37</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 41: DJ Djive (House/Techno)]]></title>
+			<link>https://bezu.lu/zulumix41</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-41_Techno_Djive.m4a</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Sat, 28 Mar 2020 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-41_Techno_Djive.m4a" length="72614065" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:14:45</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[My Story Of House Music Part 2: Lionites (House)]]></title>
+			<link>https://bezu.lu/msohm2</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/MyStoryOfHouseMusic-02_House_Lionites.m4a</guid>
+			<dc:creator><![CDATA[Lionites]]></dc:creator>
+			<pubDate>Tue, 15 Oct 2019 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/MyStoryOfHouseMusic-02_House_Lionites.m4a" length="119684899" type="audio/mp4"/>
+			<itunes:author>Lionites</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>02:03:15</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 40: DJ Djive (Techno)]]></title>
+			<link>https://bezu.lu/zulumix40</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-40_Techno_Djive.m4a</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Fri, 16 Aug 2019 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-40_Techno_Djive.m4a" length="77296499" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:19:35</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 39: DJ Djive (Techno)]]></title>
+			<link>https://bezu.lu/zulumix39</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-39_Techno_Djive.m4a</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Tue, 22 Jan 2019 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-39_Techno_Djive.m4a" length="70574865" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:12:39</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 38: DJ Djive]]></title>
+			<link>https://bezu.lu/zulumix38</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-38_Techno_Djive.m4a</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Wed, 21 Nov 2018 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-38_Techno_Djive.m4a" length="117360155" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>02:00:48</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 37: Lionites (Drum'n'Bass)]]></title>
+			<link>https://bezu.lu/zulumix37</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-37_DnB_Lionites.m4a</guid>
+			<dc:creator><![CDATA[Lionites]]></dc:creator>
+			<pubDate>Wed, 03 Oct 2018 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-37_DnB_Lionites.m4a" length="75315826" type="audio/mp4"/>
+			<itunes:author>Lionites</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:17:29</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 36: DJ Djive (Drum'n'Bass)]]></title>
+			<link>https://bezu.lu/zulumix36</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-36_DnB_Djive.m4a</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Sat, 24 Jun 2017 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-36_DnB_Djive.m4a" length="61593436" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:03:21</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[My Story Of House Music Part 1]]></title>
+			<link>https://bezu.lu/msohm1</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/MyStoryOfHouseMusic-01_House_Lionites.mp3</guid>
+			<dc:creator><![CDATA[Lionites]]></dc:creator>
+			<pubDate>Sat, 02 Jan 2016 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/MyStoryOfHouseMusic-01_House_Lionites.mp3" length="234234939" type="audio/mpeg"/>
+			<itunes:author>Lionites</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:37:34</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[KSDBLOI: Lionites (Drum&Bass)]]></title>
+			<link>https://bezu.lu/ksdbloi</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/KSDBLOI_DnB_Lionites.m4a</guid>
+			<dc:creator><![CDATA[Lionites]]></dc:creator>
+			<pubDate>Thu, 26 Jun 2014 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/KSDBLOI_DnB_Lionites.m4a" length="67996703" type="audio/mp4"/>
+			<itunes:author>Lionites</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:10:00</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 35: Lionites (Drum'n'Bass)]]></title>
+			<link>https://bezu.lu/zulumix35</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-35_DnB_Lionites.m4a</guid>
+			<dc:creator><![CDATA[Lionites]]></dc:creator>
+			<pubDate>Sat, 21 Jun 2014 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-35_DnB_Lionites.m4a" length="59986535" type="audio/mp4"/>
+			<itunes:author>Lionites</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:01:42</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[The Anthem Mix Pt 1: DJ Djive & Kameren J]]></title>
+			<link>https://bezu.lu/anthem1</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/TheAnthemMix-01_House_DjiveKJ.m4a</guid>
+			<dc:creator><![CDATA[DJ Djive & Kameren J]]></dc:creator>
+			<pubDate>Thu, 26 Sep 2013 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/TheAnthemMix-01_House_DjiveKJ.m4a" length="75253100" type="audio/mp4"/>
+			<itunes:author>DJ Djive &amp; Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:17:26</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 34: Kameren J (Dubstep)]]></title>
+			<link>https://bezu.lu/zulumix34</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-34_Dubstep_KamerenJ.m4a</guid>
+			<dc:creator><![CDATA[Kameren J]]></dc:creator>
+			<pubDate>Mon, 30 Apr 2012 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-34_Dubstep_KamerenJ.m4a" length="77033887" type="audio/mp4"/>
+			<itunes:author>Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:19:16</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[StudioMix 05: DJ Djive (Drum'n'Bass)]]></title>
+			<link>https://bezu.lu/studiomix5</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/StudioMix-05_DnB_Djive.m4a</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Mon, 20 Feb 2012 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/StudioMix-05_DnB_Djive.m4a" length="44493793" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:45:44</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 33: Kameren J (Drum'n'Bass)]]></title>
+			<description><![CDATA[]]></description>
+			<link>https://bezu.lu/zulumix33</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-33_DnB_KamerenJ.m4a</guid>
+			<dc:creator><![CDATA[Kameren J]]></dc:creator>
+			<pubDate>Fri, 03 Feb 2012 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-33_DnB_KamerenJ.m4a" length="69611993" type="audio/mp4"/>
+			<itunes:author>Kameren J</itunes:author>
+			<itunes:summary></itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:11:37</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 32: DJ Kameren J (Drum'n'Bass)]]></title>
+			<link>https://bezu.lu/zulumix32</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-32_DnB_KamerenJ.m4a</guid>
+			<dc:creator><![CDATA[Kameren J]]></dc:creator>
+			<pubDate>Fri, 01 Apr 2011 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-32_DnB_KamerenJ.m4a" length="56732090" type="audio/mp4"/>
+			<itunes:author>Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:58:21</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 31: DJ Djive (Drum & Bass)]]></title>
+			<link>https://bezu.lu/zulumix31</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-31_DnB_Djive.m4a</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Mon, 02 Aug 2010 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-31_DnB_Djive.m4a" length="56563924" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:58:11</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[The Ae Mix: Kameren J (Ambient)]]></title>
+			<link>https://bezu.lu/ae</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/TheAeMix_Ambient_KamerenJ.m4a</guid>
+			<dc:creator><![CDATA[Kameren J]]></dc:creator>
+			<pubDate>Fri, 30 Jul 2010 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/TheAeMix_Ambient_KamerenJ.m4a" length="120891987" type="audio/mp4"/>
+			<itunes:author>Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>02:04:26</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 30: Kameren J (Drum & Bass)]]></title>
+			<link>https://bezu.lu/zulumix30</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-30_DnB_KamerenJ.m4a</guid>
+			<dc:creator><![CDATA[Kameren J]]></dc:creator>
+			<pubDate>Wed, 07 Jul 2010 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-30_DnB_KamerenJ.m4a" length="57065793" type="audio/mp4"/>
+			<itunes:author>Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:58:42</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 29: Kameren J (Dubstep)]]></title>
+			<link>https://bezu.lu/zulumix29</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-29_Dubstep_KamerenJ.m4a</guid>
+			<dc:creator><![CDATA[Kameren J]]></dc:creator>
+			<pubDate>Mon, 05 Apr 2010 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-29_Dubstep_KamerenJ.m4a" length="62930484" type="audio/mp4"/>
+			<itunes:author>Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:04:46</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 28: Kameren J (Drum & Bass)]]></title>
+			<link>https://bezu.lu/zulumix28</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-28_DnB_KamerenJ.m4a</guid>
+			<dc:creator><![CDATA[Kameren J]]></dc:creator>
+			<pubDate>Sat, 20 Mar 2010 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-28_DnB_KamerenJ.m4a" length="61805053" type="audio/mp4"/>
+			<itunes:author>Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:03:35</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 27: DJ Djive (Drum & Bass)]]></title>
+			<link>https://bezu.lu/zulumix27</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-27_DnB_Djive.m4a</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Thu, 23 Jul 2009 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-27_DnB_Djive.m4a" length="56628691" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:58:15</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 26: DJ Djive (House Electro)q]]></title>
+			<link>https://bezu.lu/zulumix26</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-26_HouseElectro_Djive.m4a</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Sun, 31 May 2009 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-26_HouseElectro_Djive.m4a" length="55834796" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:57:26</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 25: Kameren J (Drum & Bass)]]></title>
+			<link>https://bezu.lu/zulumix25</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-25_DnB_KamerenJ.m4a</guid>
+			<dc:creator><![CDATA[Kameren J]]></dc:creator>
+			<pubDate>Mon, 13 Apr 2009 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-25_DnB_KamerenJ.m4a" length="56000995" type="audio/mp4"/>
+			<itunes:author>Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:57:36</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 24: Kameren J (Drum & Bass)]]></title>
+			<link>https://bezu.lu/zulumix24</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-24_DnB_KamerenJ.m4a</guid>
+			<dc:creator><![CDATA[Kameren J]]></dc:creator>
+			<pubDate>Fri, 19 Dec 2008 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-24_DnB_KamerenJ.m4a" length="55937606" type="audio/mp4"/>
+			<itunes:author>Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:57:32</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 23: DJ Djive (Drum & Bass)]]></title>
+			<link>https://bezu.lu/zulumix23</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-23_DnB_Djive.m4a</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Fri, 19 Sep 2008 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-23_DnB_Djive.m4a" length="54342379" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:55:53</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 22: DJ Kameren J (Drum & Bass)]]></title>
+			<link>https://bezu.lu/zulumix22</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-22_DnB_KamerenJ.mp3</guid>
+			<dc:creator><![CDATA[DJ Kameren J]]></dc:creator>
+			<pubDate>Thu, 14 Aug 2008 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-22_DnB_KamerenJ.mp3" length="120855321" type="audio/mpeg"/>
+			<itunes:author>DJ Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:02:54</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[Kameren J: ZuluMix 21 (House)]]></title>
+			<link>https://bezu.lu/zulumix21</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-21_House_KamerenJ.mp3</guid>
+			<dc:creator><![CDATA[DJ Kameren J]]></dc:creator>
+			<pubDate>Fri, 22 Dec 2017 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-21_House_KamerenJ.mp3" length="127877996" type="audio/mpeg"/>
+			<itunes:author>DJ Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:06:35</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 20: Kameren J (Drum & Bass)]]></title>
+			<link>https://bezu.lu/zulumix20</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-20_DnB_KamerenJ.mp3</guid>
+			<dc:creator><![CDATA[DJ Kameren J]]></dc:creator>
+			<pubDate>Sun, 03 Jun 2007 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-20_DnB_KamerenJ.mp3" length="146143231" type="audio/mpeg"/>
+			<itunes:author>DJ Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:16:05</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 19: DJ Djive (Drum & Bass)]]></title>
+			<link>https://bezu.lu/zulumix19</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-19_DnB_Djive.mp3</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Thu, 19 Apr 2007 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-19_DnB_Djive.mp3" length="112069108" type="audio/mpeg"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:58:21</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix-18: Kameren J (Drum & Bass)]]></title>
+			<link>https://bezu.lu/zulumix18</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-18_DnB_KamerenJ.mp3</guid>
+			<dc:creator><![CDATA[DJ Kameren J]]></dc:creator>
+			<pubDate>Mon, 26 Feb 2007 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-18_DnB_KamerenJ.mp3" length="140899473" type="audio/mpeg"/>
+			<itunes:author>DJ Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:13:22</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluVideo 01: I'm Shy Fashion Party @ Red Club (Lausanne)]]></title>
+			<description><![CDATA[Our FIRST video experience: The Zulu Crew entertaining the Red Clubs' party people alongside with DJ Mathemathic, Kenshyro & Mr. Mike, Deborah from Sens Unik and Saian Supa Crew... Once again an eclectic and original concept for this great event ! Check out www.shy-wear.com for the party pictures!]]></description>
+			<link>https://bezu.lu/undefined</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluVideo-01.mp4</guid>
+			<dc:creator><![CDATA[Fabio]]></dc:creator>
+			<pubDate>Tue, 05 Dec 2006 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluVideo-01.mp4" length="44144975" type="video/mp4"/>
+			<itunes:author>Fabio</itunes:author>
+			<itunes:summary>Our FIRST video experience: The Zulu Crew entertaining the Red Clubs&apos; party people alongside with DJ Mathemathic, Kenshyro &amp; Mr. Mike, Deborah from Sens Unik and Saian Supa Crew... Once again an eclectic and original concept for this great event ! Check out www.shy-wear.com for the party pictures!</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:11:26</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 17: DJ Djive & Kameren]]></title>
+			<link>https://bezu.lu/zulumix17</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-17_DjiveKJ.mp3</guid>
+			<dc:creator><![CDATA[DJ Djive & Kameren J]]></dc:creator>
+			<pubDate>Sat, 14 Oct 2006 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-17_DjiveKJ.mp3" length="115580885" type="audio/mpeg"/>
+			<itunes:author>DJ Djive &amp; Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:00:08</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[StudioMix 04: DJ Djive (Electro)]]></title>
+			<link>https://bezu.lu/studiomix4</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/StudioMix-04_Electro_Djive.mp3</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Fri, 22 Sep 2006 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/StudioMix-04_Electro_Djive.mp3" length="78690303" type="audio/mpeg"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:40:56</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[StudioMix 03: Kameren J (Electro)]]></title>
+			<link>https://bezu.lu/studiomix3</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/StudioMix-03_Electro_KamerenJ.mp3</guid>
+			<dc:creator><![CDATA[DJ Kameren J]]></dc:creator>
+			<pubDate>Thu, 14 Sep 2006 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/StudioMix-03_Electro_KamerenJ.mp3" length="99535683" type="audio/mpeg"/>
+			<itunes:author>DJ Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:51:47</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[StudioMix 02: DJ Djive (Techno)]]></title>
+			<link>https://bezu.lu/studiomix2</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/StudioMix-02_Techno_Djive.mp3</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Wed, 30 Aug 2006 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/StudioMix-02_Techno_Djive.mp3" length="43656671" type="audio/mpeg"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:22:41</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[StudioMix 01: Kameren J (Drum & Bass)]]></title>
+			<link>https://bezu.lu/studiomix1</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/StudioMix-01_DnB_KamerenJ.mp3</guid>
+			<dc:creator><![CDATA[DJ Kameren J]]></dc:creator>
+			<pubDate>Wed, 02 Aug 2006 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/StudioMix-01_DnB_KamerenJ.mp3" length="87324587" type="audio/mpeg"/>
+			<itunes:author>DJ Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:45:26</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 16: DJ Djive (Drum & Bass)]]></title>
+			<link>https://bezu.lu/zulumix16</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-16_Djive.mp3</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Mon, 08 May 2006 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-16_Djive.mp3" length="116985938" type="audio/mpeg"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:00:53</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 15: Kameren J (Drum & Bass)]]></title>
+			<link>https://bezu.lu/zulumix15</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-15_KamerenJ.mp3</guid>
+			<dc:creator><![CDATA[DJ Kameren J]]></dc:creator>
+			<pubDate>Fri, 05 May 2006 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-15_KamerenJ.mp3" length="111798229" type="audio/mpeg"/>
+			<itunes:author>DJ Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:58:11</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 08: DJ Djive (House)]]></title>
+			<link>https://bezu.lu/zulumix8</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-08_House_Djive.m4a</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Wed, 15 Apr 2020 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-08_House_Djive.m4a" length="48080013" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>00:49:23</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 07: Lester DJ (House)]]></title>
+			<link>https://bezu.lu/zulumix7</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-07_House_Lester.m4a</guid>
+			<dc:creator><![CDATA[Lester DJ]]></dc:creator>
+			<pubDate>Wed, 15 Apr 2020 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-07_House_Lester.m4a" length="68073669" type="audio/mp4"/>
+			<itunes:author>Lester DJ</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:09:58</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 06: Kameren J (House)]]></title>
+			<link>https://bezu.lu/zulumix6</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-06_House_KamerenJ.m4a</guid>
+			<dc:creator><![CDATA[Kameren J]]></dc:creator>
+			<pubDate>Mon, 13 Apr 2020 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-06_House_KamerenJ.m4a" length="60629096" type="audio/mp4"/>
+			<itunes:author>Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:02:17</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 05: DJ Djive (House)]]></title>
+			<link>https://bezu.lu/zulumix5</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-05_House_Djive.m4a</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Mon, 13 Apr 2020 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-05_House_Djive.m4a" length="72007079" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:14:00</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 04: Lester DJ (House)]]></title>
+			<link>https://bezu.lu/zulumix4</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-04_House_Lester.m4a</guid>
+			<dc:creator><![CDATA[Lester DJ]]></dc:creator>
+			<pubDate>Sun, 05 Apr 2020 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-04_House_Lester.m4a" length="65366866" type="audio/mp4"/>
+			<itunes:author>Lester DJ</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:07:15</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 02: DJ Djive (House)]]></title>
+			<link>https://bezu.lu/zulumix3</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-03_House_KamerenJ.m4a</guid>
+			<dc:creator><![CDATA[Kameren J]]></dc:creator>
+			<pubDate>Sun, 05 Apr 2020 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-03_House_KamerenJ.m4a" length="59242223" type="audio/mp4"/>
+			<itunes:author>Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:00:52</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 02: DJ Djive (House)]]></title>
+			<link>https://bezu.lu/zulumix2</link>
+			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-02_House_Djive.m4a</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Sun, 05 Apr 2020 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-02_House_Djive.m4a" length="68393576" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:10:20</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 01: DJ Djive & Kameren J (House)]]></title>
+			<link>https://bezu.lu/zulumix1</link>
+			<guid isPermaLink="true">https://bezu.lu/zulumix1</guid>
+			<dc:creator><![CDATA[DJ Djive & Kameren J]]></dc:creator>
+			<pubDate>Sat, 08 Jan 2005 00:00:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-01_House_DjiveKJ.mp3" length="124772936" type="audio/mpeg"/>
+			<itunes:author>DJ Djive &amp; Kameren J</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:04:58</itunes:duration>
+		</item>
+	</channel>
+</rss>
