@@ -147,7 +147,7 @@
     pointer-events: none;
 
     @media (min-width: 768px) {
-      margin: 0.5rem 2.5rem;
+      margin: 0.5rem 1.5rem;
       width: 10rem;
     }
 
