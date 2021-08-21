@@ -15,14 +15,15 @@
   import OverlayPanel from './components/OverlayPanel.svelte'
 
   export let tracks = []
-  export let basePath = undefined
+  export let basePath
 
   const dispatch = createEventDispatcher()
 
-  let app = undefined
-  let router = undefined
-  let player = undefined
-  let panel = undefined
+  let app
+  let router
+  let player
+  let controls
+  let panel
 
   $: {
     setAllTracks(tracks)
@@ -64,13 +65,16 @@
     
     while (
       !isBody(target) &&
-      target !== panel.getDomElement()
+      target !== panel.getDomElement() &&
+      !Object.values(controls.getDomFilterButtons())
+        .some(button => button === target)
     ) {
       target = target.parentNode
     }
 
     if (isBody(target) && panel.isVisible()) {
       panel.close()
+      controls.clearFilter()
     }
   }
 </script>
@@ -91,7 +95,11 @@
     <Player bind:this={player} on:navigate={navigate} />
   </header>
   <main>
-    <Controls on:navigate={navigate} on:toggleFilter={toggleFilter}/>
+    <Controls
+      bind:this={controls}
+      on:navigate={navigate}
+      on:toggleFilter={toggleFilter}
+    />
     <div class="grid">
       <slot />
       <OverlayPanel bind:this={panel}/>
