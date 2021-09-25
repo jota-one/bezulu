@@ -1,14 +1,14 @@
 <script>
-  import { onMount, createEventDispatcher } from "svelte";
-  import { formatTime } from "../helpers";
-  import * as player from "../services/player";
+  import { onMount, createEventDispatcher } from 'svelte'
+  import { formatTime } from '../helpers'
+  import * as player from '../services/player'
   import {
     activeTrack,
     error,
     nextTrack,
     prevTrack,
     volume,
-  } from "../stores";
+  } from '../stores'
 
   const dispatch = createEventDispatcher();
   const time = { ellapsed: 0, left: 0 };
@@ -19,23 +19,17 @@
 
   export function playPause() {
     if ($error) {
-      return;
+      return
     }
 
     if (player.isLoaded()) {
       if (playingTrackId === $activeTrack.id) {
-        if (!player.isPlaying()) {
-          player.play();
-          paused = false;
-        } else {
-          player.pause();
-          paused = true;
-        }
-        return;
+        play()
+        return
       } else {
-        progress = 0;
-        player.unload();
-        paused = true;
+        progress = 0
+        player.unload()
+        paused = true
       }
     }
 
@@ -46,34 +40,45 @@
       onEnd,
     });
 
-    paused = false;
+    paused = false
 
-    time.ellapsed = 0;
-    time.left = 0;
+    time.ellapsed = 0
+    time.left = 0
 
-    playingTrackId = $activeTrack.id;
+    playingTrackId = $activeTrack.id
 
-    if ("mediaSession" in navigator) {
+    if ('mediaSession' in navigator) {
       navigator.mediaSession.metadata = new MediaMetadata({
         title: $activeTrack.title,
         artist: $activeTrack.artist,
         album: $activeTrack.album,
         artwork: [{ src: $activeTrack.thumbnailUrl }],
-      });
+      })
 
-      navigator.mediaSession.setActionHandler("play", playPause);
-      navigator.mediaSession.setActionHandler("pause", playPause);
-      navigator.mediaSession.setActionHandler("stop", stop);
+      navigator.mediaSession.setActionHandler('play', () => {
+        playPause()
+        navigator.mediaSession.playbackState = 'playing'
+      })
+      
+      navigator.mediaSession.setActionHandler('pause', () => {
+        playPause()
+        navigator.mediaSession.playbackState = 'paused'
+      })
+      
+      navigator.mediaSession.setActionHandler('stop', () => {
+        stop()
+        navigator.mediaSession.playbackState = 'none'
+      })
 
       if ($prevTrack) {
-        navigator.mediaSession.setActionHandler("previoustrack", () => {
-          dispatch("navigate", $prevTrack)
+        navigator.mediaSession.setActionHandler('previoustrack', () => {
+          dispatch('navigate', $prevTrack)
         })
       }
 
       if ($nextTrack) {
-        navigator.mediaSession.setActionHandler("nexttrack", () => {
-          dispatch("navigate", $nextTrack)
+        navigator.mediaSession.setActionHandler('nexttrack', () => {
+          dispatch('navigate', $nextTrack)
         })
       }
     }
@@ -81,7 +86,7 @@
 
   $: playPauseButtonStyle = $activeTrack
     ? `background-image:url(${$activeTrack.thumbnailUrl})`
-    : ""
+    : ''
 
   onMount(() => {
     window.setInterval(() => {
@@ -103,7 +108,7 @@
       return
     }
 
-    dispatch("navigate", $nextTrack)
+    dispatch('navigate', $nextTrack)
   }
 
   function onError(_error) {
