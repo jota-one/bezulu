@@ -137,15 +137,34 @@
     padding: 0;
   }
 
+  h3, h4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
   h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
+
+    @media (--xs) {
+      font-size: 1rem;
+    }
   }
 
   h4 {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 400;
     opacity: 0.75;
+
+    @media (--xs) {
+      font-size: 1.2rem;
+    }
+
+    @media (--m) {
+      font-size: 1.3rem;
+    }
   }
 
   h5 {
