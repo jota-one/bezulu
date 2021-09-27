@@ -75,7 +75,7 @@ export function playNewSound({ url, volume = 1, onEnd = () => { }, onError = () 
     onError(getError(errorCode))
   })
 
-  sound.on('playerror', (_, errorcode) => {
+  sound.on('playerror', (_, errorCode) => {
     onError(getError(errorCode))
   })
 
