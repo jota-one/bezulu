@@ -3,33 +3,75 @@ import * as player from './services/player'
 
 let _allTracks = []
 
+export const sortKeys = [
+  {
+    id: 'release',
+    value: 'Release date',
+    sortKey: 'dates.released'
+  },
+  {
+    id: 'add',
+    value: 'Date added',
+    sortKey: 'dates.added'
+  },
+  {
+    id: 'artist',
+    value: 'Artist',
+    sortKey: 'artist'
+  },
+  {
+    id: 'title',
+    value: 'Title',
+    sortKey: 'title'
+  }
+]
+
 export const activeTrackId = writable('')
 export const error = writable('')
 export const loop = writable(0)
 export const random = writable(false)
 export const tracksFilter = writable({})
+export const tracksOrder = writable({})
 export const volume = writable(0.5)
 
-export const allTracks = derived(random, $random => {  
-  if ($random) {
-    _allTracks = _allTracks.reduce((randomTracks, track, i) => {
-      const index = $random
-        ? getRandomIndex(_allTracks.length, randomTracks)
-        : track._pos
+export const allTracks = derived(
+  [random, tracksOrder],
+  ([$random, $tracksOrder]) => {
+    if ($random) {
+      _allTracks = _allTracks.reduce((randomTracks, track, i) => {
+        const index = $random
+          ? getRandomIndex(_allTracks.length, randomTracks)
+          : track._pos
+        
+        if (!track._pos) {
+          track._pos = i
+        }
+    
+        randomTracks[index] = track
+        return randomTracks
+      }, new Array(_allTracks.length))
+    } else {
+      let tracks = _allTracks
+        .reduce((allTracks, track, i) => {
+          allTracks[track._pos !== undefined ? track._pos : i] = track
+          return allTracks
+        }, new Array(_allTracks.length))
       
-      if (!track._pos) {
-        track._pos = i
+      if (Object.keys($tracksOrder).length) {
+        tracks = tracks.sort((a,b) => {
+          const valueA = getSortValue(a, $tracksOrder)
+          const valueB = getSortValue(b, $tracksOrder)
+          
+          return valueA === valueB
+            ? 0
+            : valueA > valueB
+              ? $tracksOrder.desc ? -1 : 1
+              : $tracksOrder.desc ? 1 : -1
+        })
       }
-  
-      randomTracks[index] = track
-      return randomTracks
-    }, new Array(_allTracks.length))
-  } else {
-    _allTracks = _allTracks.reduce((allTracks, track, i) => {
-      allTracks[track._pos !== undefined ? track._pos : i] = track
-      return allTracks
-    }, new Array(_allTracks.length))
-  }
+
+      _allTracks = tracks
+    }
 
   return _allTracks
 })
@@ -54,6 +96,7 @@ export const filteredTracks = derived(
       }
 
       filteredTracks.push(track)
+
       return filteredTracks
     }, [])
 )
@@ -189,4 +232,14 @@ function getFilterList(allTracks, tracksFilter, key) {
     })
     return all
   }, [])
+}
+
+function getSortValue(track, order) {
+  const value = order.key.split('.').reduce((value, key) => value[key], track)
+  
+  if (order.key.startsWith('dates')) {
+    return new Date(value)
+  }
+
+  return value
 }

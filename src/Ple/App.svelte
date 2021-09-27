@@ -55,7 +55,7 @@
     });
   }
 
-  function toggleFilter(event) {
+  function togglePanel(event) {
     panel.toggle(event.detail)
   }
 
@@ -66,7 +66,7 @@
     while (
       !isBody(target) &&
       target !== panel.getDomElement() &&
-      !Object.values(controls.getDomFilterButtons())
+      !Object.values(controls.getDomPanelButtons())
         .some(button => button === target)
     ) {
       target = target.parentNode
@@ -74,7 +74,7 @@
 
     if (isBody(target) && panel.isVisible()) {
       panel.close()
-      controls.clearFilter()
+      controls.clearActivePanel()
     }
   }
 </script>
@@ -98,7 +98,7 @@
     <Controls
       bind:this={controls}
       on:navigate={navigate}
-      on:toggleFilter={toggleFilter}
+      on:togglePanel={togglePanel}
     />
     <div class="grid">
       <slot />

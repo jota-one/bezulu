@@ -7,24 +7,26 @@
     prevDisabled,
     prevTrack,
     random,
-    tracksFilter
+    tracksFilter,
+    tracksOrder
   } from '../stores'
 
-  let filterButtons = {
+  let panelButtons = {
+    sort: undefined,
     artists: undefined,
     genres: undefined
   }
 
-  export function getDomFilterButtons() {
-    return filterButtons
+  export function getDomPanelButtons() {
+    return panelButtons
   }
 
-  export function clearFilter() {
-    filter = ''
+  export function clearActivePanel() {
+    activePanel = ''
   }
 
   const dispatch = createEventDispatcher()
-  let filter
+  let activePanel
 
   function navigatePrev() {
     dispatch('navigate', $prevTrack)
@@ -43,9 +45,9 @@
     $loop = value
   }
 
-  function toggleFilter(key) {
-    filter = filter === key ? '' : key
-    dispatch('toggleFilter', key)
+  function togglePanel(key) {
+    activePanel = activePanel === key ? '' : key
+    dispatch('togglePanel', key)
   }
 </script>
 
@@ -123,12 +125,24 @@
       </svg>
     </button>
     <button
+      class="sort"
+      title="Sort list"
+      class:active={activePanel === 'sort'}
+      bind:this={panelButtons.sort}
+      on:click={() => togglePanel('sort')}
+    >
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+        <path d="M14.6792 15.5H11.9792L15.9792 19.5L19.9792 15.5H17.2292V6.5H14.6792V15.5Z"/>
+        <path d="M9.32075 8.5L12.0208 8.5L8.02075 4.5L4.02075 8.5L6.77075 8.5L6.77075 17.5L9.32075 17.5L9.32075 8.5Z"/>
+      </svg>
+    </button>
+    <button
       class="artists"
-      title="Filter list on Artists"
-      class:active={filter === 'artists'}
+      title="Filter list by Artists"
+      class:active={activePanel === 'artists'}
       data-count-filters={$tracksFilter.artist?.length > 0 ? $tracksFilter.artist?.length : undefined}
-      bind:this={filterButtons.artists}
-      on:click={() => toggleFilter('artists')}
+      bind:this={panelButtons.artists}
+      on:click={() => togglePanel('artists')}
     >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
         <path d="M16.5441 15.4361C16.2399 16.1051 14.5805 17.6797 11.9808 17.6797C9.3712 17.6797 7.782 16.0959 7.44295 15.4361C7.44295 15.4361 6.07296 13.6223 11.9808 13.6223C17.8887 13.6223 16.5441 15.4361 16.5441 15.4361Z"
@@ -145,11 +159,11 @@
     </button>
     <button
       class="genres"
-      title="Filter list on Genres"
-      class:active={filter === 'genres'}
+      title="Filter list by Genres"
+      class:active={activePanel === 'genres'}
       data-count-filters={$tracksFilter.genres?.length > 0 ? $tracksFilter.genres?.length : undefined}
-      bind:this={filterButtons.genres}
-      on:click={() => toggleFilter('genres')}
+      bind:this={panelButtons.genres}
+      on:click={() => togglePanel('genres')}
     >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
         <path
@@ -160,8 +174,8 @@
     <!-- <button
       class="albums"
       title="Filter list on Albums"
-      class:active={filter === 'albums'}
-      on:click={() => toggleFilter('albums')}
+      class:active={activePanel === 'albums'}
+      on:click={() => togglePanel('albums')}
     >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
         <path
@@ -181,8 +195,8 @@
     <button
       class="crates"
       title="Choose crate"
-      class:active={filter === 'crates'}
-      on:click={() => toggleFilter('crates')}
+      class:active={activePanel === 'crates'}
+      on:click={() => togglePanel('crates')}
     >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
         <path

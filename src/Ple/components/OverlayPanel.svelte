@@ -1,14 +1,21 @@
 <script>
-  import { artists, genres, tracksFilter } from '../stores'
+  import {
+    artists,
+    genres,
+    sortKeys,
+    tracksFilter,
+    tracksOrder
+  } from '../stores'
   import FilterList from './FilterList.svelte'
+  import SortList from './SortList.svelte'
 
   let visible = false
-  let filterKey
+  let panelKey
   let element
 
   export function toggle(what) {
-    const noToggle = visible && filterKey && filterKey !== what
-    filterKey = what
+    const noToggle = visible && panelKey && panelKey !== what
+    panelKey = what
     
     if (noToggle) {
       return
@@ -29,6 +36,11 @@
 
   export function getDomElement() {
     return element
+  }
+
+  function sort(event) {
+    const { item, desc } = event.detail
+    $tracksOrder = { key: item.sortKey, desc }
   }
 
   function filter(key, value) {
@@ -60,10 +72,13 @@
 <aside class:visible bind:this={element}>
   <div class="wrapper">
     <div class="filter">
-    {#if filterKey === 'artists'}
+    {#if panelKey === 'artists'}
       <FilterList items={$artists} title="Artists" on:filter={filterArtists} />
-    {:else if filterKey === 'genres'}
+    {:else if panelKey === 'genres'}
       <FilterList items={$genres} title="Genres" on:filter={filterGenres} />
+    {/if}
+    {#if panelKey === 'sort'}
+      <SortList items={sortKeys} order={$tracksOrder} on:sort={sort} />
     {/if}
     </div>
   </div>

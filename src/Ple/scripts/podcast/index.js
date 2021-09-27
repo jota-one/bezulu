@@ -106,17 +106,26 @@ const run = async ({
   const json = { basePath: appBasePath, items: [] }
   const podcast = new Podcast(feed.settings)
   const medias = await processMedias({ root: mediaRoot, coversRoot })
+  const episodes = feed.episodes.sort((a, b) => {
+    
+    if (!a.dates) {
+      throwError('"dates" property missing', a)
+    }
 
-  for (let index = 0; index < feed.episodes.length; index++) {
+    const dateA = new Date(a.dates?.published)
+    const dateB = new Date(b.dates?.published)
+    return dateA === dateB ? 0 : dateA > dateB ? -1 : 1
+  })
+
+  for (let index = 0; index < episodes.length; index++) {
     const episode = feed.episodes[index]
-
-    if (!episode.date) throwError('"date" property missing', episode)
-
     const item = medias[episode.file]
 
     if (!item) {
       throwError(`Media file "${path.join(mediaRoot, episode.file)}" not found`, episode)
     }
+
+    item.date = episode.dates.published
 
     podcast.addItem({
       ...item,
@@ -143,8 +152,9 @@ const run = async ({
       thumbnailUrl: path.resolve(coversRoot + item.thumbnailPath)
       .replace(path.resolve(appRoot), ''),
       dates: {
-        added: episode.date,
-        updated: episode.date
+        added: episode.dates.published,
+        updated: episode.dates.published,
+        released: episode.dates.released
       },
       downloadable: !episode.preventDownload,
       duration: item.duration,
@@ -155,6 +165,12 @@ const run = async ({
   }
 
   await fs.writeFile(feedFile, podcast.buildXml('\t'), 'utf8')
+
+  json.items = json.items.sort((a, b) => {  
+    const dateA = new Date(a.dates?.released)
+    const dateB = new Date(b.dates?.released)
+    return dateA === dateB ? 0 : dateA > dateB ? -1 : 1
+  })
 
   await fs.writeFile(
     feedFile.replace('.xml', '.json'),
