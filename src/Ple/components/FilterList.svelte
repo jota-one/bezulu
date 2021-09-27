@@ -11,7 +11,7 @@
 </script>
 
 <ul class="scrollable">
-  <li>Filter list by {title}</li>
+  <li>Filter list by {title}:</li>
   {#each items as item}
     <li>
       <label for={item.id}>
