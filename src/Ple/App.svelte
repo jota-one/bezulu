@@ -1,10 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte'
-  import {
-    activeTrackId,
-    setAllTracks,
-    volumeLevel,
-  } from './stores'
+  import { activeTrackId, allTracks, setAllTracks, tracksOrder, volumeLevel } from './stores'
   import Grid from './components/Grid.svelte'
   import Player from './components/Player.svelte'
   import Controls from './components/Controls.svelte'
@@ -17,6 +13,7 @@
   export let tracks = []
   export let basePath
 
+  const IS_NEW_TIMERANGE = 2505600000 // 1 month
   const dispatch = createEventDispatcher()
 
   let app
@@ -26,16 +23,22 @@
   let panel
 
   $: {
-    setAllTracks(tracks)
+    setAllTracks(tracks.map(track => ({ ...track, isNew: isNew(track) })))
     dispatch('colorChanged', $volumeLevel)
   }
 
+  function isNew(track) {
+    const timeDiff = Date.now() - (new Date(track.dates.added)).getTime()
+    return timeDiff < IS_NEW_TIMERANGE
+  }
+
   function onRouterInit(event) {
-    setActiveTrackId(event.detail || tracks[0].id)
+    $tracksOrder = { key: 'dates.added', desc: true }
+    setActiveTrackId(event.detail || $allTracks[0]?.id)
   }
 
   function onRouterNavigate(event) {
-    setActiveTrackId(event.detail || tracks[0].id)
+    setActiveTrackId(event.detail)
     playActiveTrack()
   }
 
@@ -46,7 +49,7 @@
   }
 
   function setActiveTrackId(trackId) {
-    $activeTrackId = trackId
+    $activeTrackId = trackId || tracks[0]?.id
   }
 
   function playActiveTrack() {

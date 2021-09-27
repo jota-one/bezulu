@@ -18,9 +18,10 @@
   export let isShowcase = false;
   export let selected = undefined;
   export let title = undefined;
+  export let isNew = false
 </script>
 
-<div class:active class:selected class:error={$error} {id}>
+<div {id} class:active class:selected class:new={isNew} class:error={$error}>
   {#if active}
     <div class="meta">
       <h3>{artist}</h3>
@@ -99,6 +100,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    overflow: hidden;
 
     &.active {
       &:before {
@@ -121,6 +123,27 @@
       img {
         filter: grayscale(1);
       }
+    }
+
+    &.new:after {
+      content: 'new';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6rem;
+      height: 6rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: .5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: black;
+      background: yellow;
+      transform-origin: 0 0;
+      transform: rotate(-45deg) translate3d(-3rem,-3.5rem,0);
+      box-shadow: 0 0 1rem rgba(0,0,0, 0.25);
     }
   }
 
