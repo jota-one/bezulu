@@ -169,6 +169,7 @@
     </div>
     <input
       type="range"
+      aria-label="Seek audio position"
       min="0"
       max={time.ellapsed + time.left}
       value={time.ellapsed}

@@ -115,6 +115,7 @@
     flex-direction: column;
     height: 100%;
     min-width: 20rem;
+    backdrop-filter: blur(0.5rem);
     transform: translateX(-100%);
     transition: transform 0.2s linear;
     pointer-events: all;

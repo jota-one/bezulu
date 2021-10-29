@@ -21,6 +21,7 @@
       <label for={`${item.id}.${direction}`}>
         <input
           type="radio"
+          aria-label="Sort list by {item.id}, ascending"
           id={`${item.id}.asc`}
           name="sort"
           checked={item.sortKey === order.key && !order.desc}
@@ -28,6 +29,7 @@
         >
         <input
           type="radio"
+          aria-label="Sort list by {item.id}, descending"
           id={`${item.id}.desc`}
           name="sort"
           checked={item.sortKey === order.key && order.desc}

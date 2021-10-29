@@ -1,2 +1,3 @@
 # Fallback for vue-router's history mode
 /*    /index.html   200
+/*    Content-Security-Policy: default-src 'self'; media-src media.example.com;

@@ -17,6 +17,7 @@
       <label for={item.id}>
         <input
           type="checkbox"
+          aria-label="Filter list by {title}"
           id={item.id}
           checked={item.checked}
           on:change={() => filter(item.value)}

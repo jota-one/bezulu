@@ -9,7 +9,7 @@
   "feed": {
     "settings": {
       "title": "Be Zulu! Podcast",
-      "description": "The Zulu Mixes: House, Techno and Drum'n'Bass sets mixed by dj's Djive, Kameren J and Lester. Discover the particular style of the Zulu Dj's: mixing old school classics with today's hits, vocal house on a a techno beat, original funk tunes inside a techno set, that's the Zulu Sound ! A varied and eclectic vision of electronic music, \"Be Zulu!\"",
+      "description": "The Zulu Mixes: House, Techno and Drum&Bass sets mixed by dj's Djive, Kameren J and Lester. Discover the particular style of the Zulu Dj's: mixing old school classics with today's hits, vocal house on a a techno beat, original funk tunes inside a techno set, that's the Zulu Sound ! A varied and eclectic vision of electronic music, \"Be Zulu!\"",
       "generator": "Jota",
       "feedUrl": "https://bezu.lu/feed.xml",
       "siteUrl": "https://bezu.lu",
@@ -25,9 +25,36 @@
           "text": "Music"
         }
       ],
-      "itunesImage": "http://www.zuluparty.ch/media/Images/CD_Covers/BeZulu_Podcast.jpg"
+      "itunesImage": "https://bezu.lu/podcast.jpg"
     },
     "episodes": [
+      {
+        "file": "/ZuluMix-45_Techno_Djive.m4a",
+        "id": "zulumix45",
+        "trackTitle": "ZuluMix 45",
+        "dates": {
+          "released": "Tue, 26 Oct 2021 23:26:00 +0200",
+          "published": "Tue, 26 Oct 2021 23:26:00 +0200"
+        },
+        "genres": [
+          "House",
+          "Techno"
+        ],
+        "preventDownload": false
+      },
+      {
+        "file": "/ZuluMix-44_DnB_Lionites.m4a",
+        "id": "zulumix44",
+        "trackTitle": "ZuluMix 44",
+        "dates": {
+          "released": "Mon, 06 Oct 2021 13:26:00 +0200",
+          "published": "Mon, 06 Oct 2021 13:26:00 +0200"
+        },
+        "genres": [
+          "Drum & Bass"
+        ],
+        "preventDownload": false
+      },
       {
         "file": "/MyStoryOfHouseMusic-03_House_Lionites.m4a",
         "id": "msohm3",

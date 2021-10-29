@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
 	<channel>
 		<title><![CDATA[Be Zulu! Podcast]]></title>
-		<description><![CDATA[The Zulu Mixes: House, Techno and Drum'n'Bass sets mixed by dj's Djive, Kameren J and Lester. Discover the particular style of the Zulu Dj's: mixing old school classics with today's hits, vocal house on a a techno beat, original funk tunes inside a techno set, that's the Zulu Sound ! A varied and eclectic vision of electronic music, "Be Zulu!"]]></description>
+		<description><![CDATA[The Zulu Mixes: House, Techno and Drum&Bass sets mixed by dj's Djive, Kameren J and Lester. Discover the particular style of the Zulu Dj's: mixing old school classics with today's hits, vocal house on a a techno beat, original funk tunes inside a techno set, that's the Zulu Sound ! A varied and eclectic vision of electronic music, "Be Zulu!"]]></description>
 		<link>https://bezu.lu</link>
 		<generator>Jota</generator>
-		<lastBuildDate>Mon, 27 Sep 2021 14:21:39 GMT</lastBuildDate>
+		<lastBuildDate>Fri, 29 Oct 2021 13:26:37 GMT</lastBuildDate>
 		<atom:link href="https://bezu.lu/feed.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[DJ Djive, Kameren J (aka Lionites) and friends]]></author>
 		<category><![CDATA[Music]]></category>
 		<itunes:author>DJ Djive, Kameren J (aka Lionites) and friends</itunes:author>
-		<itunes:summary>The Zulu Mixes: House, Techno and Drum&apos;n&apos;Bass sets mixed by dj&apos;s Djive, Kameren J and Lester. Discover the particular style of the Zulu Dj&apos;s: mixing old school classics with today&apos;s hits, vocal house on a a techno beat, original funk tunes inside a techno set, that&apos;s the Zulu Sound ! A varied and eclectic vision of electronic music, &quot;Be Zulu!&quot;</itunes:summary>
+		<itunes:summary>The Zulu Mixes: House, Techno and Drum&amp;Bass sets mixed by dj&apos;s Djive, Kameren J and Lester. Discover the particular style of the Zulu Dj&apos;s: mixing old school classics with today&apos;s hits, vocal house on a a techno beat, original funk tunes inside a techno set, that&apos;s the Zulu Sound ! A varied and eclectic vision of electronic music, &quot;Be Zulu!&quot;</itunes:summary>
 		<itunes:owner>
 			<itunes:name>DJ Djive, Kameren J (aka Lionites) and friends</itunes:name>
 			<itunes:email></itunes:email>
@@ -17,6 +17,28 @@
 		<itunes:explicit>No</itunes:explicit>
 		<itunes:category text="Music"/>
 		<itunes:image href="http://www.zuluparty.ch/media/Images/CD_Covers/BeZulu_Podcast.jpg"/>
+		<item>
+			<title><![CDATA[ZuluMix 45: DJ Djive (House/Techno)]]></title>
+			<link>https://bezu.lu/zulumix45</link>
+			<guid isPermaLink="true">https://bezu.lu/zulumix45</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Tue, 26 Oct 2021 21:26:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-45_Techno_Djive.m4a" length="65413095" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:07:19</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 44: Lionites (Drum'n'Bass)]]></title>
+			<link>https://bezu.lu/zulumix44</link>
+			<guid isPermaLink="true">https://bezu.lu/zulumix44</guid>
+			<dc:creator><![CDATA[Lionites]]></dc:creator>
+			<pubDate>Wed, 06 Oct 2021 11:26:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/ZuluMix-44_DnB_Lionites.m4a" length="125015704" type="audio/mp4"/>
+			<itunes:author>Lionites</itunes:author>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>02:08:45</itunes:duration>
+		</item>
 		<item>
 			<title><![CDATA[ZuluMix 12: Kameren J (House)]]></title>
 			<link>https://bezu.lu/zulumix12</link>

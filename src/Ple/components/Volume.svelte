@@ -44,6 +44,7 @@
   </button>
   <input
     type="range"
+    aria-label="Change volume"
     min="0"
     max="10"
     value={$volume * 10}
@@ -93,8 +94,8 @@
       -webkit-appearance: none;
       appearance: none;
       position: relative;
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 2rem;
+      height: 2rem;
       border-radius: 999px;
       border: 2px solid var(--ple-c-active);
       background: rgb(20, 20, 20);
