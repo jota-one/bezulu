@@ -1,0 +1,4 @@
+/*
+  Content-Security-Policy: default-src 'self'; media-src media.example.com;
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
