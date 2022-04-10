@@ -1,8 +1,6 @@
 <script>
   import { formatTime } from "../helpers";
   import { filteredTracks } from "../stores";
-
-  export let tracks = [];
 </script>
 
 <footer>
