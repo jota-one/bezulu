@@ -1,0 +1,13 @@
+[[redirects]]
+  # Fallback for vue-router's history mode
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Content-Security-Policy = "default-src 'self' media.lionites.com plausible.io; style-src 'self' 'unsafe-inline'"
