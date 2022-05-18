@@ -4,7 +4,7 @@
 		<description><![CDATA[The Zulu Mixes: House, Techno and Drum&Bass sets mixed by dj's Djive, Kameren J and Lester. Discover the particular style of the Zulu Dj's: mixing old school classics with today's hits, vocal house on a a techno beat, original funk tunes inside a techno set, that's the Zulu Sound ! A varied and eclectic vision of electronic music, "Be Zulu!"]]></description>
 		<link>https://bezu.lu</link>
 		<generator>Jota</generator>
-		<lastBuildDate>Fri, 29 Apr 2022 21:03:27 GMT</lastBuildDate>
+		<lastBuildDate>Wed, 18 May 2022 19:00:06 GMT</lastBuildDate>
 		<atom:link href="https://bezu.lu/feed.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[DJ Djive, Lionites and friends]]></author>
 		<category><![CDATA[Music]]></category>
@@ -17,6 +17,19 @@
 		<itunes:explicit>No</itunes:explicit>
 		<itunes:category text="Music"/>
 		<itunes:image href="https://bezu.lu/podcast2022.jpg"/>
+		<item>
+			<title><![CDATA[F**k Me I Was In The Mousse!: Kameren J (House)]]></title>
+			<description><![CDATA[]]></description>
+			<link>https://bezu.lu/f__kme</link>
+			<guid isPermaLink="true">https://bezu.lu/f__kme</guid>
+			<dc:creator><![CDATA[Kameren J]]></dc:creator>
+			<pubDate>Wed, 18 May 2022 18:56:00 GMT</pubDate>
+			<enclosure url="https://media.lionites.com/bezulu/F__kMeIWasInTheMousse_House_KamerenJ.m4a" length="67920962" type="audio/mp4"/>
+			<itunes:author>Kameren J</itunes:author>
+			<itunes:summary></itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+			<itunes:duration>01:09:49</itunes:duration>
+		</item>
 		<item>
 			<title><![CDATA[ZuluMix 45: DJ Djive (House/Techno)]]></title>
 			<link>https://bezu.lu/zulumix45</link>
