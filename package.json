@@ -35,7 +35,7 @@
     "howler": "^2.2.3",
     "music-metadata": "^7.12.3",
     "podcast": "^2.0.0",
-    "sharp": "^0.30.3",
+    "sharp": "^0.30.5",
     "sirv-cli": "^2.0.2"
   }
 }
