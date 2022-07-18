@@ -29,6 +29,19 @@
     },
     "episodes": [
       {
+        "file": "/TheAnthemMix-02_House_Djive.m4a",
+        "id": "anthem2",
+        "trackTitle": "The Anthem Mix 2",
+        "dates": {
+          "released": "Wed, 6 Jul 2022 12:00:00 +0200",
+          "published": "Mon, 18 Jul 2022 20:56:00 +0200"
+        },
+        "genres": [
+          "House"
+        ],
+        "preventDownload": false
+      },
+      {
         "file": "/F__kMeIWasInTheMousse_House_KamerenJ.m4a",
         "id": "f__kme",
         "trackTitle": "F*** Me I was in the mousse!",
