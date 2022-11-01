@@ -3,7 +3,7 @@ const path = require('path')
 const mm = require('music-metadata')
 const sharp = require('sharp')
 const Walk = require('@root/walk')
-const Podcast = require('podcast')
+const Podcast = require('podcast').Podcast
 
 const configPath = path.resolve(process.cwd(), process.argv[2])
 const audioOnly = process.argv[3]?.toLocaleLowerCase() === 'audio'
