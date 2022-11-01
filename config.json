@@ -6,6 +6,7 @@
   "appBaseUrl": "https://bezu.lu",
   "appBasePath": "/",
   "feedFile": "./public/feed.xml",
+  "feedFileAudio": "./public/feed-audio.xml",
   "feed": {
     "settings": {
       "title": "Be Zulu! Podcast",
