@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:psc="http://podlove.org/simple-chapters" xmlns:podcast="https://podcastindex.org/namespace/1.0">
 	<channel>
 		<title><![CDATA[Be Zulu! Podcast]]></title>
-		<description><![CDATA[Electronic music from old school house to modern Drum&Bass A varied and eclectic vision of electronic music, "Be Zulu!"]]></description>
+		<description><![CDATA[Follow DJ Djive and Lionites in their journey to electronic music - From Old School House to Drum & Bass, Techno and more, a varied and eclectic vision of electronic music.]]></description>
 		<link>https://bezu.lu</link>
 		<generator>Jota</generator>
-		<lastBuildDate>Tue, 01 Nov 2022 19:06:20 GMT</lastBuildDate>
+		<lastBuildDate>Tue, 01 Nov 2022 19:47:13 GMT</lastBuildDate>
 		<atom:link href="https://bezu.lu/feed.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[DJ Djive, Lionites and friends]]></author>
 		<category><![CDATA[Music]]></category>
 		<itunes:author>DJ Djive, Lionites and friends</itunes:author>
-		<itunes:summary>Electronic music from old school house to modern Drum&amp;Bass A varied and eclectic vision of electronic music, &quot;Be Zulu!&quot;</itunes:summary>
+		<itunes:summary>Follow DJ Djive and Lionites in their journey to electronic music - From Old School House to Drum &amp; Bass, Techno and more, a varied and eclectic vision of electronic music.</itunes:summary>
 		<itunes:owner>
 			<itunes:name>Lionites</itunes:name>
 			<itunes:email>bezulu@blez.org</itunes:email>
