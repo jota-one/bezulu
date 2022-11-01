@@ -4,7 +4,7 @@
 		<description><![CDATA[Electronic music from old school house to modern Drum&Bass A varied and eclectic vision of electronic music, "Be Zulu!"]]></description>
 		<link>https://bezu.lu</link>
 		<generator>Jota</generator>
-		<lastBuildDate>Tue, 01 Nov 2022 13:22:07 GMT</lastBuildDate>
+		<lastBuildDate>Tue, 01 Nov 2022 19:06:20 GMT</lastBuildDate>
 		<atom:link href="https://bezu.lu/feed.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[DJ Djive, Lionites and friends]]></author>
 		<category><![CDATA[Music]]></category>
@@ -12,7 +12,7 @@
 		<itunes:summary>Electronic music from old school house to modern Drum&amp;Bass A varied and eclectic vision of electronic music, &quot;Be Zulu!&quot;</itunes:summary>
 		<itunes:owner>
 			<itunes:name>Lionites</itunes:name>
-			<itunes:email>istvan@blez.org</itunes:email>
+			<itunes:email>bezulu@blez.org</itunes:email>
 		</itunes:owner>
 		<itunes:explicit>false</itunes:explicit>
 		<itunes:category text="Music"/>
