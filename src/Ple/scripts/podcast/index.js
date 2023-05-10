@@ -3,9 +3,10 @@ const path = require('path')
 const mm = require('music-metadata')
 const sharp = require('sharp')
 const Walk = require('@root/walk')
-const Podcast = require('podcast')
+const Podcast = require('podcast').Podcast
 
 const configPath = path.resolve(process.cwd(), process.argv[2])
+const audioOnly = process.argv[3]?.toLocaleLowerCase() === 'audio'
 
 if (!fs.pathExistsSync(configPath)) {
   throw new Error(`Config file ${configPath} not found!`)
@@ -112,11 +113,9 @@ const run = async ({
   const podcast = new Podcast(feed.settings)
   const medias = await processMedias({ root: mediaRoot, coversRoot })
   const episodes = feed.episodes.sort((a, b) => {
-    
     if (!a.dates) {
       throwError('"dates" property missing', a)
     }
-
     const dateA = new Date(a.dates?.published)
     const dateB = new Date(b.dates?.published)
     return dateA === dateB ? 0 : dateA > dateB ? -1 : 1
@@ -131,6 +130,10 @@ const run = async ({
     }
 
     item.date = episode.dates.published
+
+    if (audioOnly && !episode.id) {
+      continue
+    }
 
     podcast.addItem({
       ...item,
@@ -188,5 +191,5 @@ run({
   ...config,
   mediaRoot: path.join(ROOT, config.mediaRoot),
   coversRoot: path.join(ROOT, config.coversRoot),
-  feedFile: path.join(ROOT, config.feedFile)
+  feedFile: path.join(ROOT, audioOnly ? config.feedFileAudio : config.feedFile)
 })

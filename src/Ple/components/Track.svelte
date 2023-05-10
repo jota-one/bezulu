@@ -2,7 +2,7 @@
   import { error } from "../stores";
 
   export let active = undefined;
-  export let album = undefined;
+  // export let album = undefined;
   export let artist = undefined;
   export let audioUrl = undefined;
   export let coverUrl = undefined;
@@ -12,13 +12,13 @@
     updated: undefined,
   };
   export let downloadable = false;
-  export let duration = undefined;
+  // export let duration = undefined;
   export let genres = [];
   export let id = undefined;
   export let isShowcase = false;
   export let selected = undefined;
   export let title = undefined;
-  export let isNew = false
+  export let isNew = false;
 </script>
 
 <div {id} class:active class:selected class:new={isNew} class:error={$error}>
@@ -126,7 +126,7 @@
     }
 
     &.new:after {
-      content: 'new';
+      content: "new";
       position: absolute;
       top: 0;
       left: 0;
@@ -135,15 +135,15 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding-bottom: .5rem;
+      padding-bottom: 0.5rem;
       font-size: 0.9rem;
       font-weight: 600;
       text-transform: uppercase;
       color: black;
       background: yellow;
       transform-origin: 0 0;
-      transform: rotate(-45deg) translate3d(-3rem,-3.5rem,0);
-      box-shadow: 0 0 1rem rgba(0,0,0, 0.25);
+      transform: rotate(-45deg) translate3d(-3rem, -3.5rem, 0);
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
     }
   }
 
@@ -160,7 +160,8 @@
     padding: 0;
   }
 
-  h3, h4 {
+  h3,
+  h4 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
