@@ -28,7 +28,17 @@ export const sortKeys = [
     id: 'title',
     value: 'Title',
     sortKey: 'title'
-  }
+  },
+  {
+    id: 'title',
+    value: 'Title',
+    sortKey: 'title'
+  },
+  {
+    id: 'duration',
+    value: 'Duration',
+    sortKey: 'duration'
+  },
 ]
 
 export const state = writable(
