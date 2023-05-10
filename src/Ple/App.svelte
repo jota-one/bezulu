@@ -1,5 +1,5 @@
 <script>
-  import { createEventDispatcher } from 'svelte'
+  import { createEventDispatcher, onMount } from 'svelte'
   import { activeTrackId, allTracks, setAllTracks, tracksOrder, volumeLevel } from './stores'
   import Grid from './components/Grid.svelte'
   import Player from './components/Player.svelte'
@@ -9,6 +9,7 @@
   import SvgFilters from './components/SvgFilters.svelte'
   import Volume from './components/Volume.svelte'
   import OverlayPanel from './components/OverlayPanel.svelte'
+  import BackToTop from './components/BackToTop.svelte'
 
   export let tracks = []
   export let basePath
@@ -21,6 +22,7 @@
   let player
   let controls
   let panel
+  let showBackToTop
 
   $: {
     setAllTracks(tracks.map(track => ({ ...track, isNew: isNew(track) })))
@@ -65,7 +67,7 @@
   function onClickInApp(event) {
     const isBody = element => element.tagName.toLowerCase() === 'body'
     let target = event.target
-    
+
     while (
       !isBody(target) &&
       target !== panel.getDomElement() &&
@@ -80,6 +82,18 @@
       controls.clearActivePanel()
     }
   }
+
+  onMount(() => {
+    const target = document.querySelector('.grid .active')
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        showBackToTop = !entry.isIntersecting
+      })
+    })
+
+    observer.observe(target)
+  })
 </script>
 
 <div
@@ -110,27 +124,11 @@
       <div style="flex:1" />
       <div class="secondary-controls">
         <Volume/>
-        <button
-          class="active"
-          title="Scroll to top of page"
-          on:click={() => {
-            app.scrollIntoView();
-          }}
-        >
-          <svg
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-            fill="currentColor"
-            filter="url(#dropshadow)"
-          >
-            <path
-              d="M14,20H10V11L6.5,14.5L4.08,12.08L12,4.16L19.92,12.08L17.5,14.5L14,11V20Z"
-            />
-          </svg>
-        </button>
+        <div class="back-to-top" class:show={showBackToTop}>
+          <BackToTop />
+        </div>
       </div>
-      <Footer />
+      footr: <Footer />
     </div>
   </main>
 </div>
@@ -222,10 +220,10 @@
 
     .secondary-controls {
       position: sticky;
-      bottom: 1rem;
+      bottom: 2rem;
       display: flex;
       justify-content: space-between;
-      padding: 1rem 1.5rem 0 0;
+      padding: 2rem 1.5rem 0 0;
       pointer-events: none;
       z-index: 1;
 
@@ -255,6 +253,17 @@
       &::-webkit-scrollbar-thumb {
         background-color: rgba(255,255,255, 0.25);
         border: none;
+      }
+    }
+
+    .back-to-top {
+      opacity: 0.3;
+      transform: translateY(5rem);
+      transition: all 0.2s ease-in-out;
+
+      &.show {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   }
