@@ -16,9 +16,9 @@
   const time = { ellapsed: 0, left: 0 }
 
   let playingTrackId = undefined
-  let paused = undefined
+  let paused = true
   let progress = 0
-  
+
   export function playPause() {
     if ($error) {
       return
@@ -81,14 +81,14 @@
           navigator.mediaSession.playbackState = 'playing'
         }
       })
-      
+
       navigator.mediaSession.setActionHandler('pause', () => {
         if (!skipHandler) {
           player.pause()
           navigator.mediaSession.playbackState = 'paused'
         }
       })
-      
+
       navigator.mediaSession.setActionHandler('stop', () => {
         if (!skipHandler) {
           stop()

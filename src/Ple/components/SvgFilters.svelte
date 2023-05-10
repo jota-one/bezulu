@@ -5,7 +5,7 @@
       <feGaussianBlur result="blurOut" in="offOut" stdDeviation="1" />
       <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
       <feComponentTransfer>
-        <feFuncA type="linear" slope="0.95" />
+        <feFuncA type="linear" slope="0.3" />
       </feComponentTransfer>
       <feMerge>
         <feMergeNode />
