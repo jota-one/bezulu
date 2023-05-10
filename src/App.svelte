@@ -1,9 +1,10 @@
 <script>
   import Player from './Ple'
-  import { basePath, items } from '../public/feed.json'
+  import { app, items } from '../public/feed.json'
 
+  const { basePath } = app
   const tracks = items
-  let volumeLevel = 'default'
+  let volumeLevel = 'init'
 </script>
 
 <Player {tracks} {basePath} on:colorChanged={(e) => (volumeLevel = e.detail)}>
@@ -151,6 +152,10 @@
       width: 10rem;
     }
 
+    &.volume-init {
+      color: transparent;
+    }
+
     &.volume-off {
       color: var(--ple-c-off);
     }
@@ -179,6 +184,7 @@
       color: inherit;
       pointer-events: all;
     }
+
     svg {
       width: 100%;
       height: 100%;

@@ -24,7 +24,7 @@
 
   $: {
     setAllTracks(tracks.map(track => ({ ...track, isNew: isNew(track) })))
-    dispatch('colorChanged', $volumeLevel)
+    setTimeout(() => dispatch('colorChanged', $volumeLevel), 10)
   }
 
   function isNew(track) {
@@ -33,8 +33,8 @@
   }
 
   function onRouterInit(event) {
-    $tracksOrder = { key: 'dates.added', desc: true }
-    setActiveTrackId(event.detail || $allTracks[0]?.id)
+    $tracksOrder = $tracksOrder || { key: 'dates.added', desc: true }
+    setActiveTrackId(event.detail || $activeTrackId || $allTracks[0]?.id)
   }
 
   function onRouterNavigate(event) {

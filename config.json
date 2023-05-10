@@ -1,10 +1,14 @@
 {
   "mediaRoot": "./media",
   "coversRoot": "./public/covers",
-  "appRoot": "./public",
+  "app": {
+    "title": "Be Zulu! Podcast",
+    "id": "be-zulu",
+    "root": "./public",
+    "baseUrl": "https://bezu.lu",
+    "basePath": "/"
+  },
   "mediaBaseUrl": "https://media.lionites.com/bezulu/",
-  "appBaseUrl": "https://bezu.lu",
-  "appBasePath": "/",
   "feedFile": "./public/feed.xml",
   "feed": {
     "settings": {

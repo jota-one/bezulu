@@ -4,19 +4,21 @@
   import * as player from '../services/player'
   import {
     activeTrack,
+    duration,
+    ellapsed,
     error,
     nextTrack,
     prevTrack,
     volume,
   } from '../stores'
 
-  const dispatch = createEventDispatcher();
-  const time = { ellapsed: 0, left: 0 };
+  const dispatch = createEventDispatcher()
+  const time = { ellapsed: 0, left: 0 }
 
-  let playingTrackId = undefined;
-  let paused = undefined;
-  let progress = 0;
-
+  let playingTrackId = undefined
+  let paused = undefined
+  let progress = 0
+  
   export function playPause() {
     if ($error) {
       return
@@ -24,12 +26,12 @@
 
     if (player.isLoaded()) {
       if (playingTrackId === $activeTrack.id) {
-        play()
-        return
+        return play()
       } else {
-        progress = 0
         player.unload()
         paused = true
+        progress = 0
+        $ellapsed = 0
       }
     }
 
@@ -38,13 +40,15 @@
       volume: $volume,
       onError,
       onEnd,
-    });
+    })
+
+    setDuration()
 
     paused = false
-
-    time.ellapsed = 0
+    time.ellapsed = $ellapsed
     time.left = 0
 
+    player.seek($ellapsed)
     playingTrackId = $activeTrack.id
 
     if ('mediaSession' in navigator) {
@@ -54,20 +58,42 @@
         album: $activeTrack.album,
         artwork: [{ src: $activeTrack.thumbnailUrl }],
       })
+    }
+  }
+
+  $: playPauseButtonStyle = $activeTrack
+    ? `background-image:url(${$activeTrack.thumbnailUrl})`
+    : ''
+
+  onMount(() => {
+    updateTime()
+
+    if ('mediaSession' in navigator) {
+      // Safari for some reason is throwing back mediaSession handlers
+      // resulting in an infinite loop... As it seems also it's the only browser
+      // implementing the callActionHandler function, using this trick
+      // prevents executing the handler indefinitely.
+      const skipHandler = Boolean(navigator.mediaSession.callActionHandler)
 
       navigator.mediaSession.setActionHandler('play', () => {
-        playPause()
-        navigator.mediaSession.playbackState = 'playing'
+        if (!skipHandler) {
+          player.play()
+          navigator.mediaSession.playbackState = 'playing'
+        }
       })
       
       navigator.mediaSession.setActionHandler('pause', () => {
-        playPause()
-        navigator.mediaSession.playbackState = 'paused'
+        if (!skipHandler) {
+          player.pause()
+          navigator.mediaSession.playbackState = 'paused'
+        }
       })
       
       navigator.mediaSession.setActionHandler('stop', () => {
-        stop()
-        navigator.mediaSession.playbackState = 'none'
+        if (!skipHandler) {
+          stop()
+          navigator.mediaSession.playbackState = 'none'
+        }
       })
 
       if ($prevTrack) {
@@ -82,24 +108,14 @@
         })
       }
     }
-  }
 
-  $: playPauseButtonStyle = $activeTrack
-    ? `background-image:url(${$activeTrack.thumbnailUrl})`
-    : ''
-
-  onMount(() => {
     window.setInterval(() => {
       if (player.isPlaying()) {
-        const duration = player.getDuration();
-        const ellapsed = player.getPlayingPosition();
-
-        time.ellapsed = ellapsed;
-        time.left = duration - ellapsed;
-        progress = ellapsed / duration;
+        $ellapsed = player.getPlayingPosition();
+        updateTime()
       }
-    }, 1000);
-  });
+    }, 1000)
+  })
 
   function onEnd() {
     stop()
@@ -132,7 +148,24 @@
   }
 
   function seek(event) {
-    player.seek(event.target.value);
+    player.seek(event.target.value)
+  }
+
+  function setDuration() {
+    $duration = 0
+
+    const int = setInterval(() => {
+      if (player.getDuration() > 0) {
+        $duration = player.getDuration()
+        clearInterval(int)
+      }
+    }, 250)
+  }
+
+  function updateTime() {
+    time.ellapsed = $ellapsed
+    time.left = $duration - $ellapsed;
+    progress = $ellapsed / $duration
   }
 
   function handleKeydown(event) {
@@ -267,7 +300,7 @@
       transparent 75%,
       transparent 100%
     );
-    background-size: 1vh 1vh;
+    background-size: 0.75rem 0.75rem;
     background-position: 0 0;
     border: none;
     outline: none;
@@ -278,7 +311,7 @@
       -webkit-appearance: none;
       appearance: none;
       position: relative;
-      top: 1rem;
+      top: 0.6rem;
       width: 1px;
       height: var(--ple-s-player-height);
       background: var(--ple-c-active);
@@ -329,7 +362,7 @@
           transparent 75%,
           transparent 100%
         );
-        background-size: 1vh 1vh;
+        background-size: 0.75rem 0.75rem;
         background-position: 0 0;
         transition: background var(--ple-transition-time) var(--ple-transition-type);
       }

@@ -1,6 +1,11 @@
 import { writable, derived } from 'svelte/store'
 import * as player from './services/player'
+import { app } from '../../public/feed.json'
 
+const persistKey = 'ple-state-' + app.id
+const persistedState = localStorage[persistKey]
+
+let _initialState = {}
 let _allTracks = []
 
 export const sortKeys = [
@@ -26,13 +31,21 @@ export const sortKeys = [
   }
 ]
 
-export const activeTrackId = writable('')
+export const state = writable(
+  persistedState ? JSON.parse(persistedState) : _initialState
+)
+
+state.subscribe(state => { _initialState = state })
+
+export const activeTrackId = writable(_initialState.activeTrackId || '')
+export const duration = writable(_initialState.duration)
+export const ellapsed = writable(_initialState.ellapsed || 0)
 export const error = writable('')
-export const loop = writable(0)
+export const loop = writable(_initialState.loop || 0)
 export const random = writable(false)
-export const tracksFilter = writable({})
-export const tracksOrder = writable({})
-export const volume = writable(0.5)
+export const tracksFilter = writable(_initialState.tracksFilter || {})
+export const tracksOrder = writable(_initialState.tracksOrder || {})
+export const volume = writable(_initialState.volume === 0 ? 0 : _initialState.volume || 0.5)
 
 export const allTracks = derived(
   [random, tracksOrder],
@@ -189,10 +202,6 @@ export function setAllTracks(tracks = []) {
   _allTracks = tracks
 }
 
-volume.subscribe(volume => {
-  player.setVolume(volume)
-})
-
 function isTrackFiltered(track, filters) {
   return !Object.entries(filters).every(([key, value]) => {
     const v = Array.isArray(track[key]) ? track[key].join(',') : track[key]
@@ -243,3 +252,34 @@ function getSortValue(track, order) {
 
   return value
 }
+
+activeTrackId.subscribe(activeTrackId => {
+  state.update(s => ({ ...s, activeTrackId }))
+})
+
+duration.subscribe(duration => {
+  state.update(s => ({ ...s, duration }))
+})
+
+ellapsed.subscribe(ellapsed => {
+  state.update(s => ({ ...s, ellapsed }))
+})
+
+loop.subscribe(loop => {
+  state.update(s => ({ ...s, loop }))
+})
+
+tracksFilter.subscribe(tracksFilter => {
+  state.update(s => ({ ...s, tracksFilter }))
+})
+
+tracksOrder.subscribe(tracksOrder => {
+  state.update(s => ({ ...s, tracksOrder }))
+})
+
+volume.subscribe(volume => {
+  player.setVolume(volume)
+  state.update(s => ({ ...s, volume }))
+})
+
+state.subscribe((value) => localStorage[persistKey] = JSON.stringify(value))

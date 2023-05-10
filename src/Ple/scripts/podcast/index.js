@@ -97,13 +97,18 @@ const run = async ({
   feed,
   mediaRoot,
   coversRoot,
-  appRoot,
+  app,
   mediaBaseUrl,
-  appBaseUrl,
-  appBasePath,
   feedFile
 }) => {
-  const json = { basePath: appBasePath, items: [] }
+  const json = {
+    app: {
+      title: app.title,
+      id: app.id,
+      basePath: app.basePath,
+    },
+    items: [],
+  }
   const podcast = new Podcast(feed.settings)
   const medias = await processMedias({ root: mediaRoot, coversRoot })
   const episodes = feed.episodes.sort((a, b) => {
@@ -135,7 +140,7 @@ const run = async ({
         file: item.file
       },
       itunesDuration: item.duration,
-      url: `${appBaseUrl.replace(/\/$/, '')}/${episode.id}`,
+      url: `${app.baseUrl.replace(/\/$/, '')}/${episode.id}`,
     })
 
     if (!episode.id) {
@@ -148,9 +153,9 @@ const run = async ({
       album: feed.settings.title,
       audioUrl: mediaBaseUrl.replace(/\/$/, '') + episode.file,
       coverUrl: path.resolve(coversRoot + item.coverPath)
-        .replace(path.resolve(appRoot), ''),
+        .replace(path.resolve(app.root), ''),
       thumbnailUrl: path.resolve(coversRoot + item.thumbnailPath)
-      .replace(path.resolve(appRoot), ''),
+      .replace(path.resolve(app.root), ''),
       dates: {
         added: episode.dates.published,
         updated: episode.dates.published,
