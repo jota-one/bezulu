@@ -134,7 +134,16 @@
   function seek(event) {
     player.seek(event.target.value);
   }
+
+  function handleKeydown(event) {
+		if (event.code.toLowerCase() === 'space') {
+      playPause()
+      event.preventDefault()
+    }
+	}
 </script>
+
+<svelte:window on:keydown={handleKeydown}/>
 
 <div class="player">
   <button
@@ -269,7 +278,7 @@
       -webkit-appearance: none;
       appearance: none;
       position: relative;
-      top: 0;
+      top: 1rem;
       width: 1px;
       height: var(--ple-s-player-height);
       background: var(--ple-c-active);
