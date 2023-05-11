@@ -14,7 +14,7 @@
 </script>
 
 <div class="volume">
-  <button title="Toggle volume" on:click={toggleVolume}>
+  <button class="button" title="Toggle volume" on:click={toggleVolume}>
     <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
       {#if $volume === 0}
         <path
@@ -124,7 +124,7 @@
     }
   }
 
-  button {
+  .button {
     color: var(--ple-c-active);
     transition: color var(--ple-transition-time) var(--ple-transition-type);
   }

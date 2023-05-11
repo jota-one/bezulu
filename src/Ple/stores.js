@@ -53,6 +53,7 @@ export const ellapsed = writable(_initialState.ellapsed || 0)
 export const error = writable('')
 export const loop = writable(_initialState.loop || 0)
 export const random = writable(false)
+export const showMeta = writable([])
 export const tracksFilter = writable(_initialState.tracksFilter || {})
 export const tracksOrder = writable(_initialState.tracksOrder || {})
 export const volume = writable(_initialState.volume === 0 ? 0 : _initialState.volume || 0.5)
@@ -65,11 +66,11 @@ export const allTracks = derived(
         const index = $random
           ? getRandomIndex(_allTracks.length, randomTracks)
           : track._pos
-        
+
         if (!track._pos) {
           track._pos = i
         }
-    
+
         randomTracks[index] = track
         return randomTracks
       }, new Array(_allTracks.length))
@@ -79,12 +80,12 @@ export const allTracks = derived(
           allTracks[track._pos !== undefined ? track._pos : i] = track
           return allTracks
         }, new Array(_allTracks.length))
-      
+
       if (Object.keys($tracksOrder).length) {
         tracks = tracks.sort((a,b) => {
           const valueA = getSortValue(a, $tracksOrder)
           const valueB = getSortValue(b, $tracksOrder)
-          
+
           return valueA === valueB
             ? 0
             : valueA > valueB
@@ -134,7 +135,7 @@ export const nextTrack = derived(
   [filteredTracks, activeTrackIndex, loop],
   ([$filteredTracks, $activeTrackIndex, $loop]) => {
     const isLast = $activeTrackIndex === $filteredTracks.length - 1
-      
+
     if (isLast && $loop === 0) {
         return
     }
@@ -143,8 +144,8 @@ export const nextTrack = derived(
       ? $activeTrackIndex
       : isLast
         ? 0
-        : $activeTrackIndex + 1 
-    
+        : $activeTrackIndex + 1
+
     return $filteredTracks[index]
   }
 )
@@ -153,7 +154,7 @@ export const prevTrack = derived(
   [filteredTracks, activeTrackIndex, loop],
   ([$filteredTracks, $activeTrackIndex, $loop]) => {
     const isFirst = $activeTrackIndex === 0
-      
+
     if (isFirst && $loop === 0) {
         return
     }
@@ -216,11 +217,11 @@ function isTrackFiltered(track, filters) {
   return !Object.entries(filters).every(([key, value]) => {
     const v = Array.isArray(track[key]) ? track[key].join(',') : track[key]
     const values = [].concat(value)
-    
+
     if (!values.length) {
       return true
     }
-    
+
     return values
       .some(value => v.toLowerCase().includes(value.toLowerCase()))
   })
@@ -228,11 +229,11 @@ function isTrackFiltered(track, filters) {
 
 function getRandomIndex(max, list) {
   let index
-  
+
   do {
     index = Math.floor(Math.random() * max)
   } while(list[index])
-  
+
   return index
 }
 
@@ -255,7 +256,7 @@ function getFilterList(allTracks, tracksFilter, key) {
 
 function getSortValue(track, order) {
   const value = order.key.split('.').reduce((value, key) => value[key], track)
-  
+
   if (order.key.startsWith('dates')) {
     return new Date(value)
   }

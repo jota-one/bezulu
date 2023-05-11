@@ -16,7 +16,7 @@
   export function toggle(what) {
     const noToggle = visible && panelKey && panelKey !== what
     panelKey = what
-    
+
     if (noToggle) {
       return
     }
@@ -117,11 +117,12 @@
     min-width: 20rem;
     backdrop-filter: blur(0.5rem);
     transform: translateX(-100%);
-    transition: transform 0.2s linear;
+    transition: transform 0.1s ease-in-out;
     pointer-events: all;
 
     .visible & {
       transform: translateX(0);
+      box-shadow: 0 0 1rem rgba(0,0,0, 0.5);
     }
   }
 </style>

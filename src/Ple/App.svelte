@@ -1,6 +1,13 @@
 <script>
   import { createEventDispatcher, onMount } from 'svelte'
-  import { activeTrackId, allTracks, setAllTracks, tracksOrder, volumeLevel } from './stores'
+  import {
+    activeTrackId,
+    allTracks,
+    setAllTracks,
+    showMeta,
+    tracksOrder,
+    volumeLevel
+  } from './stores'
   import Grid from './components/Grid.svelte'
   import Player from './components/Player.svelte'
   import Controls from './components/Controls.svelte'
@@ -26,7 +33,7 @@
 
   $: {
     setAllTracks(tracks.map(track => ({ ...track, isNew: isNew(track) })))
-    setTimeout(() => dispatch('colorChanged', $volumeLevel), 10)
+    setTimeout(() => dispatch('colorChanged', $volumeLevel), 0)
   }
 
   function isNew(track) {
@@ -64,8 +71,22 @@
     panel.toggle(event.detail)
   }
 
+  function toggleMeta(event) {
+    const trackId = event.detail?.id
+
+    if (!trackId) {
+      return
+    }
+
+    if ($showMeta.includes(trackId)) {
+      $showMeta = $showMeta.filter(id => id !== trackId)
+    } else {
+      $showMeta = [...$showMeta, trackId]
+    }
+  }
+
   function onClickInApp(event) {
-    const isBody = element => element.tagName.toLowerCase() === 'body'
+    const isBody = element => element?.tagName.toLowerCase() === 'body'
     let target = event.target
 
     while (
@@ -74,6 +95,10 @@
       !Object.values(controls.getDomPanelButtons())
         .some(button => button === target)
     ) {
+      if (!target) {
+        break
+      }
+
       target = target.parentNode
     }
 
@@ -120,7 +145,7 @@
     <div class="grid">
       <slot />
       <OverlayPanel bind:this={panel}/>
-      <Grid on:navigate={navigate} />
+      <Grid on:navigate={navigate} on:toggleMeta={toggleMeta} />
       <div style="flex:1" />
       <div class="secondary-controls">
         <Volume/>
@@ -135,9 +160,9 @@
 
 <style global lang="postcss">
   /* Don't remove these imports as the variables they contain
-       (colors, transition, size, etc.) can be used by the app/page
-       embedding Ple.
-    */
+     (colors, transition, size, etc.) can be used by the app/page
+     embedding Ple.
+  */
   @import "styles/_media.pcss";
   @import "styles/_transition.pcss";
   @import "styles/_font.pcss";
@@ -259,7 +284,7 @@
     .back-to-top {
       opacity: 0.3;
       transform: translateY(5rem);
-      transition: all 0.2s ease-in-out;
+      transition: all var(--ple-transition-time) var(--ple-transition-type);
 
       &.show {
         opacity: 1;

@@ -1,5 +1,14 @@
 button,
 .button {
+  border: none;
+  background: none;
+
+  &:focus {
+    outline: 1px solid var(--ple-c-active);
+  }
+}
+
+.button {
   flex-shrink: 0;
   margin: 0;
   padding: 1rem;
@@ -7,9 +16,6 @@ button,
   align-items: center;
   justify-content: center;
   color: var(--ple-c-inactive);
-  border: none;
-  background: none;
-  cursor: pointer;
 
   &.active {
     color: var(--ple-c-active);

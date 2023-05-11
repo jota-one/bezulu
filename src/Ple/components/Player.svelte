@@ -42,6 +42,10 @@
       onEnd,
     })
 
+    if ($ellapsed === 0) {
+      progress = 0
+    }
+
     setDuration()
 
     paused = false
@@ -180,7 +184,7 @@
 
 <div class="player">
   <button
-    class="playpause"
+    class="button playpause"
     title="Play / Pause"
     style={playPauseButtonStyle}
     on:click={playPause}

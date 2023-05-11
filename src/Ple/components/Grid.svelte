@@ -1,7 +1,13 @@
 <script>
   import { onMount, createEventDispatcher } from "svelte";
   // import VirtualScroller from "../VirtualScroller/VirtualScroller.svelte";
-  import { activeTrack, filteredTracks } from "../stores";
+  import {
+    activeTrackId,
+    activeTrack,
+    ellapsed,
+    filteredTracks,
+    showMeta
+  } from "../stores";
   import Slot from "./Slot.svelte";
   import Track from "./Track.svelte";
 
@@ -9,10 +15,11 @@
   const dispatch = createEventDispatcher();
 
   $: items = [
-    $activeTrack,
+    { ...$activeTrack, showMeta: $showMeta.includes($activeTrack.id) },
     ...$filteredTracks.map((track) => ({
       ...track,
       active: track?.id === $activeTrack?.id,
+      showMeta: $showMeta.includes(track.id)
     })),
   ];
 
@@ -34,6 +41,8 @@
   function onClick(event) {
     let slot = event.target;
 
+    console.log(slot)
+
     while (!["li", "body"].includes(slot.tagName.toLowerCase())) {
       slot = slot.parentElement;
     }
@@ -44,20 +53,35 @@
 
     const selectedTrack = $filteredTracks.find(
       (track) => track.id === slot.firstElementChild.id
-    );
+    )
 
-    dispatch("navigate", selectedTrack);
+    let action = 'navigate'
+    const buttonClasses = event.target.classList
+
+    if (buttonClasses.contains('meta-button')) {
+      if (buttonClasses.contains('trigger') || buttonClasses.contains('close')) {
+        action = 'toggleMeta'
+      } else {
+        return
+      }
+    }
+
+    if ($activeTrackId !== selectedTrack) {
+      $ellapsed = 0
+    }
+
+    dispatch(action, selectedTrack)
   }
 
   onMount(() => {
-    container.querySelector("li:first-child").classList.add("active");
+    container.querySelector("li:first-child").classList.add("active")
   });
 </script>
 
 <ul bind:this={container} on:click={onClick}>
   {#each items as item}
     <Slot>
-      <Track {...item} />
+      <Track {...item} on:toggleMeta/>
     </Slot>
   {/each}
 </ul>

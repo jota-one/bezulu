@@ -5,7 +5,7 @@
 </script>
 
 <button
-  class="active"
+  class="button active"
   title="Scroll to top of page"
   on:click={() => dispatch('scrollTop')}
 >

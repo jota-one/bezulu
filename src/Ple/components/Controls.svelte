@@ -54,7 +54,7 @@
 <div class="controls scrollable">
   <div class="buttons">
     <!-- <button
-      class="search"
+      class="button search"
       title="Filter list"
     >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -64,7 +64,7 @@
       </svg>
     </button> -->
     <button
-      class="next"
+      class="button next"
       title="Skip to next track"
       disabled={$nextDisabled}
       on:click={navigateNext}
@@ -76,7 +76,7 @@
       </svg>
     </button>
     <button
-      class="previous"
+      class="button previous"
       title="Skip to previous track"
       disabled={$prevDisabled}
       on:click={navigatePrev}
@@ -88,7 +88,7 @@
       </svg>
     </button>
     <button
-      class="loop"
+      class="button loop"
       class:active={$loop !== 0}
       on:click={toggleLoop}
       title="Repeat list"
@@ -113,7 +113,7 @@
       </svg>
     </button>
     <button
-      class="random"
+      class="button random"
       class:active={$random}
       on:click={toggleRandom}
       title="Randomize list"
@@ -125,7 +125,7 @@
       </svg>
     </button>
     <button
-      class="sort"
+      class="button sort"
       title="Sort list"
       class:active={activePanel === 'sort'}
       bind:this={panelButtons.sort}
@@ -137,7 +137,7 @@
       </svg>
     </button>
     <button
-      class="artists"
+      class="button artists"
       title="Filter list by Artists"
       class:active={activePanel === 'artists'}
       data-count-filters={$tracksFilter.artist?.length > 0 ? $tracksFilter.artist?.length : undefined}
@@ -158,7 +158,7 @@
       </svg>
     </button>
     <button
-      class="genres"
+      class="button genres"
       title="Filter list by Genres"
       class:active={activePanel === 'genres'}
       data-count-filters={$tracksFilter.genres?.length > 0 ? $tracksFilter.genres?.length : undefined}
@@ -172,7 +172,7 @@
       </svg>
     </button>
     <!-- <button
-      class="albums"
+      class="button albums"
       title="Filter list on Albums"
       class:active={activePanel === 'albums'}
       on:click={() => togglePanel('albums')}
@@ -193,7 +193,7 @@
       </svg>
     </button>
     <button
-      class="crates"
+      class="button crates"
       title="Choose crate"
       class:active={activePanel === 'crates'}
       on:click={() => togglePanel('crates')}
@@ -207,7 +207,7 @@
       </svg>
     </button> -->
   </div>
-  <button class="hamburger">
+  <button class="button hamburger">
     <span />
     <span />
     <span />
@@ -250,7 +250,7 @@
     align-items: center;
   }
 
-  button {
+  .button {
     position: relative;
     width: 100%;
     padding-top: 0.75rem;
