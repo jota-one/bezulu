@@ -2,7 +2,7 @@
   import { createEventDispatcher } from 'svelte'
   import { error } from '../../stores'
 
-  import TriggerButton from './TriggerButton.svelte'
+  import InfoButton from './button/Info.svelte'
   import TrackMeta from './Meta.svelte'
 
   const dispatch = createEventDispatcher()
@@ -47,7 +47,7 @@
   {/if}
   {#if coverUrl}
     {#if !isShowcase}
-      <TriggerButton/>
+      <InfoButton/>
     {/if}
     <img
       src={(isShowcase ? coverUrl : thumbnailUrl).replace("/public", "")}
@@ -66,7 +66,7 @@
         {$error}
       </div>
     {/if}
-    <TriggerButton isShowCase/>
+    <InfoButton isShowCase/>
   {/if}
 </div>
 

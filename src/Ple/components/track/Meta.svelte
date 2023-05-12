@@ -2,8 +2,8 @@
   import dayjs from 'dayjs'
   import { formatTime } from '../../helpers'
 
-  import ArrowButton from './ArrowButton.svelte'
-  import CloseButton from './CloseButton.svelte'
+  import ArrowButton from './button/Arrow.svelte'
+  import CloseButton from './button/Close.svelte'
 
   export let isActive
   export let isShowCase

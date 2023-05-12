@@ -64,7 +64,7 @@
       return
     }
 
-    if ($activeTrackId !== selectedTrack) {
+    if ($activeTrackId !== selectedTrack.id) {
       $ellapsed = 0
     }
 

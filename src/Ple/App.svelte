@@ -150,7 +150,7 @@
       <div class="secondary-controls">
         <Volume/>
         <div class="back-to-top" class:show={showBackToTop}>
-          <BackToTop />
+          <BackToTop on:scrollTop={() => app.scrollIntoView()}/>
         </div>
       </div>
       footr: <Footer />
