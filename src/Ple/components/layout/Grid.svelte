@@ -41,8 +41,6 @@
   function onClick(event) {
     let slot = event.target;
 
-    console.log(slot)
-
     while (!["li", "body"].includes(slot.tagName.toLowerCase())) {
       slot = slot.parentElement;
     }
