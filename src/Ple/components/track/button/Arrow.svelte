@@ -29,7 +29,7 @@
     height: 1.75rem;
     padding: 0;
     fill: white;
-    opacity: 0.7;
+    opacity: 0.5;
     transition: transform 0.2s ease-in-out;
 
     &.top {
