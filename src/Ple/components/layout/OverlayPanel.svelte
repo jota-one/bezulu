@@ -5,9 +5,9 @@
     sortKeys,
     tracksFilter,
     tracksOrder
-  } from '../stores'
-  import FilterList from './FilterList.svelte'
-  import SortList from './SortList.svelte'
+  } from '../../stores'
+  import FilterList from '../filter/FilterList.svelte'
+  import SortList from '../filter/SortList.svelte'
 
   let visible = false
   let panelKey
@@ -85,9 +85,9 @@
 </aside>
 
 <style lang="postcss">
-  @import "../styles/_media.pcss";
-  @import "../styles/_size.pcss";
-  @import "../styles/_color.pcss";
+  @import "../../styles/_media.pcss";
+  @import "../../styles/_size.pcss";
+  @import "../../styles/_color.pcss";
 
   aside {
     position: fixed;

@@ -7,7 +7,7 @@
 </li>
 
 <style lang="postcss">
-  @import "../styles/_media.pcss";
+  @import "../../styles/_media.pcss";
 
   li {
     position: relative;

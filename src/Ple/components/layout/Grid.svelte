@@ -7,9 +7,9 @@
     ellapsed,
     filteredTracks,
     showMeta
-  } from "../stores";
+  } from "../../stores";
   import Slot from "./Slot.svelte";
-  import Track from "./Track.svelte";
+  import Track from "../track/Track.svelte";
 
   let container = null;
   const dispatch = createEventDispatcher();
@@ -58,12 +58,10 @@
     let action = 'navigate'
     const buttonClasses = event.target.classList
 
-    if (buttonClasses.contains('meta-button')) {
-      if (buttonClasses.contains('trigger') || buttonClasses.contains('close')) {
-        action = 'toggleMeta'
-      } else {
-        return
-      }
+    if (buttonClasses.contains('trigger') || buttonClasses.contains('close')) {
+      action = 'toggleMeta'
+    } else if (buttonClasses.contains('meta-button')) {
+      return
     }
 
     if ($activeTrackId !== selectedTrack) {
@@ -90,7 +88,7 @@
     <ul slot="container" />
 </VirtualScroller> -->
 <style lang="postcss">
-  @import "../styles/_media.pcss";
+  @import "../../styles/_media.pcss";
 
   ul {
     list-style-type: none;

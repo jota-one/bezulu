@@ -47,7 +47,7 @@
 </ul>
 
 <style lang="postcss">
-  @import "../styles/optionlist.pcss";
+  @import "../../styles/optionlist.pcss";
 
   input[type=radio] {
     pointer-events: none;

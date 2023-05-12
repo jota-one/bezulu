@@ -8,14 +8,14 @@
     tracksOrder,
     volumeLevel
   } from './stores'
-  import Grid from './components/Grid.svelte'
+  import Grid from './components/layout/Grid.svelte'
+  import OverlayPanel from './components/layout/OverlayPanel.svelte'
+  import Footer from './components/layout/Footer.svelte'
   import Player from './components/Player.svelte'
   import Controls from './components/Controls.svelte'
   import Router from './components/Router.svelte'
-  import Footer from './components/Footer.svelte'
   import SvgFilters from './components/SvgFilters.svelte'
   import Volume from './components/Volume.svelte'
-  import OverlayPanel from './components/OverlayPanel.svelte'
   import BackToTop from './components/BackToTop.svelte'
 
   export let tracks = []
@@ -245,7 +245,7 @@
 
     .secondary-controls {
       position: sticky;
-      bottom: 2rem;
+      bottom: 0;
       display: flex;
       justify-content: space-between;
       padding: 2rem 1.5rem 0 0;

@@ -1,6 +1,6 @@
 <script>
-  import { formatTime } from "../helpers";
-  import { filteredTracks } from "../stores";
+  import { formatTime } from "../../helpers";
+  import { filteredTracks } from "../../stores";
 </script>
 
 <footer>
@@ -77,7 +77,8 @@
 </footer>
 
 <style lang="postcss">
-  @import "../styles/_size.pcss";
+  @import "../../styles/_size.pcss";
+
   footer {
     display: flex;
     align-items: center;
