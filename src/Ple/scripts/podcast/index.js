@@ -1,6 +1,6 @@
 const fs = require('fs-extra')
 const path = require('path')
-const mm = require('music-metadata')
+const mm = import('music-metadata')
 const sharp = require('sharp')
 const Walk = require('@root/walk')
 const Podcast = require('podcast').Podcast
@@ -37,8 +37,9 @@ const writeCover = async ({ root, sourceFile, format, data }) => {
 
 const getMetaData = async fileName => {
   try {
-    const metadata = await mm.parseFile(fileName)
-    const cover = mm.selectCover(metadata.common.picture)
+    const { parseFile, selectCover } = await mm
+    const metadata = await parseFile(fileName)
+    const cover = selectCover(metadata.common.picture)
     return {
       author: metadata.common.artist,
       cover,
