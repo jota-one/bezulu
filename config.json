@@ -8,7 +8,7 @@
     "baseUrl": "https://bezu.lu",
     "basePath": "/"
   },
-  "mediaBaseUrl": "https://media.lionites.com/bezulu/",
+  "mediaBaseUrl": "https://media.bezu.lu/",
   "feedFile": "./public/feed.xml",
   "feedFileAudio": "./public/feed-audio.xml",
   "feed": {
