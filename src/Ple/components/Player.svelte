@@ -256,7 +256,7 @@
     background-color: rgba(128, 128, 128, 0.2);
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: 2;
+    z-index: 1;
     transition: color var(--ple-transition-time) var(--ple-transition-type);
 
     &:after {
@@ -345,16 +345,16 @@
     z-index: 1;
 
     .background {
-      margin-left: -3rem;
-      width: calc(100% + 3rem);
+      width: 100%;
       height: 100%;
       position: relative;
       overflow: hidden;
+
       &:before {
         content: '';
         position: absolute;
-        left: -4vh;
-        width: calc(100% + 4vh);
+        left: -3rem;
+        width: calc(100% + 3rem);
         height: 100%;
         background: var(--ple-c-active);
         background-image: linear-gradient(
