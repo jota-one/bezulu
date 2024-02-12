@@ -256,7 +256,7 @@
     background-color: rgba(128, 128, 128, 0.2);
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: 1;
+    z-index: 2;
     transition: color var(--ple-transition-time) var(--ple-transition-type);
 
     &:after {
@@ -345,7 +345,8 @@
     z-index: 1;
 
     .background {
-      width: 100%;
+      margin-left: -3rem;
+      width: calc(100% + 3rem);
       height: 100%;
       position: relative;
       overflow: hidden;
@@ -373,7 +374,7 @@
     }
 
     &:not(.paused) .background:before {
-      animation: playing 1s linear infinite;
+      animation: playing 1.5s linear infinite;
     }
 
     &:after {
