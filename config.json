@@ -38,6 +38,19 @@
     },
     "episodes": [
       {
+        "file": "/ZuluMix-46_Dubstep_Lionites.m4a",
+        "id": "zulumix46",
+        "trackTitle": "ZuluMix 46",
+        "dates": {
+          "released": "Thu, 8 Feb 2024 21:57:00 +0200",
+          "published": "Thu, 8 Feb 2024 21:57:00 +0200"
+        },
+        "genres": [
+          "Dubstep"
+        ],
+        "preventDownload": false
+      },
+      {
         "file": "/TheAnthemMix-02_House_Djive.m4a",
         "id": "anthem2",
         "trackTitle": "The Anthem Mix 2",
