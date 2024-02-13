@@ -170,8 +170,7 @@
 
   @keyframes playing {
     100% {
-      /* background-position: 4vh 0, 4vh 0, 4vh 0; */
-      transform: translate3d(4vh, 0, 0)
+      transform: translate3d(3rem, 0, 0)
     }
   }
 

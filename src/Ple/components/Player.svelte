@@ -349,11 +349,12 @@
       height: 100%;
       position: relative;
       overflow: hidden;
+
       &:before {
         content: '';
         position: absolute;
-        left: -4vh;
-        width: calc(100% + 4vh);
+        left: -3rem;
+        width: calc(100% + 3rem);
         height: 100%;
         background: var(--ple-c-active);
         background-image: linear-gradient(
@@ -373,7 +374,7 @@
     }
 
     &:not(.paused) .background:before {
-      animation: playing 1s linear infinite;
+      animation: playing 1.5s linear infinite;
     }
 
     &:after {
