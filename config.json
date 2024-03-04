@@ -38,6 +38,19 @@
     },
     "episodes": [
       {
+        "file": "/ZuluMix-47_DnB_Djive.m4a",
+        "id": "zulumix47",
+        "trackTitle": "ZuluMix 47",
+        "dates": {
+          "released": "Sun, 17 Feb 2024 17:34:00 +0200",
+          "published": "Thu, 4 Mar 2024 19:04:00 +0200"
+        },
+        "genres": [
+          "Drum & Bass"
+        ],
+        "preventDownload": false
+      },
+      {
         "file": "/ZuluMix-46_Dubstep_Lionites.m4a",
         "id": "zulumix46",
         "trackTitle": "ZuluMix 46",
