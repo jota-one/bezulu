@@ -4,7 +4,7 @@
 		<description><![CDATA[Share your passion for electronic music with DJ Djive and Lionites - from Old School House to Drum & Bass, Techno and more. Let yourself be moved away by their eclectic and varied records selection!]]></description>
 		<link>https://bezu.lu</link>
 		<generator>Jota</generator>
-		<lastBuildDate>Thu, 08 Feb 2024 21:08:46 GMT</lastBuildDate>
+		<lastBuildDate>Mon, 04 Mar 2024 16:47:51 GMT</lastBuildDate>
 		<atom:link href="https://bezu.lu/feed.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[DJ Djive, Lionites and friends]]></author>
 		<category><![CDATA[Music]]></category>
@@ -17,6 +17,17 @@
 		<itunes:explicit>false</itunes:explicit>
 		<itunes:category text="Music"/>
 		<itunes:image href="https://bezu.lu/podcast2022.jpg"/>
+		<item>
+			<title><![CDATA[ZuluMix 47: DJ Djive (Drum'n'Bass)]]></title>
+			<link>https://bezu.lu/zulumix47</link>
+			<guid isPermaLink="true">https://bezu.lu/zulumix47</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Mon, 04 Mar 2024 17:04:00 GMT</pubDate>
+			<enclosure url="https://media.bezu.lu/ZuluMix-47_DnB_Djive.m4a" length="63580555" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>false</itunes:explicit>
+			<itunes:duration>01:05:28</itunes:duration>
+		</item>
 		<item>
 			<title><![CDATA[ZuluMix 46: Lionites (Dubstep)]]></title>
 			<link>https://bezu.lu/zulumix46</link>
