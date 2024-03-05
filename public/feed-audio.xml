@@ -4,7 +4,7 @@
 		<description><![CDATA[Share your passion for electronic music with DJ Djive and Lionites - from Old School House to Drum & Bass, Techno and more. Let yourself be moved away by their eclectic and varied records selection!]]></description>
 		<link>https://bezu.lu</link>
 		<generator>Jota</generator>
-		<lastBuildDate>Mon, 04 Mar 2024 21:09:38 GMT</lastBuildDate>
+		<lastBuildDate>Tue, 05 Mar 2024 18:24:24 GMT</lastBuildDate>
 		<atom:link href="https://bezu.lu/feed.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[DJ Djive, Lionites and friends]]></author>
 		<category><![CDATA[Music]]></category>
@@ -22,8 +22,8 @@
 			<link>https://bezu.lu/anthem3</link>
 			<guid isPermaLink="true">https://bezu.lu/anthem3</guid>
 			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
-			<pubDate>Wed, 06 Mar 2024 19:02:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/TheAnthemMix-03_House_Djive.m4a" length="74470512" type="audio/mp4"/>
+			<pubDate>Wed, 06 Mar 2024 06:02:00 GMT</pubDate>
+			<enclosure url="https://media.bezu.lu/TheAnthemMix-03_House_Djive.m4a" length="74655555" type="audio/mp4"/>
 			<itunes:author>DJ Djive</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>01:16:34</itunes:duration>
