@@ -38,6 +38,19 @@
     },
     "episodes": [
       {
+        "file": "/TheAnthemMix-03_House_Djive.m4a",
+        "id": "anthem3",
+        "trackTitle": "The Anthem Mix 3",
+        "dates": {
+          "released": "Thu, 29 Feb 2024 00:29:00 +0200",
+          "published": "Wed, 06 Mar 2024 08:02:00 +0200"
+        },
+        "genres": [
+          "House"
+        ],
+        "preventDownload": false
+      },
+      {
         "file": "/ZuluMix-47_DnB_Djive.m4a",
         "id": "zulumix47",
         "trackTitle": "ZuluMix 47",

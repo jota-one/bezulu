@@ -4,7 +4,7 @@
 		<description><![CDATA[Share your passion for electronic music with DJ Djive and Lionites - from Old School House to Drum & Bass, Techno and more. Let yourself be moved away by their eclectic and varied records selection!]]></description>
 		<link>https://bezu.lu</link>
 		<generator>Jota</generator>
-		<lastBuildDate>Mon, 04 Mar 2024 16:47:47 GMT</lastBuildDate>
+		<lastBuildDate>Tue, 05 Mar 2024 18:24:27 GMT</lastBuildDate>
 		<atom:link href="https://bezu.lu/feed.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[DJ Djive, Lionites and friends]]></author>
 		<category><![CDATA[Music]]></category>
@@ -17,6 +17,17 @@
 		<itunes:explicit>false</itunes:explicit>
 		<itunes:category text="Music"/>
 		<itunes:image href="https://bezu.lu/podcast2022.jpg"/>
+		<item>
+			<title><![CDATA[The Anthem Mix Pt 3: DJ Djive]]></title>
+			<link>https://bezu.lu/anthem3</link>
+			<guid isPermaLink="true">https://bezu.lu/anthem3</guid>
+			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
+			<pubDate>Wed, 06 Mar 2024 06:02:00 GMT</pubDate>
+			<enclosure url="https://media.bezu.lu/TheAnthemMix-03_House_Djive.m4a" length="74655555" type="audio/mp4"/>
+			<itunes:author>DJ Djive</itunes:author>
+			<itunes:explicit>false</itunes:explicit>
+			<itunes:duration>01:16:34</itunes:duration>
+		</item>
 		<item>
 			<title><![CDATA[ZuluMix 47: DJ Djive (Drum'n'Bass)]]></title>
 			<link>https://bezu.lu/zulumix47</link>
