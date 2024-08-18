@@ -38,6 +38,19 @@
     },
     "episodes": [
       {
+        "file": "/ZuluMix-48_DnB_Lionites.m4a",
+        "id": "zulumix48",
+        "trackTitle": "ZuluMix 48",
+        "dates": {
+          "released": "Sat, 28 Jul 2024 19:15:00 +0200",
+          "published": "Sun, 18 Aug 2024 22:46:00 +0200"
+        },
+        "genres": [
+          "Drum & Bass"
+        ],
+        "preventDownload": false
+      },
+      {
         "file": "/ZuluMix-14_House_DjiveKjLester.m4a",
         "id": "zulumix14",
         "trackTitle": "ZuluMix 14: Be Gold!",

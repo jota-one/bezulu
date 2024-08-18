@@ -4,7 +4,7 @@
 		<description><![CDATA[Share your passion for electronic music with DJ Djive and Lionites - from Old School House to Drum & Bass, Techno and more. Let yourself be moved away by their eclectic and varied records selection!]]></description>
 		<link>https://bezu.lu</link>
 		<generator>Jota</generator>
-		<lastBuildDate>Sun, 18 Aug 2024 18:50:37 GMT</lastBuildDate>
+		<lastBuildDate>Sun, 18 Aug 2024 20:59:15 GMT</lastBuildDate>
 		<atom:link href="https://bezu.lu/feed.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[DJ Djive, Lionites and friends]]></author>
 		<category><![CDATA[Music]]></category>
@@ -17,6 +17,17 @@
 		<itunes:explicit>false</itunes:explicit>
 		<itunes:category text="Music"/>
 		<itunes:image href="https://bezu.lu/podcast2022.jpg"/>
+		<item>
+			<title><![CDATA[ZuluMix 48: Lionites (Drum'n'Bass)]]></title>
+			<link>https://bezu.lu/zulumix48</link>
+			<guid isPermaLink="true">https://bezu.lu/zulumix48</guid>
+			<dc:creator><![CDATA[Lionites]]></dc:creator>
+			<pubDate>Sun, 18 Aug 2024 20:46:00 GMT</pubDate>
+			<enclosure url="https://media.bezu.lu/ZuluMix-48_DnB_Lionites.m4a" length="131984067" type="audio/mp4"/>
+			<itunes:author>Lionites</itunes:author>
+			<itunes:explicit>false</itunes:explicit>
+			<itunes:duration>02:15:55</itunes:duration>
+		</item>
 		<item>
 			<title><![CDATA[ZuluMix 14: DJ Djive, Kameren J & Lester DJ (House)]]></title>
 			<link>https://bezu.lu/zulumix14</link>
