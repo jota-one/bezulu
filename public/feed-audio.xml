@@ -4,7 +4,7 @@
 		<description><![CDATA[Share your passion for electronic music with DJ Djive and Lionites - from Old School House to Drum & Bass, Techno and more. Let yourself be moved away by their eclectic and varied records selection!]]></description>
 		<link>https://bezu.lu</link>
 		<generator>Jota</generator>
-		<lastBuildDate>Tue, 05 Mar 2024 18:24:24 GMT</lastBuildDate>
+		<lastBuildDate>Sun, 18 Aug 2024 18:50:37 GMT</lastBuildDate>
 		<atom:link href="https://bezu.lu/feed.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[DJ Djive, Lionites and friends]]></author>
 		<category><![CDATA[Music]]></category>
@@ -17,6 +17,50 @@
 		<itunes:explicit>false</itunes:explicit>
 		<itunes:category text="Music"/>
 		<itunes:image href="https://bezu.lu/podcast2022.jpg"/>
+		<item>
+			<title><![CDATA[ZuluMix 14: DJ Djive, Kameren J & Lester DJ (House)]]></title>
+			<link>https://bezu.lu/zulumix14</link>
+			<guid isPermaLink="true">https://bezu.lu/zulumix14</guid>
+			<dc:creator><![CDATA[DJ Djive, Kameren J & Lester DJ]]></dc:creator>
+			<pubDate>Sun, 18 Aug 2024 18:30:00 GMT</pubDate>
+			<enclosure url="https://media.bezu.lu/ZuluMix-14_House_DjiveKjLester.m4a" length="68274489" type="audio/mp4"/>
+			<itunes:author>DJ Djive, Kameren J &amp; Lester DJ</itunes:author>
+			<itunes:explicit>false</itunes:explicit>
+			<itunes:duration>01:10:04</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 13: Lester DJ (House)]]></title>
+			<link>https://bezu.lu/zulumix13</link>
+			<guid isPermaLink="true">https://bezu.lu/zulumix13</guid>
+			<dc:creator><![CDATA[Lester DJ]]></dc:creator>
+			<pubDate>Sun, 18 Aug 2024 18:30:00 GMT</pubDate>
+			<enclosure url="https://media.bezu.lu/ZuluMix-13_House_Lester.m4a" length="69251445" type="audio/mp4"/>
+			<itunes:author>Lester DJ</itunes:author>
+			<itunes:explicit>false</itunes:explicit>
+			<itunes:duration>01:11:11</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 10: Lester DJ (House)]]></title>
+			<link>https://bezu.lu/zulumix10</link>
+			<guid isPermaLink="true">https://bezu.lu/zulumix10</guid>
+			<dc:creator><![CDATA[Lester DJ]]></dc:creator>
+			<pubDate>Sun, 18 Aug 2024 18:30:00 GMT</pubDate>
+			<enclosure url="https://media.bezu.lu/ZuluMix-10_House_Lester.m4a" length="63369668" type="audio/mp4"/>
+			<itunes:author>Lester DJ</itunes:author>
+			<itunes:explicit>false</itunes:explicit>
+			<itunes:duration>01:05:09</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[ZuluMix 09: Kameren J (House)]]></title>
+			<link>https://bezu.lu/zulumix9</link>
+			<guid isPermaLink="true">https://bezu.lu/zulumix9</guid>
+			<dc:creator><![CDATA[Kameren J]]></dc:creator>
+			<pubDate>Sun, 18 Aug 2024 18:30:00 GMT</pubDate>
+			<enclosure url="https://media.bezu.lu/ZuluMix-09_House_KamerenJ.m4a" length="56131210" type="audio/mp4"/>
+			<itunes:author>Kameren J</itunes:author>
+			<itunes:explicit>false</itunes:explicit>
+			<itunes:duration>00:57:41</itunes:duration>
+		</item>
 		<item>
 			<title><![CDATA[The Anthem Mix Pt 3: DJ Djive]]></title>
 			<link>https://bezu.lu/anthem3</link>
