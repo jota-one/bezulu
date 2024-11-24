@@ -38,6 +38,33 @@
     },
     "episodes": [
       {
+        "file": "/ZuluMix-49_Techno_Djive.m4a",
+        "id": "zulumix49",
+        "trackTitle": "ZuluMix 49",
+        "dates": {
+          "released": "Sat, 16 Nov 2024 23:59:59 +0100",
+          "published": "Sun, 24 Nov 2024 19:12:00 +0100"
+        },
+        "genres": [
+          "House",
+          "Techno"
+        ],
+        "preventDownload": false
+      },
+      {
+        "file": "/LLDEH-16_DnB_Djive.m4a",
+        "id": "lldeh16",
+        "trackTitle": "LLDEH 16",
+        "dates": {
+          "released": "Thu, 9 Feb 1999 20:12:00 +0100",
+          "published": "Sun, 24 Nov 2024 19:08:00 +0100"
+        },
+        "genres": [
+          "Drum & Bass"
+        ],
+        "preventDownload": false
+      },
+      {
         "file": "/ZuluMix-48_DnB_Lionites.m4a",
         "id": "zulumix48",
         "trackTitle": "ZuluMix 48",
