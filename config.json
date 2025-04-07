@@ -38,6 +38,19 @@
     },
     "episodes": [
       {
+        "file": "/TheAnthemMix-04_House_Lionites.m4a",
+        "id": "anthem4",
+        "trackTitle": "The Anthem Mix 4",
+        "dates": {
+          "released": "Wed, 27 Nov 2024 00:10:00 +0100",
+          "published": "Mon, 07 Apr 2025 09:25:00 +0100"
+        },
+        "genres": [
+          "House"
+        ],
+        "preventDownload": false
+      },
+      {
         "file": "/ZuluMix-49_Techno_Djive.m4a",
         "id": "zulumix49",
         "trackTitle": "ZuluMix 49",
