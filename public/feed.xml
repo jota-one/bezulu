@@ -4,7 +4,7 @@
 		<description><![CDATA[Share your passion for electronic music with DJ Djive and Lionites - from Old School House to Drum & Bass, Techno and more. Let yourself be moved away by their eclectic and varied records selection!]]></description>
 		<link>https://bezu.lu</link>
 		<generator>Jota</generator>
-		<lastBuildDate>Mon, 07 Apr 2025 07:26:24 GMT</lastBuildDate>
+		<lastBuildDate>Tue, 08 Apr 2025 20:11:48 GMT</lastBuildDate>
 		<atom:link href="https://bezu.lu/feed.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[DJ Djive, Lionites and friends]]></author>
 		<category><![CDATA[Music]]></category>
@@ -18,12 +18,23 @@
 		<itunes:category text="Music"/>
 		<itunes:image href="https://bezu.lu/podcast2022.jpg"/>
 		<item>
-			<title><![CDATA[Anthem Mix 04 - Rehearsal 1]]></title>
+			<title><![CDATA[My Story Of House Music Part 4: Lionites (Techno)]]></title>
+			<link>https://bezu.lu/msohm4</link>
+			<guid isPermaLink="true">https://bezu.lu/msohm4</guid>
+			<dc:creator><![CDATA[Lionites]]></dc:creator>
+			<pubDate>Tue, 08 Apr 2025 20:06:00 GMT</pubDate>
+			<enclosure url="https://media.bezu.lu/MyStoryOfHouseMusic-04_Techno_Lionites.m4a" length="299555601" type="audio/mp4"/>
+			<itunes:author>Lionites</itunes:author>
+			<itunes:explicit>false</itunes:explicit>
+			<itunes:duration>02:35:08</itunes:duration>
+		</item>
+		<item>
+			<title><![CDATA[The Anthem Mix Pt 4: Lionites]]></title>
 			<link>https://bezu.lu/anthem4</link>
 			<guid isPermaLink="true">https://bezu.lu/anthem4</guid>
 			<dc:creator><![CDATA[Lionites]]></dc:creator>
 			<pubDate>Mon, 07 Apr 2025 08:25:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/TheAnthemMix-04_House_Lionites.m4a" length="122135293" type="audio/mp4"/>
+			<enclosure url="https://media.bezu.lu/TheAnthemMix-04_House_Lionites.m4a" length="122135221" type="audio/mp4"/>
 			<itunes:author>Lionites</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>02:04:47</itunes:duration>

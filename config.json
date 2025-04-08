@@ -38,6 +38,19 @@
     },
     "episodes": [
       {
+        "file": "/MyStoryOfHouseMusic-04_Techno_Lionites.m4a",
+        "id": "msohm4",
+        "trackTitle": "My Story Of House Music 4",
+        "dates": {
+          "released": "Tue, 08 Apr 2025 22:06:00 +0200",
+          "published": "Tue, 08 Apr 2025 22:06:00 +0200"
+        },
+        "genres": [
+          "House",
+          "Techno"
+        ]
+      },
+      {
         "file": "/TheAnthemMix-04_House_Lionites.m4a",
         "id": "anthem4",
         "trackTitle": "The Anthem Mix 4",
