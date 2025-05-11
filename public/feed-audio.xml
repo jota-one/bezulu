@@ -4,7 +4,7 @@
 		<description><![CDATA[Share your passion for electronic music with DJ Djive and Lionites - from Old School House to Drum & Bass, Techno and more. Let yourself be moved away by their eclectic and varied records selection!]]></description>
 		<link>https://bezu.lu</link>
 		<generator>Jota</generator>
-		<lastBuildDate>Tue, 08 Apr 2025 20:11:54 GMT</lastBuildDate>
+		<lastBuildDate>Sun, 11 May 2025 19:33:57 GMT</lastBuildDate>
 		<atom:link href="https://bezu.lu/feed.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[DJ Djive, Lionites and friends]]></author>
 		<category><![CDATA[Music]]></category>
@@ -22,11 +22,11 @@
 			<link>https://bezu.lu/msohm4</link>
 			<guid isPermaLink="true">https://bezu.lu/msohm4</guid>
 			<dc:creator><![CDATA[Lionites]]></dc:creator>
-			<pubDate>Tue, 08 Apr 2025 20:06:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/MyStoryOfHouseMusic-04_Techno_Lionites.m4a" length="299555601" type="audio/mp4"/>
+			<pubDate>Sun, 11 May 2025 19:30:00 GMT</pubDate>
+			<enclosure url="https://media.bezu.lu/MyStoryOfHouseMusic-04_Techno_Lionites.m4a" length="328182627" type="audio/mp4"/>
 			<itunes:author>Lionites</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
-			<itunes:duration>02:35:08</itunes:duration>
+			<itunes:duration>02:49:58</itunes:duration>
 		</item>
 		<item>
 			<title><![CDATA[The Anthem Mix Pt 4: Lionites]]></title>
@@ -78,7 +78,7 @@
 			<guid isPermaLink="true">https://bezu.lu/zulumix14</guid>
 			<dc:creator><![CDATA[DJ Djive, Kameren J & Lester DJ]]></dc:creator>
 			<pubDate>Sun, 18 Aug 2024 18:30:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/ZuluMix-14_House_DjiveKjLester.m4a" length="68274489" type="audio/mp4"/>
+			<enclosure url="https://media.bezu.lu/ZuluMix-14_House_DjiveKjLester.m4a" length="68274910" type="audio/mp4"/>
 			<itunes:author>DJ Djive, Kameren J &amp; Lester DJ</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>01:10:04</itunes:duration>
@@ -89,7 +89,7 @@
 			<guid isPermaLink="true">https://bezu.lu/zulumix13</guid>
 			<dc:creator><![CDATA[Lester DJ]]></dc:creator>
 			<pubDate>Sun, 18 Aug 2024 18:30:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/ZuluMix-13_House_Lester.m4a" length="69251445" type="audio/mp4"/>
+			<enclosure url="https://media.bezu.lu/ZuluMix-13_House_Lester.m4a" length="69252480" type="audio/mp4"/>
 			<itunes:author>Lester DJ</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>01:11:11</itunes:duration>
@@ -100,7 +100,7 @@
 			<guid isPermaLink="true">https://bezu.lu/zulumix10</guid>
 			<dc:creator><![CDATA[Lester DJ]]></dc:creator>
 			<pubDate>Sun, 18 Aug 2024 18:30:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/ZuluMix-10_House_Lester.m4a" length="63369668" type="audio/mp4"/>
+			<enclosure url="https://media.bezu.lu/ZuluMix-10_House_Lester.m4a" length="63369805" type="audio/mp4"/>
 			<itunes:author>Lester DJ</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>01:05:09</itunes:duration>
@@ -111,7 +111,7 @@
 			<guid isPermaLink="true">https://bezu.lu/zulumix9</guid>
 			<dc:creator><![CDATA[Kameren J]]></dc:creator>
 			<pubDate>Sun, 18 Aug 2024 18:30:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/ZuluMix-09_House_KamerenJ.m4a" length="56131210" type="audio/mp4"/>
+			<enclosure url="https://media.bezu.lu/ZuluMix-09_House_KamerenJ.m4a" length="56131818" type="audio/mp4"/>
 			<itunes:author>Kameren J</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>00:57:41</itunes:duration>
@@ -122,7 +122,7 @@
 			<guid isPermaLink="true">https://bezu.lu/anthem3</guid>
 			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
 			<pubDate>Wed, 06 Mar 2024 06:02:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/TheAnthemMix-03_House_Djive.m4a" length="74655555" type="audio/mp4"/>
+			<enclosure url="https://media.bezu.lu/TheAnthemMix-03_House_Djive.m4a" length="74656017" type="audio/mp4"/>
 			<itunes:author>DJ Djive</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>01:16:34</itunes:duration>
@@ -155,7 +155,7 @@
 			<guid isPermaLink="true">https://bezu.lu/anthem2</guid>
 			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
 			<pubDate>Mon, 18 Jul 2022 18:56:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/TheAnthemMix-02_House_Djive.m4a" length="81399159" type="audio/mp4"/>
+			<enclosure url="https://media.bezu.lu/TheAnthemMix-02_House_Djive.m4a" length="81399474" type="audio/mp4"/>
 			<itunes:author>DJ Djive</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>01:22:50</itunes:duration>
@@ -167,7 +167,7 @@
 			<guid isPermaLink="true">https://bezu.lu/f__kme</guid>
 			<dc:creator><![CDATA[Kameren J]]></dc:creator>
 			<pubDate>Wed, 18 May 2022 18:56:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/F__kMeIWasInTheMousse_House_KamerenJ.m4a" length="67920962" type="audio/mp4"/>
+			<enclosure url="https://media.bezu.lu/F__kMeIWasInTheMousse_House_KamerenJ.m4a" length="67921916" type="audio/mp4"/>
 			<itunes:author>Kameren J</itunes:author>
 			<itunes:summary></itunes:summary>
 			<itunes:explicit>false</itunes:explicit>
@@ -201,7 +201,7 @@
 			<guid isPermaLink="true">https://bezu.lu/zulumix12</guid>
 			<dc:creator><![CDATA[Kameren J]]></dc:creator>
 			<pubDate>Sun, 26 Sep 2021 09:27:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/ZuluMix-12_House_KamerenJ.m4a" length="62850496" type="audio/mp4"/>
+			<enclosure url="https://media.bezu.lu/ZuluMix-12_House_KamerenJ.m4a" length="62850527" type="audio/mp4"/>
 			<itunes:author>Kameren J</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>01:04:40</itunes:duration>
@@ -212,7 +212,7 @@
 			<guid isPermaLink="true">https://bezu.lu/msohm3</guid>
 			<dc:creator><![CDATA[Lionites]]></dc:creator>
 			<pubDate>Thu, 03 Jun 2021 20:02:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/MyStoryOfHouseMusic-03_House_Lionites.m4a" length="216693611" type="audio/mp4"/>
+			<enclosure url="https://media.bezu.lu/MyStoryOfHouseMusic-03_House_Lionites.m4a" length="216694200" type="audio/mp4"/>
 			<itunes:author>Lionites</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>02:13:29</itunes:duration>
@@ -223,7 +223,7 @@
 			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-43_Techno_Djive.m4a</guid>
 			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
 			<pubDate>Mon, 19 Apr 2021 09:27:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/ZuluMix-43_Techno_Djive.m4a" length="80134102" type="audio/mp4"/>
+			<enclosure url="https://media.bezu.lu/ZuluMix-43_Techno_Djive.m4a" length="80134906" type="audio/mp4"/>
 			<itunes:author>DJ Djive</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>01:22:30</itunes:duration>
@@ -333,7 +333,7 @@
 			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/MyStoryOfHouseMusic-02_House_Lionites.m4a</guid>
 			<dc:creator><![CDATA[Lionites]]></dc:creator>
 			<pubDate>Tue, 15 Oct 2019 10:15:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/MyStoryOfHouseMusic-02_House_Lionites.m4a" length="119684899" type="audio/mp4"/>
+			<enclosure url="https://media.bezu.lu/MyStoryOfHouseMusic-02_House_Lionites.m4a" length="119685475" type="audio/mp4"/>
 			<itunes:author>Lionites</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>02:03:15</itunes:duration>
@@ -399,7 +399,7 @@
 			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/MyStoryOfHouseMusic-01_House_Lionites.mp3</guid>
 			<dc:creator><![CDATA[Lionites]]></dc:creator>
 			<pubDate>Sat, 02 Jan 2016 13:55:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/MyStoryOfHouseMusic-01_House_Lionites.mp3" length="234234939" type="audio/mpeg"/>
+			<enclosure url="https://media.bezu.lu/MyStoryOfHouseMusic-01_House_Lionites.mp3" length="234236098" type="audio/mpeg"/>
 			<itunes:author>Lionites</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>01:37:34</itunes:duration>
@@ -555,7 +555,7 @@
 			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-26_HouseElectro_Djive.m4a</guid>
 			<dc:creator><![CDATA[DJ Djive]]></dc:creator>
 			<pubDate>Sun, 31 May 2009 08:54:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/ZuluMix-26_HouseElectro_Djive.m4a" length="55834796" type="audio/mp4"/>
+			<enclosure url="https://media.bezu.lu/ZuluMix-26_HouseElectro_Djive.m4a" length="55835038" type="audio/mp4"/>
 			<itunes:author>DJ Djive</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>00:57:26</itunes:duration>
@@ -610,7 +610,7 @@
 			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-21_House_KamerenJ.mp3</guid>
 			<dc:creator><![CDATA[DJ Kameren J]]></dc:creator>
 			<pubDate>Sat, 22 Dec 2007 21:25:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/ZuluMix-21_House_KamerenJ.mp3" length="127877996" type="audio/mpeg"/>
+			<enclosure url="https://media.bezu.lu/ZuluMix-21_House_KamerenJ.mp3" length="127878124" type="audio/mpeg"/>
 			<itunes:author>DJ Kameren J</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>01:06:35</itunes:duration>
@@ -654,7 +654,7 @@
 			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-17_DjiveKJ.mp3</guid>
 			<dc:creator><![CDATA[DJ Djive & Kameren J]]></dc:creator>
 			<pubDate>Sat, 14 Oct 2006 21:15:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/ZuluMix-17_DjiveKJ.mp3" length="115580885" type="audio/mpeg"/>
+			<enclosure url="https://media.bezu.lu/ZuluMix-17_DjiveKJ.mp3" length="115581013" type="audio/mpeg"/>
 			<itunes:author>DJ Djive &amp; Kameren J</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>01:00:08</itunes:duration>
@@ -731,7 +731,7 @@
 			<guid isPermaLink="true">https://bezu.lu/zulumix1</guid>
 			<dc:creator><![CDATA[DJ Djive & Kameren J]]></dc:creator>
 			<pubDate>Sat, 08 Jan 2005 22:02:00 GMT</pubDate>
-			<enclosure url="https://media.bezu.lu/ZuluMix-01_House_DjiveKJ.mp3" length="124772936" type="audio/mpeg"/>
+			<enclosure url="https://media.bezu.lu/ZuluMix-01_House_DjiveKJ.mp3" length="124773064" type="audio/mpeg"/>
 			<itunes:author>DJ Djive &amp; Kameren J</itunes:author>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>01:04:58</itunes:duration>
