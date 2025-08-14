@@ -38,6 +38,19 @@
     },
     "episodes": [
       {
+        "file": "/ZuluMix-50_Techno_Djive.m4a",
+        "id": "zm50",
+        "trackTitle": "ZuluMix 50",
+        "dates": {
+          "released": "Thu, 14 Aug 2025 23:19:00 +0200",
+          "published": "Sun, 27 Jul 2025 21:04:00 +0200"
+        },
+        "genres": [
+          "House",
+          "Techno"
+        ]
+      },
+      {
         "file": "/MyStoryOfHouseMusic-04_Techno_Lionites.m4a",
         "id": "msohm4",
         "trackTitle": "My Story Of House Music 4",
