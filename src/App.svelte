@@ -67,7 +67,7 @@
       </defs>
     </svg>
     <a
-      href="https://podcasts.apple.com/ch/podcast/be-zulu-podcast/id189008679?l=en"
+      href="https://pod.link/189008679"
       target="_blank"
       rel="noopener"
       title="Subscribe to the Be Zulu! podcast"
