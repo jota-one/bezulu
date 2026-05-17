@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import {
     artists,
     genres,
@@ -6,20 +6,19 @@
     tracksFilter,
     tracksOrder
   } from '../../stores'
+  import type { SortKey } from '../../types'
   import FilterList from '../filter/FilterList.svelte'
   import SortList from '../filter/SortList.svelte'
 
-  let visible = false
-  let panelKey
-  let element
+  let visible = $state(false)
+  let panelKey = $state('')
+  let element: HTMLElement
 
-  export function toggle(what) {
+  export function toggle(what: string) {
     const noToggle = visible && panelKey && panelKey !== what
     panelKey = what
 
-    if (noToggle) {
-      return
-    }
+    if (noToggle) return
 
     setTimeout(() => {
       visible = !visible
@@ -30,20 +29,19 @@
     visible = false
   }
 
-  export function isVisible() {
+  export function isVisible(): boolean {
     return visible
   }
 
-  export function getDomElement() {
+  export function getDomElement(): HTMLElement {
     return element
   }
 
-  function sort(event) {
-    const { item, desc } = event.detail
-    $tracksOrder = { key: item.sortKey, desc }
+  function sort(detail: { item: SortKey; desc: boolean }) {
+    $tracksOrder = { key: detail.item.sortKey, desc: detail.desc }
   }
 
-  function filter(key, value) {
+  function filter(key: string, value: string) {
     if ($tracksFilter[key]?.includes(value)) {
       $tracksFilter = {
         ...$tracksFilter,
@@ -52,34 +50,23 @@
     } else {
       $tracksFilter = {
         ...$tracksFilter,
-        [key]: [
-          ...($tracksFilter[key] || []),
-          ...[value]
-        ]
+        [key]: [...($tracksFilter[key] || []), value]
       }
     }
-  }
-
-  function filterArtists(event) {
-    filter('artist', event.detail)
-  }
-
-  function filterGenres(event) {
-    filter('genres', event.detail)
   }
 </script>
 
 <aside class:visible bind:this={element}>
   <div class="wrapper">
     <div class="filter">
-    {#if panelKey === 'artists'}
-      <FilterList items={$artists} title="Artists" on:filter={filterArtists} />
-    {:else if panelKey === 'genres'}
-      <FilterList items={$genres} title="Genres" on:filter={filterGenres} />
-    {/if}
-    {#if panelKey === 'sort'}
-      <SortList items={sortKeys} order={$tracksOrder} on:sort={sort} />
-    {/if}
+      {#if panelKey === 'artists'}
+        <FilterList items={$artists} title="Artists" onFilter={(v) => filter('artist', v)} />
+      {:else if panelKey === 'genres'}
+        <FilterList items={$genres} title="Genres" onFilter={(v) => filter('genres', v)} />
+      {/if}
+      {#if panelKey === 'sort'}
+        <SortList items={sortKeys} order={$tracksOrder} onSort={sort} />
+      {/if}
     </div>
   </div>
 </aside>

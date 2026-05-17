@@ -1,10 +1,9 @@
-<script>
-  import { createEventDispatcher } from 'svelte'
-
-  const dispatch = createEventDispatcher()
-
-  export let isShowCase = false
-  export let dir = 'top'
+<script lang="ts">
+  let { isShowCase = false, dir = 'top', onclick }: {
+    isShowCase?: boolean
+    dir?: string
+    onclick?: () => void
+  } = $props()
 </script>
 
 <button
@@ -13,7 +12,7 @@
   class:bottom={dir === 'bottom'}
   class:showcase={isShowCase}
   title="scroll to next panel"
-  on:click={() => dispatch('click')}
+  {onclick}
 >
   <svg viewBox="0 0 24 24" width="24" height="24">
     <path
@@ -22,7 +21,7 @@
   </svg>
 </button>
 
-<style language="postcss">
+<style lang="postcss">
   .arrow {
     margin-top: 0.125rem;
     width: 1.75rem;

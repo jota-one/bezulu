@@ -43,7 +43,7 @@ const getMetaData = async fileName => {
     return {
       author: metadata.common.artist,
       cover,
-      description: metadata.common.comment,
+      description: metadata.common.comment?.[0]?.text,
       duration: metadata.format.duration,
       genre: metadata.common.genre,
       title: metadata.common.title,
@@ -144,6 +144,7 @@ const run = async ({
         file: item.file
       },
       itunesDuration: item.duration,
+      itunesSummary: item.description || '',
       url: `${app.baseUrl.replace(/\/$/, '')}/${episode.id}`,
     })
 
@@ -181,11 +182,9 @@ const run = async ({
     return dateA === dateB ? 0 : dateA > dateB ? -1 : 1
   })
 
-  await fs.writeFile(
-    feedFile.replace('.xml', '.json'),
-    JSON.stringify(json),
-    'utf8'
-  )
+  const feedJson = JSON.stringify(json)
+  await fs.writeFile(feedFile.replace('.xml', '.json'), feedJson, 'utf8')
+  await fs.writeFile(path.join(ROOT, 'src/feed.json'), feedJson, 'utf8')
 }
 
 run({

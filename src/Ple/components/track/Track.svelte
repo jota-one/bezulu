@@ -1,32 +1,31 @@
-<script>
-  import { createEventDispatcher } from 'svelte'
+<script lang="ts">
   import { error } from '../../stores'
+  import type { TrackDates } from '../../types'
 
   import InfoButton from './button/Info.svelte'
   import TrackMeta from './Meta.svelte'
 
-  const dispatch = createEventDispatcher()
-
-  export let active = undefined
-  export let album = undefined
-  export let artist = undefined
-  export let audioUrl = undefined
-  export let coverUrl = undefined
-  export let thumbnailUrl = undefined
-  export let dates = {
-    added: undefined,
-    released: undefined,
-    updated: undefined,
-  }
-  export let downloadable = false
-  export let duration = undefined
-  export let genres = []
-  export let id = undefined
-  export let isShowcase = false
-  export let selected = undefined
-  export let title = undefined
-  export let isNew = false
-  export let showMeta = false
+  let { active, album, artist, audioUrl, coverUrl, thumbnailUrl,
+    dates = {}, downloadable = false, duration, genres = [],
+    id, isShowcase = false, selected, title, isNew = false, showMeta = false
+  }: {
+    active?: boolean
+    album?: string
+    artist?: string
+    audioUrl?: string
+    coverUrl?: string
+    thumbnailUrl?: string
+    dates?: Partial<TrackDates>
+    downloadable?: boolean
+    duration?: number
+    genres?: string[]
+    id?: string
+    isShowcase?: boolean
+    selected?: boolean
+    title?: string
+    isNew?: boolean
+    showMeta?: boolean
+  } = $props()
 </script>
 
 <div {id} class:active class:selected class:new={isNew} class:error={$error}>
@@ -37,7 +36,6 @@
       {audioUrl}
       {dates}
       {duration}
-      {error}
       {genres}
       {title}
       {downloadable}
@@ -50,7 +48,7 @@
       <InfoButton/>
     {/if}
     <img
-      src={(isShowcase ? coverUrl : thumbnailUrl).replace("/public", "")}
+      src={(isShowcase ? coverUrl : thumbnailUrl)?.replace("/public", "")}
       width="100%"
       height="100%"
       loading="lazy"
@@ -73,7 +71,6 @@
 <style lang="postcss">
   @import "../../styles/_media.pcss";
   @import "../../styles/_color.pcss";
-  @import "../../styles/_button.pcss";
 
   div {
     position: absolute;
@@ -87,7 +84,7 @@
     overflow: hidden;
 
     &.active,
-    .error {
+    &.error {
       img {
         filter: grayscale(1);
       }
@@ -114,41 +111,6 @@
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.25);
     }
   }
-
-  /* .actions {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-start;
-  }
-
-  .button {
-    width: 6rem;
-    height: 6rem;
-    padding: 0;
-    transition: color var(--ple-transition-time) var(--ple-transition-type);
-
-    svg {
-      width: 2.25rem;
-      height: 2.25rem;
-
-      @media (--m) {
-        width: 2.75rem;
-        height: 2.75rem;
-      }
-    }
-  }
-
-  .meta-button {
-    font-family: monospace;
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--ple-c-active);
-    cursor: pointer;
-  } */
 
   .message {
     position: absolute;

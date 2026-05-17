@@ -1,5 +1,5 @@
-<script>
-  export let isShowCase = false
+<script lang="ts">
+  let { isShowCase = false }: { isShowCase?: boolean } = $props()
 </script>
 
 <button
@@ -7,7 +7,7 @@
   class:showcase={isShowCase}
   title="open info panel"
 >
-  <img src="/info-button.svg"/>
+  <img src="/info-button.svg" alt="" />
 </button>
 
 <style lang="postcss">

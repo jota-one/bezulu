@@ -1,90 +1,76 @@
-<script>
-  import { onMount, createEventDispatcher } from "svelte";
-  // import VirtualScroller from "../VirtualScroller/VirtualScroller.svelte";
+<script lang="ts">
+  import { onMount } from "svelte"
   import {
     activeTrackId,
     activeTrack,
     ellapsed,
     filteredTracks,
     showMeta
-  } from "../../stores";
-  import Slot from "./Slot.svelte";
-  import Track from "../track/Track.svelte";
+  } from "../../stores"
+  import type { Track } from "../../types"
+  import Slot from "./Slot.svelte"
+  import TrackComponent from "../track/Track.svelte"
 
-  let container = null;
-  const dispatch = createEventDispatcher();
+  let { onnavigate, onToggleMeta }: {
+    onnavigate?: (track: Track) => void
+    onToggleMeta?: (track: Track) => void
+  } = $props()
 
-  $: items = [
-    { ...$activeTrack, showMeta: $showMeta.includes($activeTrack.id) },
+  let container: HTMLUListElement
+
+  let items = $derived([
+    { ...$activeTrack, showMeta: $showMeta.includes($activeTrack.id ?? '') },
     ...$filteredTracks.map((track) => ({
       ...track,
       active: track?.id === $activeTrack?.id,
       showMeta: $showMeta.includes(track.id)
     })),
-  ];
+  ])
 
-  function renderSlot({ index, container }) {
-    new Slot({ target: container });
-  }
+  function onClick(event: MouseEvent) {
+    let slot = event.target as Element | null
 
-  function renderItem({ index, container }) {
-    const props = items[index];
-    new Track({ target: container, props });
-
-    if (props.active) {
-      container.classList.add("active");
-    } else {
-      container.classList.remove("active");
-    }
-  }
-
-  function onClick(event) {
-    let slot = event.target;
-
-    while (!["li", "body"].includes(slot.tagName.toLowerCase())) {
-      slot = slot.parentElement;
+    while (slot && !["li", "body"].includes(slot.tagName.toLowerCase())) {
+      slot = slot.parentElement
     }
 
-    if (slot.tagName.toLowerCase() === "body") {
-      return;
-    }
+    if (!slot || slot.tagName.toLowerCase() === "body") return
 
     const selectedTrack = $filteredTracks.find(
-      (track) => track.id === slot.firstElementChild.id
+      (track) => track.id === slot!.firstElementChild?.id
     )
 
-    let action = 'navigate'
-    const buttonClasses = event.target.classList
+    if (!selectedTrack) return
 
-    if (buttonClasses.contains('trigger') || buttonClasses.contains('close')) {
-      action = 'toggleMeta'
-    } else if (buttonClasses.contains('meta-button')) {
-      return
-    }
+    const buttonClasses = (event.target as Element).classList
+    const isToggleMeta = buttonClasses.contains('trigger') || buttonClasses.contains('close')
+
+    if (buttonClasses.contains('meta-button') && !isToggleMeta) return
 
     if ($activeTrackId !== selectedTrack.id) {
       $ellapsed = 0
     }
 
-    dispatch(action, selectedTrack)
+    if (isToggleMeta) {
+      onToggleMeta?.(selectedTrack)
+    } else {
+      onnavigate?.(selectedTrack)
+    }
   }
 
   onMount(() => {
-    container.querySelector("li:first-child").classList.add("active")
-  });
+    container.querySelector("li:first-child")?.classList.add("active")
+  })
 </script>
 
-<ul bind:this={container} on:click={onClick}>
+<ul bind:this={container} onclick={onClick}>
   {#each items as item}
     <Slot>
-      <Track {...item} on:toggleMeta/>
+      <TrackComponent {...item} />
     </Slot>
   {/each}
 </ul>
 
-<!-- <VirtualScroller {items} {renderSlot} {renderItem}>
-    <ul slot="container" />
-</VirtualScroller> -->
 <style lang="postcss">
   @import "../../styles/_media.pcss";
 

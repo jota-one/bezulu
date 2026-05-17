@@ -1,20 +1,20 @@
-<script>
-  import { volume } from "../stores";
+<script lang="ts">
+  import { volume } from "../stores"
 
-  let currentVolume
+  let currentVolume = $state(0.5)
 
-  function onInput(event) {
-    $volume = event.target.value / 10;
+  function onInput(event: Event) {
+    $volume = (event.target as HTMLInputElement).valueAsNumber / 10
     currentVolume = $volume
   }
 
-  function toggleVolume () {
+  function toggleVolume() {
     $volume = $volume === 0 ? currentVolume : 0
   }
 </script>
 
 <div class="volume">
-  <button class="button" title="Toggle volume" on:click={toggleVolume}>
+  <button class="button" title="Toggle volume" onclick={toggleVolume}>
     <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
       {#if $volume === 0}
         <path
@@ -48,13 +48,12 @@
     min="0"
     max="10"
     value={$volume * 10}
-    on:input={onInput}
+    oninput={onInput}
   />
 </div>
 
 <style lang="postcss">
   @import "../styles/_media.pcss";
-  @import "../styles/_button.pcss";
 
   .volume {
     position: relative;

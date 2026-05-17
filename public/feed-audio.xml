@@ -4,7 +4,7 @@
 		<description><![CDATA[Share your passion for electronic music with DJ Djive and Lionites - from Old School House to Drum & Bass, Techno and more. Let yourself be moved away by their eclectic and varied records selection!]]></description>
 		<link>https://bezu.lu</link>
 		<generator>Jota</generator>
-		<lastBuildDate>Mon, 20 Apr 2026 10:04:02 GMT</lastBuildDate>
+		<lastBuildDate>Sun, 17 May 2026 19:51:21 GMT</lastBuildDate>
 		<atom:link href="https://bezu.lu/feed.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[DJ Djive, Lionites and friends]]></author>
 		<category><![CDATA[Music]]></category>
@@ -195,14 +195,12 @@
 		</item>
 		<item>
 			<title><![CDATA[F**k Me I Was In The Mousse!: Kameren J (House)]]></title>
-			<description><![CDATA[]]></description>
 			<link>https://bezu.lu/f__kme</link>
 			<guid isPermaLink="true">https://bezu.lu/f__kme</guid>
 			<dc:creator><![CDATA[Kameren J]]></dc:creator>
 			<pubDate>Wed, 18 May 2022 18:56:00 GMT</pubDate>
 			<enclosure url="https://media.bezu.lu/F__kMeIWasInTheMousse_House_KamerenJ.m4a" length="67921916" type="audio/mp4"/>
 			<itunes:author>Kameren J</itunes:author>
-			<itunes:summary></itunes:summary>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>01:09:49</itunes:duration>
 		</item>
@@ -494,14 +492,12 @@
 		</item>
 		<item>
 			<title><![CDATA[ZuluMix 33: Kameren J (Drum'n'Bass)]]></title>
-			<description><![CDATA[]]></description>
 			<link>https://bezu.lu/zulumix33</link>
 			<guid isPermaLink="false">http://www.zuluparty.ch/media/Sounds/Podcasts/items/ZuluMix-33_DnB_KamerenJ.m4a</guid>
 			<dc:creator><![CDATA[Kameren J]]></dc:creator>
 			<pubDate>Fri, 03 Feb 2012 16:48:00 GMT</pubDate>
 			<enclosure url="https://media.bezu.lu/ZuluMix-33_DnB_KamerenJ.m4a" length="69611993" type="audio/mp4"/>
 			<itunes:author>Kameren J</itunes:author>
-			<itunes:summary></itunes:summary>
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:duration>01:11:37</itunes:duration>
 		</item>

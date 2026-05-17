@@ -1,20 +1,18 @@
-
-<script>
-  import { createEventDispatcher } from 'svelte'
-
-  const dispatch = createEventDispatcher()
-
-  export let isShowCase = false
+<script lang="ts">
+  let { isShowCase = false, onclick }: {
+    isShowCase?: boolean
+    onclick?: () => void
+  } = $props()
 </script>
 
 <button
   class="meta-button close"
   class:showcase={isShowCase}
   title="close info panel"
-  on:click={() => dispatch('click')}
-/>
+  {onclick}
+></button>
 
-<style language="postcss">
+<style lang="postcss">
   .close {
     width: 1.75rem;
     height: 1.75rem;

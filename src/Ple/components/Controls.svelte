@@ -1,5 +1,4 @@
-<script>
-  import { createEventDispatcher } from 'svelte'
+<script lang="ts">
   import {
     loop,
     nextDisabled,
@@ -10,14 +9,22 @@
     tracksFilter,
     tracksOrder
   } from '../stores'
+  import type { Track } from '../types'
 
-  let panelButtons = {
+  let { onnavigate, onTogglePanel }: {
+    onnavigate?: (track: Track) => void
+    onTogglePanel?: (key: string) => void
+  } = $props()
+
+  let panelButtons: Record<string, HTMLElement | undefined> = $state({
     sort: undefined,
     artists: undefined,
     genres: undefined
-  }
+  })
 
-  export function getDomPanelButtons() {
+  let activePanel = $state('')
+
+  export function getDomPanelButtons(): Record<string, HTMLElement | undefined> {
     return panelButtons
   }
 
@@ -25,15 +32,12 @@
     activePanel = ''
   }
 
-  const dispatch = createEventDispatcher()
-  let activePanel
-
   function navigatePrev() {
-    dispatch('navigate', $prevTrack)
+    if ($prevTrack) onnavigate?.($prevTrack)
   }
 
   function navigateNext() {
-    dispatch('navigate', $nextTrack)
+    if ($nextTrack) onnavigate?.($nextTrack)
   }
 
   function toggleRandom() {
@@ -41,33 +45,22 @@
   }
 
   function toggleLoop() {
-    const value = $loop === -1 ? 1 : $loop === 0 ? -1 : 0
-    $loop = value
+    $loop = $loop === -1 ? 1 : $loop === 0 ? -1 : 0
   }
 
-  function togglePanel(key) {
+  function togglePanel(key: string) {
     activePanel = activePanel === key ? '' : key
-    dispatch('togglePanel', key)
+    onTogglePanel?.(key)
   }
 </script>
 
 <div class="controls scrollable">
   <div class="buttons">
-    <!-- <button
-      class="button search"
-      title="Filter list"
-    >
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-        <path
-          d="M10.7679 4.26788C12.4918 4.26788 14.1451 4.9527 15.3641 6.17169C16.5831 7.39068 17.2679 9.04398 17.2679 10.7679C17.2679 12.0053 17.0958 12.9228 16.054 14.554C16.054 14.6534 19.7321 18.2321 19.7321 18.2321L18.2321 19.7321L14.554 16.054C13.5126 16.8228 12.0053 17.2679 10.7679 17.2679C9.04398 17.2679 7.39068 16.5831 6.17169 15.3641C4.9527 14.1451 4.26788 12.4918 4.26788 10.7679C4.26788 9.04398 4.9527 7.39068 6.17169 6.17169C7.39068 4.9527 9.04398 4.26788 10.7679 4.26788ZM10.7679 6.26788C8.26788 6.26788 6.26788 8.26788 6.26788 10.7679C6.26788 13.2679 8.26788 15.2679 10.7679 15.2679C13.2679 15.2679 15.2679 13.2679 15.2679 10.7679C15.2679 8.26788 13.2679 6.26788 10.7679 6.26788Z"
-        />
-      </svg>
-    </button> -->
     <button
       class="button next"
       title="Skip to next track"
       disabled={$nextDisabled}
-      on:click={navigateNext}
+      onclick={navigateNext}
     >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
         <path
@@ -79,7 +72,7 @@
       class="button previous"
       title="Skip to previous track"
       disabled={$prevDisabled}
-      on:click={navigatePrev}
+      onclick={navigatePrev}
     >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
         <path
@@ -90,7 +83,7 @@
     <button
       class="button loop"
       class:active={$loop !== 0}
-      on:click={toggleLoop}
+      onclick={toggleLoop}
       title="Repeat list"
     >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -115,7 +108,7 @@
     <button
       class="button random"
       class:active={$random}
-      on:click={toggleRandom}
+      onclick={toggleRandom}
       title="Randomize list"
     >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -129,7 +122,7 @@
       title="Sort list"
       class:active={activePanel === 'sort'}
       bind:this={panelButtons.sort}
-      on:click={() => togglePanel('sort')}
+      onclick={() => togglePanel('sort')}
     >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
         <path d="M14.6792 15.5H11.9792L15.9792 19.5L19.9792 15.5H17.2292V6.5H14.6792V15.5Z"/>
@@ -142,7 +135,7 @@
       class:active={activePanel === 'artists'}
       data-count-filters={$tracksFilter.artist?.length > 0 ? $tracksFilter.artist?.length : undefined}
       bind:this={panelButtons.artists}
-      on:click={() => togglePanel('artists')}
+      onclick={() => togglePanel('artists')}
     >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
         <path d="M16.5441 15.4361C16.2399 16.1051 14.5805 17.6797 11.9808 17.6797C9.3712 17.6797 7.782 16.0959 7.44295 15.4361C7.44295 15.4361 6.07296 13.6223 11.9808 13.6223C17.8887 13.6223 16.5441 15.4361 16.5441 15.4361Z"
@@ -163,7 +156,7 @@
       class:active={activePanel === 'genres'}
       data-count-filters={$tracksFilter.genres?.length > 0 ? $tracksFilter.genres?.length : undefined}
       bind:this={panelButtons.genres}
-      on:click={() => togglePanel('genres')}
+      onclick={() => togglePanel('genres')}
     >
       <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
         <path
@@ -171,53 +164,17 @@
         />
       </svg>
     </button>
-    <!-- <button
-      class="button albums"
-      title="Filter list on Albums"
-      class:active={activePanel === 'albums'}
-      on:click={() => togglePanel('albums')}
-    >
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M19.8496 4.15045H4.15045V19.8496H19.8496V4.15045ZM18.5254 5.47468H6.5597V18.5253H18.5254V5.47468Z"
-        />
-        <circle cx="12.5425" cy="12" r="4.91698" fill-opacity="0.15"/>
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M12.5425 16.917C15.2581 16.917 17.4595 14.7156 17.4595 12C17.4595 9.28444 15.2581 7.08304 12.5425 7.08304C9.82695 7.08304 7.62555 9.28444 7.62555 12C7.62555 14.7156 9.82695 16.917 12.5425 16.917ZM12.5418 15.6257C14.5446 15.6257 16.1681 14.0021 16.1681 11.9993C16.1681 9.99652 14.5446 8.37292 12.5418 8.37292C10.539 8.37292 8.91536 9.99652 8.91536 11.9993C8.91536 14.0021 10.539 15.6257 12.5418 15.6257Z"
-        />
-        <circle cx="12.5425" cy="12" r="1.33821"/>
-      </svg>
-    </button>
-    <button
-      class="button crates"
-      title="Choose crate"
-      class:active={activePanel === 'crates'}
-      on:click={() => togglePanel('crates')}
-    >
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-        <path
-          d="M17.5438 4.20335L15.1206 4.72354L18.9013 19.6687L21.3245 19.1486L17.5438 4.20335Z"
-        />
-          <path d="M6.44421 4.23966H8.93233V19.5853H6.44421V4.23966Z" />
-          <path d="M10.7825 4.23966H13.2706V19.5853H10.7825V4.23966Z" />
-      </svg>
-    </button> -->
   </div>
   <button class="button hamburger">
-    <span />
-    <span />
-    <span />
+    <span></span>
+    <span></span>
+    <span></span>
   </button>
 </div>
 
 <style lang="postcss">
   @import "../styles/_media.pcss";
   @import "../styles/_size.pcss";
-  @import "../styles/_button.pcss";
 
   .controls {
     position: sticky;

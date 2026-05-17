@@ -1,0 +1,43 @@
+@import "./Ple/styles/_transition.pcss";
+@import "./Ple/styles/_font.pcss";
+@import "./Ple/styles/_button.pcss";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+@keyframes playing {
+  100% {
+    transform: translate3d(3rem, 0, 0);
+  }
+}
+
+.scrollable {
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(128, 128, 128, 0.35);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.25);
+    border: none;
+  }
+}
+
+.ple-app .secondary-controls {
+  > * {
+    pointer-events: all;
+  }
+
+  button {
+    transition: color var(--ple-transition-time) var(--ple-transition-type);
+  }
+
+  svg {
+    width: 3rem;
+    height: 3rem;
+  }
+}

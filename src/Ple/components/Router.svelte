@@ -1,28 +1,28 @@
-<script>
-  import { onMount, createEventDispatcher } from "svelte";
+<script lang="ts">
+  import { onMount } from "svelte"
 
-  export let basePath = "";
-  export function navigate(trackId) {
-    if (trackId === getTrackFromLocation()) {
-      return;
-    }
+  let { basePath = "", oninit, onnavigate }: {
+    basePath?: string
+    oninit?: (trackId: string) => void
+    onnavigate?: (trackId: string) => void
+  } = $props()
 
-    window.history.pushState(null, null, `${basePath}${trackId}`);
+  export function navigate(trackId: string) {
+    if (trackId === getTrackFromLocation()) return
+    window.history.pushState(null, '', `${basePath}${trackId}`)
   }
 
-  const dispatch = createEventDispatcher();
-
-  function getTrackFromLocation() {
-    return window.location.pathname.replace(basePath, "");
+  function getTrackFromLocation(): string {
+    return window.location.pathname.replace(basePath, "")
   }
 
-  function onPopState(state) {
-    dispatch("navigate", getTrackFromLocation());
+  function onPopState() {
+    onnavigate?.(getTrackFromLocation())
   }
 
   onMount(() => {
-    dispatch("init", getTrackFromLocation());
-  });
+    oninit?.(getTrackFromLocation())
+  })
 </script>
 
-<svelte:window on:popstate={onPopState} />
+<svelte:window onpopstate={onPopState} />

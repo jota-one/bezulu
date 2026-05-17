@@ -1,14 +1,15 @@
-<script>
+<script lang="ts">
   import Player from './Ple'
-  import { app, items } from '../public/feed.json'
+  import { app, items } from './feed.json'
 
-  const { basePath } = app
-  const tracks = items
-  let volumeLevel = 'init'
+  const { basePath } = app as { basePath: string }
+  const tracks = items as any[]
+  let volumeLevel = $state('init')
 </script>
 
-<Player {tracks} {basePath} on:colorChanged={(e) => (volumeLevel = e.detail)}>
+<Player {tracks} {basePath} onColorChanged={(level: string) => (volumeLevel = level)}>
   <div class="logo volume-{volumeLevel}">
+  a
     <svg
       width="70"
       height="66"
@@ -146,52 +147,54 @@
     z-index: 4;
     transition: color var(--ple-transition-time) var(--ple-transition-type);
     pointer-events: none;
+  }
 
-    @media (min-width: 768px) {
+  @media (min-width: 768px) {
+    .logo {
       margin: 0.5rem 1.5rem;
       width: 10rem;
     }
+  }
 
-    &.volume-init {
-      color: transparent;
-    }
+  .logo.volume-init {
+    color: transparent;
+  }
 
-    &.volume-off {
-      color: var(--ple-c-off);
-    }
+  .logo.volume-off {
+    color: var(--ple-c-off);
+  }
 
-    &.volume-min {
-      color: var(--ple-c-min);
-    }
+  .logo.volume-min {
+    color: var(--ple-c-min);
+  }
 
-    &.volume-low {
-      color: var(--ple-c-low);
-    }
+  .logo.volume-low {
+    color: var(--ple-c-low);
+  }
 
-    &.volume-default {
-      color: var(--ple-c-default);
-    }
+  .logo.volume-default {
+    color: var(--ple-c-default);
+  }
 
-    &.volume-high {
-      color: var(--ple-c-high);
-    }
+  .logo.volume-high {
+    color: var(--ple-c-high);
+  }
 
-    &.volume-max {
-      color: var(--ple-c-max);
-    }
+  .logo.volume-max {
+    color: var(--ple-c-max);
+  }
 
-    a {
-      color: inherit;
-      pointer-events: all;
-    }
+  .logo a {
+    color: inherit;
+    pointer-events: all;
+  }
 
-    svg {
-      width: 100%;
-      height: 100%;
+  .logo svg {
+    width: 100%;
+    height: 100%;
+  }
 
-      &:last-of-type {
-        margin-top: -1.5rem;
-      }
-    }
+  .logo svg:last-of-type {
+    margin-top: -1.5rem;
   }
 </style>

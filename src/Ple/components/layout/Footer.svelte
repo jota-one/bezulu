@@ -1,6 +1,6 @@
-<script>
-  import { formatTime } from "../../helpers";
-  import { filteredTracks } from "../../stores";
+<script lang="ts">
+  import { formatTime } from "../../helpers"
+  import { filteredTracks } from "../../stores"
 </script>
 
 <footer>
@@ -10,7 +10,7 @@
     </div>
     <div>
       {formatTime(
-        $filteredTracks.reduce((sum, track) => sum + track?.duration, 0)
+        $filteredTracks.reduce((sum, track) => sum + (track?.duration ?? 0), 0)
       )}
     </div>
   </div>
