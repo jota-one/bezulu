@@ -43,7 +43,7 @@ const getMetaData = async fileName => {
     return {
       author: metadata.common.artist,
       cover,
-      description: metadata.common.comment,
+      description: metadata.common.comment?.[0]?.text,
       duration: metadata.format.duration,
       genre: metadata.common.genre,
       title: metadata.common.title,
@@ -144,6 +144,7 @@ const run = async ({
         file: item.file
       },
       itunesDuration: item.duration,
+      itunesSummary: item.description || '',
       url: `${app.baseUrl.replace(/\/$/, '')}/${episode.id}`,
     })
 
