@@ -1,5 +1,5 @@
-<script>
-  import { createEventDispatcher, onMount } from 'svelte'
+<script lang="ts">
+  import { onMount, type Snippet } from 'svelte'
   import {
     activeTrackId,
     allTracks,
@@ -11,72 +11,73 @@
   import Grid from './components/layout/Grid.svelte'
   import OverlayPanel from './components/layout/OverlayPanel.svelte'
   import Footer from './components/layout/Footer.svelte'
-  import Player from './components/Player.svelte'
+  import PlayerComponent from './components/Player.svelte'
   import Controls from './components/Controls.svelte'
   import Router from './components/Router.svelte'
   import SvgFilters from './components/SvgFilters.svelte'
   import Volume from './components/Volume.svelte'
   import BackToTop from './components/BackToTop.svelte'
+  import type { Track } from './types'
 
-  export let tracks = []
-  export let basePath
+  let { tracks = [], basePath, onColorChanged, children }: {
+    tracks?: Track[]
+    basePath: string
+    onColorChanged?: (level: string) => void
+    children?: Snippet
+  } = $props()
 
-  const IS_NEW_TIMERANGE = 2505600000 // 1 month
-  const dispatch = createEventDispatcher()
+  const IS_NEW_TIMERANGE = 2505600000
 
-  let app
-  let router
-  let player
-  let controls
-  let panel
-  let showBackToTop
+  let appEl: HTMLDivElement
+  let router: { navigate: (id: string) => void }
+  let playerComp: { playPause: () => void }
+  let controls: { getDomPanelButtons: () => Record<string, HTMLElement | undefined>; clearActivePanel: () => void }
+  let panel: { toggle: (key: string) => void; close: () => void; isVisible: () => boolean; getDomElement: () => HTMLElement }
+  let showBackToTop = $state(false)
 
-  $: {
+  $effect.pre(() => {
     setAllTracks(tracks.map(track => ({ ...track, isNew: isNew(track) })))
-    setTimeout(() => dispatch('colorChanged', $volumeLevel), 0)
+  })
+
+  $effect(() => {
+    setTimeout(() => onColorChanged?.($volumeLevel), 0)
+  })
+
+  function isNew(track: Track): boolean {
+    return Date.now() - new Date(track.dates.added).getTime() < IS_NEW_TIMERANGE
   }
 
-  function isNew(track) {
-    const timeDiff = Date.now() - (new Date(track.dates.added)).getTime()
-    return timeDiff < IS_NEW_TIMERANGE
-  }
-
-  function onRouterInit(event) {
+  function onRouterInit(trackId: string) {
     $tracksOrder = $tracksOrder || { key: 'dates.added', desc: true }
-    setActiveTrackId(event.detail || $activeTrackId || $allTracks[0]?.id)
+    setActiveTrackId(trackId || $activeTrackId || $allTracks[0]?.id)
   }
 
-  function onRouterNavigate(event) {
-    setActiveTrackId(event.detail)
+  function onRouterNavigate(trackId: string) {
+    setActiveTrackId(trackId)
     playActiveTrack()
   }
 
-  function navigate(event) {
-    setActiveTrackId(event.detail.id)
+  function navigate(track: Track) {
+    setActiveTrackId(track.id)
     router.navigate($activeTrackId)
     playActiveTrack()
   }
 
-  function setActiveTrackId(trackId) {
-    $activeTrackId = trackId || tracks[0]?.id
+  function setActiveTrackId(trackId: string | undefined) {
+    $activeTrackId = trackId || tracks[0]?.id || ''
   }
 
   function playActiveTrack() {
-    window.setTimeout(() => {
-      player.playPause()
-    });
+    window.setTimeout(() => playerComp.playPause())
   }
 
-  function togglePanel(event) {
-    panel.toggle(event.detail)
+  function togglePanel(key: string) {
+    panel.toggle(key)
   }
 
-  function toggleMeta(event) {
-    const trackId = event.detail?.id
-
-    if (!trackId) {
-      return
-    }
+  function toggleMeta(track: Track) {
+    const trackId = track?.id
+    if (!trackId) return
 
     if ($showMeta.includes(trackId)) {
       $showMeta = $showMeta.filter(id => id !== trackId)
@@ -85,21 +86,17 @@
     }
   }
 
-  function onClickInApp(event) {
-    const isBody = element => element?.tagName.toLowerCase() === 'body'
-    let target = event.target
+  function onClickInApp(event: MouseEvent) {
+    const isBody = (el: Element | null) => el?.tagName.toLowerCase() === 'body'
+    let target = event.target as Element | null
 
     while (
       !isBody(target) &&
       target !== panel.getDomElement() &&
-      !Object.values(controls.getDomPanelButtons())
-        .some(button => button === target)
+      !Object.values(controls.getDomPanelButtons()).some(btn => btn === target)
     ) {
-      if (!target) {
-        break
-      }
-
-      target = target.parentNode
+      if (!target) break
+      target = target.parentNode as Element | null
     }
 
     if (isBody(target) && panel.isVisible()) {
@@ -110,6 +107,7 @@
 
   onMount(() => {
     const target = document.querySelector('.grid .active')
+    if (!target) return
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -123,60 +121,43 @@
 
 <div
   class="ple-app volume-{$volumeLevel}"
-  bind:this={app}
-  on:click={onClickInApp}
+  bind:this={appEl}
+  onclick={onClickInApp}
 >
   <SvgFilters />
   <Router
     {basePath}
     bind:this={router}
-    on:init={onRouterInit}
-    on:navigate={onRouterNavigate}
+    oninit={onRouterInit}
+    onnavigate={onRouterNavigate}
   />
   <header>
-    <Player bind:this={player} on:navigate={navigate} />
+    <PlayerComponent bind:this={playerComp} onnavigate={navigate} />
   </header>
   <main>
     <Controls
       bind:this={controls}
-      on:navigate={navigate}
-      on:togglePanel={togglePanel}
+      onnavigate={navigate}
+      onTogglePanel={togglePanel}
     />
     <div class="grid">
-      <slot />
-      <OverlayPanel bind:this={panel}/>
-      <Grid on:navigate={navigate} on:toggleMeta={toggleMeta} />
-      <div style="flex:1" />
+      {@render children?.()}
+      <OverlayPanel bind:this={panel} />
+      <Grid onnavigate={navigate} onToggleMeta={toggleMeta} />
+      <div style="flex:1"></div>
       <div class="secondary-controls">
-        <Volume/>
+        <Volume />
         <div class="back-to-top" class:show={showBackToTop}>
-          <BackToTop on:scrollTop={() => app.scrollIntoView()}/>
+          <BackToTop onScrollTop={() => appEl.scrollIntoView()} />
         </div>
       </div>
-      footr: <Footer />
+      <Footer />
     </div>
   </main>
 </div>
 
-<style global lang="postcss">
-  /* Don't remove these imports as the variables they contain
-     (colors, transition, size, etc.) can be used by the app/page
-     embedding Ple.
-  */
+<style lang="postcss">
   @import "styles/_media.pcss";
-  @import "styles/_transition.pcss";
-  @import "styles/_font.pcss";
-  @import "styles/_button.pcss";
-
-  @keyframes playing {
-    100% {
-      transform: translate3d(3rem, 0, 0)
-    }
-  }
-
-  * {
-    box-sizing: border-box;
-  }
 
   .ple-app {
     position: relative;
@@ -250,34 +231,6 @@
       padding: 2rem 1.5rem 0 0;
       pointer-events: none;
       z-index: 1;
-
-      & > * {
-        pointer-events: all;
-      }
-
-      button {
-        transition: color var(--ple-transition-time) var(--ple-transition-type);
-      }
-
-      svg {
-        width: 3rem;
-        height: 3rem;
-      }
-    }
-
-    .scrollable {
-      &::-webkit-scrollbar {
-        width: 0.5rem;
-      }
-
-      &::-webkit-scrollbar-track {
-        background: rgba(128,128,128, 0.35);
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background-color: rgba(255,255,255, 0.25);
-        border: none;
-      }
     }
 
     .back-to-top {

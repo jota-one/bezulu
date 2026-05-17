@@ -181,11 +181,9 @@ const run = async ({
     return dateA === dateB ? 0 : dateA > dateB ? -1 : 1
   })
 
-  await fs.writeFile(
-    feedFile.replace('.xml', '.json'),
-    JSON.stringify(json),
-    'utf8'
-  )
+  const feedJson = JSON.stringify(json)
+  await fs.writeFile(feedFile.replace('.xml', '.json'), feedJson, 'utf8')
+  await fs.writeFile(path.join(ROOT, 'src/feed.json'), feedJson, 'utf8')
 }
 
 run({

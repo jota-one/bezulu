@@ -1,9 +1,11 @@
-<script>
-  const active = false;
+<script lang="ts">
+  import type { Snippet } from 'svelte'
+
+  let { children }: { children?: Snippet } = $props()
 </script>
 
-<li class:active>
-  <slot />
+<li>
+  {@render children?.()}
 </li>
 
 <style lang="postcss">
@@ -16,7 +18,7 @@
     background: rgba(50, 50, 50, 0.5);
     cursor: pointer;
 
-    &.active {
+    &:global(.active) {
       grid-column-end: span 2;
       grid-row-end: span 2;
 

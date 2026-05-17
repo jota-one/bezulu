@@ -1,16 +1,20 @@
-<script>
-  import { createEventDispatcher } from 'svelte'
-  export let items = []
-  export let order = {}
+<script lang="ts">
+  import type { SortKey, TracksOrder } from '../../types'
 
-  const dispatch = createEventDispatcher()
+  let { items = [], order = {}, onSort }: {
+    items?: SortKey[]
+    order?: TracksOrder
+    onSort?: (detail: { item: SortKey; desc: boolean }) => void
+  } = $props()
 
-  $: direction = Object.keys(order).length
-    ? order.desc ? 'asc' : 'desc'
-    : 'asc'
+  let direction = $derived(
+    Object.keys(order).length
+      ? order.desc ? 'asc' : 'desc'
+      : 'asc'
+  )
 
-  function sort(item, desc) {
-    dispatch('sort', { item, desc })
+  function sort(item: SortKey, desc: boolean) {
+    onSort?.({ item, desc })
   }
 </script>
 
@@ -25,7 +29,7 @@
           id={`${item.id}.asc`}
           name="sort"
           checked={item.sortKey === order.key && !order.desc}
-          on:change={() => sort(item, false)}
+          onchange={() => sort(item, false)}
         >
         <input
           type="radio"
@@ -33,7 +37,7 @@
           id={`${item.id}.desc`}
           name="sort"
           checked={item.sortKey === order.key && order.desc}
-          on:change={() => sort(item, true)}
+          onchange={() => sort(item, true)}
         >
         {item.value}
         {#if item.sortKey === order.key}

@@ -1,13 +1,11 @@
-<script>
-  import { createEventDispatcher } from 'svelte'
-  export let items = []
-  export let title
+<script lang="ts">
+  import type { FilterItem } from '../../types'
 
-  const dispatch = createEventDispatcher()
-
-  function filter(value) {
-    dispatch('filter', value)
-  }
+  let { items = [], title, onFilter }: {
+    items?: FilterItem[]
+    title: string
+    onFilter?: (value: string) => void
+  } = $props()
 </script>
 
 <ul class="scrollable">
@@ -20,7 +18,7 @@
           aria-label="Filter list by {title}"
           id={item.id}
           checked={item.checked}
-          on:change={() => filter(item.value)}
+          onchange={() => onFilter?.(item.value)}
         >
         {item.value}
       </label>

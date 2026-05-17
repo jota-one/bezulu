@@ -2,43 +2,41 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public --no-clear  --single -p 5000",
-    "podcast:build": "node src/Ple/scripts/podcast config.json",
-    "podcast:build:audio": "node src/Ple/scripts/podcast config.json audio"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "podcast:build": "node src/Ple/scripts/podcast/index.cjs config.json",
+    "podcast:build:audio": "node src/Ple/scripts/podcast/index.cjs config.json audio"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^24.1.0",
-    "@rollup/plugin-json": "^6.0.1",
-    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "@tsconfig/svelte": "^5.0.2",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.5.10",
     "postcss-custom-media": "^9.1.5",
     "postcss-import": "^15.1.0",
     "postcss-load-config": "^4.0.1",
     "postcss-nested": "^6.0.1",
-    "rollup": "^3.29.4",
-    "rollup-plugin-css-only": "^4.3.0",
-    "rollup-plugin-livereload": "^2.0.5",
-    "rollup-plugin-svelte": "^7.1.6",
-    "rollup-plugin-svelte-ssr": "^1.0.3",
-    "svelte": "^4.2.19",
-    "svelte-preprocess": "^5.0.4"
+    "svelte": "^5.0.0",
+    "svelte-check": "^4.0.0",
+    "tslib": "^2.6.0",
+    "typescript": "^5.3.0",
+    "vite": "^8.0.0"
   },
   "dependencies": {
-    "@rollup/plugin-terser": "^0.4.4",
     "@root/walk": "^1.1.0",
     "dayjs": "^1.11.10",
     "fs-extra": "^11.1.1",
     "howler": "^2.2.4",
     "music-metadata": "^8.3.0",
     "podcast": "^2.0.1",
-    "sharp": "^0.32.6",
-    "sirv-cli": "^2.0.2"
+    "sharp": "^0.32.6"
   },
   "pnpm": {
+    "onlyBuiltDependencies": ["esbuild", "sharp"],
     "overrides": {
       "semantic-release@<=17.2.2": ">=17.2.3",
       "semver-regex@<3.1.4": ">=3.1.4",

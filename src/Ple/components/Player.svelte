@@ -1,5 +1,5 @@
-<script>
-  import { onMount, createEventDispatcher } from 'svelte'
+<script lang="ts">
+  import { onMount } from 'svelte'
   import { formatTime } from '../helpers'
   import * as player from '../services/player'
   import {
@@ -11,18 +11,18 @@
     prevTrack,
     volume,
   } from '../stores'
+  import type { Track } from '../types'
 
-  const dispatch = createEventDispatcher()
-  const time = { ellapsed: 0, left: 0 }
+  let { onnavigate }: { onnavigate?: (track: Track) => void } = $props()
 
-  let playingTrackId = undefined
-  let paused = true
-  let progress = 0
+  const time = $state({ ellapsed: 0, left: 0 })
+
+  let playingTrackId = $state<string | undefined>(undefined)
+  let paused = $state(true)
+  let progress = $state(0)
 
   export function playPause() {
-    if ($error) {
-      return
-    }
+    if ($error) return
 
     if (player.isLoaded()) {
       if (playingTrackId === $activeTrack.id) {
@@ -36,15 +36,13 @@
     }
 
     player.playNewSound({
-      url: $activeTrack.audioUrl,
+      url: $activeTrack.audioUrl!,
       volume: $volume,
       onError,
       onEnd,
     })
 
-    if ($ellapsed === 0) {
-      progress = 0
-    }
+    if ($ellapsed === 0) progress = 0
 
     setDuration()
 
@@ -60,24 +58,20 @@
         title: $activeTrack.title,
         artist: $activeTrack.artist,
         album: $activeTrack.album,
-        artwork: [{ src: $activeTrack.thumbnailUrl }],
+        artwork: [{ src: $activeTrack.thumbnailUrl! }],
       })
     }
   }
 
-  $: playPauseButtonStyle = $activeTrack
+  let playPauseButtonStyle = $derived($activeTrack
     ? `background-image:url(${$activeTrack.thumbnailUrl})`
-    : ''
+    : '')
 
   onMount(() => {
     updateTime()
 
     if ('mediaSession' in navigator) {
-      // Safari for some reason is throwing back mediaSession handlers
-      // resulting in an infinite loop... As it seems also it's the only browser
-      // implementing the callActionHandler function, using this trick
-      // prevents executing the handler indefinitely.
-      const skipHandler = Boolean(navigator.mediaSession.callActionHandler)
+      const skipHandler = Boolean((navigator.mediaSession as any).callActionHandler)
 
       navigator.mediaSession.setActionHandler('play', () => {
         if (!skipHandler) {
@@ -102,20 +96,20 @@
 
       if ($prevTrack) {
         navigator.mediaSession.setActionHandler('previoustrack', () => {
-          dispatch('navigate', $prevTrack)
+          onnavigate?.($prevTrack!)
         })
       }
 
       if ($nextTrack) {
         navigator.mediaSession.setActionHandler('nexttrack', () => {
-          dispatch('navigate', $nextTrack)
+          onnavigate?.($nextTrack!)
         })
       }
     }
 
     window.setInterval(() => {
       if (player.isPlaying()) {
-        $ellapsed = player.getPlayingPosition();
+        $ellapsed = player.getPlayingPosition()
         updateTime()
       }
     }, 1000)
@@ -123,17 +117,12 @@
 
   function onEnd() {
     stop()
-
-    if (!$nextTrack) {
-      return
-    }
-
-    dispatch('navigate', $nextTrack)
+    if ($nextTrack) onnavigate?.($nextTrack)
   }
 
-  function onError(_error) {
+  function onError(_error: string) {
     stop()
-    error.set(_error);
+    error.set(_error)
   }
 
   function play() {
@@ -151,13 +140,12 @@
     paused = true
   }
 
-  function seek(event) {
-    player.seek(event.target.value)
+  function seek(event: Event) {
+    player.seek((event.target as HTMLInputElement).valueAsNumber)
   }
 
   function setDuration() {
     $duration = 0
-
     const int = setInterval(() => {
       if (player.getDuration() > 0) {
         $duration = player.getDuration()
@@ -168,26 +156,26 @@
 
   function updateTime() {
     time.ellapsed = $ellapsed
-    time.left = $duration - $ellapsed;
-    progress = $ellapsed / $duration
+    time.left = ($duration ?? 0) - $ellapsed
+    progress = $ellapsed / ($duration ?? 1)
   }
 
-  function handleKeydown(event) {
-		if (event.code.toLowerCase() === 'space') {
+  function handleKeydown(event: KeyboardEvent) {
+    if (event.code.toLowerCase() === 'space') {
       playPause()
       event.preventDefault()
     }
-	}
+  }
 </script>
 
-<svelte:window on:keydown={handleKeydown}/>
+<svelte:window onkeydown={handleKeydown} />
 
 <div class="player">
   <button
     class="button playpause"
     title="Play / Pause"
     style={playPauseButtonStyle}
-    on:click={playPause}
+    onclick={playPause}
   >
     {#if $activeTrack.id}
       <svg
@@ -219,7 +207,7 @@
       min="0"
       max={time.ellapsed + time.left}
       value={time.ellapsed}
-      on:input={seek}
+      oninput={seek}
     />
     {#if $activeTrack.id}
       <div class="text">
@@ -237,7 +225,6 @@
 <style lang="postcss">
   @import "../styles/_media.pcss";
   @import "../styles/_size.pcss";
-  @import "../styles/_button.pcss";
 
   .player {
     width: 100%;

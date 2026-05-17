@@ -1,13 +1,11 @@
-<script>
-  import { createEventDispatcher } from 'svelte'
-
-  const dispatch = createEventDispatcher()
+<script lang="ts">
+  let { onScrollTop }: { onScrollTop?: () => void } = $props()
 </script>
 
 <button
   class="button active"
   title="Scroll to top of page"
-  on:click={() => dispatch('scrollTop')}
+  onclick={() => onScrollTop?.()}
 >
   <svg
     viewBox="0 0 24 24"
