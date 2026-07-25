@@ -29,7 +29,7 @@
     "howler": "^2.2.4",
     "music-metadata": "^11.12.3",
     "podcast": "^2.0.1",
-    "sharp": "^0.34.5"
+    "sharp": "^0.35.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
