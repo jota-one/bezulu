@@ -38,6 +38,19 @@
     },
     "episodes": [
       {
+        "file": "/ZuluMix-53_Techno_Djive.m4a",
+        "id": "zm53",
+        "trackTitle": "ZuluMix 53",
+        "dates": {
+          "released": "Wed, 12 Aug 2026 17:43:00 +0200",
+          "published": "Sun, 9 Aug 2026 17:19:00 +0200"
+        },
+        "genres": [
+          "House",
+          "Techno"
+        ]
+      },
+      {
         "file": "/ZuluMix-52_DnB_Lionites.m4a",
         "id": "zm52",
         "trackTitle": "ZuluMix 52",
