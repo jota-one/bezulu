@@ -2,3 +2,5 @@ allowBuilds:
   esbuild: true
   sharp: true
   svelte-preprocess: set this to true or false
+minimumReleaseAgeExclude:
+  - music-metadata@12.3.0
